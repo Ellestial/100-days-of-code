@@ -1,7 +1,6 @@
 # 100 Days Of Code - Log
 
 ### Day 1: January 8, 2018
-##### (delete me or comment me out)
 
 **Readings**: Started reading Eloquent JavaScript. I read through the Introduction and about a quarter of the way through Chapter 1: Values, Types, and Operators.
 
