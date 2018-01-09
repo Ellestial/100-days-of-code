@@ -1,30 +1,13 @@
 # 100 Days Of Code - Log
 
-### Day 0: February 30, 2016 (Example 1)
+### Day 1: January 8, 2018
 ##### (delete me or comment me out)
 
-**Today's Progress**: Fixed CSS, worked on canvas functionality for the app.
+**Readings**: Started reading Eloquent JavaScript. I read through the Introduction and about a quarter of the way through Chapter 1: Values, Types, and Operators.
 
-**Thoughts:** I really struggled with CSS, but, overall, I feel like I am slowly getting better at it. Canvas is still new for me, but I managed to figure out some basic functionality.
+**Today's Progress**: Dove back into JS. Refamiliarized myself with strings, arrays, and functions on FreeCodeCamp. Got about halfway through the Basic JavaScript section.
 
-**Link to work:** [Calculator App](http://www.example.com)
+**Thoughts:** It's good to get back to JavScript! I'm remembering more than I expected and didn't have any issues on FreeCodeCamp, which is probably why I was able to get through what they consider 5 hours of content in 45 minutes or so. I'm learning more from this Eloquent JavaScript eBook, too, which is nice. I learned that bits are two-valued things, and that 32-bit and 64-bit computers are related to how many bits can run simultaneously. It's interesting getting this different sort of background.
 
-### Day 0: February 30, 2016 (Example 2)
-##### (delete me or comment me out)
+**Link to work:** [Eloquent JavaScript eBook](http://eloquentjavascript.net/index.html)
 
-**Today's Progress**: Fixed CSS, worked on canvas functionality for the app.
-
-**Thoughts**: I really struggled with CSS, but, overall, I feel like I am slowly getting better at it. Canvas is still new for me, but I managed to figure out some basic functionality.
-
-**Link(s) to work**: [Calculator App](http://www.example.com)
-
-
-### Day 1: June 27, Monday
-
-**Today's Progress**: I've gone through many exercises on FreeCodeCamp.
-
-**Thoughts** I've recently started coding, and it's a great feeling when I finally solve an algorithm challenge after a lot of attempts and hours spent.
-
-**Link(s) to work**
-1. [Find the Longest Word in a String](https://www.freecodecamp.com/challenges/find-the-longest-word-in-a-string)
-2. [Title Case a Sentence](https://www.freecodecamp.com/challenges/title-case-a-sentence)
