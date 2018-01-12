@@ -31,3 +31,14 @@
 **Thoughts**: I feel a bit odd about reviewing items that I'm already pretty comfortable with (variables, primitive data types, etc.), but I also wanted to make sure to really tackle all of this course I purchased (other than HTML/CSS). I'm glad I did! I didn't realize you could enter sample code into the console and have it remember variables, run functions, etc. I also forgot the difference between undefined and null, and didn't know undefined == null results in true.
 
 **Link to work:** N/A
+
+
+### Day 4: January 11, 2018
+
+**Readings**: None for the day.
+
+**Today's Progress**: I got through if statements and boolean information on the Web Developer Bootcamp course.
+
+**Thoughts**:  It took longer than I expected, especially since I'm familiar with this material. I may be too tired. I should work on starting JavaScript before 9:00PM.
+
+**Link to work:** N/A
