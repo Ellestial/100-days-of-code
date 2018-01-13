@@ -37,8 +37,19 @@
 
 **Readings**: None for the day.
 
-**Today's Progress**: I got through if statements and boolean information on the Web Developer Bootcamp course.
+**Today's Progress**: I got through if statements and boolean information in the Web Developer Bootcamp course.
 
 **Thoughts**:  It took longer than I expected, especially since I'm familiar with this material. I may be too tired. I should work on starting JavaScript before 9:00PM.
+
+**Link to work:** N/A
+
+
+### Day 5: January 12, 2018
+
+**Readings**: None for the day.
+
+**Today's Progress**: Finished one Basic Algorithm Scripting challenge in FreeCodeCamp and got through while loops in the Web Developer Bootcamp course.
+
+**Thoughts**:  Today went better -- yesterday I had issues with this one specific FreeCodeCamp challenge that I figured out today. It involved arrays and array.prototype.map(), so I learned about that. I also got a nice while loop review, and learned about how the developer console will show all results from a while loop, including the evaluation that stops the loop (because the increment/decrement occurs at the end of the true evaluated result).
 
 **Link to work:** N/A
