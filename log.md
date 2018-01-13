@@ -46,10 +46,21 @@
 
 ### Day 5: January 12, 2018
 
-**Readings**: None for the day.
+**Readings**: Finished Chapter 1: Values, Types, and Operators in Eloquent JavaScript.
 
 **Today's Progress**: Finished one Basic Algorithm Scripting challenge in FreeCodeCamp and got through while loops in the Web Developer Bootcamp course.
 
 **Thoughts**:  Today went better -- yesterday I had issues with this one specific FreeCodeCamp challenge that I figured out today. It involved arrays and array.prototype.map(), so I learned about that. I also got a nice while loop review, and learned about how the developer console will show all results from a while loop, including the evaluation that stops the loop (because the increment/decrement occurs at the end of the true evaluated result).
+
+**Link to work:** N/A
+
+
+### Day 6: January 13, 2018
+
+**Readings**: Finished Chapter 1: Values, Types, and Operators in Eloquent JavaScript.
+
+**Today's Progress**: Got through for loops in the Web Developer Bootcamp course. This means I finished Section 9: JavaScript Control Flow.
+
+**Thoughts**:  I'm very happy with this bootcamp course so far. It feels much more connected and beneficial than other JavaScript tutorials I've taken. I enjoy doing this in conjunction with FreeCodeCamp, though, since the latter has a nice range of challenges to tackle once I learn the skills necessary for them.
 
 **Link to work:** N/A
