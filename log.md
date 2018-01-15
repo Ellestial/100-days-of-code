@@ -64,3 +64,14 @@
 **Thoughts**:  I'm very happy with this bootcamp course so far. It feels much more connected and beneficial than other JavaScript tutorials I've taken. I enjoy doing this in conjunction with FreeCodeCamp, though, since the latter has a nice range of challenges to tackle once I learn the skills necessary for them.
 
 **Link to work:** N/A
+
+
+### Day 7: January 14, 2018
+
+**Readings**: Began reading Chapter 2: Program Structure in Eloquent JavaScript. About 1/5 through.
+
+**Today's Progress**: Covered functions, arguments, the return keyword, and example problems in the Web Developer Bootcamp.
+
+**Thoughts**:  I spent some time just searching for various JS/programming terms I had questions about, which was somewhat overwhelming, but also interesting. I'm feeling more confident and excited about this Udemy course. I'm learning tidbits that are helpful for my overall understanding of the language that I haven't learned about from my other resources. Example: every function returns something, even if it's just undefined, which explains why I see undefined when I call console.log(). Interesting!
+
+**Link to work:** N/A
