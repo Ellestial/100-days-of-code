@@ -75,3 +75,14 @@
 **Thoughts**:  I spent some time just searching for various JS/programming terms I had questions about, which was somewhat overwhelming, but also interesting. I'm feeling more confident and excited about this Udemy course. I'm learning tidbits that are helpful for my overall understanding of the language that I haven't learned about from my other resources. Example: every function returns something, even if it's just undefined, which explains why I see undefined when I call console.log(). Interesting!
 
 **Link to work:** [Function Examples](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/day007scriptFunction.js)
+
+
+### Day 8: January 15, 2018
+
+**Readings**: None.
+
+**Today's Progress**: Covered arrays and array methods including: pop(), shift(), push(), unshift(), indexOf(), and slice() in the Web Developer Bootcamp. I also made a rudimentary To Do list.
+
+**Thoughts**:  I felt that there was a lot of review today, but I was excited to make a To Do list on my own. There was a "code along" section in the course for this, but I created it on my own before watching it and did a correct job. Plus, I added one small feature (deleting the last To Do item). So that was exciting to see some real code working!
+
+**Link to work:** [To Do List Example](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/008scriptTodo.js)
