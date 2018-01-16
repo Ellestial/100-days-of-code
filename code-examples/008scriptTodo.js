@@ -11,7 +11,9 @@ function toDo() {
       todos.push(newTodo);
     } else if (userInput === "list") {
       console.log(todos);
-    } else if (userInput === "undo") {
+    } else if (userInput === "undo" && todos.length === 0) {
+      alert("Sorry, you don't have any items to undo.");
+    } else if (userInput === "undo" && todos.length > 0) {
       alert(todos.pop() + " has been removed.");
     }
   }
