@@ -81,7 +81,7 @@
 
 **Readings**: None.
 
-**Today's Progress**: Covered arrays and array methods including: pop(), shift(), push(), unshift(), indexOf(), and slice() in the Web Developer Bootcamp. I also made a rudimentary To Do list.
+**Today's Progress**: Covered scope and higher order function definitions. Then I jumped into arrays and array methods including: pop(), shift(), push(), unshift(), indexOf(), and slice() in the Web Developer Bootcamp. I also made a rudimentary To Do list.
 
 **Thoughts**:  I felt that there was a lot of review today, but I was excited to make a To Do list on my own. There was a "code along" section in the course for this, but I created it on my own before watching it and did a correct job. Plus, I added one small feature (deleting the last To Do item). So that was exciting to see some real code working!
 
