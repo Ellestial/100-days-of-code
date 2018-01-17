@@ -92,7 +92,7 @@
 
 **Readings**: None.
 
-**Today's Progress**: Focused on forEach() and splice() in the Web Developer Bootcamp. I also made a refined my To Do list and focused on reorganizing my code by breaking out functions to help logic-heavy loops feel more readible.
+**Today's Progress**: Focused on forEach() and for array iterations, as well as splice() in the Web Developer Bootcamp. I also made a refined my To Do list and focused on reorganizing my code by breaking out functions to help logic-heavy loops feel more readible.
 
 **Thoughts**:  It was exciting to learn about forEach() and experiment with that. I also enjoyed adjusting the To Do list to be able to delete any item.
 
