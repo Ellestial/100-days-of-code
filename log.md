@@ -86,3 +86,14 @@
 **Thoughts**:  I felt that there was a lot of review today, but I was excited to make a To Do list on my own. There was a "code along" section in the course for this, but I created it on my own before watching it and did a correct job. Plus, I added one small feature (deleting the last To Do item). So that was exciting to see some real code working!
 
 **Link to work:** [To Do List Example](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/008scriptTodo.js)
+
+
+### Day 9: January 16, 2018
+
+**Readings**: None.
+
+**Today's Progress**: Focused on forEach() and splice() in the Web Developer Bootcamp. I also made a refined my To Do list and focused on reorganizing my code by breaking out functions to help logic-heavy loops feel more readible.
+
+**Thoughts**:  It was exciting to learn about forEach() and experiment with that. I also enjoyed adjusting the To Do list to be able to delete any item.
+
+**Link to work:** [To Do List 2 Example](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/009scriptTodo.js)
