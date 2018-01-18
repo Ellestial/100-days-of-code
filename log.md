@@ -103,7 +103,7 @@
 
 **Readings**: None.
 
-**Today's Progress**: Covered some array sample problems, and learned how to create my own forEach() method in the Web Developer Bootcamp.
+**Today's Progress**: Covered some array sample problems, and learned how to create my own forEach() method in the Web Developer Bootcamp. I also tackled 3 of the algorithm scripting challenges on FreeCodeCamp (return longest number in an array, repeat a string, and truncate a string).
 
 **Thoughts**:  I started off today by trying to solve a problem that my coworker gave me. I spent about an hour on this and could not figure it out, to my dismay. That was frustrating, but I'm glad I moved onto finishing up the arrays section in the bootcamp. I was able to easily solve the array sample problems. One thing I learned, though, was that if you use forEach() in another function and want to return a value, that will only return the value for the forEach() function, it will not close out of the parent function. Good to know!
 
