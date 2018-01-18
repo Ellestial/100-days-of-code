@@ -97,3 +97,15 @@
 **Thoughts**:  It was exciting to learn about forEach() and experiment with that. I also enjoyed adjusting the To Do list to be able to delete any item.
 
 **Link to work:** [To Do List 2 Example](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/009scriptTodo.js)
+
+
+### Day 10: January 17, 2018
+
+**Readings**: None.
+
+**Today's Progress**: Covered some array sample problems, and learned how to create my own forEach() method in the Web Developer Bootcamp.
+
+**Thoughts**:  I started off today by trying to solve a problem that my coworker gave me. I spent about an hour on this and could not figure it out, to my dismay. That was frustrating, but I'm glad I moved onto finishing up the arrays section in the bootcamp. I was able to easily solve the array sample problems. One thing I learned, though, was that if you use forEach() in another function and want to return a value, that will only return the value for the forEach() function, it will not close out of the parent function. Good to know!
+
+**Link to work:** 
+[Sample Array Problems](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/010scriptArrays.js)
