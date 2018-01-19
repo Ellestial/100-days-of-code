@@ -109,3 +109,15 @@
 
 **Link to work:** 
 [Sample Array Problems](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/010scriptArrays.js)
+
+
+### Day 11: January 18, 2018
+
+**Readings**: None.
+
+**Today's Progress**: Started and finished the JavaScript Basics: Objects section in the Web Developer Bootcamp.
+
+**Thoughts**: I thought it was really interesting to learn that arrays are actually objects -- their key/value pairing is just index/value for them. I also learned more differences between arrays and objects that I think are helpful, such as how arrays are specifically about order/list, while objects are arbitrary and do not have any concept of order. Briefly touched on the keyword 'this,' which I have heard is very confusing from various programmers.
+
+**Link to work:** 
+[Sample Object Creation](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/011scriptObject.js)
