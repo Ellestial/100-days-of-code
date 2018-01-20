@@ -121,3 +121,15 @@
 
 **Link to work:** 
 [Sample Object Creation](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/011scriptObject.js)
+
+
+### Day 12: January 19, 2018
+
+**Readings**: None.
+
+**Today's Progress**: Got through about half of the section on DOM Manipulation in the Web Developer Bootcamp.
+
+**Thoughts**: I'm excited to finally mess with HTML/CSS with my JS because of the DOM. Today was covering the very basics, including: getElementById(), getElementsByClassName(), getElementsByTagName(), querySelector(), and querySelectorAll() and focusing on just being able to target elements that way. I also learned that every HTML/CSS element is actually an object.
+
+**Link to work:**
+[Sample Ways To Target HTML Element](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/012scriptDOM.js)
