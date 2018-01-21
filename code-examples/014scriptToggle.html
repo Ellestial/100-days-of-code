@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Project</title>
+    <style type="text/css">
+      .purple {
+        background: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <button>CLICK ME</button>
+
+
+    <!-- THIS BLOCK WAS MY FIRST ATTEMPT
+     <script type="text/javascript">
+      var btn = document.querySelector("button");
+      var body = document.querySelector("body");
+
+      btn.addEventListener("click", function() {
+        if(body.style.background === "purple") {
+          body.style.background = "white";
+        } else {
+          body.style.background = "purple";
+        }
+      });
+    </script> -->
+
+
+   <!-- THIS BLOCK WAS INSTRUCTOR'S FIRST ROUND OF REFACTORED CODE
+      <script type="text/javascript">
+      var btn = document.querySelector("button");
+      var isPurple = false;
+
+      btn.addEventListener("click", function() {
+        if(isPurple) {
+          document.body.style.background = "white";
+        } else {
+          document.body.style.background = "purple";
+        }
+        isPurple = !isPurple; // refactured way of writing isPurple = true or false
+      });
+    </script> -->
+
+    <!-- THIS BLOCK WAS FINAL REFACTORED CODE -->
+     <script type="text/javascript">
+      var btn = document.querySelector("button");
+
+      btn.addEventListener("click", function() {
+        document.body.classList.toggle("purple");
+      });
+    </script>
+  </body>
+</html>
