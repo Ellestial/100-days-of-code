@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Project</title>
+    <style type="text/css">
+      .big {
+        font-size: 35px;
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <h1>Goodbye</h1>
+
+    <ul>
+      <li id="highlight" test>List Item 1</li>
+      <li class="bolded">List Item 2</li>
+      <li class="bolded">List Item 3</li>
+    </ul>
+
+    <h2>Subheader</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec erat vitae augue mollis mattis ut eu purus. Mauris ut tellus metus. Nam volutpat vestibulum urna id sodales.</p>
+
+    <script type="text/javascript">
+      var makeBig = document.querySelector("h1");
+
+      makeBig.classList.add("big");
+
+      setInterval(function() {
+          makeBig.classList.toggle("big");
+      }, 1000);
+
+      var testAtt = document.querySelector("li");
+      testAtt.setAttribute("test", "big");
+    </script>
+  </body>
+</html>
