@@ -132,4 +132,17 @@
 **Thoughts**: I'm excited to finally mess with HTML/CSS with my JS because of the DOM. Today was covering the very basics, including: getElementById(), getElementsByClassName(), getElementsByTagName(), querySelector(), and querySelectorAll() and focusing on just being able to target elements that way. I also learned that every HTML/CSS element is actually an object.
 
 **Link to work:**
-[Sample Ways To Target HTML Element](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/012scriptDOM.js)
+[Sample Ways To Target HTML Element](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/012scriptDOM.html)
+
+
+
+### Day 13: January 20, 2018
+
+**Readings**: None.
+
+**Today's Progress**: Finished the section on DOM Manipulation in the Web Developer Bootcamp.
+
+**Thoughts**: I learned about .classList.add("class-name"), .classList.remove("another-class"), and .classList.toggle("another-class") and the benefits of each. I also learned .textContent and .innerHTML and learned how you can add HTML tags to the .innerHTML list node. Finally, I learned that .getAttribute() and .setAttribute() methods can be very beneficial, as well as looping through to adjust content based on the [i] index of the element.
+
+**Link to work:**
+[Sample Ways Of Manipulating DOM](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/013scriptDOM.html)
