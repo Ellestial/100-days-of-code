@@ -146,3 +146,15 @@
 
 **Link to work:**
 [Sample Ways Of Manipulating DOM](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/013scriptDOM.html)
+
+
+### Day 14: January 21, 2018
+
+**Readings**: None.
+
+**Today's Progress**: Started Advanced DOM Manipulation, where I learned to toggle a background color change when clicking a button. Also started on a larger project with the Web Developer Bootcamp course called Score Keeper. You add a point to player 1 or 2 and monitor who is winning and when the game has ended. This will push into tomorrow.
+
+**Thoughts**: I'm glad to finally get into DOM manipulation in more detail. I didn't get as far as I wanted today, because I wanted to try making the Score Keeper project without going through the Web Developer Bootcamp lecture on it. Will push forward tomorrow with hopefully more success.
+
+**Link to work:**
+[More DOM Manipulation](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/014scriptToggle.html)
