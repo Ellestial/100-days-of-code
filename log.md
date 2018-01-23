@@ -158,3 +158,16 @@
 
 **Link to work:**
 [More DOM Manipulation](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/014scriptToggle.html)
+
+
+### Day 15: January 22, 2018
+
+**Readings**: None.
+
+**Today's Progress**: I finished up the Score Keeper code-along and I also messed around a bit with mouseover and mouseout events. This finished the Advanced DOM Manipulation section in the Web Developer Bootcamp.
+
+**Thoughts**: I felt a lot better about today than yesterday. I feel I learned a lot from these code alongs, even though I wanted to do it myself. It was helpful for me to admit I wasn't quite sure what to do and actually follow along with the video to learn more about solving different kinds of problems.
+
+**Links to work:**
+[Score Keeper Game](https://github.com/Ellestial/100-days-of-code/tree/master/code-examples/015scoreKeeper)
+[Mouseover and Mouseout Examples](https://github.com/Ellestial/100-days-of-code/tree/master/code-examples/015mouseExamples)
