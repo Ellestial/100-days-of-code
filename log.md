@@ -171,3 +171,14 @@
 **Links to work:**
 [Score Keeper Game](https://github.com/Ellestial/100-days-of-code/tree/master/code-examples/015scoreKeeper)
 [Mouseover and Mouseout Examples](https://github.com/Ellestial/100-days-of-code/tree/master/code-examples/015mouseExamples)
+
+
+### Day 16: January 23, 2018
+
+**Readings**: None.
+
+**Today's Progress**: I'm working ahead on the Color Game project in the Web Developer Bootcamp. I watched the first video that just explained the goals, and am attempting to do all of the work myself before watching any further demonstrations.
+
+**Thoughts**: This is rough! But also rewarding. I worked on this project for about 3 hours without realizing it, and have made some strides. I struggle in some areas, but I'm also able to do some things I wasn't expecting. Hoping to get more progress tomorrow! I had planned to finish this project tomorrow, but may need to work longer in order to really do it myself, but that's ok.
+
+**Links to work:** None. Yet!
