@@ -182,3 +182,14 @@
 **Thoughts**: This is rough! But also rewarding. I worked on this project for about 3 hours without realizing it, and have made some strides. I struggle in some areas, but I'm also able to do some things I wasn't expecting. Hoping to get more progress tomorrow! I had planned to finish this project tomorrow, but may need to work longer in order to really do it myself, but that's ok.
 
 **Links to work:** None. Yet!
+
+
+### Day 17: January 24, 2018
+
+**Readings**: None.
+
+**Today's Progress**: Continued work on the Color Game.
+
+**Thoughts**: I'm slowly going insane, I think. I worked on this for like 3.5 hours today. Still haven't watched any of the code-along videos. I'm really getting close. Should be done tomorrow!
+
+**Links to work:** None. Yet!
