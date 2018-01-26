@@ -193,3 +193,13 @@
 **Thoughts**: I'm slowly going insane, I think. I worked on this for like 3.5 hours today. Still haven't watched any of the code-along videos. I'm really getting close. Should be done tomorrow!
 
 **Links to work:** None. Yet!
+
+
+### Day 18: January 25, 2018
+
+**Readings**: None.
+**Today's Progress**: I FINISHED THE COLOR GAME.
+
+**Thoughts**: Wow, this feels incredible. My first JavaScript/HTML/CSS ...thing... that I made entirely on my own. I know the JS could be cleaned up a lot, and I want to revisit it in a few weeks after I learn more, but this is such a big accomplishment for me. It took about 8 or 9 hours over the course of the last 3 days, but I did it.
+
+**Links to work:** [Color Game](https://codepen.io/Ellestial/pen/opRjrK)
