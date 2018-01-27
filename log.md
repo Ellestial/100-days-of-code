@@ -215,3 +215,14 @@
 **Thoughts**: It's been a few days since I watched a tutorial, so it was a nice change to learn things from an instructor. jQuery makes a lot of sense, and I'm also getting some "ah hah!" moments on how I interpret the code the programmers do at my job.
 
 **Links to work:** [jQuery Examples](https://github.com/Ellestial/100-days-of-code/tree/master/code-examples/019jqueryExample)
+
+
+### Day 20: January 27, 2018
+
+**Readings**: None.
+
+**Today's Progress**: Went through the Advanced jQuery section in the Web Developer Bootcamp. Also set up some files for the To Do List project I will be making tomorrow.
+
+**Thoughts**: jQuery seems pretty great! I worry about relying on it, though, so I'm curious to see what other developers think of it.
+
+**Links to work**: [Advanced jQuery Examples](https://github.com/Ellestial/100-days-of-code/tree/master/code-examples/020jqueryAdvanced)
