@@ -198,8 +198,20 @@
 ### Day 18: January 25, 2018
 
 **Readings**: None.
+
 **Today's Progress**: I FINISHED THE COLOR GAME.
 
 **Thoughts**: Wow, this feels incredible. My first JavaScript/HTML/CSS ...thing... that I made entirely on my own. I know the JS could be cleaned up a lot, and I want to revisit it in a few weeks after I learn more, but this is such a big accomplishment for me. It took about 8 or 9 hours over the course of the last 3 days, but I did it.
 
 **Links to work:** [Color Game](https://codepen.io/Ellestial/pen/opRjrK)
+
+
+### Day 19: January 26, 2018
+
+**Readings**: None.
+
+**Today's Progress**: Went through the Intro to jQuery section in the Web Developer Bootcamp.
+
+**Thoughts**: It's been a few days since I watched a tutorial, so it was a nice change to learn things from an instructor. jQuery makes a lot of sense, and I'm also getting some "ah hah!" moments on how I interpret the code the programmers do at my job.
+
+**Links to work:** [jQuery Examples](https://github.com/Ellestial/100-days-of-code/tree/master/code-examples/019jqueryExample)
