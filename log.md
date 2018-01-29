@@ -226,3 +226,12 @@
 **Thoughts**: jQuery seems pretty great! I worry about relying on it, though, so I'm curious to see what other developers think of it.
 
 **Links to work**: [Advanced jQuery Examples](https://github.com/Ellestial/100-days-of-code/tree/master/code-examples/020jqueryAdvanced)
+
+
+### Day 21: January 28, 2018
+
+**Readings**: None.
+
+**Today's Progress**: Created a To Do List app using jQuery.
+
+**Thoughts**: Well...I got through about 90% of this app. I was surprised with how little code is required with using jQuery, which is nice. However, I'm having a few difficulties that I'll need to explore more tomorrow. I also am worried because I feel like I already forgot a lot from the color game project I worked on a few days ago. Maybe it's just an off day, though.
