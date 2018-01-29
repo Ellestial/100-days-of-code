@@ -1,0 +1,93 @@
+html, body, input {
+  width: 100%;
+  height: 100%;
+  font: 18px "Lato", arial, sans-serif;
+  color: #313131; }
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background: linear-gradient(to right, #d12980 0%, #e5d27b 100%); }
+
+#todo-holder {
+  width: 50%;
+  border-radius: 2px;
+  background-color: #fff; }
+
+#new-holder #new-header {
+  display: flex;
+  align-items: center;
+  background-color: #b7ee5f; }
+  #new-holder #new-header h1 {
+    padding: 12px;
+    font-size: 24px;
+    flex-grow: 1; }
+  #new-holder #new-header #add {
+    width: 25px;
+    height: 5px;
+    position: relative;
+    margin: 12px;
+    padding: 12px;
+    background: #59af19;
+    transition: 500ms; }
+    #new-holder #new-header #add::before {
+      width: 5px;
+      height: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: inherit;
+      transition: 500ms;
+      content: ''; }
+    #new-holder #new-header #add:hover {
+      cursor: pointer;
+      transform: scale3d(1.2, 1.2, 1); }
+    #new-holder #new-header #add.closed {
+      transform: rotate(180deg); }
+      #new-holder #new-header #add.closed::before {
+        height: 25px; }
+#new-holder input {
+  width: 100%;
+  margin: 0;
+  padding: 12px 8px;
+  box-sizing: border-box;
+  border: 4px solid #fff;
+  background: #b7ecdb; }
+  #new-holder input:focus {
+    border-color: #44a183; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+  ul li {
+    display: flex;
+    align-items: center;
+    list-style-type: none; }
+    ul li:hover .icon {
+      width: 50px;
+      overflow: visible; }
+    ul li.completed {
+      text-decoration: line-through;
+      color: #c2c2c2; }
+    ul li.placeholder {
+      display: none; }
+    ul li:nth-child(even) {
+      background-color: #f3f3f3; }
+  ul .icon {
+    width: 0;
+    padding: 12px 0;
+    background-color: #d82121;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    transition: 350ms; }
+    ul .icon:hover {
+      background-color: #b01515;
+      transform: scale3d(1.2, 1.2, 1);
+      cursor: pointer; }
+  ul p {
+    margin: 0;
+    padding: 12px; }
