@@ -235,3 +235,16 @@
 **Today's Progress**: Created a To Do List app using jQuery.
 
 **Thoughts**: Well...I got through about 90% of this app. I was surprised with how little code is required with using jQuery, which is nice. However, I'm having a few difficulties that I'll need to explore more tomorrow. I also am worried because I feel like I already forgot a lot from the color game project I worked on a few days ago. Maybe it's just an off day, though.
+
+**Links to work:** [To Do List I created](https://github.com/Ellestial/100-days-of-code/tree/master/code-examples/022todoList)
+
+
+### Day 22: January 29, 2018
+
+**Readings**: None.
+
+**Today's Progress**: Watched the instructional videos for the To Do List I created yesterday.
+
+**Thoughts**: I was excited to see that I did most of everything correctly. The one exception was that I didn't know about the stopPropagation() jQuery method. I also chose to duplicate one <li> item from the HTML at a time instead of creating my own <li> in the JS, so that I could update the HTML and have all of the items update easily too. So maybe that's a preferential choice? Either way, I feel good that I knew what I was doing after all.
+  
+ **Links to work:** [To Do List edits from Web Developer Bootcamp](https://github.com/Ellestial/100-days-of-code/tree/master/code-examples/022todoList)
