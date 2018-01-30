@@ -1,0 +1,114 @@
+$padding-default: 12px;
+
+html, body, input {
+  width: 100%;
+  height: 100%;
+  font: 18px "Lato", arial, sans-serif;
+  color: #313131;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background: linear-gradient(to right, #d12980 0%, #e5d27b 100%);
+}
+
+#container {
+  width: 50%;
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+// NEW HOLDER SECTION
+h1 {
+  margin: 0;
+  padding: $padding-default;
+  font-size: 24px;
+  flex-grow: 1;
+  background-color: #b7ee5f;
+}
+
+.fa-plus {
+  color: #5fba0f;
+  float: right;
+  transition: 500ms;
+
+  &:hover {
+    cursor: pointer;
+    color: #fff;
+    transform: scale3d(1.2, 1.2, 1);
+  }
+
+  &.closed {
+    transform: rotate(180deg);
+  }
+}
+
+input {
+  width: 100%;
+  margin: 0;
+  padding: $padding-default 8px;
+  box-sizing: border-box;
+  border: 4px solid #fff;
+  background: #b7ecdb;
+
+  &:focus {
+    border-color: #44a183;
+  }
+}
+
+// CREATED HOLDER SECTION
+ul {
+  margin: 0;
+  padding: 0;
+
+  // to do list items
+  li {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+
+    &:hover {
+
+      span {
+        width: 50px;
+        overflow: visible;
+      }
+    }
+
+    &.completed {
+      text-decoration: line-through;
+      color: #c2c2c2;
+    }
+
+    &:nth-child(even) {
+      background-color: #f3f3f3;
+    }
+  }
+
+  // delete icon
+  span {
+    width: 0;
+    margin-right: 12px;
+    padding: $padding-default 0;
+    background-color: #d82121;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    transition: 350ms;
+
+    &:hover {
+      background-color: #b01515;
+      transform: scale3d(1.2, 1.2, 1);
+      cursor: pointer;
+    }
+  }
+
+  // to do list item title
+  p {
+    margin: 0;
+    padding: $padding-default;
+  }
+}
