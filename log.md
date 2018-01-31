@@ -248,3 +248,14 @@
 **Thoughts**: I was excited to see that I did most of everything correctly. The one exception was that I didn't know about the stopPropagation() jQuery method. I also chose to duplicate one <li> item from the HTML at a time instead of creating my own <li> in the JS, so that I could update the HTML and have all of the items update easily too. So maybe that's a preferential choice? Either way, I feel good that I knew what I was doing after all.
   
  **Links to work:** [To Do List edits from Web Developer Bootcamp](https://github.com/Ellestial/100-days-of-code/tree/master/code-examples/022todoList)
+
+
+### Day 23: January 30, 2018
+
+**Readings**: None.
+
+**Today's Progress**: Watched a few instructional videos on creating a patatap clone from the Web Developer Bootcamp. Decided to stop and attempt the project on my own.
+
+**Thoughts**: Today was very frustrating and I didn't get nearly as far as I had hoped. I'm having a hard time trying to understand the syntax and just how to work with the paper.js library.
+
+**Links to work:** None.
