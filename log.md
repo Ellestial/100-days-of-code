@@ -259,3 +259,14 @@
 **Thoughts**: Today was very frustrating and I didn't get nearly as far as I had hoped. I'm having a hard time trying to understand the syntax and just how to work with the paper.js library.
 
 **Links to work:** None.
+
+
+### Day 24: January 31, 2018
+
+**Readings**: None.
+
+**Today's Progress**: Got through the patatap clone section in the Web Developer Bootcamp.
+
+**Thoughts**: This was very frustrating and hard. I feel like I should have experimented more on my own before diving into libraries and learning this sort of thing. This section in the bootcamp was an optional one, but I dove right in immediately regardless. I was not able to work ahead to figure out the code on my own, and instead needed to follow along in the videos even after spending over an hour reading through the paper.js tutorials.
+
+**Links to work:** [Patatap Clone](https://github.com/Ellestial/100-days-of-code/tree/master/code-examples/024patatapClone)
