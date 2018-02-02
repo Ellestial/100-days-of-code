@@ -270,3 +270,14 @@
 **Thoughts**: This was very frustrating and hard. I feel like I should have experimented more on my own before diving into libraries and learning this sort of thing. This section in the bootcamp was an optional one, but I dove right in immediately regardless. I was not able to work ahead to figure out the code on my own, and instead needed to follow along in the videos even after spending over an hour reading through the paper.js tutorials.
 
 **Links to work:** [Patatap Clone](https://github.com/Ellestial/100-days-of-code/tree/master/code-examples/024patatapClone)
+
+
+### Day 25: February 1, 2018
+
+**Readings**: None.
+
+**Today's Progress**: Finished three FreeCodeCamp algorithm challenges.
+
+**Thoughts**: This was easier than when I worked on these before! Still a challenge, but I was able to get through these a lot quicker than when I tried prior to the Web Developer Bootcamp. I'm definitely feeling the benefit of coding every day.
+
+**Links to work:** [Day 25 Algorithm Challenges](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/025freeCodeCamp.js)
