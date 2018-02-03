@@ -281,3 +281,14 @@
 **Thoughts**: This was easier than when I worked on these before! Still a challenge, but I was able to get through these a lot quicker than when I tried prior to the Web Developer Bootcamp. I'm definitely feeling the benefit of coding every day.
 
 **Links to work:** [Day 25 Algorithm Challenges](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/025freeCodeCamp.js)
+
+
+## Day 26: February 2, 2018
+
+**Readings**: None.
+
+**Today's Progress**: ...Limited. I worked on the Seek and Destroy FreeCodeCamp challenge for 2.5 hours. I researched the Array.prototype.filter() method and the arguments object.
+
+**Thoughts**: This was very frustrating and frankly made me feel dumb. The challenge states, "You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments." I am struggling with being able to make a loop within a filter() method. I need to call it for the night, though, because all I've done tonight was make dinner and work on this and it's a Friday night and I want to not tear my hair out tonight.
+
+**Links to work:** None today.
