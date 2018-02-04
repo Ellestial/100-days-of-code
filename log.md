@@ -292,3 +292,12 @@
 **Thoughts**: This was very frustrating and frankly made me feel dumb. The challenge states, "You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments." I am struggling with being able to make a loop within a filter() method. I need to call it for the night, though, because all I've done tonight was make dinner and work on this and it's a Friday night and I want to not tear my hair out tonight.
 
 **Links to work:** None today.
+
+
+## Day 27: February 3, 2018
+
+**Today's Progress**: Got through one FreeCodeCamp algorithm challenge.
+
+**Thoughts**: I put the challenge that frustrated me yesterday on hold. I figure I will come back to it when I'm better equipped for that sort of challenge. Instead, I moved onto one that incorporated using the Array.prototype.sort() function, which I hadn't been exposed to before. I learned how to use that, so I feel better about my progress today.
+
+**Links to work:** [Day 27 Algorithm Challenge](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/027freeCodeCampBelong.js)
