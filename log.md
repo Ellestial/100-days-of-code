@@ -301,3 +301,12 @@
 **Thoughts**: I put the challenge that frustrated me yesterday on hold. I figure I will come back to it when I'm better equipped for that sort of challenge. Instead, I moved onto one that incorporated using the Array.prototype.sort() function, which I hadn't been exposed to before. I learned how to use that, so I feel better about my progress today.
 
 **Links to work:** [Day 27 Algorithm Challenge](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/027freeCodeCampBelong.js)
+
+
+## Day 28: February 4, 2018
+
+**Today's Progress**: Learned about Array.of(), Array.isArray(), Array.prototype.fill(), and Array.prototype.copyWithin().
+
+**Thoughts**: I have been worried that I'm getting ahead of myself in the various algorithm challenges, so I'm spending time reading through and understanding each of the inherit instances of array/string/function/object. I decided to start with arrays. So I'm going through MDN for each of them and actually logging notes to myself.
+
+**Links to work:** [Private Spreadsheet](https://docs.google.com/spreadsheets/d/1hikeDDVhWlM416k0qwvencVcu8LD2IrZbKLOmNtl3Pw/edit?usp=sharing)
