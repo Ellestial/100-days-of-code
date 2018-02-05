@@ -305,7 +305,7 @@
 
 ## Day 28: February 4, 2018
 
-**Today's Progress**: Learned about Array.of(), Array.isArray(), Array.prototype.fill(), and Array.prototype.copyWithin().
+**Today's Progress**: Learned about Array.from(), Array.of(), Array.isArray(), Array.prototype.fill(), and Array.prototype.copyWithin().
 
 **Thoughts**: I have been worried that I'm getting ahead of myself in the various algorithm challenges, so I'm spending time reading through and understanding each of the inherit instances of array/string/function/object. I decided to start with arrays. So I'm going through MDN for each of them and actually logging notes to myself.
 
