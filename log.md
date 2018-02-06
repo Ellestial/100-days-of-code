@@ -310,3 +310,12 @@
 **Thoughts**: I have been worried that I'm getting ahead of myself in the various algorithm challenges, so I'm spending time reading through and understanding each of the inherit instances of array/string/function/object. I decided to start with arrays. So I'm going through MDN for each of them and actually logging notes to myself.
 
 **Links to work:** [Private Spreadsheet](https://docs.google.com/spreadsheets/d/1hikeDDVhWlM416k0qwvencVcu8LD2IrZbKLOmNtl3Pw/edit?usp=sharing)
+
+
+## Day 29: February 5, 2018
+
+**Today's Progress**: Reviewed Array.prototype mutator methods: pop(), push(), reverse(), sort(), splice(), shift(), and unshift(). Took notes on them, as well as some accessor methods: includes(), indexOf(), lastIndexOf(), concat(), and join().
+
+**Thoughts**: This is a bit slow-moving, but I think it's good to review the full definition of each of these methods. I think I should finish the array methods tomorrow, and then I may try to find some array challenges to test out my new knowledge. It was a tad hard to focus today, maybe because I hadn't gotten much sleep. I need to make sure to get to bed earlier.
+
+**Links to work:** None.
