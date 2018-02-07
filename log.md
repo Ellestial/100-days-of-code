@@ -319,3 +319,12 @@
 **Thoughts**: This is a bit slow-moving, but I think it's good to review the full definition of each of these methods. I think I should finish the array methods tomorrow, and then I may try to find some array challenges to test out my new knowledge. It was a tad hard to focus today, maybe because I hadn't gotten much sleep. I need to make sure to get to bed earlier.
 
 **Links to work:** None.
+
+
+## Day 30: February 6, 2018
+
+**Today's Progress**: Reviewed Array.prototype mutator methods slice() and toString(). Also started reading through iteration array methods entries() (which I do not understand) and every(). Finished up one FreeCodeCamp challenge.
+
+**Thoughts**: I started going through the FreeCodeCamp challenge and felt much more confident because of my reviewing the array methods I have so far. This encourages me to finish up reading through the rest of the list, even though it ends up just being a lot of memorization and reading right now. I know it will pay off, as it already has with this one challenge I could not do before.
+
+**Links to work:** [FreeCodeCamp Challenge](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/030freeCodeCamp.js)
