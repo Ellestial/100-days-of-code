@@ -328,3 +328,21 @@
 **Thoughts**: I started going through the FreeCodeCamp challenge and felt much more confident because of my reviewing the array methods I have so far. This encourages me to finish up reading through the rest of the list, even though it ends up just being a lot of memorization and reading right now. I know it will pay off, as it already has with this one challenge I could not do before.
 
 **Links to work:** [FreeCodeCamp Challenge](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/030freeCodeCamp.js)
+
+
+## Day 31: Febraury 7, 2018
+
+**Today's Progress**: Struggled through another FreeCodeCamp challenge and could not get it. Continued going through some iteration array methods like forEach() and keys().
+
+**Thoughts**: Most frustrating day of JS I've had so far.
+
+**Links to work:** None.
+
+
+## Day 32: February 8, 2018
+
+**Today's Progress**: Researched best-use cases for map() vs forEach(). Also read more about reduce() and map() and took care of a few old FreeCodeCamp lessons on these topics with ease.
+
+**Thoughts**: Today went better than yesterday. I learned forEach() is best used for when passing data through and not manipulating it at all. map() is best used for manipulating data and chaining functions. Map also returns in a new array, while forEach() manipulates the original array. Will get through the rest of the array methods tomorrow and then can review them overall more. This is slow-moving, but I'm definitely learning a lot about what is possible with arrays.
+
+**Links to work:** None.
