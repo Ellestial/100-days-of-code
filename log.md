@@ -346,3 +346,12 @@
 **Thoughts**: Today went better than yesterday. I learned forEach() is best used for when passing data through and not manipulating it at all. map() is best used for manipulating data and chaining functions. Map also returns in a new array, while forEach() manipulates the original array. Will get through the rest of the array methods tomorrow and then can review them overall more. This is slow-moving, but I'm definitely learning a lot about what is possible with arrays.
 
 **Links to work:** None.
+
+
+## Day 33: February 9, 2018
+
+**Today's Progress**: Finished going through array methods on MDN. Also reviewed the distinction between map() and forEach() with my friend.
+
+**Thoughts**: Today went much much better. In the end, the biggest (or only?) distinction between forEach() and map() is that map() returns a new array and uses the return keyword. It feels good getting through all the array methods, too. Going to review them tomorrow, and then jump into string methods.
+
+**Links to work:** None.
