@@ -355,3 +355,12 @@
 **Thoughts**: Today went much much better. In the end, the biggest (or only?) distinction between forEach() and map() is that map() returns a new array and uses the return keyword. It feels good getting through all the array methods, too. Going to review them tomorrow, and then jump into string methods.
 
 **Links to work:** None.
+
+
+## Day 34: February 10, 2018
+
+**Today's Progress**: Reviewed the array methods and started on learning string methods (which I think will go quicker than arrays did). Also tackled some algorithm challenges on Codebyte.com
+
+**Thoughts**: I feel like I'm moving a lot slower than earlier weeks, but I know learning this information will be very necessary to me understanding how everything fits together. I think I need to actively have a few challenges to tackle daily to help flex my coding muscles in addition to me reading.
+
+**Links to work:** None.
