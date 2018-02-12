@@ -364,3 +364,12 @@
 **Thoughts**: I feel like I'm moving a lot slower than earlier weeks, but I know learning this information will be very necessary to me understanding how everything fits together. I think I need to actively have a few challenges to tackle daily to help flex my coding muscles in addition to me reading.
 
 **Links to work:** None.
+
+
+## Day 35: February 11, 2018
+
+**Today's Progress**: Read through 5 string methods on MDN. Then tackled 3 intermediate algorithm challenges on FreeCodeCamp.
+
+**Thoughts**: I got very frustrated when a filter() method wasn't working...until I realized I wasn't assigning it to a new variable. WHOOPS. I feel excited that I got 3 of the intermediate challenges done, though. This encourages me to read more about string methods, since one of the algorithm challenges was quick because I knew certain array methods would work best for the specific situation.
+
+**Links to work:** [FreeCodeCamp Challenges](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/035freeCodeCamp.js)
