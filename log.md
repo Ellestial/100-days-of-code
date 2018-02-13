@@ -373,3 +373,14 @@
 **Thoughts**: I got very frustrated when a filter() method wasn't working...until I realized I wasn't assigning it to a new variable. WHOOPS. I feel excited that I got 3 of the intermediate challenges done, though. This encourages me to read more about string methods, since one of the algorithm challenges was quick because I knew certain array methods would work best for the specific situation.
 
 **Links to work:** [FreeCodeCamp Challenges](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/035freeCodeCamp.js)
+
+
+## Day 36: February 12, 2018
+
+**Today's Progress**: Learned all about regex! From remembering certain components with () to having optional portions with ? and counting 1 or more instances of an element with +, I learned the syntax.
+
+**Thoughts**: I finally decided to face this beast head on, and it went super well! I used a really helpful tutorial that someone posted in a FreeCodeCamp Facebook group. I started going through some practice examples in the link, too, and will pick back up on that tomorrow. Here'x an example regex!
+var testRegEx = /\d{3}\s\d{3}/;
+var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
+
+**Links to work:** [Regex Tutorial](https://regexone.com)
