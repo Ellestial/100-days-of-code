@@ -384,3 +384,12 @@ var testRegEx = /\d{3}\s\d{3}/;
 var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 
 **Links to work:** [Regex Tutorial](https://regexone.com)
+
+
+## Day 37: February 13, 2018
+
+**Today's Progress**: Reviewed all the array methods and continued learning and practicing regex.
+
+**Thoughts**: Today went surprisingly well for a review day. I remembered most things about all the arrays, including being able to name all the mutator and accessor array methods off the top of my head. I took a Stack Overflow comment's suggestion with just going through Stack Overflow regex questions and answering them myself and seeing what the actual answers are to help me see best practices. Going well so far!
+
+**Links to work:** None.
