@@ -393,3 +393,12 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: Today went surprisingly well for a review day. I remembered most things about all the arrays, including being able to name all the mutator and accessor array methods off the top of my head. I took a Stack Overflow comment's suggestion with just going through Stack Overflow regex questions and answering them myself and seeing what the actual answers are to help me see best practices. Going well so far!
 
 **Links to work:** None.
+
+
+## Day 38: February 14, 2018
+
+**Today's Progress**: Reviewed some regex and started a more complex algorithm challenge.
+
+**Thoughts**: Not much done today unfortunately. I had a busy day and started at 10pm and was exhausted, so I had a hard time focusing. Tomorrow will be better.
+
+**Links to work:** None.
