@@ -402,3 +402,12 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: Not much done today unfortunately. I had a busy day and started at 10pm and was exhausted, so I had a hard time focusing. Tomorrow will be better.
 
 **Links to work:** None.
+
+
+## Day 39: February 15, 2018
+
+**Today's Progress**: Finished a more complex algorithm challenge and learned a bit about APIs.
+
+**Thoughts**: I felt pretty good about getting the algorithm challenge. Got to use my newfound regex knowledge! I want to go through the JSON APIs and Ajax section of FreeCodeCamp again tomorrow. It was only copy/pasting code in, so I want to make sure I understand how to pull in JSON data.
+
+**Links to work:** [FreeCodeCamp Algorithm Challenge](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/039freeCodeCamp.js)
