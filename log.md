@@ -420,3 +420,12 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: Feeling pretty good! Starting this program was a bit slow-going. It's been a few weeks since I worked on any JS that wasn't explicit learning or algorithm challenges, so I have to get used to creating functions and calling them in events and whatnot. I started diving into the Twitter API and I'm already learning a lot. I need to stop the small learning steps via algorithm challenges and reading on MDN and just dive into projects!
 
 **Links to work:** None (yet).
+
+
+## Day 41: February 17, 2018
+
+**Today's Progress**: Worked on random quote generator.
+
+**Thoughts**: Very frustrated.
+
+**Links ot work:** None.
