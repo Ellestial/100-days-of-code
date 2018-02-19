@@ -428,4 +428,13 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 
 **Thoughts**: Very frustrated.
 
-**Links ot work:** None.
+**Links to work:** None.
+
+
+## Day 42: February 18, 2018
+
+**Today's Progress**: Worked on random quote generator and got it so pressing a 'New Quote' button loads in a random quote, as well as that quote's author and source URL (if there is one).
+
+**Thoughts**: Today went MUCH better than yesterday. I learned I needed to do an AJAX call in order for a new quote to load in, since a new HTTP request needs to be made to the API whenever I press the 'New Quote' button. Tomorrow I just want to take care of the final touches of figuring out how to have the Twitter API load in the new data-text of the quote/author for sharing.
+
+**Links to work:** Tomorrow!
