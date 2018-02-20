@@ -438,3 +438,12 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: Today went MUCH better than yesterday. I learned I needed to do an AJAX call in order for a new quote to load in, since a new HTTP request needs to be made to the API whenever I press the 'New Quote' button. Tomorrow I just want to take care of the final touches of figuring out how to have the Twitter API load in the new data-text of the quote/author for sharing.
 
 **Links to work:** Tomorrow!
+
+
+## Day 43: February 19, 2018
+
+**Today's Progress**: Finished the random quote generator.
+
+**Thoughts**: I spent 3 hours on this today instead of the minimum 1 hour. I also did a hacky-ish way of adjusting the Twitter share feature (creating a new button for each quote and removing the previous button), BUT IT WORKS.
+
+**Links to work:** [Random Quote Generator](https://codepen.io/Ellestial/pen/ddJpML)
