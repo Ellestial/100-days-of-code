@@ -447,3 +447,12 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: I spent 3 hours on this today instead of the minimum 1 hour. I also did a hacky-ish way of adjusting the Twitter share feature (creating a new button for each quote and removing the previous button), BUT IT WORKS.
 
 **Links to work:** [Random Quote Generator](https://codepen.io/Ellestial/pen/ddJpML)
+
+
+## Day 44: February 20, 2018
+
+**Today's Progress**: Started on a local weather app that tells you your location and the temperature/weather currently there.
+
+**Thoughts**: This is going much smoother than the random quote generator already! Knowing a tad about APIs and AJAX helps a lot. Definitely still a challenge and I'm facing certain difficulties, but I'm excited.
+
+**Links tow ork:** None today.
