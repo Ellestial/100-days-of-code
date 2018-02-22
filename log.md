@@ -455,4 +455,13 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 
 **Thoughts**: This is going much smoother than the random quote generator already! Knowing a tad about APIs and AJAX helps a lot. Definitely still a challenge and I'm facing certain difficulties, but I'm excited.
 
-**Links tow ork:** None today.
+**Links to work:** None today.
+
+
+## Day 45: February 21, 2018
+
+**Today's Progress**: I went to a "code with your peers" event at Jellyvision today! It was called Code & Coffee and was a meetup from the Girl Develop It group.
+
+**Thoughts**: It went...OK. I'm way too shy to go to these sorts of things alone. I also didn't really get much of my own coding done at all because of people talking near me. I did explain Bootstrap to a few people, though!
+
+**Links to work:** None.
