@@ -465,3 +465,12 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: It went...OK. I'm way too shy to go to these sorts of things alone. I also didn't really get much of my own coding done at all because of people talking near me. I did explain Bootstrap to a few people, though!
 
 **Links to work:** None.
+
+
+## Day 46: February 22, 2018
+
+**Today's Progress**: Finished the JS of my local weather app!
+
+**Thoughts**: Went very well. :) It almmost seemed too easy... I still want to get the design in better shape. I tried console.log() the API object to see what key/value pairings it had, but I learned there were multiple objects. In order to view the other objects associated with the geolocation API, I had to console.log() the results from each of the functions. Ex: had to run a separate console.log() for navigator.geolocation and navigator.geolocation.watchPosition().
+
+**Links to work:** [Local Weather App](https://codepen.io/Ellestial/pen/rJvVbP)
