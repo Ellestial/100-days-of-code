@@ -474,3 +474,12 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: Went very well. :) It almmost seemed too easy... I still want to get the design in better shape. I tried console.log() the API object to see what key/value pairings it had, but I learned there were multiple objects. In order to view the other objects associated with the geolocation API, I had to console.log() the results from each of the functions. Ex: had to run a separate console.log() for navigator.geolocation and navigator.geolocation.watchPosition().
 
 **Links to work:** [Local Weather App](https://codepen.io/Ellestial/pen/rJvVbP)
+
+
+## Day 47: February 23, 2018
+
+**Today's Progress**: Worked on the CSS for my local weather app and started reading through the documentation for Wikipedia's API.
+
+**Thoughts**: I felt like I cheated by doing CSS today instead of JavaScript, but it's still coding! And I made up time by reading through part of the Wikipedia API. That API is pretty massive. I'm a bit overwhelmed, but my next project on FreeCodeCamp involves searching for terms and pulling in results from Wikipedia. Basically a limited search engine.
+
+**Links to work:** None.
