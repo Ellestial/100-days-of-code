@@ -483,3 +483,21 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: I felt like I cheated by doing CSS today instead of JavaScript, but it's still coding! And I made up time by reading through part of the Wikipedia API. That API is pretty massive. I'm a bit overwhelmed, but my next project on FreeCodeCamp involves searching for terms and pulling in results from Wikipedia. Basically a limited search engine.
 
 **Links to work:** None.
+
+
+## Day 48: February 24, 2018
+
+**Today's Progress**: Finished up the CSS and JS for the local weather app and read through a bit of my JavaScript & JQuery Interactive Front-End Web Development book.
+
+**Thoughts**: FINALLY found the source API that FreeCodeCamp uses for their weather API. This way, I was able to target specific weather types and style them as groupings instead of a separate style for rain/heavy rain/very heavy rain/etc. Took a while, but feeling better!
+
+**Links to work:** None.
+
+
+## Day 49: February 25, 2018
+
+**Today's Progress**: Moved forward on a Wikipedia viewer app. Goal is to be able to search in the app for terms and have a list of results appear that then link out to their corresponding Wikipedia pages.
+
+**Thoughts**: Feeling pretty good so far! Having a confusing issue with the API not loading in properly because of an error mentioning 'Access-Control-Allow-Origin'. Have never heard of this, so will need to explore this more.
+
+**Links to work:** None.
