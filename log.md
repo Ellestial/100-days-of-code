@@ -501,3 +501,12 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: Feeling pretty good so far! Having a confusing issue with the API not loading in properly because of an error mentioning 'Access-Control-Allow-Origin'. Have never heard of this, so will need to explore this more.
 
 **Links to work:** None.
+
+
+## Day 50: February 26, 2018
+
+**Today's Progress**: Worked on the Wikipedia app! Figured out the Access-Control-Allow-Origin issue was related to CORS (cross-origin resource sharing) and it was as simple as putting a key/value in the ajax() data call of origin: "\*". Search results come in properly. Spent some time making sure dynamically created divs were deleted upon a new search so they didn't just duplicate forever.
+
+**Thoughts**: Excited! Was annoyed with some stuff for a while, but it's working now. Last two steps are to link out the results to their proper wiki pages and to add CSS.
+
+**Links to work:** None today.
