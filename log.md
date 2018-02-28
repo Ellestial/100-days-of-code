@@ -510,3 +510,12 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: Excited! Was annoyed with some stuff for a while, but it's working now. Last two steps are to link out the results to their proper wiki pages and to add CSS.
 
 **Links to work:** None today.
+
+
+## Day 51: February 27, 2018
+
+**Today's Progress**: JS finishing touches on Wikipedia app. Started on CSS.
+
+**Thoughts**: I never thought I'd be annoyed with having to do CSS. I just want to make a ton of cool JS things now and work on CSS later! But working on CSS for this Wikipedia app. Created a mockup in Adobe XD and set to work. As usual, having some flexbox annoyances, but will work that out and finishing touches tomorrow.
+
+**Links to work:** TOMORROW for real.
