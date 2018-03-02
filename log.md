@@ -519,3 +519,21 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: I never thought I'd be annoyed with having to do CSS. I just want to make a ton of cool JS things now and work on CSS later! But working on CSS for this Wikipedia app. Created a mockup in Adobe XD and set to work. As usual, having some flexbox annoyances, but will work that out and finishing touches tomorrow.
 
 **Links to work:** TOMORROW for real.
+
+
+## Day 52: February 28, 2018
+
+**Today's Progress**: Continued work on Wikipedia app, began AJAX Basics course on Treehouse.
+
+**Thoughts**: Was getting kind of frustrated with the Wikipedia app and wanted to continue learning about AJAX, so I'm taking a break. On the Wikipedia app front, though, I added a line to show what the user had last searched when search results appear. This also broke the code, though, because the new element I added (<h2>) is not considered a childNode of the parent element for some reason.
+
+**Links to work:** None.
+
+
+## Day 53: March 1, 2018
+
+**Today's Progress**: Continued on in the AJAX Basics course in Treehouse.
+
+**Thoughts**: Learning how to make AJAX via vanilla JS! That's definitely helpful. I know about new var xhr = XMLHttpRequest() and xhr.readyState === 4 and xhr.status === 200 and the like. Enjoying this and I'm about halfway through the course.
+
+**Links to work:** None.
