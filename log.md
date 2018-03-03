@@ -537,3 +537,12 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: Learning how to make AJAX via vanilla JS! That's definitely helpful. I know about new var xhr = XMLHttpRequest() and xhr.readyState === 4 and xhr.status === 200 and the like. Enjoying this and I'm about halfway through the course.
 
 **Links to work:** None.
+
+
+## Day 54: March 2, 2018
+
+**Today's Progress**: Continued AJAX Basics course in Treehouse. Had more practice with vanilla JS XMLHttpRequest() object and started on jQuery AJAX.
+
+**Thoughts**: It's a bit overwhelming to learn the same thing in multiple ways based on different libraries. I have the vanilla JS way of adding HTTP requests and now feel like I'm re-learning for jQuery (in addition to remembering all the different jQuery methods I learned before). Ah well!
+
+**Links to work:** None.
