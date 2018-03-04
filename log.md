@@ -546,3 +546,12 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: It's a bit overwhelming to learn the same thing in multiple ways based on different libraries. I have the vanilla JS way of adding HTTP requests and now feel like I'm re-learning for jQuery (in addition to remembering all the different jQuery methods I learned before). Ah well!
 
 **Links to work:** None.
+
+
+## Day 55: March 3, 2018
+
+**Today's Progress**: Continued AJAX Basics course in Treehouse. Learned how to use $.get(url, data, callback) and $.ajaz(url, settings). Also, learned to chain .fail(jqXHR) method on the end to do something if the server doesn't respond to an AJAX request.
+
+**Thoughts**: Feeling more comfortable with AJAX. Got very frustrated when I tried to convert some vanilla JS to jQuery and couldn't change document.querySelectorAll('li')\[i] to $('li')\[i]. Apparently, you have to do $('li').eq(i) instead. Last part of this course I'll be taking tomorrow is on APIs.
+
+**Links to work:** None.
