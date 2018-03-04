@@ -555,3 +555,12 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: Feeling more comfortable with AJAX. Got very frustrated when I tried to convert some vanilla JS to jQuery and couldn't change document.querySelectorAll('li')\[i] to $('li')\[i]. Apparently, you have to do $('li').eq(i) instead. Last part of this course I'll be taking tomorrow is on APIs.
 
 **Links to work:** None.
+
+
+## Day 56: March 4, 2018
+
+**Today's Progress**:
+
+**Thoughts**:
+
+**Links to work:** [TreeHouse AJAX Project](https://codepen.io/Ellestial/pen/yvWVvz)
