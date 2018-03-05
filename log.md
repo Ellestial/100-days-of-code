@@ -559,8 +559,8 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 
 ## Day 56: March 4, 2018
 
-**Today's Progress**:
+**Today's Progress**: Finished the AJAX Basics course in Treehouse.
 
-**Thoughts**:
+**Thoughts**: Feel more comfortable with AJAX. Surprisingly enjoying vanilla JS more than jQuery. Next challenge will be going through 30 Day Vanilla JS Coding Challenge offered by Wes Bos.
 
 **Links to work:** [TreeHouse AJAX Project](https://codepen.io/Ellestial/pen/yvWVvz)
