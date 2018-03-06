@@ -564,3 +564,12 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: Feel more comfortable with AJAX. Surprisingly enjoying vanilla JS more than jQuery. Next challenge will be going through 30 Day Vanilla JS Coding Challenge offered by Wes Bos.
 
 **Links to work:** [TreeHouse AJAX Project](https://codepen.io/Ellestial/pen/yvWVvz)
+
+
+## Day 57: March 5, 2018
+
+**Today's Progress**: Tackled first JavaScript 30 challenge, which was titled JS Drum Kit.
+
+**Thoughts**: This is going to be very helpful. I am already reaping the rewards of seeing the project instructions, attempting the project on my own, and then going through the video to see where I could improve. I'm taking notes in a Google doc. Some things of interest: can easily target data attributes in the DOM by document.querySelector('.class\[data-name="' + variable + '"]'); Also, transitionend is an event that I can use instead of adding a setTimeout() to fire after a transition is done. Lastly, I can console.log(this) to see what the this keyword is applied to at any given point.
+
+**Links to work:** [JavaScript 30: Challenge 1](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/057js30drumkit.html)
