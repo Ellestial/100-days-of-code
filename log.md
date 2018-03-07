@@ -573,3 +573,12 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: This is going to be very helpful. I am already reaping the rewards of seeing the project instructions, attempting the project on my own, and then going through the video to see where I could improve. I'm taking notes in a Google doc. Some things of interest: can easily target data attributes in the DOM by document.querySelector('.class\[data-name="' + variable + '"]'); Also, transitionend is an event that I can use instead of adding a setTimeout() to fire after a transition is done. Lastly, I can console.log(this) to see what the this keyword is applied to at any given point.
 
 **Links to work:** [JavaScript 30: Challenge 1](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/057js30drumkit.html)
+
+
+## Day 58: March 6, 2018
+
+**Today's Progress**: JavaScript 30 challenge 2. Titled CSS & JS Clock.
+
+**Thoughts**: I created my clock and watched the video after. To my immense surprise, I did everything the same way Wes Bos did! The one tidbit of advice he gave was to remove the transition on the clock hands when it the rotate(xdeg) reaches 360/0deg so it doesn't animate all the way around to the beginning. With that advice, I added an if statement that was not in the video. Hoorah!
+
+**Links to work:** [JavaScript 30: Challenge 2](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/058js30jsclock.html)
