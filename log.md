@@ -582,3 +582,21 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: I created my clock and watched the video after. To my immense surprise, I did everything the same way Wes Bos did! The one tidbit of advice he gave was to remove the transition on the clock hands when it the rotate(xdeg) reaches 360/0deg so it doesn't animate all the way around to the beginning. With that advice, I added an if statement that was not in the video. Hoorah!
 
 **Links to work:** [JavaScript 30: Challenge 2](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/058js30jsclock.html)
+
+
+## Day 59: March 7, 2018
+
+**Today's Progress**: JavaScript 30 challenge 3. Titled Playing With CSS Variables and JavaScript
+
+**Thoughts**: HOLY SHIT CSS VARIABLES ARE AMAZING. They're essentially `let` JS variables. You can update them whenever you want with CSS or JS and it will be global or scope or whatever you want.
+
+**Links to work:** [JavaScript 30: Challenge 3](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/059js30variables.html)
+
+
+## Day 60: March 8, 2018
+
+**Today's Progress**: JavaScript 30 challenge 4. Titled Array Cardio Day 1.
+
+**Thoughts**: This challenge was made of 8 array challenges. I blew through the first 5 with flying colors, but had a bit of trouble with the last three. One required chaining a  `map()` and `filter()` function back to back on a DOM node list that was converted `Array.from()`, the next was a `sort()` challenge where I learned to use ternary operators to get the value of the function results because it's more accurate than just saying a - b or whatnot. The last involved `reduce()` which i am sort of rusty with. It took a bunch of terms and made an object containing a key for each item in the array and a value indicating the number of times the key was in the array.
+
+**Links to work:** [JavaScript 30: Challenge4](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/060js30array1.html)
