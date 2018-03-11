@@ -618,3 +618,12 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: Took a break from the JS challenges. Spent the full day cleaning and baking, so didn't start JS until 9:30PM and was already tired. Happy to have finished the Wikipedia app. I'll want to clean it up sometime -- the code and CSS could be improved.
 
 **Links to work:** [Wikipedia App](https://codepen.io/Ellestial/full/wyExez/)
+
+
+## Day 63: March 11, 2018
+
+**Today's Progress**: Finished JavaScript 30 challenge 5. Titled Flex Panels Image Library. Also tackled one array algorithm challenge from Coderbyte.
+
+**Thoughts**: I overthought the flex challenge, so I messed it up a bit. It was way simpler than I was thinking, so I'm glad I watched the video for it. Also, I used regex to make a string line in title case. I used the str.prototype.replace() method, too. The regex formula was \(/b/w)+\gi -- that gi at the end was messing me up for a while. I was getting frustrated because I didn't know why targetting match.toUpperCase() was only working for the first word.
+
+**Links to work:** None.
