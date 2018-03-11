@@ -600,3 +600,21 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: This challenge was made of 8 array challenges. I blew through the first 5 with flying colors, but had a bit of trouble with the last three. One required chaining a  `map()` and `filter()` function back to back on a DOM node list that was converted `Array.from()`, the next was a `sort()` challenge where I learned to use ternary operators to get the value of the function results because it's more accurate than just saying a - b or whatnot. The last involved `reduce()` which i am sort of rusty with. It took a bunch of terms and made an object containing a key for each item in the array and a value indicating the number of times the key was in the array.
 
 **Links to work:** [JavaScript 30: Challenge4](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/060js30array1.html)
+
+
+## Day 61: March 9, 2018
+
+**Today's Progress**: Began JavaScript 30 challenge 5.
+
+**Thoughts**: Today was rough. I went out for a couple drinks and came back and by the time I was able to get to JS, it was already 10:30. I wasn't able to get as far as I wanted.
+
+**Links to work:** None.
+
+
+## Day 62: March 10, 2018
+
+**Today's Progress**: Finished Wikipedia app.
+
+**Thoughts**: Took a break from the JS challenges. Spent the full day cleaning and baking, so didn't start JS until 9:30PM and was already tired. Happy to have finished the Wikipedia app. I'll want to clean it up sometime -- the code and CSS could be improved.
+
+**Links to work:** [Wikipedia App](https://codepen.io/Ellestial/full/wyExez/)
