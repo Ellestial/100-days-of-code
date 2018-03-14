@@ -627,3 +627,21 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: I overthought the flex challenge, so I messed it up a bit. It was way simpler than I was thinking, so I'm glad I watched the video for it. Also, I used regex to make a string line in title case. I used the str.prototype.replace() method, too. The regex formula was \(/b/w)+\gi -- that gi at the end was messing me up for a while. I was getting frustrated because I didn't know why targetting match.toUpperCase() was only working for the first word.
 
 **Links to work:** None.
+
+
+## Day 64: March 12, 2018
+
+**Today's Progress**: Finished JavaScript 30 challenge 7. Array Cardio Day 2.
+
+**Thoughts**: Got through the challenge fine, but got frustrated trying to remember some JavaScript that I feel I've already forgotten. Didn't help I was tired.
+
+**Links to work:** None.
+
+
+## Day 65: March 13, 2018
+
+**Today's Progress** ;Finished JavaScript 30 challenges 9 (14 Must Know Dev Tools Tricks) and 10 (Hold Shift To Check Multiple Checkboxes).
+
+**Thoughts**: Felt excited I was able to tackle that shift checkboxes challenge, but I did it in a much slower/longer way than the instructor. That was frustrating, as I'm not totally understanding how he did it.
+
+**Links to work:** [JS Challenge Day 9](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/065js30checkbox.html)
