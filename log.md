@@ -645,3 +645,12 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: Felt excited I was able to tackle that shift checkboxes challenge, but I did it in a much slower/longer way than the instructor. That was frustrating, as I'm not totally understanding how he did it.
 
 **Links to work:** [JS Challenge Day 9](https://github.com/Ellestial/100-days-of-code/blob/master/code-examples/065js30checkbox.html)
+
+
+## Day 66: March 14, 2018
+
+**Today's Progress**: Spent a long time reviewing the proper way to complete the challenge from yesterday. Also began working on a JS challenge I accidentally skipped: Day 6 Ajax Type Ahead.
+
+**Thoughts**: I wrote down notes in a Google doc for myself, but I'll post them here too. When you click a checkbox, it runs an event listener. If you are holding down the shift button and the checkbox is actively checked, it will run some code. If not, it will set that first checked item to lastChecked (ex: you aren’t holding the shift button down when you click the first item). The code that runs if you are holding shift and the checkbox you clicked is actively checked, it will run a loop to change a boolean value of inBetween. If the element is that lastCheck element it will change inBetween to be true. If the next item is not the actively checked checkbox, it will keep inBetween as true and so on. Finally, when it reaches the actively checked checkbox, it will swith inBetween to false. Then, if inBetween is set to true, we set element.checked = true.
+
+**Links to work:** None.
