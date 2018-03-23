@@ -654,3 +654,21 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: I wrote down notes in a Google doc for myself, but I'll post them here too. When you click a checkbox, it runs an event listener. If you are holding down the shift button and the checkbox is actively checked, it will run some code. If not, it will set that first checked item to lastChecked (ex: you aren’t holding the shift button down when you click the first item). The code that runs if you are holding shift and the checkbox you clicked is actively checked, it will run a loop to change a boolean value of inBetween. If the element is that lastCheck element it will change inBetween to be true. If the next item is not the actively checked checkbox, it will keep inBetween as true and so on. Finally, when it reaches the actively checked checkbox, it will swith inBetween to false. Then, if inBetween is set to true, we set element.checked = true.
 
 **Links to work:** None.
+
+
+## Day 67: March 15, 2018
+
+**Today's Progress**: Continued on Ajax Type Ahead.
+
+**Thoughts**: Very little progress.
+
+**Links to work:** None.
+
+
+## Day 68: March 32, 2018 (MISSED 6 DAYS)
+
+**Today's Progress**: Continued on Ajax Type Ahead.
+
+**Thoughts**: No progress whatsoever. Real life got in the way finally, so I needed to take a week off JavaScript. Now that I've jumped back in, though, I'm struggling more with this challenge. It is a much more difficult one where I start typing in a city or state name and display results as I type, as well as highlighting the searched letters in the results. Hoping to get more figured out in the next few days.
+
+**Links to work:** None.
