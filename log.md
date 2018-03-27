@@ -665,10 +665,28 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Links to work:** None.
 
 
-## Day 68: March 32, 2018 (MISSED 6 DAYS)
+## Day 68: March 22, 2018 (MISSED 6 DAYS)
 
 **Today's Progress**: Continued on Ajax Type Ahead.
 
 **Thoughts**: No progress whatsoever. Real life got in the way finally, so I needed to take a week off JavaScript. Now that I've jumped back in, though, I'm struggling more with this challenge. It is a much more difficult one where I start typing in a city or state name and display results as I type, as well as highlighting the searched letters in the results. Hoping to get more figured out in the next few days.
 
 **Links to work:** None.
+
+
+## Day 69: March 25, 2018 (MISSED 2 DAYS)
+
+**Today's Progress**: Continued Ajax Type Ahead.
+
+**Thoughts**: Had to watch part of the tutorial to get the gist of what to do, but still struggling.
+
+**Links to work**: None.
+
+
+## Day 70: March 26, 2018
+
+**Today's Progress**: Continued Ajax Type Ahead.
+
+**Thoughts**: Doing better. almost have this thing under wraps, but it's pretty disorganized. I have it so search results appear as I type/backspace, as well as having currently searched terms appear in a highlighted color. However, I need to have it work for both city names and state names. I'm almost there, I can feel it.
+
+**Links to work**: None.
