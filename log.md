@@ -690,3 +690,21 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: Doing better. almost have this thing under wraps, but it's pretty disorganized. I have it so search results appear as I type/backspace, as well as having currently searched terms appear in a highlighted color. However, I need to have it work for both city names and state names. I'm almost there, I can feel it.
 
 **Links to work**: None.
+
+
+## Day 71: March 27, 2018
+
+**Today's Progress**: Got frustrated and started working on custom video player.
+
+**Thoughts**: Frustration with this Ajax Type Ahead so I figured I'd try something different.
+
+**Links to work**: None.
+
+
+## Day 72: April 1, 2018
+
+**Today's Progress**: Continued on Custom HTML5 Video Player.
+
+**Thoughts**: Going well, although slow. I have it so I can press the video itself and the play button to play/pause the video, I can speed up/down the playrate, the scrubber moves with the timing of the video, and I can adjust the volume. Things to do: work on adjusting the seekrate and making it so I can press the scrubber at any point and have the video jump to that point.
+
+**Links to work**: None.
