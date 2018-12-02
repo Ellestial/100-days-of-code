@@ -708,3 +708,10 @@ var newArr = testRegEx.exec('555 555 3535'); // returns 555 555
 **Thoughts**: Going well, although slow. I have it so I can press the video itself and the play button to play/pause the video, I can speed up/down the playrate, the scrubber moves with the timing of the video, and I can adjust the volume. Things to do: work on adjusting the seekrate and making it so I can press the scrubber at any point and have the video jump to that point.
 
 **Links to work**: None.
+
+
+## Day ??: December 2, 2018
+
+**Today's Progress**: Got a new computer and installed Git.
+
+**Thoughts**: GETTING BACK IN THE GAME.
