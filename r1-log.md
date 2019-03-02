@@ -1,10 +1,7 @@
-# #100DaysOfCode Log - Round 1 - [Your Name Here]
+# 100 Days Of Code - Log
 
-The log of my #100DaysOfCode challenge. Started on [July 17, Monday, 2017].
+### Day 1: March 1, 2019
 
-## Log
+**Today's Progress**: Rewatched Objects section within The Web Developer Bootcamp Udemy course.
 
-### R1D1 
-Started a Weather App. Worked on the draft layout of the app, struggled with OpenWeather API http://www.example.com
-
-### R1D2
+**Thoughts**: I've been refamiliarizing myself with JavaScript on and off the last month, and want to make a more dedicated effort to spend 1 hour of learning/practice a day. Object refresher was helpful, but I also was able to make some connections to more advanced work I had learned last year from this refresher.
