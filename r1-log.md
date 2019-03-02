@@ -5,3 +5,10 @@
 **Today's Progress**: Rewatched Objects section within The Web Developer Bootcamp Udemy course.
 
 **Thoughts**: I've been refamiliarizing myself with JavaScript on and off the last month, and want to make a more dedicated effort to spend 1 hour of learning/practice a day. Object refresher was helpful, but I also was able to make some connections to more advanced work I had learned last year from this refresher.
+
+
+### Day 2: March 2, 2019
+
+**Today's Progress**: Rewatched half of Intro to DOM section within The Web Developer Bootcamp Udemy course and set up node modules/sass to watch for SCSS changes in my IDE.
+
+**Thoughts**: Finally clicked for me how all of CSS is just defining new values for pre-determined object properties (color, line-height, etc etc) and that everything is really an object. Exciting to finally get that through my head -- I know that wasn't a revelation for me before when I began learning JavaScript.
