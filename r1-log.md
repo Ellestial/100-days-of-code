@@ -9,6 +9,15 @@
 
 ### Day 2: March 2, 2019
 
-**Today's Progress**: Rewatched half of Intro to DOM section within The Web Developer Bootcamp Udemy course and set up node modules/sass to watch for SCSS changes in my IDE.
+**Today's Progress**: Rewatched half of Intro to DOM section within The Web Developer Bootcamp Udemy course and set up node modules/sass to watch for SCSS changes in Visual Studio Code.
 
 **Thoughts**: Finally clicked for me how all of CSS is just defining new values for pre-determined object properties (color, line-height, etc etc) and that everything is really an object. Exciting to finally get that through my head -- I know that wasn't a revelation for me before when I began learning JavaScript.
+
+
+### Day 3: March 3, 2019
+
+**Today's Progress**: Rewatched remainder of Intro to DOM section within Udemy course and started Advanced DOM Manipulation. Also skimmed through the ABCs of programming reading.
+
+**Readings**: "JavaScript & jQuery Interactive Front-End Web Development" - Jon Duckett. Chapter 1.
+
+**Thoughts**: All this information so far feels very familiar to me. This is good, but also I don't want to spend too much time on too familiar of a review period.
