@@ -21,3 +21,12 @@
 **Readings**: "JavaScript & jQuery Interactive Front-End Web Development" - Jon Duckett. Chapter 1.
 
 **Thoughts**: All this information so far feels very familiar to me. This is good, but also I don't want to spend too much time on too familiar of a review period.
+
+
+### Day 4: March 4, 2019
+
+**Today's Progress**: Watched one Advanced DOM Manipulation video in the Udemy course, started working on a counting game, and started reading Eloquent JavaScript.
+
+**Readings**: "Eloquent JavaScript" - Marijn Haverbeke. Introduction.
+
+**Thoughts**: I think this Eloquent JavaScript book will be very helpful. It's interesting even already to learn some more about computer programming, like how bits work.
