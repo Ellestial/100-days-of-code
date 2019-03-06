@@ -25,8 +25,15 @@
 
 ### Day 4: March 4, 2019
 
-**Today's Progress**: Watched one Advanced DOM Manipulation video in the Udemy course, started working on a counting game, and started reading Eloquent JavaScript.
+**Today's Progress**: Watched one Advanced DOM Manipulation video in the Udemy course, started working on a score tracking game, and started reading Eloquent JavaScript.
 
 **Readings**: "Eloquent JavaScript" - Marijn Haverbeke. Introduction.
 
 **Thoughts**: I think this Eloquent JavaScript book will be very helpful. It's interesting even already to learn some more about computer programming, like how bits work.
+
+
+## Day 5: March 5, 2019
+
+**Today's Progress**: Worked exclusively on the counting game.
+
+**Thoughts**: Feel pretty good about this. The score tracking game is a code-along project in the Udemy course I'm going through, but I'm trying to create it before watching the videos. The videos also have the score tracking game between 2 people, while I am setting up my work to allow for any number of players. I'm probably about 90% done with this, and then will be trying to DRY it up.
