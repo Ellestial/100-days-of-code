@@ -37,3 +37,12 @@
 **Today's Progress**: Worked exclusively on the counting game.
 
 **Thoughts**: Feel pretty good about this. The score tracking game is a code-along project in the Udemy course I'm going through, but I'm trying to create it before watching the videos. The videos also have the score tracking game between 2 people, while I am setting up my work to allow for any number of players. I'm probably about 90% done with this, and then will be trying to DRY it up.
+
+
+## Day 6: March 6, 2019
+
+**Today's Progress**: Finished counting game.
+
+**Thoughts**: I feel good! I finished the score tracking game. You enter a value for the max number of points needed to win a game, the number of players involved, and then add points to each player's total until a winner is determined. I cleaned up the code as much as I could at this point, but I'll probably go back in a month from now to see how I can improve it more. A few things I considered: allowing for any number of points and players, preventing users from entering anything other than number values, making sure the event listener resets every game in case there are more/fewer buttons to select.
+
+**Link to work**: [Score Tracking Game](https://codepen.io/Ellestial/pen/ZPLdmm)
