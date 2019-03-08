@@ -46,3 +46,12 @@
 **Thoughts**: I feel good! I finished the score tracking game. You enter a value for the max number of points needed to win a game, the number of players involved, and then add points to each player's total until a winner is determined. I cleaned up the code as much as I could at this point, but I'll probably go back in a month from now to see how I can improve it more. A few things I considered: allowing for any number of points and players, preventing users from entering anything other than number values, making sure the event listener resets every game in case there are more/fewer buttons to select.
 
 **Link to work**: [Score Tracking Game](https://codepen.io/Ellestial/pen/ZPLdmm)
+
+
+## Day 7: March 7, 2019
+
+**Today's Progress**: Read Chapter 1 in Eloquent JavaScript. Watched part 1 of the code along of the score tracking game. I had originally listened to the project description and then made it entirely on my own and with more advanced features, so now I'm going through the rest of the original Udemy videos to see if there's anything I missed/could have done better.
+
+**Readings**: "Eloquent JavaScript" - Marijn Haverbeke. Chapter 1.
+
+**Thoughts**: Not as exciting of a day, but was still happy to fit in an hour of JavaScript despite a busy day. I'm enjoying this book and feel it explains things in a very different and interesting way than other sources I've found.
