@@ -55,3 +55,10 @@
 **Readings**: "Eloquent JavaScript" - Marijn Haverbeke. Chapter 1.
 
 **Thoughts**: Not as exciting of a day, but was still happy to fit in an hour of JavaScript despite a busy day. I'm enjoying this book and feel it explains things in a very different and interesting way than other sources I've found.
+
+
+## Day 8: March 8, 2019
+
+**Today's Progress**: Watched the rest of the Advanced DOM Manipulation videos in the Udemy course. Set up the initial HTML and CSS for the next section -- the Color Game Project. I will be completing the project before watching the code-along.
+
+**Thoughts**: My score tracking game is much more DRY and maintainable than the code-along in the Udemy course. The purpose of it was to be a first project for people, but it's nice that I was able to move beyond that quickly. I created the Color Game Project last year, and am hoping to compare my new CSS/JS with what I did before to hopefully see an improvement.
