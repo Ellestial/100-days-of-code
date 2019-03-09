@@ -62,3 +62,10 @@
 **Today's Progress**: Watched the rest of the Advanced DOM Manipulation videos in the Udemy course. Set up the initial HTML and CSS for the next section -- the Color Game Project. I will be completing the project before watching the code-along.
 
 **Thoughts**: My score tracking game is much more DRY and maintainable than the code-along in the Udemy course. The purpose of it was to be a first project for people, but it's nice that I was able to move beyond that quickly. I created the Color Game Project last year, and am hoping to compare my new CSS/JS with what I did before to hopefully see an improvement.
+
+
+## Day 9: March 9, 2019
+
+**Today's Progress**: Got about 1/2 or 2/3 through the JavaScript of the Color Game Project.
+
+**Thoughts**: This is more of an introductory project and is starting to feel as such to me. I'm trying to think of the DRYest way to go about the JavaScript instead of just trying to make things work. This is motivating.
