@@ -69,3 +69,10 @@
 **Today's Progress**: Got about 1/2 or 2/3 through the JavaScript of the Color Game Project.
 
 **Thoughts**: This is more of an introductory project and is starting to feel as such to me. I'm trying to think of the DRYest way to go about the JavaScript instead of just trying to make things work. This is motivating.
+
+
+## Day 10: March 10, 2019
+
+**Today's Progress**: Finished Color Game Project.
+
+**Thoughts**: I'd like to go through tomorrow and see if I can clean up the code and then I want to compare it to my other attempt at this project last year. I have been feeling sick today, so I didn't get as much done as I was hoping for.
