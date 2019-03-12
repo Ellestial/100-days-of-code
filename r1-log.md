@@ -76,3 +76,20 @@
 **Today's Progress**: Finished Color Game Project.
 
 **Thoughts**: I'd like to go through tomorrow and see if I can clean up the code and then I want to compare it to my other attempt at this project last year. I have been feeling sick today, so I didn't get as much done as I was hoping for.
+
+
+## Day 11: March 11, 2019
+
+**Today's Progress**: Read some Eloquent JavaScript and tidied up Color Game Project.
+
+**Thoughts**: I compared my new Color Game Project to the one I made last year. There were some differences that I've outlined below. I have since ammended my JS to consider the cons.
+
+* New Pros
+  * I made the new one more flexible with allowing any number of difficulty modes with any number of color cards. All that's required is adding a new HTML element and adding an event listener that calls setMode(ev.target, 8) or however many colors. 
+  * I had more helpful variable names and better use cases. For example, I didn't use a gameOver = true or false variable in my new game, but I did in the old one despite not having any use case for it.
+  * I found some code statements in my old version that could have been removed. I'm glad I'm able to see that sort of detail now. 
+* New Cons
+  * I should have created a new variable for some elements to make it more readable. For example, in the createBlocks() function, I should create a variable for colorBlocks.length that equals currentBlocks, while the argument within the function should be named desiredBlocks instead of num. 
+  * I had previously created an event listener on the color blocks holder and defined it once by just using an event argument for event.target to access each of the actual color blocks instead of looping through each color block and having that run again when the color block count was different based on modes.
+
+**Link To Work**: [Color Game Project v2](https://codepen.io/Ellestial/pen/XGezyR)
