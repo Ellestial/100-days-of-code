@@ -93,3 +93,16 @@
   * I had previously created an event listener on the color blocks holder and defined it once by just using an event argument for event.target to access each of the actual color blocks instead of looping through each color block and having that run again when the color block count was different based on modes.
 
 **Link To Work**: [Color Game Project v2](https://codepen.io/Ellestial/pen/XGezyR)
+
+
+## Day 12: March 12, 2019
+
+**Today's Progress**: Watched the Color Game Project code-along sections of the Web Designer Bootcamp Udemy course.
+
+**Thoughts**: I was somewhat surprised with some of the differences between my version of the project and what the Udemy course displayed. I wanted to redo my project again with some of the considerations from the Udemy course, but I think I will do so at a later date when I get more knowledge. I believe my version of the project is a bit more maintainable since it's not limited to a set number of items, but there were still some good tips.
+
+* Udemy suggestions
+  * Use an array to house all random numbers
+  * Create a variable for each color value (r, g, and b) to make it more legible
+  * Set a master variable to determine the current number of colors there should be
+  * Create init() function that is run immediately and takes care of anything that needs to be done on page load
