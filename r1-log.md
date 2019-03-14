@@ -106,3 +106,10 @@
   * Create a variable for each color value (r, g, and b) to make it more legible
   * Set a master variable to determine the current number of colors there should be
   * Create init() function that is run immediately and takes care of anything that needs to be done on page load
+
+
+## Day 13: March 13, 2019
+
+**Today's Progress**: Watched through most of the Intro to jQuery section in the Udemy course. Also reviewed my notes from the course thus far.
+
+**Thoughts**: I know jQuery is sort of on the out at this point, but thought I would still review these videos just in case. I'd like to recreate a few of the functions like $() at some point when I feel competent enough. I'm glad I read through my notes from the other sections, too.
