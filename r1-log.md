@@ -113,3 +113,24 @@
 **Today's Progress**: Watched through most of the Intro to jQuery section in the Udemy course. Also reviewed my notes from the course thus far.
 
 **Thoughts**: I know jQuery is sort of on the out at this point, but thought I would still review these videos just in case. I'd like to recreate a few of the functions like $() at some point when I feel competent enough. I'm glad I read through my notes from the other sections, too.
+
+
+## Day 14: March 14, 2019
+
+**Today's Progress**: Read.
+
+**Readings**: "Eloquent JavaScript" - Marijn Haverbeke. Chapter 2.
+
+**Thoughts**: It was helpful to just sit down and read. Re-learned about the do while statement and learned about how bindings are defined and why to use that term rather than variable.
+
+
+--
+**I was on vacation from March 14th to March 19th and did not have time to spend an hour a day on JavaScript while out of state.**
+--
+
+
+## Day 15: March 19, 2019
+
+**Today's Progress**: Started reading about functions in Eloquent JavaScript while on the plane and also watched videos on jQuery in the Udemy course when I got home.
+
+**Thoughts**: I am definitely looking forward to doing some actual JavaScript soon.
