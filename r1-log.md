@@ -134,3 +134,10 @@
 **Today's Progress**: Started reading about functions in Eloquent JavaScript while on the plane and also watched videos on jQuery in the Udemy course when I got home.
 
 **Thoughts**: I am definitely looking forward to doing some actual JavaScript soon.
+
+
+## Day 16: March 20, 2019
+
+**Today's Progress**: Watched through the rest of Introductory jQuery videos and started Advanced jQuery. Also worked on CSS for upcoming To Do List project.
+
+**Thoughts**: I was very exhausted today, so I am proud of myself for still practicing an hour of JavaScript. I got a quick reminder about adding an event argument in an event listener's function, which was good. I also learned how to target specifically checked checkboxes using JS and CSS.
