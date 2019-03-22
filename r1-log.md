@@ -141,3 +141,10 @@
 **Today's Progress**: Watched through the rest of Introductory jQuery videos and started Advanced jQuery. Also worked on CSS for upcoming To Do List project.
 
 **Thoughts**: I was very exhausted today, so I am proud of myself for still practicing an hour of JavaScript. I got a quick reminder about adding an event argument in an event listener's function, which was good. I also learned how to target specifically checked checkboxes using JS and CSS.
+
+
+## Day 17: March 21, 2019
+
+**Today's Progress**: Watched through the rest of Advanced jQuery and completed most of the jQuery for the To Do List project.
+
+**Thoughts**: I was able to get a lot done today in an hour, which felt nice. I am creating the To Do List project before watching the code-along videos. I would also like to complete the project in vanilla JS before watching the videos to make sure I can do it both ways and so I can better see the differences.
