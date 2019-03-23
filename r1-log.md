@@ -155,3 +155,10 @@
 **Today's Progress**: Finished the To Do List project via jQuery and got about halfway through via vanilla JS.
 
 **Thoughts**: This was so quick and easy to do in jQuery. I'm trying to figure out how to replicate the slideToggle() jQuery function using only vanilla JS, so that's been proving difficult for me. Hopefully tomorrow I can figure it out with fresh eyes.
+
+
+## Day 19: March 23, 2019
+
+**Today's PRogress**: Made my own slideToggle() function...ish.
+
+**Thoughts**: I tried recreating slideToggle() in vanilla JS...and it's hard! The biggest issue I'm having currently is setting to display: none/block and being able to have the slide animation work if new content populates into the div that adjusts the height. Definitely giving me some practice trying to do something new, though. I'd like to make a vanilla JS way of other jQuery functions at some point too.
