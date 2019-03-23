@@ -148,3 +148,10 @@
 **Today's Progress**: Watched through the rest of Advanced jQuery and completed most of the jQuery for the To Do List project.
 
 **Thoughts**: I was able to get a lot done today in an hour, which felt nice. I am creating the To Do List project before watching the code-along videos. I would also like to complete the project in vanilla JS before watching the videos to make sure I can do it both ways and so I can better see the differences.
+
+
+## Day 18: March 22, 2019
+
+**Today's Progress**: Finished the To Do List project via jQuery and got about halfway through via vanilla JS.
+
+**Thoughts**: This was so quick and easy to do in jQuery. I'm trying to figure out how to replicate the slideToggle() jQuery function using only vanilla JS, so that's been proving difficult for me. Hopefully tomorrow I can figure it out with fresh eyes.
