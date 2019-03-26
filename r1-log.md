@@ -169,3 +169,10 @@
 **Today's Progress**: Finished first draft of To Do List in vanilla JS.
 
 **Thoughts**: I managed to create a rough slideToggle() and fadeOff() in vanilla JS. I'd like to clean it up tomorrow to make it more sustainable and have it potentially work for any situation.
+
+
+## Day 21: March 25, 2019
+
+**Today's Progress**: Finished edits to To Do List in vanilla JS.
+
+**Thoughts**: I'm frustrated I couldn't think of an equation that could work to responsively create a sliding animation who's duration would be based on a function parameter. I should revisit this in a couple weeks.
