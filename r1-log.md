@@ -176,3 +176,10 @@
 **Today's Progress**: Finished edits to To Do List in vanilla JS.
 
 **Thoughts**: I'm frustrated I couldn't think of an equation that could work to responsively create a sliding animation who's duration would be based on a function parameter. I should revisit this in a couple weeks.
+
+
+## Day 22: March 26, 2019 (my birthday!)
+
+**Today's Progress**: Watched Udemy course videos walking through To Do List and worked with working locally with Git.
+
+**Thoughts**: I did everything correctly per the Udemy videos, so that's reassuring! I'm also trying to work locally with Git instead of relying on updating files within the GitHub web interface.
