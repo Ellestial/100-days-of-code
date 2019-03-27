@@ -1,0 +1,132 @@
+html, body, h1, h2, h3, h4, h5, h6, p, ul, li, header, footer, div, span, input {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html {
+  padding: 1rem;
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, #d6fcb3 0%, #79faf5 90%);
+  font-family: "Roboto";
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  line-height: 150%;
+}
+
+.todos {
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px 15px rgba(0, 158, 151, 0.14);
+  background-color: #fff;
+}
+
+.todos__header {
+  background-color: #19b3cc;
+}
+.todos__header > * {
+  padding: 0 1rem;
+}
+.todos__header .header__title {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.todos__header .header__expand {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  transition: transform 250ms;
+}
+.todos__header .header__expand::before, .todos__header .header__expand::after {
+  margin: auto;
+  display: block;
+  background-color: #fff;
+  content: "";
+}
+.todos__header .header__expand::before {
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.todos__header .header__expand::after {
+  width: 4px;
+  height: 100%;
+  transition: transform 250ms;
+}
+.todos__header .header__expand:hover {
+  cursor: pointer;
+  transform: scale3d(1.3, 1.3, 1);
+}
+.todos__header .header__expand.is--collapsed::after {
+  transform: rotate(90deg);
+}
+.todos__header .header__content {
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.todos__header .header__add {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 3px solid #02aeca;
+}
+
+.todos__body .todo {
+  display: flex;
+  align-items: flex-start;
+}
+.todos__body .todo:nth-child(even) {
+  background-color: #e9fcff;
+}
+.todos__body .todo:hover {
+  cursor: pointer;
+}
+.todos__body .todo:hover .todo__delete {
+  width: 40px;
+}
+.todos__body .todo__description {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  transition: all 250ms;
+}
+.todos__body .todo__description.is--complete {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+.todos__body .todo__delete {
+  width: 0;
+  padding: 0.25rem 0;
+  background: transparent;
+  border: 0;
+  color: #ea6078;
+  font-size: 25px;
+  transition: all 250ms;
+  overflow: hidden;
+}
+.todos__body .todo__delete:hover {
+  background-color: #ea6078;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=styles.css.map */
