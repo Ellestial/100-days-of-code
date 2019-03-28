@@ -183,3 +183,10 @@
 **Today's Progress**: Watched Udemy course videos walking through To Do List and worked with working locally with Git.
 
 **Thoughts**: I did everything correctly per the Udemy videos, so that's reassuring! I'm also trying to work locally with Git instead of relying on updating files within the GitHub web interface.
+
+
+## Day 23: March 27, 2019
+
+**Today's Progress**: Started up optional Udemy project to make Patatap Clone. Read through probably 1/2 or 2/3 of paper.js documentation and practiced what I learned. Also practiced working with git locally again.
+
+**Thoughts**: I am trying to be patient with reading through documentation before trying to do much of the project. I believe I am understanding the documentation, and I was able to have a circle appear randomly on the page on page load. I know I had a hard time with this optional project when I created it last year, so I am trying my best to create it without watching any of the code-along videos this time through.
