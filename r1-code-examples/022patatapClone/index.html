@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Patatap Clone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="lib/paperjs-v0.12.0/dist/paper-full.min.js"></script>
+  <script type="text/paperscript" canvas="paperCanvas" resize="true">
+    var screenWidth = document.querySelector('canvas').offsetWidth;
+    var screenHeight = document.querySelector('canvas').offsetHeight;
+    var circlePoint = new Point(screenWidth, screenHeight) * Point.random();
+    var newCircle = new Path.Circle(circlePoint.floor(), 50);
+    newCircle.fillColor = 'black';
+  </script>
+</head>
+<body>
+  <canvas style="width: 100vw; height: 100vh;" id="paperCanvas"></canvas>
+</body>
+</html>
