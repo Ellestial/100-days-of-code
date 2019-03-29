@@ -9,9 +9,31 @@
   <script type="text/paperscript" canvas="paperCanvas" resize="true">
     var screenWidth = document.querySelector('canvas').offsetWidth;
     var screenHeight = document.querySelector('canvas').offsetHeight;
-    var circlePoint = new Point(screenWidth, screenHeight) * Point.random();
-    var newCircle = new Path.Circle(circlePoint.floor(), 50);
-    newCircle.fillColor = 'black';
+
+    var newPath = new Path();
+    newPath.add(new Point(100, 100), new Point (300, 300), new Point(300, 100));
+    newPath.closed = true;
+    newPath.smooth();
+    newPath.strokeColor = 'black';
+
+    function onKeyDown(event) {
+      var circlePoint = new Point(screenWidth, screenHeight) * Point.random();
+      var newCircle = new Path.Circle(circlePoint.floor(), 500);
+      newCircle.fillColor = 'green';
+      newCircle.scaling;
+      console.log(newCircle.scaling);
+
+      var circleTween = newCircle.tweenTo({
+        'scaling.length': 0.2,
+        'fillColor.hue': '+= 45'
+      }, {
+        duration: 1000
+      });
+
+      setTimeout(function() {
+        newCircle.remove();
+      }, 1000);
+    }
   </script>
 </head>
 <body>

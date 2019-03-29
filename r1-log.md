@@ -190,3 +190,10 @@
 **Today's Progress**: Started up optional Udemy project to make Patatap Clone. Read through probably 1/2 or 2/3 of paper.js documentation and practiced what I learned. Also practiced working with git locally again.
 
 **Thoughts**: I am trying to be patient with reading through documentation before trying to do much of the project. I believe I am understanding the documentation, and I was able to have a circle appear randomly on the page on page load. I know I had a hard time with this optional project when I created it last year, so I am trying my best to create it without watching any of the code-along videos this time through.
+
+
+## Day 24: March 28, 2019
+
+**Today's Progress**: Started messing around more with the Patatap Clone project.
+
+**Thoughts**: Learning my first library definitely has a steep learning curve. I'm able to have cirlces appear on keypress and change color, but the scaling property isn't working for some reason. I'm using the tween method, and changing the hue works fine. Hm. Stumped for tonight.
