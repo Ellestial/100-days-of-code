@@ -6,37 +6,49 @@
   <title>Patatap Clone</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="text/javascript" src="lib/paperjs-v0.12.0/dist/paper-full.min.js"></script>
+  <script src="main.json"></script>
   <script type="text/paperscript" canvas="paperCanvas" resize="true">
     var screenWidth = document.querySelector('canvas').offsetWidth;
     var screenHeight = document.querySelector('canvas').offsetHeight;
 
-    var newPath = new Path();
-    newPath.add(new Point(100, 100), new Point (300, 300), new Point(300, 100));
-    newPath.closed = true;
-    newPath.smooth();
-    newPath.strokeColor = 'black';
-
     function onKeyDown(event) {
       var circlePoint = new Point(screenWidth, screenHeight) * Point.random();
       var newCircle = new Path.Circle(circlePoint.floor(), 500);
-      newCircle.fillColor = 'green';
-      newCircle.scaling;
-      console.log(newCircle.scaling);
+      newCircle.applyMatrix = false;
+      var randomCircle = [];
+
+      for(var i = 0; i < newCircle.segments.length; i++) {
+        randomCircle.push(Math.floor(Math.random() * 250));
+      }
+
+      newCircle.fillColor = letters[15].color;
+
+      for(var i = 0; i < letters.length; i++) {
+        if(letters[i].key === event.key) {
+          newCircle.fillColor = letters[i].color;
+        }
+      }
 
       var circleTween = newCircle.tweenTo({
-        'scaling.length': 0.2,
-        'fillColor.hue': '+= 45'
+        'scaling.length': 0.01,
+        'fillColor.hue': '+= 60',
+        'segments[0].point': '+= ' + randomCircle[0],
+        'segments[1].point': '+= ' + randomCircle[1],
+        'segments[2].point': '+= ' + randomCircle[2],
+        'segments[3].point': '+= ' + randomCircle[3],
+        'handleBounds.top': '(new Point.random()* 100).floor()'
       }, {
-        duration: 1000
+        duration: 500,
+        easing: 'easeInOutQuad'
       });
 
       setTimeout(function() {
         newCircle.remove();
-      }, 1000);
+      }, 500);
     }
   </script>
 </head>
-<body>
+<body style="background: #313131; overflow: hidden;">
   <canvas style="width: 100vw; height: 100vh;" id="paperCanvas"></canvas>
 </body>
 </html>

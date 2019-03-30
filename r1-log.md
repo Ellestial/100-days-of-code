@@ -197,3 +197,10 @@
 **Today's Progress**: Started messing around more with the Patatap Clone project.
 
 **Thoughts**: Learning my first library definitely has a steep learning curve. I'm able to have cirlces appear on keypress and change color, but the scaling property isn't working for some reason. I'm using the tween method, and changing the hue works fine. Hm. Stumped for tonight.
+
+
+## Day 25: March 29, 2019
+
+**Today's Progress**: Figured out what was stumping me yesterday! Finished up the paper.js portion of the challenge.
+
+**Thoughts**: Apparently I needed to set a setMatrix value to be false in order to animate the scaling of the circles. I should read through documentation a bit more thoroughly in the future. I created a JSON file to change the color of each circle depending on which letter was pressed. I also set it up so once I get the audio component added, I can just plug that into the JSON so each key has its own sound.
