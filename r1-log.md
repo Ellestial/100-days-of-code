@@ -204,3 +204,10 @@
 **Today's Progress**: Figured out what was stumping me yesterday! Finished up the paper.js portion of the challenge.
 
 **Thoughts**: Apparently I needed to set a setMatrix value to be false in order to animate the scaling of the circles. I should read through documentation a bit more thoroughly in the future. I created a JSON file to change the color of each circle depending on which letter was pressed. I also set it up so once I get the audio component added, I can just plug that into the JSON so each key has its own sound.
+
+
+## Day 26: March 30, 2019
+
+**Today's Progress**: Finished Patatap Clone project! Started watching the codealong videos from Udemy for it.
+
+**Thoughts**: I feel good about completing this entirely on my own without needing the guidance of the Udemy videos. I also adjusted the project just a tad to have a slightly randomly shaped blob appear each time you press a key instead of just a circle. It'll still be helpful to watch through them to see any areas I could simplify my code a bit. Also, I tackled a small paper.js exercise that I remember not being able to do last time I attempted to learn JS. Feeling optimistic.

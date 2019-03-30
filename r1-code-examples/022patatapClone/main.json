@@ -2,131 +2,131 @@ var letters = [
     {
         key: 'a',
         color: 'rgb(252, 240, 56)',
-        sound: 'test'
+        sound: 'sounds/bubbles.mp3'
     },
     {
         key: 'b',
         color: 'rgb(175, 241, 44)',
-        sound: 'test'
+        sound: 'sounds/clay.mp3'
     },
     {
         key: 'c',
         color: 'rgb(22, 182, 138)',
-        sound: 'test'
+        sound: 'sounds/confetti.mp3'
     },
     {
         key: 'd',
         color: 'rgb(122, 56, 3)',
-        sound: 'test'
+        sound: 'sounds/corona.mp3'
     },
     {
         key: 'e',
         color: 'rgb(89, 121, 252)',
-        sound: 'test'
+        sound: 'sounds/dotted-spiral.mp3'
     },
     {
         key: 'f',
         color: 'rgb(103, 226, 82)',
-        sound: 'test'
+        sound: 'sounds/flash-1.mp3'
     },
     {
         key: 'g',
         color: 'rgb(103, 226, 82)',
-        sound: 'test'
+        sound: 'sounds/flash-2.mp3'
     },
     {
         key: 'h',
         color: 'rgb(151, 113, 110)',
-        sound: 'test'
+        sound: 'sounds/flash-3.mp3'
     },
     {
         key: 'i',
         color: 'rgb(16, 125, 233)',
-        sound: 'test'
+        sound: 'sounds/glimmer.mp3'
     },
     {
         key: 'j',
         color: 'rgb(27, 10, 235)',
-        sound: 'test'
+        sound: 'sounds/moon.mp3'
     },
     {
         key: 'k',
         color: 'rgb(241, 167, 111)',
-        sound: 'test'
+        sound: 'sounds/pinwheel.mp3'
     },
     {
         key: 'l',
         color: 'rgb(43, 142, 92)',
-        sound: 'test'
+        sound: 'sounds/piston-1.mp3'
     },
     {
         key: 'm',
         color: 'rgb(75, 144, 114)',
-        sound: 'test'
+        sound: 'sounds/piston-2.mp3'
     },
     {
         key: 'n',
         color: 'rgb(97, 229, 33)',
-        sound: 'test'
+        sound: 'sounds/piston-3.mp3'
     },
     {
         key: 'o',
         color: 'rgb(36, 77, 90)',
-        sound: 'test'
+        sound: 'sounds/prism-1.mp3'
     },
     {
         key: 'p',
         color: 'rgb(202, 208, 157)',
-        sound: 'test'
+        sound: 'sounds/prism-2.mp3'
     },
     {
         key: 'q',
         color: 'rgb(158, 148, 11)',
-        sound: 'test'
+        sound: 'sounds/prism-3.mp3'
     },
     {
         key: 'r',
         color: 'rgb(24, 18, 38)',
-        sound: 'test'
+        sound: 'sounds/splits.mp3'
     },
     {
         key: 's',
         color: 'rgb(138, 39, 149)',
-        sound: 'test'
+        sound: 'sounds/squiggle.mp3'
     },
     {
         key: 't',
         color: 'rgb(163, 201, 152)',
-        sound: 'test'
+        sound: 'sounds/strike.mp3'
     },
     {
         key: 'u',
         color: 'rgb(183, 35, 196)',
-        sound: 'test'
+        sound: 'sounds/suspension.mp3'
     },
     {
         key: 'v',
         color: 'rgb(47, 76, 207)',
-        sound: 'test'
+        sound: 'sounds/timer.mp3'
     },
     {
         key: 'w',
         color: 'rgb(128, 234, 129)',
-        sound: 'test'
+        sound: 'sounds/ufo.mp3'
     },
     {
         key: 'x',
         color: 'rgb(53, 5, 164)',
-        sound: 'test'
+        sound: 'sounds/veil.mp3'
     },
     {
         key: 'y',
         color: 'rgb(91, 167, 197)',
-        sound: 'test'
+        sound: 'sounds/wipe.mp3'
     },
     {
         key: 'z',
         color: 'rgb(237, 106, 201)',
-        sound: 'test'
+        sound: 'sounds/zig-zag.mp3'
     }
 ]

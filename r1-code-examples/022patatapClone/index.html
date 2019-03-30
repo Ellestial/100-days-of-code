@@ -1,54 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html style="width: 100%; height: 100%; margin: 0;">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Patatap Clone</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="lib/howler.min.js"></script>
   <script type="text/javascript" src="lib/paperjs-v0.12.0/dist/paper-full.min.js"></script>
   <script src="main.json"></script>
   <script type="text/paperscript" canvas="paperCanvas" resize="true">
     var screenWidth = document.querySelector('canvas').offsetWidth;
     var screenHeight = document.querySelector('canvas').offsetHeight;
+    var transitionDuration = 500;
+
+    for(var i = 0; i <= 1000; i += 100) {
+
+      for(var j = 0; j <= 1000; j += 100) {
+        var testCircle = new Path.Circle(new Point(0, 0), 10);
+        testCircle.fillColor = 'red';
+        testCircle.position = new Point(i, j);
+      }
+    }
 
     function onKeyDown(event) {
       var circlePoint = new Point(screenWidth, screenHeight) * Point.random();
       var newCircle = new Path.Circle(circlePoint.floor(), 500);
       newCircle.applyMatrix = false;
-      var randomCircle = [];
-
-      for(var i = 0; i < newCircle.segments.length; i++) {
-        randomCircle.push(Math.floor(Math.random() * 250));
-      }
-
-      newCircle.fillColor = letters[15].color;
+      newCircle.fillColor = 'rgb(255, 255, 255)'; <!-- default color -->
 
       for(var i = 0; i < letters.length; i++) {
         if(letters[i].key === event.key) {
           newCircle.fillColor = letters[i].color;
+
+          var newSound = new Howl({
+            src: letters[i].sound
+          })
+
+          newSound.play();
+        }
+      }
+
+      for(var i = 0; i < newCircle.segments.length; i++) {
+        var randomCoordinates = Math.floor(Math.random() * 250);
+
+        if(newCircle.segments[i] % 2 === 0) {
+          newCircle.segments[i].point += randomCoordinates;
+        } else {
+          newCircle.segments[i].point -= randomCoordinates;
         }
       }
 
       var circleTween = newCircle.tweenTo({
         'scaling.length': 0.01,
-        'fillColor.hue': '+= 60',
-        'segments[0].point': '+= ' + randomCircle[0],
-        'segments[1].point': '+= ' + randomCircle[1],
-        'segments[2].point': '+= ' + randomCircle[2],
-        'segments[3].point': '+= ' + randomCircle[3],
-        'handleBounds.top': '(new Point.random()* 100).floor()'
+        'fillColor.hue': '+= 60'
       }, {
-        duration: 500,
+        duration: transitionDuration,
         easing: 'easeInOutQuad'
       });
 
-      setTimeout(function() {
+      window.setTimeout(function() {
         newCircle.remove();
-      }, 500);
+      }, transitionDuration);
     }
   </script>
 </head>
-<body style="background: #313131; overflow: hidden;">
-  <canvas style="width: 100vw; height: 100vh;" id="paperCanvas"></canvas>
+<body style="width: 100%; height: 100%; background: #313131; margin: 0;">
+  <canvas style="width: 100%; height: 100%;" id="paperCanvas"></canvas>
 </body>
 </html>
