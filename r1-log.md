@@ -211,3 +211,6 @@
 **Today's Progress**: Finished Patatap Clone project! Started watching the codealong videos from Udemy for it.
 
 **Thoughts**: I feel good about completing this entirely on my own without needing the guidance of the Udemy videos. I also adjusted the project just a tad to have a slightly randomly shaped blob appear each time you press a key instead of just a circle. It'll still be helpful to watch through them to see any areas I could simplify my code a bit. Also, I tackled a small paper.js exercise that I remember not being able to do last time I attempted to learn JS. Feeling optimistic.
+
+
+## TEST
