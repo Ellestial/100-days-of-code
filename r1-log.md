@@ -213,4 +213,15 @@
 **Thoughts**: I feel good about completing this entirely on my own without needing the guidance of the Udemy videos. I also adjusted the project just a tad to have a slightly randomly shaped blob appear each time you press a key instead of just a circle. It'll still be helpful to watch through them to see any areas I could simplify my code a bit. Also, I tackled a small paper.js exercise that I remember not being able to do last time I attempted to learn JS. Feeling optimistic.
 
 
-## TEST
+## Day 27: March 31, 2019
+
+**Today's Progress**: Finished watching the Udemy code-along videos on the Patatap Clone project.
+
+**Thoughts**: I learned a couple things that I applied to my own project file. A couple things I learned: 
+ * When using a loop inside of a loop to indicate x and y coordinates, Colt named the local variables x and y instead of i and j. This is helpful to be more specific even when just naming looping variables.
+ * Instead of using vanilla JS to grab max width/height, paper.js has a built in property by using view.size.width and view.size.height.
+ * When referencing objects, make sure to use bracket notation if you want the code in the brackets to run before applying it to the object. For example, letters[event.key] will run letters[f] (or whatever key is pressed), while letters.event.key returns undefined.
+ * I didn't need to create an array of objects in the JSON file. Instead, I adjusted it so it was one large object with all the keys defined as properties, while each of their values were another object containing the color and sound.
+ * Add an if statement to only run the code for keys that are defined in the letters object.
+
+ However, Colt used an array to track everything and run the code, but I am able to do so without it. I found using an array an extra task that isn't necessary, but I wonder if I'm just not understanding the importance of the array. I read in the Udemy Q&A section that the onFrame() method has to be defined at the global level, which may have influenced the need for an array. However, I discovered there is an item.onFrame() method that works properly the way I need it. I therefore did not adjust my code to use an array. Maybe I'll revisit this in a couple months when I get more experience to better decide if my choices were adequate.

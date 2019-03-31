@@ -9,36 +9,46 @@
   <script type="text/javascript" src="lib/paperjs-v0.12.0/dist/paper-full.min.js"></script>
   <script src="main.json"></script>
   <script type="text/paperscript" canvas="paperCanvas" resize="true">
-    var screenWidth = document.querySelector('canvas').offsetWidth;
-    var screenHeight = document.querySelector('canvas').offsetHeight;
-    var transitionDuration = 500;
+    // var screenWidth = document.querySelector('canvas').offsetWidth;
+    // var screenHeight = document.querySelector('canvas').offsetHeight; // removed based on codealong because of easier paper.js method. also moved within onKeyDown() function to make responsive
+    // var transitionDuration = 500; can remove now that I'm not using tween and instead using item.onFrame()
 
-    for(var i = 0; i <= 1000; i += 100) {
-
-      for(var j = 0; j <= 1000; j += 100) {
-        var testCircle = new Path.Circle(new Point(0, 0), 10);
-        testCircle.fillColor = 'red';
-        testCircle.position = new Point(i, j);
-      }
-    }
+    // for(var i = 0; i <= 1000; i += 100) {
+    //
+    //  for(var j = 0; j <= 1000; j += 100) {
+    //    var testCircle = new Path.Circle(new Point(i, j), 10);
+    //    testCircle.fillColor = 'red';
+    //  }
+    //}
 
     function onKeyDown(event) {
-      var circlePoint = new Point(screenWidth, screenHeight) * Point.random();
+      if(!letters[event.key]) {
+        return;
+      }
+      var maxPoint = new Point(view.size.width, view.size.height); <!-- added based on codealong -->
+      var circlePoint = maxPoint * Point.random();
       var newCircle = new Path.Circle(circlePoint.floor(), 500);
-      newCircle.applyMatrix = false;
+      // newCircle.applyMatrix = false; able to remove this now that I use the onFrame() function that allows newCircle.scale() to work
       newCircle.fillColor = 'rgb(255, 255, 255)'; <!-- default color -->
 
-      for(var i = 0; i < letters.length; i++) {
-        if(letters[i].key === event.key) {
-          newCircle.fillColor = letters[i].color;
+      // removing for loop as a way to target currently pressed letter and applying styles. had to adjust json file
+      // for(var i = 0; i < letters.length; i++) {
+      //   if(letters[i].key === event.key) {
+      //     newCircle.fillColor = letters[i].color;
+      //
+      //    var newSound = new Howl({
+      //      src: letters[i].sound
+      //    })
+      //
+      //     newSound.play();
+      //   }
+      // }
 
-          var newSound = new Howl({
-            src: letters[i].sound
-          })
-
-          newSound.play();
-        }
-      }
+      // adding block below based on Udemy codealong as a quicker/easier way to adjust attributes
+      newCircle.fillColor = letters[event.key].color;
+      new Howl({
+        src: letters[event.key].sound
+      }).play();
 
       for(var i = 0; i < newCircle.segments.length; i++) {
         var randomCoordinates = Math.floor(Math.random() * 250);
@@ -50,17 +60,29 @@
         }
       }
 
-      var circleTween = newCircle.tweenTo({
-        'scaling.length': 0.01,
-        'fillColor.hue': '+= 60'
-      }, {
-        duration: transitionDuration,
-        easing: 'easeInOutQuad'
-      });
+      // removing tween as a way to change the size/color because then it relies on the transitionDuration
+      // variable to remove and because I cannot run newCircle.scale()
+      // var circleTween = newCircle.tweenTo({
+      //   'scaling.length': 0.01,
+      //   'fillColor.hue': '+= 60'
+      // }, {
+      //   duration: transitionDuration,
+      //   easing: 'easeInOutQuad'
+      // });
+      //
+      // window.setTimeout(function() {
+      //   newCircle.remove();
+      // }, transitionDuration);
 
-      window.setTimeout(function() {
-        newCircle.remove();
-      }, transitionDuration);
+      // adding item.onFrame() function to adjust sizing and hue
+      newCircle.onFrame = function(e) {
+        this.scale(0.88);
+        this.fillColor.hue += 1;
+
+        if(newCircle.area < 1) {
+          this.remove();
+        }
+      }
     }
   </script>
 </head>

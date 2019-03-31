@@ -1,132 +1,106 @@
-var letters = [
-    {
-        key: 'a',
+var letters = {
+    a: {
         color: 'rgb(252, 240, 56)',
         sound: 'sounds/bubbles.mp3'
     },
-    {
-        key: 'b',
+    b: {
         color: 'rgb(175, 241, 44)',
         sound: 'sounds/clay.mp3'
     },
-    {
-        key: 'c',
+    c: {
         color: 'rgb(22, 182, 138)',
         sound: 'sounds/confetti.mp3'
     },
-    {
-        key: 'd',
+    d: {
         color: 'rgb(122, 56, 3)',
         sound: 'sounds/corona.mp3'
     },
-    {
-        key: 'e',
+    e: {
         color: 'rgb(89, 121, 252)',
         sound: 'sounds/dotted-spiral.mp3'
     },
-    {
-        key: 'f',
+    f: {
         color: 'rgb(103, 226, 82)',
         sound: 'sounds/flash-1.mp3'
     },
-    {
-        key: 'g',
+    g: {
         color: 'rgb(103, 226, 82)',
         sound: 'sounds/flash-2.mp3'
     },
-    {
-        key: 'h',
+    h: {
         color: 'rgb(151, 113, 110)',
         sound: 'sounds/flash-3.mp3'
     },
-    {
-        key: 'i',
+    i: {
         color: 'rgb(16, 125, 233)',
         sound: 'sounds/glimmer.mp3'
     },
-    {
-        key: 'j',
+    j: {
         color: 'rgb(27, 10, 235)',
         sound: 'sounds/moon.mp3'
     },
-    {
-        key: 'k',
+    k: {
         color: 'rgb(241, 167, 111)',
         sound: 'sounds/pinwheel.mp3'
     },
-    {
-        key: 'l',
+    l: {
         color: 'rgb(43, 142, 92)',
         sound: 'sounds/piston-1.mp3'
     },
-    {
-        key: 'm',
+    m: {
         color: 'rgb(75, 144, 114)',
         sound: 'sounds/piston-2.mp3'
     },
-    {
-        key: 'n',
+    n: {
         color: 'rgb(97, 229, 33)',
         sound: 'sounds/piston-3.mp3'
     },
-    {
-        key: 'o',
+    o: {
         color: 'rgb(36, 77, 90)',
         sound: 'sounds/prism-1.mp3'
     },
-    {
-        key: 'p',
+    p: {
         color: 'rgb(202, 208, 157)',
         sound: 'sounds/prism-2.mp3'
     },
-    {
-        key: 'q',
+    q: {
         color: 'rgb(158, 148, 11)',
         sound: 'sounds/prism-3.mp3'
     },
-    {
-        key: 'r',
+    r: {
         color: 'rgb(24, 18, 38)',
         sound: 'sounds/splits.mp3'
     },
-    {
-        key: 's',
+    s: {
         color: 'rgb(138, 39, 149)',
         sound: 'sounds/squiggle.mp3'
     },
-    {
-        key: 't',
+    t: {
         color: 'rgb(163, 201, 152)',
         sound: 'sounds/strike.mp3'
     },
-    {
-        key: 'u',
+    u: {
         color: 'rgb(183, 35, 196)',
         sound: 'sounds/suspension.mp3'
     },
-    {
-        key: 'v',
+    v: {
         color: 'rgb(47, 76, 207)',
         sound: 'sounds/timer.mp3'
     },
-    {
-        key: 'w',
+    w: {
         color: 'rgb(128, 234, 129)',
         sound: 'sounds/ufo.mp3'
     },
-    {
-        key: 'x',
+    x: {
         color: 'rgb(53, 5, 164)',
         sound: 'sounds/veil.mp3'
     },
-    {
-        key: 'y',
+    y: {
         color: 'rgb(91, 167, 197)',
         sound: 'sounds/wipe.mp3'
     },
-    {
-        key: 'z',
+    z: {
         color: 'rgb(237, 106, 201)',
         sound: 'sounds/zig-zag.mp3'
     }
-]
+}
