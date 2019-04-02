@@ -225,3 +225,10 @@
  * Add an if statement to only run the code for keys that are defined in the letters object.
 
  However, Colt used an array to track everything and run the code, but I am able to do so without it. I found using an array an extra task that isn't necessary, but I wonder if I'm just not understanding the importance of the array. I read in the Udemy Q&A section that the onFrame() method has to be defined at the global level, which may have influenced the need for an array. However, I discovered there is an item.onFrame() method that works properly the way I need it. I therefore did not adjust my code to use an array. Maybe I'll revisit this in a couple months when I get more experience to better decide if my choices were adequate.
+
+
+ ## Day 28: April 1, 2019
+
+ **Today's Progress**: Went through 8 algorithm challenges on FreeCodeCamp.
+
+ **Thoughts**: I was hoping to get more done, but one of the challenges confused me a bit. I came up with a working solution for Truncate a String, which is an algorithm scripting challenge to add an ellipsis at a given point in a string based on a number. But the way the site suggests doing it considers the ellipses as 3 characters only if adding ellipses after 3 or less characters. I'm rather tired this evening, so I'll revisit this tomorrow.
