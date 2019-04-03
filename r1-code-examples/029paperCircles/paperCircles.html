@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html style="width: 100%; height: 100%; margin: 0;">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Patatap Clone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="lib/paper-full.min.js"></script>
+  <script type="text/paperscript" canvas="paperCanvas" resize="true">
+    // create basic circles and get their path information
+    // create a circle that moves around on mouse move
+    // checks each item to see if it is within 100 px of mouse movement circle
+    // if item is within 100 px, add new segment to on mouse move circle exactly halfway between dragged circle and one it's close to
+    // add new segment to background circle exactly halfway between dragged circle and one it's close to
+    // if item moves further away, remove new segment
+
+    var circleArr = [];
+    for(var x = 100; x < 1000; x += 200) {
+        for(var y = 100; y < 1000; y += 200) {
+            var createdCircle = new Path.Circle(new Point(x, y), 40);
+            createdCircle.fillColor = '#313131';
+            createdCircle.flatten(2);
+            createdCircle.smooth();
+            circleArr.push(createdCircle);
+        }
+    }
+    console.log(circleArr);
+
+    var newCircle = new Path.Circle(new Point(0, 0), 60);
+    newCircle.fillColor = 'red';
+
+    tool.minDistance = 5;
+
+    console.log(circleArr[1]);
+
+    function onMouseMove(e) {
+        newCircle.position = e.point;
+        console.log(newCircle);
+    };
+  </script>
+</head>
+<body style="width: 100%; height: 100%; background: #f3f3f3; margin: 0;">
+  <canvas style="width: 100%; height: 100%;" id="paperCanvas"></canvas>
+</body>
+</html>

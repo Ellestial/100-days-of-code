@@ -232,3 +232,10 @@
  **Today's Progress**: Went through 8 algorithm challenges on FreeCodeCamp.
 
  **Thoughts**: I was hoping to get more done, but one of the challenges confused me a bit. I came up with a working solution for Truncate a String, which is an algorithm scripting challenge to add an ellipsis at a given point in a string based on a number. But the way the site suggests doing it considers the ellipses as 3 characters only if adding ellipses after 3 or less characters. I'm rather tired this evening, so I'll revisit this tomorrow.
+
+
+ ## Day 29: April 2, 2019
+
+ **Today's Progress**: Decided on a whim to try and replicate a paper.js project I found on their site. 
+ 
+ **Thoughts**: I'm trying to do it without looking at the source code at all to better play around with what the library has to offer. Figured this would be a cool way to practice learning a library. It will most likely take me a few days.
