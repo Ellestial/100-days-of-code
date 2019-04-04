@@ -239,3 +239,10 @@
  **Today's Progress**: Decided on a whim to try and replicate a paper.js project I found on their site. 
  
  **Thoughts**: I'm trying to do it without looking at the source code at all to better play around with what the library has to offer. Figured this would be a cool way to practice learning a library. It will most likely take me a few days.
+
+
+ ## Day 30: April 3, 2019
+
+ **Today's Progress**: Continued work on my paper.js project.
+
+ **Thoughts**: I didn't really get anywhere today. Ah, well, this happens.

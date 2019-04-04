@@ -14,28 +14,36 @@
     // add new segment to background circle exactly halfway between dragged circle and one it's close to
     // if item moves further away, remove new segment
 
-    var circleArr = [];
+    var circleGroup = new Group([]);
     for(var x = 100; x < 1000; x += 200) {
         for(var y = 100; y < 1000; y += 200) {
-            var createdCircle = new Path.Circle(new Point(x, y), 40);
-            createdCircle.fillColor = '#313131';
-            createdCircle.flatten(2);
-            createdCircle.smooth();
-            circleArr.push(createdCircle);
+            var newCircle = new Path.Circle(new Point(x, y), 40);
+            newCircle.fillColor = '#313131';
+            circleGroup.addChild(newCircle);
         }
     }
-    console.log(circleArr);
+
+    var circleCenters = [];
+    for(var i = 0; i < circleGroup.children.length; i++) {
+      circleCenters.push(circleGroup.children[i].position);
+    }
 
     var newCircle = new Path.Circle(new Point(0, 0), 60);
     newCircle.fillColor = 'red';
+    newCircle.insertSegments(2, [new Point(0, 100)]);
 
     tool.minDistance = 5;
 
-    console.log(circleArr[1]);
-
     function onMouseMove(e) {
-        newCircle.position = e.point;
-        console.log(newCircle);
+      newCircle.position = e.point;
+
+      for(var i = 0; i < circleCenters.length; i++) {
+
+        if(circleCenters[i] > (e.point - 60) && circleCenters[i] < (e.point + 60)) {
+          console.log(circleCenters[i], e.point - 60);
+          circleGroup.children[i].fillColor = 'blue';
+        }
+      }
     };
   </script>
 </head>
