@@ -246,3 +246,10 @@
  **Today's Progress**: Continued work on my paper.js project.
 
  **Thoughts**: I didn't really get anywhere today. Ah, well, this happens.
+
+
+ ## Day 31: April 4, 2019
+
+ **Today's Progress**: Gave up on previous paper.js project and started a different one.
+
+ **Thoughts**: Trying to create a line that I can manipulate/move around on mouseover. Struggling a lot with this today.
