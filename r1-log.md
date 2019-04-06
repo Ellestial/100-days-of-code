@@ -253,3 +253,10 @@
  **Today's Progress**: Gave up on previous paper.js project and started a different one.
 
  **Thoughts**: Trying to create a line that I can manipulate/move around on mouseover. Struggling a lot with this today.
+
+
+ ## Day 32: April 5, 2019
+
+ **Today's Progress**: Gave up on the paper.js projects and looked at the source code for the manipulated line. Started JavaScript 30 challenges.
+
+ **Thoughts**: I have felt very dissuaded these last few days with my failures. I figure I'm not knowledgeable enough to explore an entire complex library yet, so I'm starting Wes Bos's JavaScript 30 challenge where I will complete 30 different projects strictly with vanilla JS.
