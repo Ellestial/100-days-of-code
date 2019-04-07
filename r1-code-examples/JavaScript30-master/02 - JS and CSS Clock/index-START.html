@@ -69,11 +69,12 @@
   </style>
 
   <script>
+    var currentTime = new Date();
+    var secondHand = document.querySelector('.second-hand');
+    var minuteHand = document.querySelector('.min-hand');
+    var hourHand = document.querySelector('.hour-hand');
+
     window.setInterval(function() {
-      var currentTime = new Date();
-      var secondHand = document.querySelector('.second-hand');
-      var minuteHand = document.querySelector('.min-hand');
-      var hourHand = document.querySelector('.hour-hand');
       
       secondHand.style.transform = 'rotate(' + currentTime.getSeconds() * 6 + 'deg)';
       minuteHand.style.transform = 'rotate(' + currentTime.getMinutes() * 6 + 'deg)';
