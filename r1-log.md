@@ -260,3 +260,10 @@
  **Today's Progress**: Gave up on the paper.js projects and looked at the source code for the manipulated line. Started JavaScript 30 challenges.
 
  **Thoughts**: I have felt very dissuaded these last few days with my failures. I figure I'm not knowledgeable enough to explore an entire complex library yet, so I'm starting Wes Bos's JavaScript 30 challenge where I will complete 30 different projects strictly with vanilla JS.
+
+
+ ## Day 33: April 6, 2019
+
+ **Today's Progress**: Completed JavaScript 30 - Day 1 and almost finished Day 2
+
+ **Thoughts**: It was hard for me to focus today, but I was able to get a decent amount done. I'm happy to be going through these projects and hope to finish all of them in less than 30 days.
