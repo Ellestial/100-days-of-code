@@ -22,6 +22,11 @@
 
   <style>
 
+    :root {
+      --base: #ffc600;
+      --spacing: 10px;
+      --blur: 5px;
+    }
     /*
       misc styles, nothing to do with CSS variables
     */
@@ -39,12 +44,49 @@
       margin-bottom: 50px;
     }
 
+    img {
+      border: var(--spacing) solid var(--base);
+      filter: blur(var(--blur));
+    }
+
+    .hl {
+      color: var(--base);
+    }
+
     input {
       width: 100px;
     }
   </style>
 
   <script>
+ /*    const spacingInput = document.querySelector('#spacing');
+    const blurInput = document.querySelector('#blur');
+    const baseInput = document.querySelector('#base');
+
+    spacingInput.addEventListener('change', function(e) {
+      document.documentElement.style.setProperty('--spacing', e.target.value + 'px');
+    });
+
+    blurInput.addEventListener('change', function(e) {
+      document.documentElement.style.setProperty('--blur', e.target.value + 'px');
+    });
+
+    baseInput.addEventListener('change', function(e) {
+      document.documentElement.style.setProperty('--base', e.target.value);
+    }); */
+
+    const inputs = document.querySelectorAll('input');
+
+    function changeVars() {
+      var suffix = this.dataset.sizing || '';
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+    }
+
+    for(var i = 0; i < inputs.length; i++) {
+      inputs[i].addEventListener('change', changeVars);
+      inputs[i].addEventListener('mousemove', changeVars);
+    }
+
   </script>
 
 </body>

@@ -267,3 +267,14 @@
  **Today's Progress**: Completed JavaScript 30 - Day 1 and almost finished Day 2
 
  **Thoughts**: It was hard for me to focus today, but I was able to get a decent amount done. I'm happy to be going through these projects and hope to finish all of them in less than 30 days.
+
+
+ ## Day 34: April 7, 2019
+
+ **Today's Progress**: Completed JavaScript 30 - Days 2 and 3.
+
+**Thoughts**: I didn't have issues with these, but I did learn a few things. Some key takeaways:
+  * NodeList vs array = array has a full list of functions and methods. NodeList does not. forEach() is now supported in NodeList
+  * For dragging input types, can add event listener for 'change' AND 'mousemove'
+  * For any custom-made data attributes, you can access them via this.dataset to see full list
+  * If you are adding a variable only if said variable exists, can do something like: var suffix = this.dataset.sizing || '';

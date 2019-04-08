@@ -57,29 +57,42 @@
     }
 
     .hand {
-      width: 50%;
-      height: 6px;
+      width: 6px;
+      height: 50%;
       background: black;
       position: absolute;
-      top: 50%;
-      transform-origin: right;
-      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      left: 50%;
+      transform-origin: bottom;
+      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.475);
     }
 
   </style>
 
   <script>
-    var currentTime = new Date();
     var secondHand = document.querySelector('.second-hand');
     var minuteHand = document.querySelector('.min-hand');
     var hourHand = document.querySelector('.hour-hand');
 
-    window.setInterval(function() {
-      
-      secondHand.style.transform = 'rotate(' + currentTime.getSeconds() * 6 + 'deg)';
-      minuteHand.style.transform = 'rotate(' + currentTime.getMinutes() * 6 + 'deg)';
-      hourHand.style.transform = 'rotate(' + currentTime.getHours() * 6 + 'deg)';
-    }, 1000);
+    function transformHand(hand, handTime, duration) {
+      hand.style.transform = 'rotate(' + handTime * (360 / duration) + 'deg)';
+
+      if(handTime === 0) {
+        hand.style.transition = 'none';
+      } else if(handTime === 1) {
+        hand.style.transition = 'transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.475)';
+      }
+    }
+
+    function setTime() {
+      var currentTime = new Date();
+      transformHand(secondHand, currentTime.getSeconds(), 60);
+      transformHand(minuteHand, currentTime.getMinutes(), 60);
+      transformHand(hourHand, currentTime.getHours(), 12);
+    }
+
+    setTime();
+
+    window.setInterval(setTime, 1000);
 
   </script>
 </body>
