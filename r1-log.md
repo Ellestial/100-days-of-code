@@ -288,3 +288,14 @@
   * Can log console.table() instead of console.log() to more easily see results
   * Can easily use ternary operator for sort method
   * You can call querySelector on any existing DOM element. Doesn't have to just be document
+
+
+ ## Day 36: April 9, 2019
+
+ **Today's Progress**: Completed JavaScript 30 - Days 5 and 7.
+
+ **Thoughts**: Day 5 was really simple for me since it was primarily via flexbox/CSS. Day 7 was another array challenge that was a good refresher. I skipped day 6 for now since it revolves around AJAX, and I haven't really familiarized myself with that yet.
+
+ A few things I learned from today:
+  * If using transitionend event listener on elements that have multiple transitioned elements, make sure to target when you want the transitionend to fire by doing if(e.propertyName.includes('flex'))
+  * Array errors return -1 usually because they take an item's length - 1 in order to be able to grab the first index of an array if needed, so if that length is 0 then all that is left is the -1. Mind blown. Been wondering about this. 
