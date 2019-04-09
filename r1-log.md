@@ -277,4 +277,14 @@
   * NodeList vs array = array has a full list of functions and methods. NodeList does not. forEach() is now supported in NodeList
   * For dragging input types, can add event listener for 'change' AND 'mousemove'
   * For any custom-made data attributes, you can access them via this.dataset to see full list
-  * If you are adding a variable only if said variable exists, can do something like: var suffix = this.dataset.sizing || '';
+  * If you are adding a variable only if said variable exists, can do something like: var suffix = this.dataset.sizing || ''
+
+
+ ## Day 35: April 8, 2019
+
+ **Today's Progress**: Completed JavaScript 30 - Day 4.
+
+ **Thoughts**: Took longer than I had anticipated, but this was an array challenge that required me to get refreshed on some array methods like reduce. Learned a couple things:
+  * Can log console.table() instead of console.log() to more easily see results
+  * Can easily use ternary operator for sort method
+  * You can call querySelector on any existing DOM element. Doesn't have to just be document
