@@ -299,3 +299,10 @@
  A few things I learned from today:
   * If using transitionend event listener on elements that have multiple transitioned elements, make sure to target when you want the transitionend to fire by doing if(e.propertyName.includes('flex'))
   * Array errors return -1 usually because they take an item's length - 1 in order to be able to grab the first index of an array if needed, so if that length is 0 then all that is left is the -1. Mind blown. Been wondering about this. 
+
+
+  ## Day 37: April 10, 2019
+
+  **Today's Progress**: Began Javascript 30 - Day 8.
+
+  **Thoughts**: I don't remember doing this lesson a year or so ago when I first started the JavaScript 30 challenge. I therefore don't remember anything about canvas, so I spent today familiarizing myself with some pieces. I got the project to create a line that changes color and width when you click and move the mouse...but the color and stroke width change for the entire line instead of just for the parts it should affect.

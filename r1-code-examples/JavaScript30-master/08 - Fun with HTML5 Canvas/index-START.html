@@ -6,14 +6,81 @@
 </head>
 <body>
 <canvas id="draw" width="800" height="800"></canvas>
-<script>
-</script>
 
 <style>
   html, body {
+    width: 100%;
+    height: calc(100% - 2px);
     margin: 0;
+    box-sizing: border-box;
+    line-height: 100%;
+  }
+
+  html {
+    background-color: #313131;
   }
 </style>
 
+<script>
+    var canvas = document.querySelector('#draw');
+    var drawing = false;
+    var strokeColor;
+    var r = 0;
+    var g = 0;
+    var b = 0;
+
+    function sizeCanvas() {
+      canvas.width = document.body.offsetWidth;
+      canvas.height = document.body.offsetHeight;
+    }
+
+    function changeColor() {
+      if(r < 255) {
+        r += 1;
+      } else if(g < 255) {
+        g += 1;
+      } else if(b < 255) {
+        b += 1;
+      };
+
+      return strokeColor = `rgb(${r}, ${g}, ${b})`;
+    }
+
+    function startPath(e) {
+      console.log('start');
+      ctx.beginPath();
+      ctx.moveTo(e.offsetX, e.offsetY);
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      drawing = true;
+    }
+
+    function drawPath(e) {
+      if(drawing) {
+        console.log(e);
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.strokeStyle = changeColor();
+        ctx.stroke();
+        ctx.lineWidth =  e.movementX - e.movementY;
+      }
+    }
+
+    function endPath(e) {
+      console.log('end');
+      ctx.closePath(e.offsetX, e.offsetY);
+      drawing = false;
+    }
+
+    if(canvas.getContext) {
+      var ctx = canvas.getContext('2d');
+      sizeCanvas();
+
+      canvas.addEventListener('mousedown', startPath);
+      canvas.addEventListener('mousemove', drawPath);
+      canvas.addEventListener('mouseup', endPath);
+    }
+
+    window.onresize = sizeCanvas;
+  </script>
 </body>
 </html>
