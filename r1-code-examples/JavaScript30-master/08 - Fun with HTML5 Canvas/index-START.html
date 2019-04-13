@@ -23,11 +23,13 @@
 
 <script>
     var canvas = document.querySelector('#draw');
+    var ctx = canvas.getContext('2d');
+
     var drawing = false;
-    var strokeColor;
-    var r = 0;
-    var g = 0;
-    var b = 0;
+    var hue = 0;
+    var startingX = null;
+    var startingY = null;
+    var timestamp = null;
 
     function sizeCanvas() {
       canvas.width = document.body.offsetWidth;
@@ -35,52 +37,56 @@
     }
 
     function changeColor() {
-      if(r < 255) {
-        r += 1;
-      } else if(g < 255) {
-        g += 1;
-      } else if(b < 255) {
-        b += 1;
-      };
+      if(hue < 360) {
+        hue += 1;
+      } else if(hue === 360) {
+        hue = 0;
+      }
 
-      return strokeColor = `rgb(${r}, ${g}, ${b})`;
+      return `hsl(${hue}, 100%, 50%)`;
     }
 
     function startPath(e) {
-      console.log('start');
-      ctx.beginPath();
-      ctx.moveTo(e.offsetX, e.offsetY);
-      ctx.lineCap = 'round';
-      ctx.lineJoin = 'round';
+      startingX = e.offsetX;
+      startingY = e.offsetY;
       drawing = true;
     }
 
     function drawPath(e) {
-      if(drawing) {
-        console.log(e);
-        ctx.lineTo(e.offsetX, e.offsetY);
-        ctx.strokeStyle = changeColor();
-        ctx.stroke();
-        ctx.lineWidth =  e.movementX - e.movementY;
+      if(!drawing) {
+        return;
       }
+
+      var currentX = e.offsetX;
+      var currentY = e.offsetY;
+      var speed = Math.abs((currentX - startingX) + (currentY - startingY));
+
+      ctx.beginPath();
+      ctx.moveTo(startingX, startingY);
+      ctx.lineTo(currentX, currentY);
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.strokeStyle = changeColor();
+      ctx.stroke();
+      ctx.lineWidth = speed + 5;
+
+      startingX = currentX;
+      startingY = currentY;
     }
 
     function endPath(e) {
-      console.log('end');
-      ctx.closePath(e.offsetX, e.offsetY);
+      startingX = e.offsetX;
+      startingY = e.offsetY;
+      ctx.closePath(startingX, startingY);
       drawing = false;
     }
 
-    if(canvas.getContext) {
-      var ctx = canvas.getContext('2d');
-      sizeCanvas();
-
-      canvas.addEventListener('mousedown', startPath);
-      canvas.addEventListener('mousemove', drawPath);
-      canvas.addEventListener('mouseup', endPath);
-    }
-
+    sizeCanvas();
     window.onresize = sizeCanvas;
+
+    canvas.addEventListener('mousedown', startPath);
+    canvas.addEventListener('mousemove', drawPath);
+    canvas.addEventListener('mouseup', endPath);
   </script>
 </body>
 </html>

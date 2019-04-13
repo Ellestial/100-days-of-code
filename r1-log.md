@@ -224,54 +224,54 @@
  * I didn't need to create an array of objects in the JSON file. Instead, I adjusted it so it was one large object with all the keys defined as properties, while each of their values were another object containing the color and sound.
  * Add an if statement to only run the code for keys that are defined in the letters object.
 
- However, Colt used an array to track everything and run the code, but I am able to do so without it. I found using an array an extra task that isn't necessary, but I wonder if I'm just not understanding the importance of the array. I read in the Udemy Q&A section that the onFrame() method has to be defined at the global level, which may have influenced the need for an array. However, I discovered there is an item.onFrame() method that works properly the way I need it. I therefore did not adjust my code to use an array. Maybe I'll revisit this in a couple months when I get more experience to better decide if my choices were adequate.
+However, Colt used an array to track everything and run the code, but I am able to do so without it. I found using an array an extra task that isn't necessary, but I wonder if I'm just not understanding the importance of the array. I read in the Udemy Q&A section that the onFrame() method has to be defined at the global level, which may have influenced the need for an array. However, I discovered there is an item.onFrame() method that works properly the way I need it. I therefore did not adjust my code to use an array. Maybe I'll revisit this in a couple months when I get more experience to better decide if my choices were adequate.
 
 
- ## Day 28: April 1, 2019
+## Day 28: April 1, 2019
 
- **Today's Progress**: Went through 8 algorithm challenges on FreeCodeCamp.
+**Today's Progress**: Went through 8 algorithm challenges on FreeCodeCamp.
 
- **Thoughts**: I was hoping to get more done, but one of the challenges confused me a bit. I came up with a working solution for Truncate a String, which is an algorithm scripting challenge to add an ellipsis at a given point in a string based on a number. But the way the site suggests doing it considers the ellipses as 3 characters only if adding ellipses after 3 or less characters. I'm rather tired this evening, so I'll revisit this tomorrow.
-
-
- ## Day 29: April 2, 2019
-
- **Today's Progress**: Decided on a whim to try and replicate a paper.js project I found on their site. 
- 
- **Thoughts**: I'm trying to do it without looking at the source code at all to better play around with what the library has to offer. Figured this would be a cool way to practice learning a library. It will most likely take me a few days.
+**Thoughts**: I was hoping to get more done, but one of the challenges confused me a bit. I came up with a working solution for Truncate a String, which is an algorithm scripting challenge to add an ellipsis at a given point in a string based on a number. But the way the site suggests doing it considers the ellipses as 3 characters only if adding ellipses after 3 or less characters. I'm rather tired this evening, so I'll revisit this tomorrow.
 
 
- ## Day 30: April 3, 2019
+## Day 29: April 2, 2019
 
- **Today's Progress**: Continued work on my paper.js project.
+**Today's Progress**: Decided on a whim to try and replicate a paper.js project I found on their site. 
 
- **Thoughts**: I didn't really get anywhere today. Ah, well, this happens.
-
-
- ## Day 31: April 4, 2019
-
- **Today's Progress**: Gave up on previous paper.js project and started a different one.
-
- **Thoughts**: Trying to create a line that I can manipulate/move around on mouseover. Struggling a lot with this today.
+**Thoughts**: I'm trying to do it without looking at the source code at all to better play around with what the library has to offer. Figured this would be a cool way to practice learning a library. It will most likely take me a few days.
 
 
- ## Day 32: April 5, 2019
+## Day 30: April 3, 2019
 
- **Today's Progress**: Gave up on the paper.js projects and looked at the source code for the manipulated line. Started JavaScript 30 challenges.
+**Today's Progress**: Continued work on my paper.js project.
 
- **Thoughts**: I have felt very dissuaded these last few days with my failures. I figure I'm not knowledgeable enough to explore an entire complex library yet, so I'm starting Wes Bos's JavaScript 30 challenge where I will complete 30 different projects strictly with vanilla JS.
-
-
- ## Day 33: April 6, 2019
-
- **Today's Progress**: Completed JavaScript 30 - Day 1 and almost finished Day 2
-
- **Thoughts**: It was hard for me to focus today, but I was able to get a decent amount done. I'm happy to be going through these projects and hope to finish all of them in less than 30 days.
+**Thoughts**: I didn't really get anywhere today. Ah, well, this happens.
 
 
- ## Day 34: April 7, 2019
+## Day 31: April 4, 2019
 
- **Today's Progress**: Completed JavaScript 30 - Days 2 and 3.
+**Today's Progress**: Gave up on previous paper.js project and started a different one.
+
+**Thoughts**: Trying to create a line that I can manipulate/move around on mouseover. Struggling a lot with this today.
+
+
+## Day 32: April 5, 2019
+
+**Today's Progress**: Gave up on the paper.js projects and looked at the source code for the manipulated line. Started JavaScript 30 challenges.
+
+**Thoughts**: I have felt very dissuaded these last few days with my failures. I figure I'm not knowledgeable enough to explore an entire complex library yet, so I'm starting Wes Bos's JavaScript 30 challenge where I will complete 30 different projects strictly with vanilla JS.
+
+
+## Day 33: April 6, 2019
+
+**Today's Progress**: Completed JavaScript 30 - Day 1 and almost finished Day 2
+
+**Thoughts**: It was hard for me to focus today, but I was able to get a decent amount done. I'm happy to be going through these projects and hope to finish all of them in less than 30 days.
+
+
+## Day 34: April 7, 2019
+
+**Today's Progress**: Completed JavaScript 30 - Days 2 and 3.
 
 **Thoughts**: I didn't have issues with these, but I did learn a few things. Some key takeaways:
   * NodeList vs array = array has a full list of functions and methods. NodeList does not. forEach() is now supported in NodeList
@@ -301,8 +301,28 @@
   * Array errors return -1 usually because they take an item's length - 1 in order to be able to grab the first index of an array if needed, so if that length is 0 then all that is left is the -1. Mind blown. Been wondering about this. 
 
 
-  ## Day 37: April 10, 2019
+## Day 37: April 10, 2019
 
-  **Today's Progress**: Began Javascript 30 - Day 8.
+**Today's Progress**: Began Javascript 30 - Day 8.
 
-  **Thoughts**: I don't remember doing this lesson a year or so ago when I first started the JavaScript 30 challenge. I therefore don't remember anything about canvas, so I spent today familiarizing myself with some pieces. I got the project to create a line that changes color and width when you click and move the mouse...but the color and stroke width change for the entire line instead of just for the parts it should affect.
+**Thoughts**: I don't remember doing this lesson a year or so ago when I first started the JavaScript 30 challenge. I therefore don't remember anything about canvas, so I spent today familiarizing myself with some pieces. I got the project to create a line that changes color and width when you click and move the mouse...but the color and stroke width change for the entire line instead of just for the parts it should affect.
+
+**Project Summary**: Using canvas, make it so when you click and drag the mouse around, a rainbow line follows the cursor with differing thicknesses.
+
+
+## Day 38: April 11, 2019
+
+**Today's Progress**: Completed JavaScript 30 - Day 8.
+
+**Thoughts**: This went much better than I expected. I misinterpreted the challenge, so I actually made something a bit more complex, where the speed you move your mouse determines the thickness of a rainbow line that appears. My biggest issues were:
+ * I originally used rgb to change the color, but that proved incredibly difficult to get a rainbow effect. I then switched to hsl after Wes Bos mentioned it.
+ * I needed to move the ctx.beginPath() and ctx.moveTo(x, y) to within the drawPath() function instead of the startPath() function. Wes Bos actually didn't even mention this, and I had somehow gotten that in a weird place on my own. I was trying some crazy solutions to make it so the entire line didn't change color, such as using a gradient (which didn't work). Fixed!
+
+ 
+ ## Day 39: April 12, 2019
+
+ **Today's Progress**: Watched JavaScript 30 - Day 9 and started Day 10's project.
+
+ **Thoughts**: Day 9 consisted of some developer tools tips, so there was no challenge there. I got extremely tired today for some reason, so I struggled with getting started on Day 10's project. Also, I forgot to push my day 38 notes/code yesterday, so I'm pushing it along with today's.
+
+ **Project Summary**: Allow a user to press a checkbox, hold down shift, press another checkbox, and have all the checkboxes between point A and point B check off.
