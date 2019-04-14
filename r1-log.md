@@ -326,3 +326,14 @@ However, Colt used an array to track everything and run the code, but I am able 
  **Thoughts**: Day 9 consisted of some developer tools tips, so there was no challenge there. I got extremely tired today for some reason, so I struggled with getting started on Day 10's project. Also, I forgot to push my day 38 notes/code yesterday, so I'm pushing it along with today's.
 
  **Project Summary**: Allow a user to press a checkbox, hold down shift, press another checkbox, and have all the checkboxes between point A and point B check off.
+
+
+ ## Day 40: April 13, 2019
+
+ **Today's Progress**: JavaScript 30 - Day 10 project.
+
+ **Thoughts**: I was able to come up with a solution on my own, but it was pretty different/less efficient than Wes Bos's way. However, he did mention this was a more complex challenge, so I still feel pretty good about what I did come up with. I do want to revisit this at some point, because the proper solution is way more simple than mine. Some notes:
+ * Make sure to add a check in the JS to see if the clicked checkbox is getting unchecked, in which case you can ignore it
+  * If(this.checked) { // do }
+ * Keydown and keyup are included in click event listener -- don't need separate listeners for all 3
+* Can use an opposite boolean variable within a forEach() instead of finding the index of each checkbox. Using this method, if the current checkbox within the forEach() is the currently checked checkbox OR the last checked checkbox, the boolean variable called isBetween will be flipped to true/false.

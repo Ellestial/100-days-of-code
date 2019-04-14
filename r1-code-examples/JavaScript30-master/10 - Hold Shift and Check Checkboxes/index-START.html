@@ -97,29 +97,70 @@
 
 <script>
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  let selected = [];
-  let selectedStart;
-  let selectedEnd;
+  let lastCheckbox;
+  let lastCheckboxIndex;
+  let currentCheckbox;
+  let currentCheckboxIndex;
   let selecting = false;
 
+  // function getIndex() {
+  //   checkboxes.forEach(function(checkbox, index) {
+  //     if(checkbox === currentCheckbox) {
+  //       currentCheckboxIndex = index;
+  //     } else if(checkbox === lastCheckbox) {
+  //       lastCheckboxIndex = index;
+  //     }
+  //   });
+  // }
+
+  // function setChecked() {
+  //   checkboxes.forEach(function(checkbox, index) {
+  //     if((index > currentCheckboxIndex && index < lastCheckboxIndex) || (index < currentCheckboxIndex && index > lastCheckboxIndex)) {
+  //       checkbox.checked = true;
+  //     }
+  //   });
+  // }
+
+  // for(var i = 0; i < checkboxes.length; i++) {
+  //   checkboxes[i].addEventListener('click', function(e) {
+  //     currentCheckbox = this;
+  //     if(selecting && lastCheckbox !== undefined) {
+  //       getIndex();
+  //       setChecked();
+  //     }
+  //     lastCheckbox = currentCheckbox;
+  //   });
+
+  //   checkboxes[i].addEventListener('keydown', function(e) {
+  //     if(e.which === 16) {
+  //       selecting = true;
+  //     }
+  //   });
+
+  //   checkboxes[i].addEventListener('keyup', function() {
+  //     selecting = false;
+  //   })
+  // }
+
+
+  var inBetween = false;
   for(var i = 0; i < checkboxes.length; i++) {
     checkboxes[i].addEventListener('click', function(e) {
-      if(selecting) {
-        selectedEnd = this.parentNode;
-      } else if(!selecting) {
-        selectedStart = this.parentNode;
-      }
-    });
+      currentCheckbox = this;
+      if(e.shiftKey && this.checked && lastCheckbox !== undefined) {
+        
+        checkboxes.forEach(function(checkbox, index) {
+          if(checkbox === currentCheckbox || checkbox === lastCheckbox) {
+            inBetween = !inBetween;
+          }
 
-    checkboxes[i].addEventListener('keydown', function(e) {
-      if(e.which === 16) {
-        selecting = true;
+          if(inBetween) {
+            checkbox.checked = true;
+          }
+        });
       }
+      lastCheckbox = currentCheckbox;
     });
-
-    checkboxes[i].addEventListener('keyup', function() {
-      selecting = false;
-    })
   }
 </script>
 </body>
