@@ -334,6 +334,6 @@ However, Colt used an array to track everything and run the code, but I am able 
 
  **Thoughts**: I was able to come up with a solution on my own, but it was pretty different/less efficient than Wes Bos's way. However, he did mention this was a more complex challenge, so I still feel pretty good about what I did come up with. I do want to revisit this at some point, because the proper solution is way more simple than mine. Some notes:
  * Make sure to add a check in the JS to see if the clicked checkbox is getting unchecked, in which case you can ignore it
-  * If(this.checked) { // do }
+   * If(this.checked) { // do }
  * Keydown and keyup are included in click event listener -- don't need separate listeners for all 3
 * Can use an opposite boolean variable within a forEach() instead of finding the index of each checkbox. Using this method, if the current checkbox within the forEach() is the currently checked checkbox OR the last checked checkbox, the boolean variable called isBetween will be flipped to true/false.
