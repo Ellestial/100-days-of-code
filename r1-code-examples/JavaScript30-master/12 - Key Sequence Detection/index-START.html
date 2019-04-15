@@ -7,6 +7,33 @@
 </head>
 <body>
 <script>
+    const konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+
+    // my way:
+    let index = 0;
+    document.addEventListener('keyup', function(e) {
+        if(index === konami.length - 1) {
+            console.log('you won!');
+            cornify_add();
+            index = 0;
+        } else if(e.which === konami[index]) {
+            index++;
+        } else {
+            index = 0;
+        }
+    });
+
+    // wes bos's way:
+    // let pressed = [];
+    // document.addEventListener('keyup', function(e) {
+    //     pressed.push(e.which);
+    //     pressed.splice(-konami.length - 1, pressed.length - konami.length);
+    //     console.log(pressed, konami);
+    //     if(String(pressed) === String(konami)) {
+    //         console.log('you won!');
+    //         cornify_add();
+    //     }
+    // });
 </script>
 </body>
 </html>
