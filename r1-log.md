@@ -337,3 +337,12 @@ However, Colt used an array to track everything and run the code, but I am able 
    * If(this.checked) { // do }
  * Keydown and keyup are included in click event listener -- don't need separate listeners for all 3
 * Can use an opposite boolean variable within a forEach() instead of finding the index of each checkbox. Using this method, if the current checkbox within the forEach() is the currently checked checkbox OR the last checked checkbox, the boolean variable called isBetween will be flipped to true/false.
+
+
+## Day 41: April 14, 2019
+
+**Today's Progress**: JavaScript 30 - Day 11 project (mostly finished).
+
+**Thoughts**: I'm feeling pretty good about this project so far. I was able to make the skipping and sliders pretty flexible in case more sliders/skipping adjustments were added. I'm going to finish up the progress slider tomorrow.
+
+**Project Summary**: Create some custom controls for a video player, including: skipping, volume adjustments, speed adjustments, playing, and progress slider.

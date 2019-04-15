@@ -7,44 +7,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="text/javascript" src="lib/paper-full.min.js"></script>
   <script type="text/paperscript" canvas="paperCanvas" resize="true">
-    // create basic circles and get their path information
-    // create a circle that moves around on mouse move
-    // checks each item to see if it is within 100 px of mouse movement circle
-    // if item is within 100 px, add new segment to on mouse move circle exactly halfway between dragged circle and one it's close to
-    // add new segment to background circle exactly halfway between dragged circle and one it's close to
-    // if item moves further away, remove new segment
+    // determine number of segments
+    // create chain
+    // add event listener to have most recent event follow cursor
+    // other events folow cursor
 
-    var circleGroup = new Group([]);
-    for(var x = 100; x < 1000; x += 200) {
-        for(var y = 100; y < 1000; y += 200) {
-            var newCircle = new Path.Circle(new Point(x, y), 40);
-            newCircle.fillColor = '#313131';
-            circleGroup.addChild(newCircle);
-        }
-    }
+    var numSegments = 20;
+    var segmentLength = 20;
+    var widthSegments = 20;
 
-    var circleCenters = [];
-    for(var i = 0; i < circleGroup.children.length; i++) {
-      circleCenters.push(circleGroup.children[i].position);
-    }
-
-    var newCircle = new Path.Circle(new Point(0, 0), 60);
-    newCircle.fillColor = 'red';
-    newCircle.insertSegments(2, [new Point(0, 100)]);
-
-    tool.minDistance = 5;
-
-    function onMouseMove(e) {
-      newCircle.position = e.point;
-
-      for(var i = 0; i < circleCenters.length; i++) {
-
-        if(circleCenters[i] > (e.point - 60) && circleCenters[i] < (e.point + 60)) {
-          console.log(circleCenters[i], e.point - 60);
-          circleGroup.children[i].fillColor = 'blue';
-        }
-      }
+    var linePath = new Path();
+    linePath.style = {
+      strokeColor: 'blue',
+      strokeWidth: widthSegments,
+      strokeCap: 'round'
     };
+
+    linePath.selected = true;
+
+    for(var i = 0; i < numSegments; i++) {
+      linePath.add(new Point((segmentLength * i) + 200, 300));
+    }
+
+    linePath.smooth();
+
+    function onMouseMove(event) {
+      linePath.firstSegment.point = event.point;
+      for (var i = 0; i < segmentLength - 1; i++) {
+        var segment = linePath.segments[i];
+        var nextSegment = segment.next;
+        var vector = segment.point - nextSegment.point;
+        console.log(vector);
+        vector.length = segmentLength;
+        nextSegment.point = segment.point - vector;
+      }
+      linePath.smooth({ type: 'continuous' });
+    }
   </script>
 </head>
 <body style="width: 100%; height: 100%; background: #f3f3f3; margin: 0;">
