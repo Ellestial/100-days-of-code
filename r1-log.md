@@ -346,3 +346,12 @@ However, Colt used an array to track everything and run the code, but I am able 
 **Thoughts**: I'm feeling pretty good about this project so far. I was able to make the skipping and sliders pretty flexible in case more sliders/skipping adjustments were added. I'm going to finish up the progress slider tomorrow.
 
 **Project Summary**: Create some custom controls for a video player, including: skipping, volume adjustments, speed adjustments, playing, and progress slider.
+
+
+## Day 42: April 15, 2019
+
+**Today's Progress**: JavaScript 30 - Days 12 and 13 (mostly finished).
+
+**Thoughts**: I stayed late at work for an appointment, and I decided to skip day 11's challenge for now. Day 12 went fairly quickly. My solution was not as polished as Wes Bos's, but it worked. Day 13 is really applicable to me, and I probably got around halfway done. I had to google getBoundingClientRect(), which I want to read about more. I'm a bit cautious, because this challenge didn't seem as difficult as other ones.
+
+**Project Summary**: Day 12 involved checking to see if the user pressed the Konami code on their keyboard. If they did, a surprise would appear. Day 13 involved having images animate in on scroll.
