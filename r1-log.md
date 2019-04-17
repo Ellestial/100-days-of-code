@@ -355,3 +355,12 @@ However, Colt used an array to track everything and run the code, but I am able 
 **Thoughts**: I stayed late at work for an appointment, and I decided to skip day 11's challenge for now. Day 12 went fairly quickly. My solution was not as polished as Wes Bos's, but it worked. Day 13 is really applicable to me, and I probably got around halfway done. I had to google getBoundingClientRect(), which I want to read about more. I'm a bit cautious, because this challenge didn't seem as difficult as other ones.
 
 **Project Summary**: Day 12 involved checking to see if the user pressed the Konami code on their keyboard. If they did, a surprise would appear. Day 13 involved having images animate in on scroll.
+
+
+## Day 43: April 16, 2019
+
+**Today's Progress**: You Don't Know JS - Chapter 1 reading and project
+
+**Thoughts**: This was a lot of review, but I spent a surprising amount of time on the project at the end.
+
+**Project Summary**: Create a function to purchase the max number of phones (and up to one accessory each if the total isn't higher than an amount you'd like to pay) you could afford based on your bank account amount and a tax rate.

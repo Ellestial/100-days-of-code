@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const TAX_RATE = 0.08;
+        const PHONE_PRICE = 399.99;
+        const ACCESSORY_PRICE = 14.99;
+        const SPENDING_THRESHOLD = 550;
+        let bankAccountAmount = Number(prompt("How much money do you have in your bank account?"));
+
+        function spendMoney(maxAmount) {
+            while(maxAmount > 0) {
+                let purchase = 0;
+                purchase += PHONE_PRICE;
+                if(calculateTax(purchase) + calculateTax(ACCESSORY_PRICE) < SPENDING_THRESHOLD) {
+                    purchase += ACCESSORY_PRICE;
+                }
+                if(maxAmount > calculateTax(purchase)) {
+                    maxAmount -= calculateTax(purchase);
+                    console.log('Your purchase was ' + formatPrice(calculateTax(purchase)));
+                } else {
+                    break;
+                }
+            }
+            console.log('Your remaining balance is ' + formatPrice(maxAmount));
+        }
+
+        function calculateTax(item) {
+            return (item * TAX_RATE) + item;
+        }
+
+        function formatPrice(amount) {
+            return '$' + amount.toFixed(2);
+        }
+
+        spendMoney(bankAccountAmount);
+    </script>
+</body>
+</html>
