@@ -372,7 +372,7 @@ However, Colt used an array to track everything and run the code, but I am able 
 
 **Thoughts**: Finished up the Day 13 challenge. I watched part of the video, got a tidbit of info that I needed/was previously confused by, and was able to finish the project without help. It required more math than I'm used to, althought not really that much altogether, so I want to get more comfortable with math and JS. Day 14 revolved around how strings, booleans, and numbers can have variable references to other variables stay separate, like the below example:
 ```
-		let age = 100;
+  let age = 100;
   let age2 = age;
   console.log(age, age2); // 100 100
   age =  200;
@@ -380,7 +380,7 @@ However, Colt used an array to track everything and run the code, but I am able 
 ```
 While arrays/objects would update the original, like the below example:
 ```
-		let players = ["Emily", "Lauren", "Jas"];
+  let players = ["Emily", "Lauren", "Jas"];
   let team = players;
   team[1] = "Allie";
   console.log(team, players) // both are ["Emily", "Allie", "Lauren"]
