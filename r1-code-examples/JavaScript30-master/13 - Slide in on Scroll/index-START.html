@@ -43,21 +43,37 @@
   </div>
 
   <script>
+    // my first attempt
+    // const imgs = document.querySelectorAll('img');
+
+    // function checkSlide(e) {
+    //   var browserHeight = window.innerHeight;
+
+    //   imgs.forEach(function(img, i) {
+    //       let currentImg = img.getBoundingClientRect().y;
+    //       if (currentImg < (img.offsetHeight / 2) && currentImg > -(img.offsetHeight / 4)) {
+    //           img.classList.add('active');
+    //       } else {
+    //           img.classList.remove('active');
+    //       }
+    //   });
+    // }
+
+    // my second attempt
     const imgs = document.querySelectorAll('img');
 
-    window.addEventListener('scroll', function(e) {
-        let viewportHeight = window.innerHeight;
-
-        imgs.forEach(function(img, i) {
-            console.log(viewportHeight);
-            let currentImg = img.getBoundingClientRect().y;
-            if (currentImg < (viewportHeight / 2 + 100) && currentImg > (viewportHeight / 2 - 100)) {
-                img.classList.add('active');
-            } else {
-                img.classList.remove('active');
-            }
-        });
-    });
+    function checkSlide(e) {
+      const viewportPosTop = window.scrollY;
+      const viewportPosBottom = window.innerHeight + viewportPosTop;
+      imgs.forEach(function(img, i) {
+          let imgHalfHeight = img.offsetHeight / 2;
+          if (img.offsetTop < viewportPosBottom - (img.offsetHeight / 2) && img.offsetTop > viewportPosTop - (img.offsetHeight / 2)) {
+              img.classList.add('active');
+          } else {
+              img.classList.remove('active');
+          }
+      });
+    }
 
     function debounce(func, wait = 20, immediate = true) {
       var timeout;
@@ -73,6 +89,8 @@
         if (callNow) func.apply(context, args);
       };
     }
+
+    window.addEventListener('scroll', debounce(checkSlide));
   </script>
 
   <style>
