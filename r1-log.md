@@ -364,3 +364,25 @@ However, Colt used an array to track everything and run the code, but I am able 
 **Thoughts**: This was a lot of review, but I spent a surprising amount of time on the project at the end.
 
 **Project Summary**: Create a function to purchase the max number of phones (and up to one accessory each if the total isn't higher than an amount you'd like to pay) you could afford based on your bank account amount and a tax rate.
+
+
+## Day 44: April 17, 2019
+
+**Today's Progress**: JavaScript 30 - Day 13 and Day 14
+
+**Thoughts**: Finished up the Day 13 challenge. I watched part of the video, got a tidbit of info that I needed/was previously confused by, and was able to finish the project without help. It required more math than I'm used to, althought not really that much altogether, so I want to get more comfortable with math and JS. Day 14 revolved around how strings, booleans, and numbers can have variable references to other variables stay separate, like the below example:
+```
+		let age = 100;
+  let age2 = age;
+  console.log(age, age2); // 100 100
+  age =  200;
+  console.log(age, age2); // 200 100
+```
+While arrays/objects would update the original, like the below example:
+```
+		let players = ["Emily", "Lauren", "Jas"];
+  let team = players;
+  team[1] = "Allie";
+  console.log(team, players) // both are ["Emily", "Allie", "Lauren"]
+```
+This is because team itself is not an array, but rather a reference to the array, so updating team[1] passes over to the original. I would like to revisit my notes on this in the future to really hone in this knowledge.
