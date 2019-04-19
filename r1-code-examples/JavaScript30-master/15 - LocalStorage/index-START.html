@@ -30,6 +30,44 @@
   const itemsList = document.querySelector('.plates');
   const items = [];
 
+  localStorage.setItem('items', JSON.stringify(items));
+  const data = JSON.parse(localStorage.getItem('foodItems'));
+
+  function createElements(index, labelValue, checkedValue) {
+    const li = document.createElement('li');
+    const checkbox = document.createElement('input');
+    const label = document.createElement('label');
+
+    itemsList.appendChild(li);
+    li.appendChild(checkbox);
+    li.appendChild(label);
+
+    checkbox.type = 'checkbox';
+    checkbox.checked = checkedValue;
+    checkbox.setAttribute('data-index', index);
+    checkbox.id = 'item' + index;
+
+    label.textContent = labelValue;
+    label.for = 'item' + index;
+  }
+
+  function addItem(e) {
+    const currentIndex = items.length;
+    items.push({
+      index: currentIndex,
+      label: this.querySelector('[type="text"]').value,
+      checked: false
+    });
+    localStorage.setItem('foodItems', JSON.stringify(items));
+    this.querySelector('[type="text"]').value = '';
+  }
+
+  data.forEach(function(arrItem) {
+    createElements(arrItem.index, arrItem.label, arrItem.checked);
+  });
+
+  addItems.addEventListener('submit', addItem);
+
 </script>
 
 

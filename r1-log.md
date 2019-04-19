@@ -386,3 +386,12 @@ While arrays/objects would update the original, like the below example:
   console.log(team, players) // both are ["Emily", "Allie", "Lauren"]
 ```
 This is because team itself is not an array, but rather a reference to the array, so updating team[1] passes over to the original. I would like to revisit my notes on this in the future to really hone in this knowledge.
+
+
+## Day 45: April 18, 2019
+
+**Today's Progress**: Worked on JavaScript 30 - Day 15
+
+**Project Summary**: Work with event delegation and localStorage. Allow the ability to add tapas items to a list along with a checkmark next to each item. Info should be stored in localStorage to see changes on page reload.
+
+**Thoughts**: I was not introduced to localStorage when I worked on learning JavaScript last year, so this is an exciting new feature for me. I watched the intro to the Wes Bos video, but am otherwise trying to solve this challenge on my own before watching the rest of the video. May take another day.
