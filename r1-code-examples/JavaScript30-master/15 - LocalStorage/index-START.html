@@ -29,9 +29,25 @@
   const addItems = document.querySelector('.add-items');
   const itemsList = document.querySelector('.plates');
   const items = [];
+  let data;
 
-  localStorage.setItem('items', JSON.stringify(items));
-  const data = JSON.parse(localStorage.getItem('foodItems'));
+  if(localStorage.foodItems) {
+    retrieveLocalStorage();
+  }
+
+  function setLocalStorage() {
+    localStorage.setItem('foodItems', JSON.stringify(items));
+  }
+
+  function retrieveLocalStorage() {
+    data = JSON.parse(localStorage.getItem('foodItems'));
+    itemsList.innerHTML = '';
+
+    data.forEach(function(arrItem) {
+      items.push(arrItem);
+      createElements(arrItem.index, arrItem.label, arrItem.checked);
+    });
+  }
 
   function createElements(index, labelValue, checkedValue) {
     const li = document.createElement('li');
@@ -51,22 +67,30 @@
     label.for = 'item' + index;
   }
 
-  function addItem(e) {
+  function addItem() {
     const currentIndex = items.length;
     items.push({
       index: currentIndex,
       label: this.querySelector('[type="text"]').value,
       checked: false
     });
-    localStorage.setItem('foodItems', JSON.stringify(items));
-    this.querySelector('[type="text"]').value = '';
+    setLocalStorage();
   }
 
-  data.forEach(function(arrItem) {
-    createElements(arrItem.index, arrItem.label, arrItem.checked);
-  });
+  function toggleCheckbox(e) {
+    let currentLi = e.target.parentNode;
+    let currentCheckbox = currentLi.querySelector('input');
+    if(currentCheckbox.getElementByTagName = 'input') {
+      let currentIndex = currentCheckbox.getAttribute('data-index');
+      currentCheckbox.checked = !currentCheckbox.checked;
+    items[currentIndex].checked = !items[currentIndex].checked;
+    setLocalStorage();
+    }
+  }
 
   addItems.addEventListener('submit', addItem);
+
+  itemsList.addEventListener('click', toggleCheckbox);
 
 </script>
 

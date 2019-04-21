@@ -395,3 +395,14 @@ This is because team itself is not an array, but rather a reference to the array
 **Project Summary**: Work with event delegation and localStorage. Allow the ability to add tapas items to a list along with a checkmark next to each item. Info should be stored in localStorage to see changes on page reload.
 
 **Thoughts**: I was not introduced to localStorage when I worked on learning JavaScript last year, so this is an exciting new feature for me. I watched the intro to the Wes Bos video, but am otherwise trying to solve this challenge on my own before watching the rest of the video. May take another day.
+
+
+--
+**Skipped April 19th to spend some last time with aging family pet.**
+--
+
+## Day 46: April 20, 2019
+
+**Today's Progress**: Worked on JavaScript 30 - Day 15
+
+**Thoughts**: Took me a few minutes to remember what I was doing in this project even though I touched it just two days ago. I finished the challenge successfully, but plan on cleaning up the code a bit tomorrow before watching the code along video. This was a good challenge and success.
