@@ -406,3 +406,20 @@ This is because team itself is not an array, but rather a reference to the array
 **Today's Progress**: Worked on JavaScript 30 - Day 15
 
 **Thoughts**: Took me a few minutes to remember what I was doing in this project even though I touched it just two days ago. I finished the challenge successfully, but plan on cleaning up the code a bit tomorrow before watching the code along video. This was a good challenge and success.
+
+
+## Day 47: April 21, 2019
+
+**Today's Progress**: Watched JavaScript 30 - Day 15 code along
+
+**Thoughts**: My solo attempt was very similar to Wes Bos's result! The biggest notable difference is that he rerenders all the items on the page every time you check/uncheck or add an item, while I just update the individual instance. I took down some notes, though:
+  * e.preventDefault(); is used to prevent page reloading when submit event is fired
+  * Form elements have a .reset() method on them that can be used instead of input.textContent = '';
+  * Good to have a default value for something to loop over so it doesn't break if nothing is pushed through in a function like populatingList/createElements
+    * Ex: function populateList(plates = [], platesList)
+  * Can go to Application tab of console and view the file:// of Local Storage to see key/value pairs and additional information
+  * Can define variables with a logical operator.
+    * Ex: const items = JSON.parse(localStorage.getItem('items')) || [];
+  * Event Delegation: set a listener event on something higher up than what you need (something that will not ever change) and then inside you check to see if it's the thing that you want
+    * Ex: if (!e.target.matches('input')) return; and put any code beneath that you would want to run
+  * Instead of element.getAttribute('data-index'), you can do element.dataset.index

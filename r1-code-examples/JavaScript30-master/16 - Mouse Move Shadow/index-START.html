@@ -35,6 +35,13 @@
   </style>
 
 <script>
+  const hero = document.querySelector('.hero');
+
+  function styleReposition(e) {
+    console.dir(this);
+  }
+
+  hero.addEventListener('mousemove', styleReposition);
 </script>
 </body>
 </html>

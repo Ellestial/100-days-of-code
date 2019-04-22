@@ -28,23 +28,17 @@
 <script>
   const addItems = document.querySelector('.add-items');
   const itemsList = document.querySelector('.plates');
-  const items = [];
-  let data;
-
-  if(localStorage.foodItems) {
-    retrieveLocalStorage();
-  }
+  let items = [];
 
   function setLocalStorage() {
     localStorage.setItem('foodItems', JSON.stringify(items));
   }
 
   function retrieveLocalStorage() {
-    data = JSON.parse(localStorage.getItem('foodItems'));
     itemsList.innerHTML = '';
+    items = JSON.parse(localStorage.getItem('foodItems'));
 
-    data.forEach(function(arrItem) {
-      items.push(arrItem);
+    items.forEach(function(arrItem) {
       createElements(arrItem.index, arrItem.label, arrItem.checked);
     });
   }
@@ -67,14 +61,17 @@
     label.for = 'item' + index;
   }
 
-  function addItem() {
-    const currentIndex = items.length;
+  function addItem(e) {
+    e.preventDefault();
+    const currentArr = items.length;
     items.push({
-      index: currentIndex,
+      index: currentArr,
       label: this.querySelector('[type="text"]').value,
       checked: false
     });
+    createElements(items[currentArr].index, items[currentArr].label, items[currentArr].checked);
     setLocalStorage();
+    this.reset(); // adding this line based on Wes Bos's video
   }
 
   function toggleCheckbox(e) {
@@ -83,13 +80,16 @@
     if(currentCheckbox.getElementByTagName = 'input') {
       let currentIndex = currentCheckbox.getAttribute('data-index');
       currentCheckbox.checked = !currentCheckbox.checked;
-    items[currentIndex].checked = !items[currentIndex].checked;
-    setLocalStorage();
+      items[currentIndex].checked = !items[currentIndex].checked;
+      setLocalStorage();
     }
   }
 
-  addItems.addEventListener('submit', addItem);
+  if(localStorage.foodItems) {
+    retrieveLocalStorage();
+  }
 
+  addItems.addEventListener('submit', addItem);
   itemsList.addEventListener('click', toggleCheckbox);
 
 </script>
