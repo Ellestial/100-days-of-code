@@ -15,11 +15,9 @@
     color: black;
     font-family: sans-serif;
   }
-
   body {
     margin: 0;
   }
-
   .hero {
     min-height: 100vh;
     display: flex;
@@ -27,7 +25,6 @@
     align-items: center;
     color: black;
   }
-
   h1 {
     text-shadow: 10px 10px 0 rgba(0,0,0,1);
     font-size: 100px;
@@ -36,9 +33,36 @@
 
 <script>
   const hero = document.querySelector('.hero');
-
+  const heroText = document.querySelector('.hero h1');
   function styleReposition(e) {
-    console.dir(this);
+    // my first attempt:
+    // let centerPoint = [heroText.offsetLeft + (heroText.clientWidth / 2), heroText.offsetTop + (heroText.clientHeight / 2)];
+    // let cursorPoint = [e.clientX, e.clientY];
+
+    // let shadowX = Math.floor((cursorPoint[0] - centerPoint[0]) / 5);
+    // let shadowY = Math.floor((cursorPoint[1] - centerPoint[1]) / 5);
+
+    // my second attempt:
+    const width = heroText.offsetWidth;
+    const height = heroText.offsetHeight;
+    const walk = 100; // px amount
+    let x = e.offsetX;
+    let y = e.offsetY;
+
+    if(e.target !== this) {
+      x += width;
+      y += height;
+    }
+
+    let shadowX = Math.round(x - (walk / 2));
+    let shadowY = Math.round(y - (walk / 2));
+    
+    heroText.style.textShadow = `
+    ${-shadowX}px ${shadowY}px 0 rgba(255, 0, 0, 1), 
+    ${shadowX}px ${-shadowY}px 0 rgba(0, 255, 0, 1), 
+    ${-shadowX}px ${-shadowY}px 0 rgba(0, 0, 255, 1), 
+    ${shadowX}px ${shadowY}px 0 rgba(0, 0, 0, 1)
+    `;
   }
 
   hero.addEventListener('mousemove', styleReposition);
