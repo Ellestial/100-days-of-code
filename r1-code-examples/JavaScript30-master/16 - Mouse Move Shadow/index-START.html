@@ -50,12 +50,18 @@
     let y = e.offsetY;
 
     if(e.target !== this) {
-      x += width;
-      y += height;
+      x += e.target.offsetLeft;
+      y += e.target.offsetTop;
     }
 
-    let shadowX = Math.round(x - (walk / 2));
-    let shadowY = Math.round(y - (walk / 2));
+    console.log(x, y);
+
+   // 0 - 50
+   // 300 - 100
+   // 300 - 50
+
+    let shadowX = Math.round((x / width + walk) - (walk / 2));
+    let shadowY = Math.round((y / height + walk) - (walk / 2));
     
     heroText.style.textShadow = `
     ${-shadowX}px ${shadowY}px 0 rgba(255, 0, 0, 1), 

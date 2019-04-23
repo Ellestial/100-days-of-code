@@ -423,3 +423,12 @@ This is because team itself is not an array, but rather a reference to the array
   * Event Delegation: set a listener event on something higher up than what you need (something that will not ever change) and then inside you check to see if it's the thing that you want
     * Ex: if (!e.target.matches('input')) return; and put any code beneath that you would want to run
   * Instead of element.getAttribute('data-index'), you can do element.dataset.index
+
+
+## Day 48: April 22, 2019
+
+**Today's Progress**: JavaScript 30 - Day 16 challenge/code along
+
+**Thoughts**: I solved the problem in a way that was slightly different from Wes Bos, but was still successful. I'm trying to replicate his code after watching his video, but am struggling a bit with the math equation. I will take a look tomorrow, though. One note from today's challenge:
+  * You can use e.offsetX and e.offsetY to get the position of your cursor, but if you have nested elements inside of it, you'll need to create an if statement so the offsetX and Y do not reset to 0 once you get to the nested element:
+    * if(this !== e.target) { x += e.target.offsetLeft; y += e.target.offsetTop; }
