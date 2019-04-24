@@ -42,6 +42,13 @@
     // let shadowX = Math.floor((cursorPoint[0] - centerPoint[0]) / 5);
     // let shadowY = Math.floor((cursorPoint[1] - centerPoint[1]) / 5);
 
+    // heroText.style.textShadow = `
+    // ${-shadowX}px ${shadowY}px 0 rgba(255, 0, 0, 1), 
+    // ${shadowX}px ${-shadowY}px 0 rgba(0, 255, 0, 1), 
+    // ${-shadowX}px ${-shadowY}px 0 rgba(0, 0, 255, 1), 
+    // ${shadowX}px ${shadowY}px 0 rgba(0, 0, 0, 1)
+    // `;
+
     // my second attempt:
     const width = heroText.offsetWidth;
     const height = heroText.offsetHeight;
@@ -54,19 +61,14 @@
       y += e.target.offsetTop;
     }
 
-    console.log(x, y);
+    let shadowX = Math.round((x / this.clientWidth * walk) - (walk / 2));
+    let shadowY = Math.round((y / this.clientHeight * walk) - (walk / 2));
 
-   // 0 - 50
-   // 300 - 100
-   // 300 - 50
 
-    let shadowX = Math.round((x / width + walk) - (walk / 2));
-    let shadowY = Math.round((y / height + walk) - (walk / 2));
-    
     heroText.style.textShadow = `
-    ${-shadowX}px ${shadowY}px 0 rgba(255, 0, 0, 1), 
-    ${shadowX}px ${-shadowY}px 0 rgba(0, 255, 0, 1), 
-    ${-shadowX}px ${-shadowY}px 0 rgba(0, 0, 255, 1), 
+    ${shadowX * -1}px ${shadowY}px 0 rgba(255, 0, 0, 1), 
+    ${shadowX}px ${shadowY * -1}px 0 rgba(0, 255, 0, 1), 
+    ${shadowX * -1}px ${shadowY * -1}px 0 rgba(0, 0, 255, 1), 
     ${shadowX}px ${shadowY}px 0 rgba(0, 0, 0, 1)
     `;
   }

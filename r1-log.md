@@ -429,6 +429,19 @@ This is because team itself is not an array, but rather a reference to the array
 
 **Today's Progress**: JavaScript 30 - Day 16 challenge/code along
 
+**Project Summary**: Create a text shadow that moves based on your cursor position on the screen.
+
 **Thoughts**: I solved the problem in a way that was slightly different from Wes Bos, but was still successful. I'm trying to replicate his code after watching his video, but am struggling a bit with the math equation. I will take a look tomorrow, though. One note from today's challenge:
   * You can use e.offsetX and e.offsetY to get the position of your cursor, but if you have nested elements inside of it, you'll need to create an if statement so the offsetX and Y do not reset to 0 once you get to the nested element:
     * if(this !== e.target) { x += e.target.offsetLeft; y += e.target.offsetTop; }
+
+
+## Day 49: April 23, 2019
+
+**Today's Progress**: JavaScript 30 - Day 17 challenge/code along
+
+**Project Summary**: Sort a list of band names alphabetically, but ignoring words 'A', 'An', and 'The'.
+
+**Thoughts**: I was able to resolve the math equation from yesterday. I mistakenly declared the width/height variables to be the width/height of the text container on the page, not of the actual viewport width/height. This was causing the issues, but I figured it out, so I'm happy.
+
+I resolved today's challenge in a more complex way than Wes Bos did. He used replace() and a regular expression, while I instead split each band name, checked if the first index was one of the words, and applied shift() if so. I liked how he created a function that could pass the a or b arguments into it without much more code.

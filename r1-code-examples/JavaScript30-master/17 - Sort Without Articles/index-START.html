@@ -47,8 +47,42 @@
 
 <script>
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+const ignoredWords = ['A', 'An', 'The'];
 
+bands.sort(function(a, b) {
+  let firstBand = a.split(' ');
+  let secondBand = b.split(' ');
 
+  ignoredWords.forEach(function(word) {
+    if(firstBand[0] === word) {
+      firstBand.shift();
+    }
+    if(secondBand[0] === word) {
+      secondBand.shift();
+    }
+  });
+
+  firstBand = firstBand.join(' ');
+  secondBand = secondBand.join(' ');
+  
+  if(firstBand > secondBand) {
+    return 1;
+  } else {
+    return -1;
+  }
+});
+
+function displayBands() {
+  const ul = document.querySelector('ul');
+
+  bands.forEach(function(band) {
+    const newLi = document.createElement('li');
+    newLi.textContent = band;
+    ul.appendChild(newLi);
+  });
+}
+
+displayBands();
 </script>
 
 </body>
