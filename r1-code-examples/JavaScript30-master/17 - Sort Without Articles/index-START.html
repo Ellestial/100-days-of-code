@@ -49,28 +49,50 @@
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 const ignoredWords = ['A', 'An', 'The'];
 
-bands.sort(function(a, b) {
-  let firstBand = a.split(' ');
-  let secondBand = b.split(' ');
+// bands.sort(function(a, b) {
+//   let firstBand = a.split(' ');
+//   let secondBand = b.split(' ');
 
-  ignoredWords.forEach(function(word) {
-    if(firstBand[0] === word) {
-      firstBand.shift();
-    }
-    if(secondBand[0] === word) {
-      secondBand.shift();
-    }
-  });
+//   ignoredWords.forEach(function(word) {
+//     if(firstBand[0] === word) {
+//       firstBand.shift();
+//     }
+//     if(secondBand[0] === word) {
+//       secondBand.shift();
+//     }
+//   });
 
-  firstBand = firstBand.join(' ');
-  secondBand = secondBand.join(' ');
+//   firstBand = firstBand.join(' ');
+//   secondBand = secondBand.join(' ');
   
-  if(firstBand > secondBand) {
+//   if(firstBand > secondBand) {
+//     return 1;
+//   } else {
+//     return -1;
+//   }
+// });
+
+bands.sort(function(a, b) {
+  console.log(ignoreCheck(a));
+  if(ignoreCheck(a) > ignoreCheck(b)) {
     return 1;
   } else {
     return -1;
   }
 });
+
+function ignoreCheck(str) {
+
+  ignoredWords.forEach(function(word) {
+    let re = new RegExp('^' + word + ' ', 'i');
+
+    if(str.includes(word)) {
+      return str.replace(re, '');
+    }
+  });
+  console.log(str);
+  return str;
+}
 
 function displayBands() {
   const ul = document.querySelector('ul');

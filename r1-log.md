@@ -445,3 +445,10 @@ This is because team itself is not an array, but rather a reference to the array
 **Thoughts**: I was able to resolve the math equation from yesterday. I mistakenly declared the width/height variables to be the width/height of the text container on the page, not of the actual viewport width/height. This was causing the issues, but I figured it out, so I'm happy.
 
 I resolved today's challenge in a more complex way than Wes Bos did. He used replace() and a regular expression, while I instead split each band name, checked if the first index was one of the words, and applied shift() if so. I liked how he created a function that could pass the a or b arguments into it without much more code.
+
+
+## Day 50: April 24, 2019
+
+**Today's Progress**: JavaScript 30 - Day 18 challenge progress, and Day 17 review
+
+**Thoughts**: I was very distracted today because of some life events, so I look forward to tomorrow when my head is more cleared.
