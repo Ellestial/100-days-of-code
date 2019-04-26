@@ -459,6 +459,6 @@ I resolved today's challenge in a more complex way than Wes Bos did. He used rep
 **Today's Progress**: Finished JavaScript 30 - Day 18 challenge/codealong
 
 **Thoughts**: I worked on two versions of this, and the second one was almost dead on what Wes Bos did. A couple things I learned:
-  * Instead of looking for all <li>, look for anything with [data-time] attribute
+  * Instead of looking for all li, look for anything with [data-time] attribute
 	* Can use an existing/default method within another method. For example, can use someVar.map(Number), which is the same as running:
    * someVar.map(function(str) { return Number(str); }
