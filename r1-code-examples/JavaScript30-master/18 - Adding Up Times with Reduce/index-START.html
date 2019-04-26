@@ -184,13 +184,25 @@
 <script>
   const lis = document.querySelectorAll('li');
   let lisArr = Array.from(lis);
+  let hr;
+  let min;
+  let sec;
+  let total;
 
   function reducerTime(a, li) {
     const vidTime = li.dataset.time;
-    return Number(vidTime.replace(':', '.')) * 60;
-  }
+    let vidTimeArr = vidTime.split(':').map(Number);
+    let vidSec = (vidTimeArr[0] * 60) + vidTimeArr[1];
+    return a += vidSec;
+  };
 
-  console.dir(lisArr.reduce(reducerTime, 0));
+  remainingSec = ((lisArr.reduce(reducerTime, 0) / 60) / 60);
+  hr = Math.floor(remainingSec);
+  remainingSec = remainingSec % hr * 60;
+  min = Math.floor(remainingSec);
+  sec = Math.round(remainingSec);
+
+  console.log(hr, min, sec);
 </script>
 </body>
 </html>
