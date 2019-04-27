@@ -458,7 +458,16 @@ I resolved today's challenge in a more complex way than Wes Bos did. He used rep
 
 **Today's Progress**: Finished JavaScript 30 - Day 18 challenge/codealong
 
-**Thoughts**: I worked on two versions of this, and the second one was almost dead on what Wes Bos did. A couple things I learned:
+**Thoughts**: I worked on two versions of this, and the second one and almost completely matched what Wes Bos did. A couple things I learned:
   * Instead of looking for all li, look for anything with [data-time] attribute
   * Can use an existing/default method within another method. For example, can use someVar.map(Number), which is the same as running:
     * someVar.map(function(str) { return Number(str); }
+
+
+## Day 52: April 26, 2019
+
+**Today's Progress**: Began JavaScript 30 - Day 19 challenge and partial codealong
+
+**Project Summary**: Access your webcam and create a photo booth style application with it by letting the user take photos and apply different filters.
+
+**Thoughts**: This is a super interesting challenge. I learned a bit about what promises are today, which I've never learned about before. I didn't get very far in this project because I am wanting to do as much as I can before watching the codealong. So far: I got my video to play. Tomorrow I will tackle canvas for the second time.
