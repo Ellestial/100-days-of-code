@@ -16,8 +16,14 @@ function getVideo() {
 };
 
 function createCanvas() {
-    console.dir(ctx);
+    const width = video.videoWidth;
+    const height = video.videoHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    setInterval(function() {
+        ctx.drawImage(video, 0, 0, width, height);
+    }, 16);
 }
 
 getVideo();
-createCanvas();

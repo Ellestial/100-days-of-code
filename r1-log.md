@@ -397,9 +397,7 @@ This is because team itself is not an array, but rather a reference to the array
 **Thoughts**: I was not introduced to localStorage when I worked on learning JavaScript last year, so this is an exciting new feature for me. I watched the intro to the Wes Bos video, but am otherwise trying to solve this challenge on my own before watching the rest of the video. May take another day.
 
 
---
-**Skipped April 19th to spend some last time with aging family pet.**
---
+--**Skipped April 19th to spend some last time with aging family pet.**--
 
 ## Day 46: April 20, 2019
 
@@ -471,3 +469,10 @@ I resolved today's challenge in a more complex way than Wes Bos did. He used rep
 **Project Summary**: Access your webcam and create a photo booth style application with it by letting the user take photos and apply different filters.
 
 **Thoughts**: This is a super interesting challenge. I learned a bit about what promises are today, which I've never learned about before. I didn't get very far in this project because I am wanting to do as much as I can before watching the codealong. So far: I got my video to play. Tomorrow I will tackle canvas for the second time.
+
+
+## Day 53: April 27, 2019
+
+**Today's Progress**: Continued Day 19 challenge
+
+**Thoughts**: This is a slow-going challenge. In the hour that I worked today, I only added 8 lines of code. This is offputting, but I'm trying to work through it since this is an entirely new challenge that I'm trying to do as much as on my own as possible. I had to watch part of the code along today because I couldn't get an image to show up in the canvas element, but I discovered I did everything right, but the canvas element just didn't have a width and height defined.
