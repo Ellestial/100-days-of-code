@@ -397,7 +397,7 @@ This is because team itself is not an array, but rather a reference to the array
 **Thoughts**: I was not introduced to localStorage when I worked on learning JavaScript last year, so this is an exciting new feature for me. I watched the intro to the Wes Bos video, but am otherwise trying to solve this challenge on my own before watching the rest of the video. May take another day.
 
 
---**Skipped April 19th to spend some last time with aging family pet.**--
+#--**Skipped April 19th to spend some last time with aging family pet.**--
 
 ## Day 46: April 20, 2019
 
