@@ -476,3 +476,10 @@ I resolved today's challenge in a more complex way than Wes Bos did. He used rep
 **Today's Progress**: Continued Day 19 challenge
 
 **Thoughts**: This is a slow-going challenge. In the hour that I worked today, I only added 8 lines of code. This is offputting, but I'm trying to work through it since this is an entirely new challenge that I'm trying to do as much as on my own as possible. I had to watch part of the code along today because I couldn't get an image to show up in the canvas element, but I discovered I did everything right, but the canvas element just didn't have a width and height defined.
+
+
+## Day 54: April 28, 2019
+
+**Today's Progress**: Continued Day 19 challenge
+
+**Thoughts**: Today went better. I was able to figure out how to get the canvas size to be set to the video size once the video loaded in. I also figured out how to take screenshots and allow for downloading said screenshots. Tomorrow I will tackle pixel manipulation with canvas.
