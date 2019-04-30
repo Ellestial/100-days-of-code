@@ -33,12 +33,48 @@ function setCanvas() {
 
     setInterval(function() {
         ctx.drawImage(video, 0, 0, width, height);
+        let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        //allRed(imageData);
+        greenScreen(imageData);
     }, 16);
+}
 
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    imageData.data = [255, 255, 255];
-    ctx.putImageData(imageData, 0, 0);
-    console.log(imageData);
+function allRed(img) {
+    const data = img.data;
+    for (var i = 0; i < data.length; i += 4) {
+      data[i]     = 200;     // red
+      data[i + 1] = data[i + 1]; // green
+      data[i + 2] = data[i + 2]; // blue
+    }
+    ctx.putImageData(img, 0, 0);
+}
+
+function greenScreen(img) {
+    const data = img.data;
+    for (var i = 0; i < data.length; i += 4) {
+        if(data[i] > 100) {
+            data[i] = 255;
+        }
+        if(data[i + 1] > 100) {
+            data[i + 1] = 255;
+        }
+        if(data[i + 2] > 100) {
+            data[i + 2] = 255;
+        }
+    }
+    ctx.putImageData(img, 0, 0);
+}
+
+function photoEffect(img) {
+    const data = img.data;
+    const rmin = document.querySelector('input[name="rmin"]');
+    const rmax = document.querySelector('input[name="rmax"]');
+    for (var i = 0; i < data.length; i += 4) {
+      data[i]     = Math.floor((Number(rmax.value) - Number(rmin.value)));     // red
+      data[i + 1] = 255 - data[i + 1]; // green
+      data[i + 2] = 255 - data[i + 2]; // blue
+    }
+    ctx.putImageData(img, 0, 0);
 }
 
 function takePhoto() {

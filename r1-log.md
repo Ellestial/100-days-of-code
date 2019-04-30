@@ -483,3 +483,12 @@ I resolved today's challenge in a more complex way than Wes Bos did. He used rep
 **Today's Progress**: Continued Day 19 challenge
 
 **Thoughts**: Today went better. I was able to figure out how to get the canvas size to be set to the video size once the video loaded in. I also figured out how to take screenshots and allow for downloading said screenshots. Tomorrow I will tackle pixel manipulation with canvas.
+
+
+## Day 55: April 29, 2019
+
+**Today's Progress**: Continued Day 19 challenge
+
+**Thoughts**: Today went very well. I learned a good deal about pixel manipulation in canvas using getImageData(). I learned it returns the width of the image data in pixels x the height of the image data in pixels, and then multiplied by 4 for the r, g, b, and a values that are just all in a list like: console.log(data[0], data[1], data[2], data[3], data[4], data[5]); // logs the values for r, g, b, a, r, g.
+
+Wes Bos has 4 different pixel manipulation challenges: all red hue, color offsets, adjusting overall blur, and creating a green screen effect. I was able to take care of the first challenge today and hope to finish the other 3 tomorrow.
