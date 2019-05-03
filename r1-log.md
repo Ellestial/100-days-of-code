@@ -492,3 +492,20 @@ I resolved today's challenge in a more complex way than Wes Bos did. He used rep
 **Thoughts**: Today went very well. I learned a good deal about pixel manipulation in canvas using getImageData(). I learned it returns the width of the image data in pixels x the height of the image data in pixels, and then multiplied by 4 for the r, g, b, and a values that are just all in a list like: console.log(data[0], data[1], data[2], data[3], data[4], data[5]); // logs the values for r, g, b, a, r, g.
 
 Wes Bos has 4 different pixel manipulation challenges: all red hue, color offsets, adjusting overall blur, and creating a green screen effect. I was able to take care of the first challenge today and hope to finish the other 3 tomorrow.
+
+
+# **Out of state April 30th and May 1st.**
+
+
+## Day 56: May 2, 2019
+
+**Today's Progress**: FINISHED Day 19 challenge
+
+**Thoughts**: I feel really good about what I accomplished. I was very close to what Wes Bos did for every step of the way and only have a few notes from watching through his codealong today:
+  * f you inspect video, you'll see the src is a blob, which means that it's the raw data that's being fed into it.
+  * Wes did video.src = window.url.createObjectURL(loclaMediaStream), while I did video.srcObject = MediaStream; Not sure difference?
+  * Return setInterval(), because if you ever need to stop it from painting, you can have access to the interval
+  * Instead of createCanvas() function I created that adds a setInterval() and loops every half a second until the video has a width of 1px or more, I can create a canplay event listener! Much simpler
+  * Instead of my method of ctx.putImageData(img, 0, 0) at the bottom of each effect function, can instead just set imageData in setCanvas() to be the effect function:
+    * Instead of: allRed(imageData)and setting putImageData at bottom
+    * Do: imageData = allRed(imageData); and ctx.putImageData(imageData, 0, 0) right underneath and once. And then make sure to return imageData
