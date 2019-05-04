@@ -509,3 +509,12 @@ Wes Bos has 4 different pixel manipulation challenges: all red hue, color offset
   * Instead of my method of ctx.putImageData(img, 0, 0) at the bottom of each effect function, can instead just set imageData in setCanvas() to be the effect function:
     * Instead of: allRed(imageData)and setting putImageData at bottom
     * Do: imageData = allRed(imageData); and ctx.putImageData(imageData, 0, 0) right underneath and once. And then make sure to return imageData
+
+
+## Day 57: May 3, 2019
+
+**Today's Progress**: Started Day 20 challenge and some You Don't Know JS: Up and Going - Chapter 2 reading
+
+**Project Summary**: Create a text to speech program.
+
+**Thoughts**: Had a very demanding day that made working through this challenge difficult. I'll need a fresh mind tomorrow to revisit.

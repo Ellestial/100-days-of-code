@@ -11,7 +11,26 @@
 
 <script>
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const recognition = new SpeechRecognition();
+  navigator.mediaDevices.getUserMedia({ audio: true })
+    .then (writeAudio)
+  recognition.interimResults = true;
+  recognition.lang = 'en-US';
+  // recognition.continuous = true;
 
+  function writeAudio() {
+    const newP = document.createElement('p');
+    recognition.start();
+    let test = newP.textContent = recognition.grammars;
+    console.log('test');
+  }
+
+  function endAudio() {
+    recognition.stop();
+  }
+
+  document.addEventListener('onsoundstart', writeAudio);
+  document.addEventListener('onsoundend', endAudio);
 
 </script>
 
