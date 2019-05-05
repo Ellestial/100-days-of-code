@@ -12,25 +12,24 @@
 <script>
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   const recognition = new SpeechRecognition();
-  navigator.mediaDevices.getUserMedia({ audio: true })
-    .then (writeAudio)
+  const words = document.querySelector('.words');
   recognition.interimResults = true;
-  recognition.lang = 'en-US';
-  // recognition.continuous = true;
 
-  function writeAudio() {
-    const newP = document.createElement('p');
+  recognition.start();
+
+  recognition.onresult = function(e) {
+    words.lastElementChild.textContent = e.results[0][0].transcript;
     recognition.start();
-    let test = newP.textContent = recognition.grammars;
-    console.log('test');
-  }
+  };
 
-  function endAudio() {
-    recognition.stop();
-  }
+  recognition.addEventListener('speechstart', function(e) {
+    let p = document.createElement('p');
+    words.appendChild(p);
+  });
 
-  document.addEventListener('onsoundstart', writeAudio);
-  document.addEventListener('onsoundend', endAudio);
+recognition.addEventListener('speechend', function(e) {
+  recognition.stop();
+});
 
 </script>
 

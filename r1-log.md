@@ -518,3 +518,14 @@ Wes Bos has 4 different pixel manipulation challenges: all red hue, color offset
 **Project Summary**: Create a text to speech program.
 
 **Thoughts**: Had a very demanding day that made working through this challenge difficult. I'll need a fresh mind tomorrow to revisit.
+
+
+## Day 58: May 4th, 2019
+
+**Today's Progress**: Continued day 20 challenge.
+
+**Thoughts**: Went better than yesterday, but still not finished. A few reasons my technique wasn't working:
+  * I needed to run a localhost server.
+  * It is not supported in Firefox Developer Edition or in Vivaldi. I had to switch to chrome.
+
+I am confident I will get this finished and understood fully tomorrow.
