@@ -529,3 +529,10 @@ Wes Bos has 4 different pixel manipulation challenges: all red hue, color offset
   * It is not supported in Firefox Developer Edition or in Vivaldi. I had to switch to chrome.
 
 I am confident I will get this finished and understood fully tomorrow.
+
+
+## Day 59: May 5th, 2019
+
+**Today's Progress**: Finished day 20 challenge.
+
+**Thoughts**: Trying to comprehend how Wes Bos used map to create the full transcript for each spoken sentence. Hoping to come back at that portion with a fresh mind tomorrow.

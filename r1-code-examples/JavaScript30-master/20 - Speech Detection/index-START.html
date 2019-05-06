@@ -14,23 +14,32 @@
   const recognition = new SpeechRecognition();
   const words = document.querySelector('.words');
   recognition.interimResults = true;
+  recognition.continuous = true;
 
-  recognition.start();
-
-  recognition.onresult = function(e) {
-    words.lastElementChild.textContent = e.results[0][0].transcript;
-    recognition.start();
-  };
-
-  recognition.addEventListener('speechstart', function(e) {
+  function createP() {
     let p = document.createElement('p');
     words.appendChild(p);
-  });
+  }
 
-recognition.addEventListener('speechend', function(e) {
-  recognition.stop();
-});
+  recognition.start();
+  createP();
 
+  recognition.onresult = function(e) {
+    const results = Array.from(e.results);
+    results.map(function(result) {
+      return result[0];
+    });
+    results.map(function(result) {
+      return result.transcript;
+    });
+    console.dir(results);
+    let items = e.results.length - 1;
+    words.lastElementChild.textContent = e.results[items][0].transcript;
+
+    if(e.results[items].isFinal) {
+      createP();
+    }
+  };
 </script>
 
 
