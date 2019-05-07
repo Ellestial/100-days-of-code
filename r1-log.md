@@ -536,3 +536,17 @@ I am confident I will get this finished and understood fully tomorrow.
 **Today's Progress**: Finished day 20 challenge.
 
 **Thoughts**: Trying to comprehend how Wes Bos used map to create the full transcript for each spoken sentence. Hoping to come back at that portion with a fresh mind tomorrow.
+
+
+## Day 60: May 6th, 2019
+
+**Today's Progress**: Reading You Don't Know JS - Up & Going, Chapter 2.
+
+**Thoughts**: Learned a wealth of good information today. Some of my biggest takeaways are:
+  * Arrays and functions are types of objects. Arrays are key-value pairs, where the key is always numerical (though you technically could set someArr['color'] = 'blue')
+  * JS converts primitive values into objects behind the scenes when methods are used on them, like "some string".toUpperCase();
+  * Comparison operators of inequality do not have strict type coercion.
+  * Type coercion will try to convert booleans or strings to numbers. Object type coercion considers the reference, not the actual values.
+   * var a = [1, 2, 3]; var b = [1, 2, 3]; var c = a;
+   * a == b // false
+   * a == c // true
