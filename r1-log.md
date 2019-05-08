@@ -550,3 +550,12 @@ I am confident I will get this finished and understood fully tomorrow.
    * var a = [1, 2, 3]; var b = [1, 2, 3]; var c = a;
    * a == b // false
    * a == c // true
+
+## Day 61: May 7th, 2019
+
+**Today's Progress**: Reading You Don't Know JS - Up & Going, Chapter 2.
+
+**Thoughts**: Enjoying reading through this and learning a lot. Some key takeaways:
+  * How to immediate envoke functions. You need to wrap the function with () to ensure it's not treated as a normal function, and then add an additional () to the end (in a similar manner that you normally would have to run foo() after declaring the function).
+  * "strict mode"; is a way to make more stable, reliable code.
+  * Closure is a complicated topic about being able to remember pieces of a scope after the function finishes running.
