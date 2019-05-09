@@ -551,6 +551,7 @@ I am confident I will get this finished and understood fully tomorrow.
    * a == b // false
    * a == c // true
 
+
 ## Day 61: May 7th, 2019
 
 **Today's Progress**: Reading You Don't Know JS - Up & Going, Chapter 2.
@@ -559,3 +560,11 @@ I am confident I will get this finished and understood fully tomorrow.
   * How to immediate envoke functions. You need to wrap the function with () to ensure it's not treated as a normal function, and then add an additional () to the end (in a similar manner that you normally would have to run foo() after declaring the function).
   * "strict mode"; is a way to make more stable, reliable code.
   * Closure is a complicated topic about being able to remember pieces of a scope after the function finishes running.
+
+
+## Day 62: May 8th, 2019
+
+**Today's Progress**: Finished You Don't Know JS - Up & Going, Chapters 2 and 3
+
+**Thoughts**: I can't get enough of You Don't Know JS. I feel like I"m learning a lot about the language that I knew nothing about. I'm the target audience for this book series, and I can't wait to read more. I'm going to balance Wes Bos's JavaScript 30 challenges with this reading so I can understand more fundamental things. The major thing I learned:
+  * Prototypes are ways for an object to use a related object's property as a fallback if the aforementioned object doesn't have the property called. An example of this is using toUpperCase() on a string, which is converted to a String object and then uses a reference to that String object's toUpperCase() property.
