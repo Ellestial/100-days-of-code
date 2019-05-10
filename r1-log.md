@@ -568,3 +568,14 @@ I am confident I will get this finished and understood fully tomorrow.
 
 **Thoughts**: I can't get enough of You Don't Know JS. I feel like I"m learning a lot about the language that I knew nothing about. I'm the target audience for this book series, and I can't wait to read more. I'm going to balance Wes Bos's JavaScript 30 challenges with this reading so I can understand more fundamental things. The major thing I learned:
   * Prototypes are ways for an object to use a related object's property as a fallback if the aforementioned object doesn't have the property called. An example of this is using toUpperCase() on a string, which is converted to a String object and then uses a reference to that String object's toUpperCase() property.
+
+
+## Day 63: May 9th, 2019
+
+**Today's Progress**: Read half of You Don't Know JS - Scope & Closures, Chapter 1. Watched Wes Bos's JavaScript 30 Day 21 challenge. Began day 22 challenge.
+
+**Thoughts**: Today was productive. Started learning more about the how JavaScript compiles behind the scenes and how the engine works with the compiler and scope to determine variables.
+
+I also watched Wes Bos's JavaScript 30 - Day 21: Geolocation based Speedometer and Compass because it required having a Mac. It used the navigation object, similar to what was necessary for speech to text and webcam.
+
+I then started Day 22 - Follow Along Links, where a highlight appears behind a link when you mouseover it, and then it moves eto the next link you highlight.
