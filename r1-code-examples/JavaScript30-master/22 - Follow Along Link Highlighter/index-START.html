@@ -38,13 +38,15 @@
 
     function moveHighlight(e) {
       const el = e.target;
+      const windowScrollHeight = window.scrollY;
+      const windowScrollWidth = window.scrollX;
 
       if(el.hasAttribute('href')) {
         highlight.style.width = el.offsetWidth + 'px';
         highlight.style.height = el.offsetHeight + 'px';
-        highlight.style.top = el.offsetTop + 'px';
-        highlight.style.left = el.offsetLeft + 'px';
-        console.dir(body);
+        highlight.style.top = (e.pageY) + 'px';
+        highlight.style.left = (e.pageX) + 'px';
+        console.dir(e);
       }
     };
 

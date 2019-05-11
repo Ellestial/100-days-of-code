@@ -579,3 +579,10 @@ I am confident I will get this finished and understood fully tomorrow.
 I also watched Wes Bos's JavaScript 30 - Day 21: Geolocation based Speedometer and Compass because it required having a Mac. It used the navigation object, similar to what was necessary for speech to text and webcam.
 
 I then started Day 22 - Follow Along Links, where a highlight appears behind a link when you mouseover it, and then it moves eto the next link you highlight.
+
+
+## Day 64: May 10th, 2019
+
+**Today's Progress**: Worked on JavaScript 30 Day 22 challenge
+
+**Thoughts**: I started this challenge late after celebrating a friend's birthday, and that had a big toll on me. I was unable to concentrate/solve the issues and instead tried thinking through a couple options for an hour without much resolution. I will make sure to not start my JS practice after 9.
