@@ -35,6 +35,29 @@
   const options = document.querySelectorAll('[type="range"], [name="text"]');
   const speakButton = document.querySelector('#speak');
   const stopButton = document.querySelector('#stop');
+
+  function adjustVoice() {
+    const name = this.getAttribute('name');
+    msg[name] = this.value;
+
+    populateVoiceList();
+  }
+
+  function populateVoiceList() {
+    const voices = speechSynthesis.getVoices();
+    
+    for(var i = 0; i < voices.length; i++) {
+      const option = document.createElement('option');
+      option.textContent = voices[i].name;
+      voicesDropdown.appendChild(option);
+    }
+  }
+
+  populateVoiceList();
+
+  options.forEach(function(option) {
+    option.addEventListener('change', adjustVoice);
+  });
 </script>
 
 </body>

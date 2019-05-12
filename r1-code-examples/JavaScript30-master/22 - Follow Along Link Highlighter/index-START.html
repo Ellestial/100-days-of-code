@@ -38,15 +38,15 @@
 
     function moveHighlight(e) {
       const el = e.target;
-      const windowScrollHeight = window.scrollY;
-      const windowScrollWidth = window.scrollX;
 
       if(el.hasAttribute('href')) {
-        highlight.style.width = el.offsetWidth + 'px';
-        highlight.style.height = el.offsetHeight + 'px';
-        highlight.style.top = (e.pageY) + 'px';
-        highlight.style.left = (e.pageX) + 'px';
-        console.dir(e);
+        const location = el.getBoundingClientRect();
+        const windowScrollTop = window.scrollY;
+        const windowScrollLeft = window.scrollX;
+
+        highlight.style.width = location.width + 'px';
+        highlight.style.height = location.height + 'px';
+        highlight.style.transform = 'translate(' + (location.left + windowScrollLeft) + 'px, ' + (location.top + windowScrollTop) + 'px)';
       }
     };
 
