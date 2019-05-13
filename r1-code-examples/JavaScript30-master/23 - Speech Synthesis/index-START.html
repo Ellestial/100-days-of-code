@@ -29,6 +29,7 @@
     </div>
 
 <script>
+  const synth = window.speechSynthesis;
   const msg = new SpeechSynthesisUtterance();
   let voices = [];
   const voicesDropdown = document.querySelector('[name="voice"]');
@@ -40,23 +41,50 @@
     const name = this.getAttribute('name');
     msg[name] = this.value;
 
-    populateVoiceList();
+    beginSpeaking();
   }
 
   function populateVoiceList() {
-    const voices = speechSynthesis.getVoices();
+    const voiceList = speechSynthesis.getVoices();
     
-    for(var i = 0; i < voices.length; i++) {
-      const option = document.createElement('option');
-      option.textContent = voices[i].name;
-      voicesDropdown.appendChild(option);
+    for(var i = 0; i < voiceList.length; i++) {
+      if((voiceList[i].lang).startsWith('en-')) {
+        voices.push(voiceList[i]);
+        const option = document.createElement('option');
+        option.textContent = voiceList[i].name + ' (' + voiceList[i].lang + ')';
+        voicesDropdown.appendChild(option);
+      }
     }
   }
 
-  populateVoiceList();
+  function beginSpeaking() {
+    synth.cancel();
+    synth.speak(msg);
+  }
+
+  setTimeout(function() {
+    populateVoiceList();
+  }, 500);
 
   options.forEach(function(option) {
     option.addEventListener('change', adjustVoice);
+  });
+
+  voicesDropdown.addEventListener('change', function(e) {
+    const currentName = this.value;
+
+    for(var i = 0; i < voices.length; i++) {
+
+      if(currentName.startsWith(voices[i].name)) {
+        msg.voice = voices[i];
+      }
+    }
+  });
+
+  speakButton.addEventListener('click', beginSpeaking);
+
+  stopButton.addEventListener('click', function() {
+    synth.cancel();
   });
 </script>
 

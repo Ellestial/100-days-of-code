@@ -593,3 +593,10 @@ I then started Day 22 - Follow Along Links, where a highlight appears behind a l
 **Today's Progress**: Finished JavaScript 30 Day 22 challenge and got about halfway through Day 23
 
 **Thoughts**: With a full night sleep, I was able to resolve the challenge very quickly and using the same method that Wes Bos did. Felt very good about it. Day 23 challenge is to work with the text-to-speech API. I was able to get a list of voice options and adjust the rate/pitch/text. Now I just need to get the audio to actually play!
+
+
+## Day 66: May 12, 2019
+
+**Today's Progress**: Continued JavaScript 30 Day 23 challenge
+
+**Thoughts**: Mostly finished with this. A bit of a slow start today, but I'm getting very close. The remaining pieces I need to take care of: have the Speak button work on page load without having to edit the textarea content, and cleaning up code. That's it! Still avoiding watching the Wes Bos code-along videos until I gave the lesson my best shot.
