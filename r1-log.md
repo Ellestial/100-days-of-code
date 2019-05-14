@@ -600,3 +600,12 @@ I then started Day 22 - Follow Along Links, where a highlight appears behind a l
 **Today's Progress**: Continued JavaScript 30 Day 23 challenge
 
 **Thoughts**: Mostly finished with this. A bit of a slow start today, but I'm getting very close. The remaining pieces I need to take care of: have the Speak button work on page load without having to edit the textarea content, and cleaning up code. That's it! Still avoiding watching the Wes Bos code-along videos until I gave the lesson my best shot.
+
+
+## Day 67: May 13, 2019
+
+**Today's Progress**: Continued reading You Don't Know JS - Scope & Closures, Chapter 1.
+
+**Thoughts**: Took me a while, but I now understand the LHS and RHS variable look-up process for scope. In summary:
+  * LHS: finding the container variable and assigning a value to it. Do not care about the actual value. If this look-up results in nothing found, and you are not in Strict Mode, the global scope creates a variable and hands it back to the engine.
+  * RHS: finding the value of something. If this look-up results in nothing found, a ReferenceError is thrown.
