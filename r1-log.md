@@ -609,3 +609,14 @@ I then started Day 22 - Follow Along Links, where a highlight appears behind a l
 **Thoughts**: Took me a while, but I now understand the LHS and RHS variable look-up process for scope. In summary:
   * LHS: finding the container variable and assigning a value to it. Do not care about the actual value. If this look-up results in nothing found, and you are not in Strict Mode, the global scope creates a variable and hands it back to the engine.
   * RHS: finding the value of something. If this look-up results in nothing found, a ReferenceError is thrown.
+
+
+## Day 68: May 14, 2019
+
+**Today's Progress**: Finished You Don't Know JS - Scope & Closures, Chapter 1. Began Chapter 2.
+
+**Thoughts**: Learning more about how scope works:
+  * If you call a variable in an inappropriate way, such as a non-function value as a function (var a = 2; a()), it will return a TypeError.
+  * Shadowing is defined as defining the same variable name in multiple locations within a nested scope.
+  * Global variables can be accessed as a property of the window object. A way to get the value of a global scoped variable regardless of shadowing.
+  * Lexical scope is based on the order/location of code based on the programmer.
