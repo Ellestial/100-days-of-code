@@ -620,3 +620,12 @@ I then started Day 22 - Follow Along Links, where a highlight appears behind a l
   * Shadowing is defined as defining the same variable name in multiple locations within a nested scope.
   * Global variables can be accessed as a property of the window object. A way to get the value of a global scoped variable regardless of shadowing.
   * Lexical scope is based on the order/location of code based on the programmer.
+
+
+## Day 69: May 15, 2019
+
+**Today's Progress**: Continued reading You Don't Know JS - Scope & Closures, Chapter 2. Took a few JS quizzes.
+
+**Thoughts**: Spent a good deal of time learning about eval() and what it does. I feel more comfortable with what lexical scope is vs dynamic scope. I also took an interesting JS quiz. I got 50% on it, while the average is 47.96%. I got a lot of the scope and coerced equality -related questions correct, so my research and learning is paying off!
+
+(JavaScript Web Quiz)[http://davidshariff.com/js-quiz/#]
