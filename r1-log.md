@@ -629,3 +629,10 @@ I then started Day 22 - Follow Along Links, where a highlight appears behind a l
 **Thoughts**: Spent a good deal of time learning about eval() and what it does. I feel more comfortable with what lexical scope is vs dynamic scope. I also took an interesting JS quiz. I got 50% on it, while the average is 47.96%. I got a lot of the scope and coerced equality -related questions correct, so my research and learning is paying off!
 
 (JavaScript Web Quiz)[http://davidshariff.com/js-quiz/#]
+
+
+## Day 70: May 16, 2019
+
+**Today's Progress**: Finished reading You Don't Know JS - Scope & Closures, Chapter 2.
+
+**Thoughts**: I better understand eval() and learned about with and both of their performance limitations. I'm curious about the FUnction() constructor, but the reading didn't cover that in too much depth, beyond saying it's a better alternative.
