@@ -37,6 +37,10 @@
   const speakButton = document.querySelector('#speak');
   const stopButton = document.querySelector('#stop');
 
+  let enVoices;
+
+  msg.text = document.querySelector('textarea').value;
+
   function adjustVoice() {
     const name = this.getAttribute('name');
     msg[name] = this.value;
@@ -46,15 +50,26 @@
 
   function populateVoiceList() {
     const voiceList = speechSynthesis.getVoices();
+
+    enVoices = voiceList.filter(function(voice) {
+      return voice.lang.includes('en');
+    });
+
+    enVoices.map(function(voice) {
+      const option = document.createElement('option');
+      option.textContent = voice.name + ' (' + voice.lang + ')';
+      option.setAttribute('data-name', voice.name);
+      voicesDropdown.appendChild(option);
+    });
     
-    for(var i = 0; i < voiceList.length; i++) {
-      if((voiceList[i].lang).startsWith('en-')) {
-        voices.push(voiceList[i]);
-        const option = document.createElement('option');
-        option.textContent = voiceList[i].name + ' (' + voiceList[i].lang + ')';
-        voicesDropdown.appendChild(option);
-      }
-    }
+    // for(var i = 0; i < voiceList.length; i++) {
+    //   if((voiceList[i].lang).startsWith('en-')) {
+    //     voices.push(voiceList[i]);
+    //     const option = document.createElement('option');
+    //     option.textContent = voiceList[i].name + ' (' + voiceList[i].lang + ')';
+    //     voicesDropdown.appendChild(option);
+    //   }
+    // }
   }
 
   function beginSpeaking() {
@@ -62,9 +77,12 @@
     synth.speak(msg);
   }
 
-  setTimeout(function() {
-    populateVoiceList();
-  }, 500);
+  // can use voiceschanged event instead of less effective timeout
+  // setTimeout(function() {
+  //   populateVoiceList();
+  // }, 500);
+
+  speechSynthesis.addEventListener('voiceschanged', populateVoiceList);
 
   options.forEach(function(option) {
     option.addEventListener('change', adjustVoice);
@@ -73,10 +91,11 @@
   voicesDropdown.addEventListener('change', function(e) {
     const currentName = this.value;
 
-    for(var i = 0; i < voices.length; i++) {
+    for(var i = 0; i < enVoices.length; i++) {
 
-      if(currentName.startsWith(voices[i].name)) {
-        msg.voice = voices[i];
+      if(currentName.startsWith(enVoices[i].name)) {
+        msg.voice = enVoices[i];
+        beginSpeaking();
       }
     }
   });

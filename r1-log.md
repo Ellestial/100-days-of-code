@@ -636,3 +636,10 @@ I then started Day 22 - Follow Along Links, where a highlight appears behind a l
 **Today's Progress**: Finished reading You Don't Know JS - Scope & Closures, Chapter 2.
 
 **Thoughts**: I better understand eval() and learned about with and both of their performance limitations. I'm curious about the FUnction() constructor, but the reading didn't cover that in too much depth, beyond saying it's a better alternative.
+
+
+## Day 71: May 17, 2019
+
+**Today's Progress**: Finished Wes Bos' JavaScript 30 - Day 23 challenge (Speech Synthesis) and watched code-along
+
+**Thoughts**: I think I did pretty well in this challenge. My biggest issue is not utilizing array methods as much as I should. I really need to use map(), find(), filter(), etc more often. Also, I need to make sure to set data attributes more often for different elements to make it much easier to reference back to them.
