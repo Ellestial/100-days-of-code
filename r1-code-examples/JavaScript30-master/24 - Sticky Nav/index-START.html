@@ -54,7 +54,37 @@
   </div>
 
 <script>
+  // const header = document.querySelector('header');
+  const body = document.body;
+  const mainNav = document.querySelector('#main');
+  const topOfNav = mainNav.offsetTop;
 
+  function debounce(func, wait = 10, immediate = true) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  }
+
+  function fixHeader() {
+    // if(window.scrollY > header.offsetHeight) {
+    if(window.scrollY >= topOfNav) {
+      body.classList.add('fixed-nav');
+      body.style.paddingTop = mainNav.offsetHeight + 'px'; // added per Wes Bos 
+    } else {
+      body.style.paddingTop = '0px';
+      body.classList.remove('fixed-nav');
+    }
+  }
+  window.addEventListener('scroll', debounce(fixHeader));
 </script>
 
 </body>

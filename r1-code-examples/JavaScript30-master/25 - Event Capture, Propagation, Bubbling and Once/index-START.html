@@ -42,7 +42,15 @@
 
 <button></button>
 <script>
+  const divs = document.querySelectorAll('div');
 
+  function logThis() {
+    console.log(this.classList.value);
+  }
+
+  divs.forEach(function(div) {
+    div.addEventListener('click', logThis, {once: true});
+  });
 </script>
 </body>
 </html>

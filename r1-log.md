@@ -643,3 +643,18 @@ I then started Day 22 - Follow Along Links, where a highlight appears behind a l
 **Today's Progress**: Finished Wes Bos' JavaScript 30 - Day 23 challenge (Speech Synthesis) and watched code-along
 
 **Thoughts**: I think I did pretty well in this challenge. My biggest issue is not utilizing array methods as much as I should. I really need to use map(), find(), filter(), etc more often. Also, I need to make sure to set data attributes more often for different elements to make it much easier to reference back to them.
+
+
+## Day 72: May 18, 2019
+
+**Today's Progress**: Completed Wes Bos' JavaScript 30 - Day 24 (Sticky Nav) and 25 (Event Capture, Propagation, Bubbling, and Once) challenges and watched code-alongs
+
+**Project Summary**: Create a nav that becomes fixed to the top of the screen when you reach a certain scroll distance.
+
+**Thoughts**: Productive day! I was very close on the Sticky Nav project. I used position: sticky instead of position: fixed, since sticky is a new value for the position property. Because Wes used fixed, though, I learned that you will need to add padding-top to the body element that equals the height of the nav since the nav is taken out of the flow of the document with fixed positioning.
+
+The other video wasn't a challenge so much as learning about some event features. I learned
+  * Capture: Goes top down upon clicking an element -- the browser captures that the item you clicked is in the html, then the body, then the header, etc. It does not fire the event during this, unless capture is set to true in an event listener's options object.
+  * Bubbling: Goes down to top upon clicking an element. The browser returns that you clicked the button that's inside the header that's inside the body that's inside the html.
+  * Propagation: Prevents capturing/bubbling from continuing past where e.stopPropagation() is called.
+  * Once: Event listener's option property that lets you allow the event to only be fired once before it unbinds itself.
