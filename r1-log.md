@@ -658,3 +658,12 @@ The other video wasn't a challenge so much as learning about some event features
   * Bubbling: Goes down to top upon clicking an element. The browser returns that you clicked the button that's inside the header that's inside the body that's inside the html.
   * Propagation: Prevents capturing/bubbling from continuing past where e.stopPropagation() is called.
   * Once: Event listener's option property that lets you allow the event to only be fired once before it unbinds itself.
+
+
+## Day 73: May 19, 2019
+
+**Today's Progress**: Almost completed Wes Bos' JavaScript 30 - Day 26 (Follow Along Nav) challenge.
+
+**Project Summary**: Instead of a normal nav with dropdowns where you hover over one nav button and a dropdown appears, make it so the background of the dropdown moves along to the next hovered button's dropdown and fit the content.
+
+**Thoughts**: Went mostly well, just need to figure out how to add margin to the top of the dropdown to fit properly. Everything else seems set!

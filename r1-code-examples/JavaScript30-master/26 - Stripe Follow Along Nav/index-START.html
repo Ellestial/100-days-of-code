@@ -220,6 +220,42 @@
 </style>
 
 <script>
+  const dropdownBackground = document.querySelector('.dropdownBackground');
+  const nav = document.querySelector('nav');
+  const liBtns = document.querySelectorAll('.cool > li');
+
+  function showDropdowns() {
+    const thisLi = this;
+    const thisDropdown = this.querySelector('.dropdown');
+    const a = this.querySelector('a');
+
+    const location = this.getBoundingClientRect();
+    dropdownBackground.classList.add('open');
+    thisLi.classList.add('trigger-enter');
+
+    window.setTimeout(function() {
+      thisLi.classList.add('trigger-enter-active');
+    }, 100);
+    
+    console.log(a.style.color);
+  
+    dropdownBackground.style.width = thisDropdown.offsetWidth + 'px';
+    dropdownBackground.style.height = thisDropdown.offsetHeight + 'px';
+    dropdownBackground.style.top = (location.top - thisDropdown.offsetTop + a.style.margin) + 'px';
+    dropdownBackground.style.left = (location.left + thisDropdown.offsetLeft) + 'px';
+  };
+
+  function hideDropdowns() {
+    dropdownBackground.classList.remove('open');
+    this.classList.remove('trigger-enter');
+    this.classList.remove('trigger-enter-active');
+  };
+
+  liBtns.forEach(function(li) {
+    li.addEventListener('mouseenter', showDropdowns);
+    li.addEventListener('mouseleave', hideDropdowns);
+  });
+
 </script>
 
 </body>
