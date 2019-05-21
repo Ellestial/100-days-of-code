@@ -5,7 +5,6 @@
   <title>Follow Along Nav</title>
 </head>
 <body>
-  <h2>Cool</h2>
   <nav class="top">
     <div class="dropdownBackground">
       <span class="arrow"></span>
@@ -226,23 +225,33 @@
 
   function showDropdowns() {
     const thisLi = this;
-    const thisDropdown = this.querySelector('.dropdown');
-    const a = this.querySelector('a');
+    const thisDropdown = thisLi.querySelector('.dropdown');
+    const location = thisLi.getBoundingClientRect();
 
-    const location = this.getBoundingClientRect();
     dropdownBackground.classList.add('open');
     thisLi.classList.add('trigger-enter');
 
     window.setTimeout(function() {
       thisLi.classList.add('trigger-enter-active');
     }, 100);
-    
-    console.log(a.style.color);
   
-    dropdownBackground.style.width = thisDropdown.offsetWidth + 'px';
-    dropdownBackground.style.height = thisDropdown.offsetHeight + 'px';
-    dropdownBackground.style.top = (location.top - thisDropdown.offsetTop + a.style.margin) + 'px';
-    dropdownBackground.style.left = (location.left + thisDropdown.offsetLeft) + 'px';
+    // dropdownBackground.style.width = thisDropdown.offsetWidth + 'px';
+    // dropdownBackground.style.height = thisDropdown.offsetHeight + 'px';
+    // dropdownBackground.style.top = (location.top - thisDropdown.offsetTop) + 'px';
+    // dropdownBackground.style.left = (location.left + thisDropdown.offsetLeft) + 'px';
+
+    const dropdownCoords = thisDropdown.getBoundingClientRect();
+    const navCoords = nav.getBoundingClientRect();
+    const coords = {
+      width: dropdownCoords.width,
+      height: dropdownCoords.height,
+      top: dropdownCoords.top - navCoords.top,
+      left: dropdownCoords.left - navCoords.left
+    }
+
+    dropdownBackground.style.width = coords.width + 'px';
+    dropdownBackground.style.height = coords.height + 'px';
+    dropdownBackground.style.transform = 'translate(' + coords.left + 'px,' + coords.top + 'px)';
   };
 
   function hideDropdowns() {

@@ -667,3 +667,14 @@ The other video wasn't a challenge so much as learning about some event features
 **Project Summary**: Instead of a normal nav with dropdowns where you hover over one nav button and a dropdown appears, make it so the background of the dropdown moves along to the next hovered button's dropdown and fit the content.
 
 **Thoughts**: Went mostly well, just need to figure out how to add margin to the top of the dropdown to fit properly. Everything else seems set!
+
+
+## Day 74: May 20, 2019
+
+**Today's Progress**: Finished Wes Bos' JavaScript 30 - Day 26 challenge and codealong. Began Day 27 (Click and Drag) challenge.
+
+**Project Summary**: Click and move your mouse to drag a scrollbar to the left/right of the screen.
+
+**Thoughts**: Learned a few things from yesterday's challenge. I feel like that challenge and today's are both very relevant. I was able to have the scrollbar move on mousedrag by adding a boolean that changes to true on mousedown, and then a mousemove event that fires that only does anything if that boolean is true. A few notes from Day 26 challenge:
+  * Two classes can get added to an element to show it -- first to set from display: none to display: block/whatever, second to go from opacity: 0 to opacity: 1 after a setTimeout() function. This is how Angular and React do things too
+ * element.getBoundingClientRect() takes the absolute position the element is at on the screen. It therefore needs to subtract the coords of the nav it should be relating to, otherwise if more content is added to the top of the page, it will push down the element
