@@ -36,35 +36,33 @@
 
 <script>
   const items = document.querySelector('.items');
-  const itemsLocation = items.getBoundingClientRect();
-  let mouseBegin = 0;
-  let mouseEnd = 0;
-  let mouseDifference = 0;
+  let mouseBegin;
+  let mouseEnd;
   let mouseDown = false;
-
-  items.scrollLeft = 400;
 
   function dragStart(e) {
     mouseBegin = e.screenX;
     mouseDown = true;
+    items.classList.add('active');
   }
 
   function dragging(e) {
     if(mouseDown) {
       mouseEnd = e.screenX;
-      if(mouseBegin > mouseEnd ? mouseDifference = mouseBegin - mouseEnd : mouseDifference = mouseBegin + mouseEnd);
-      items.scrollLeft += mouseDifference;
-      console.log(mouseBegin, mouseEnd, mouseDifference);
+      items.scrollLeft += ((mouseBegin - mouseEnd) * 3);
+      mouseBegin = e.screenX;
     }
   }
 
-  function dragEnd(e) {
+  function dragEnd() {
     mouseDown = false;
+    items.classList.remove('active');
   }
 
-  document.addEventListener('mousedown', dragStart);
-  document.addEventListener('mousemove', dragging);
-  document.addEventListener('mouseup', dragEnd);
+  items.addEventListener('mousedown', dragStart);
+  items.addEventListener('mousemove', dragging);
+  items.addEventListener('mouseleave', dragEnd);
+  items.addEventListener('mouseup', dragEnd);
 </script>
 
   </body>
