@@ -41,17 +41,28 @@
   let mouseDown = false;
 
   function dragStart(e) {
-    mouseBegin = e.screenX;
+    // mouseBegin = e.screenX;
+    mouseBegin = e.screenX - items.offsetLeft; // adjusted per wes bos
     mouseDown = true;
     items.classList.add('active');
   }
 
   function dragging(e) {
-    if(mouseDown) {
-      mouseEnd = e.screenX;
-      items.scrollLeft += ((mouseBegin - mouseEnd) * 3);
-      mouseBegin = e.screenX;
+    // changing from putting everything in the if statement to just if mouseDown is false in if statement
+    // if(mouseDown) {
+    //   mouseEnd = e.screenX;
+    //   items.scrollLeft += ((mouseBegin - mouseEnd) * 3);
+    //   mouseBegin = e.screenX;
+    // }
+
+    if(!mouseDown) {
+      return;
     }
+    // mouseEnd = e.screenX;
+    mouseEnd = e.screenX - items.offsetLeft; // adjusted per wes bos
+    items.scrollLeft += ((mouseBegin - mouseEnd) * 3);
+    // mouseBegin = e.screenX;
+    mouseBegin = e.screenX - items.offsetLeft; // adjusted per wes bos
   }
 
   function dragEnd() {

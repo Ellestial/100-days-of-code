@@ -15,6 +15,32 @@
   </div>
 
 <script>
+  const video = document.querySelector('video');
+  const speedHolder = document.querySelector('.speed');
+  const speedBar = document.querySelector('.speed-bar');
+
+  function speedDragging(e) {
+    let speedFraction = (e.offsetY / this.offsetHeight);
+    console.log(e.offsetY, e.pageY);
+    // let currentSpeed = (speedFraction * 5).toFixed(1); can remove based on wes bos updates
+
+    const min = 0.4; // suggestion from wes bos video
+    const max = 5; // suggestion from wes bos video
+    const playback = speedFraction * (max - min) + min; // suggestion from wes bos video
+
+    // if(currentSpeed >= min && currentSpeed <= max) { can remove if statement because of playback update
+    //   speedBar.style.height = speedFraction * 100 + '%';
+    //   video.playbackRate = currentSpeed;
+    //   speedBar.textContent = currentSpeed + 'x';
+    // }
+
+    speedBar.style.height = speedFraction * 100 + '%';
+    video.playbackRate = playback; // changed from currentSpeed variable
+    speedBar.textContent = playback.toFixed(2) + 'x'; // changed from currentSpeed variable
+  }
+
+  speedHolder.addEventListener('mousemove', speedDragging);
+  
 </script>
 </body>
 </html>

@@ -688,3 +688,18 @@ The other video wasn't a challenge so much as learning about some event features
   * Instead of putting all of code in an if statement that reads like if(someVarIsTrue) { }, have if(!someVarIsTrue) { return; } 
   * Can add e.preventDefault() on movemove event listener to prevent highlighting of text or other normal/default functionality
   * Make sure to take e.pageX - items.offsetLeft to remove any space that may be between the current position of the cursor and the leftmost side of the draggable div
+
+
+## Day 76: May 22, 2019
+
+**Today's Progress**: Started and completed Wes Bos' JavaScript 30 - Day 28 challenge and codealong. Started Day 29 challenge.
+
+**Project Summary**: Adjust the playback rate for a video based on the mousemove event on an external div.
+
+**Thoughts**: I thought this went really well. I finished it pretty quickly, and did things in a mostly similar way as Wes Bos. I don't know why he used e.pageY instead of e.offsetY, though. Here are a few of my notes:
+  * Good to set variables for the min and max playback rate amount
+  * Can find the range of acceptable output for something by taking a value that ranges from 0 to 1 and multiplying it by (max - min) and then adding min
+    var min = 0.5;
+    var max = 5;
+    var currentValue = 0.222;
+    var test = currentValue * (max - min) + min; // this results in 0.222 * (4.5) + 0.5, or 1.499
