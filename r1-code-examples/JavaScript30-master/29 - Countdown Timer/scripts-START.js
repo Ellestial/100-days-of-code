@@ -1,43 +1,56 @@
 const displayEndTime = document.querySelector('.display__end-time');
 const displayTimeLeft = document.querySelector('.display__time-left');
 const timerBtns = document.querySelectorAll('.timer__button');
-let timerDuration = 100;
+const form = document.querySelector('form');
+const input = document.querySelector('input[name="minutes"]');
+let decreaseCounter;
 
 function startTimer(seconds) {
-    const startTime = Date.now();
-    const endTime = startTime + (seconds * 100);
-    let timeLeft = seconds;
-    let date = new Date();
-    date.setTime(endTime);
-    console.log(date);
-    endTime.setTime(startTime + durationMilli);
-    console.log(startTime, endTime.getMinutes());
-    let currentMin = ('0' + endTime.getMinutes()).slice(-2);
-    displayEndTime.textContent = `Be back at ${endTime.getHours()}:${currentMin}`;
+    window.clearInterval(decreaseCounter);
+    const start = Date.now();
+    const end = start + (seconds * 1000);
+    // moved section below to own function
+    // const endTime = new Date();
+    // endTime.setTime(end);
+    // const endHr = endTime.getHours();
+    // const endMin = ('0' + endTime.getMinutes()).slice(-2);
+    // displayEndTime.textContent = `Be back at ${endHr}:${endMin}`;
+    showTimeLeft(seconds);
+    showEndTime(end);
 
-    let decreaseCounter = window.setInterval(function() {
-        timeLeft -= 1;
-        let minsLeft = Math.floor(timeLeft / 60);
-        let secsLeft = ('0' + timeLeft % 60).slice(-2);
-        displayTimeLeft.textContent = minsLeft + ':' + secsLeft;
-
-        if(timeLeft === 0) {
+    decreaseCounter = window.setInterval(function() {
+        const current = Date.now();
+        const leftTime = Math.round((end - current) / 1000);
+        showTimeLeft(leftTime);
+        if(leftTime <= 0) {
             window.clearInterval(decreaseCounter);
-            displayTimeLeft.textContent = 'Done!';
-            displayEndTime.textContent = 'Your break is finished';
         }
     }, 1000);
 }
 
-startTimer(timerDuration);
+function showTimeLeft(seconds) {
+    const leftMin = Math.floor(seconds / 60);
+    const leftSec = ('0' + (seconds % 60)).slice(-2);
+    const timerAmount = `${leftMin}:${leftSec}`;
+    document.title = timerAmount;
+    displayTimeLeft.textContent = timerAmount;
+}
+
+function showEndTime(timestamp) {
+    const endTime = new Date(timestamp);
+    // endTime.setTime(end); // can remove by adding the end parameter into the new Date above
+    const endHr = endTime.getHours() > 12 ? endTime.getHours() - 12 : endTime.getHours();
+    const endMin = ('0' + endTime.getMinutes()).slice(-2);
+    displayEndTime.textContent = `Be back at ${endHr}:${endMin}`;
+}
 
 timerBtns.forEach(function(btn) {
-    btn.addEventListener('click', startTimer);
+    btn.addEventListener('click', function(e) {
+        startTimer(this.getAttribute('data-time'));
+    });
 });
 
-// determine length of break in minutes
-// start count down
-// get current time
-// determine time after break ends based on current time and break length
-// be able to start over length of break in minutes by clicking another button
-
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    startTimer(input.value * 60);
+});

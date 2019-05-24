@@ -712,3 +712,15 @@ The other video wasn't a challenge so much as learning about some event features
 **Project Summary**: Create a countdown timer.
 
 **Thoughts**: Watched the first couple minutes of the codealong after finishing some of the code myself -- enough to see that Wes Bos mentions not using setInterval(). I stopped the video there and plan on figuring it out on my own.
+
+
+## Day 78: May 24, 2019
+
+**Today's Progress**: Finished Wes Bos' JavaScript 30 - Day 29 challenge and codealong.
+
+**Thoughts**: This was a bit challenging, but I was able to figure it mostly out on my own. A few important lessons learned:
+  * Can use a setInterval() function, but should not base the current time on a decreasing number value, and instead should base it on the end time minus the current time. That way, if there's a hiccup or some lag, the countdown will still be correct since it's based on real values
+  * document.title is a way to reference your browser tab name
+  * Can run ternary operator to say something like endTime.getHours() > 12 ? endTime.getHours() - 12 : endTime.getHours(); to adjust for North American 12 hour clocks
+  * Need to add a clearInterval() function to the top of startTimer to cancel out any other intervals that exist, so there aren't a few going simultaneously
+  * If element has a name attribute, can do document.whateverName to access it. Can also do nested ones like document.whateverName.nestedName
