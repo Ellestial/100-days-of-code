@@ -703,3 +703,12 @@ The other video wasn't a challenge so much as learning about some event features
     var max = 5;
     var currentValue = 0.222;
     var test = currentValue * (max - min) + min; // this results in 0.222 * (4.5) + 0.5, or 1.499
+
+
+## Day 77: May 23, 2019
+
+**Today's Progress**: Continued with Wes Bos' JavaScript 30 - Day 29 challenge.
+
+**Project Summary**: Create a countdown timer.
+
+**Thoughts**: Watched the first couple minutes of the codealong after finishing some of the code myself -- enough to see that Wes Bos mentions not using setInterval(). I stopped the video there and plan on figuring it out on my own.
