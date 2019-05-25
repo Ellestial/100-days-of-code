@@ -724,3 +724,18 @@ The other video wasn't a challenge so much as learning about some event features
   * Can run ternary operator to say something like endTime.getHours() > 12 ? endTime.getHours() - 12 : endTime.getHours(); to adjust for North American 12 hour clocks
   * Need to add a clearInterval() function to the top of startTimer to cancel out any other intervals that exist, so there aren't a few going simultaneously
   * If element has a name attribute, can do document.whateverName to access it. Can also do nested ones like document.whateverName.nestedName
+
+
+## Day 79: May 25, 2019
+
+**Today's Progress**: Started and finished Wes Bos' JavaScript 30 - Day 30 challenge and codealong.
+
+**Project Summary**: Create a whack-a-mole game.
+
+**Thoughts**: Reminded me of the Color Game project I worked on for the Udemy course, so this went mostly well. I had a few too-complex solutions for components. For example, I can just create a setTimeout() function that ends the game through a boolean variable after an ellapsed amount of time. My solution was more complex (and less accurate) by checking the current time after a mole goes down and ending the game if the current time is at or passed the current time + game duration. More notes:
+  * It's helpful to create a randomNum() function instead of relying on it as a variable since the function can be called multiple times with different return values, while the variable has to be re-declared to get a different value.
+  * It's helpful to create a separate function that gets a random hole based on the input node list/array. Add a lastHole variable that is checked to see if the current hole is the same one as the last one, in which case rerun the randomHole() function
+  * Suggestion based on above -- create functions that are more agnostic for the end goal when possible.
+  * Can create an isOver boolean variable to determine if the game should be over. Can then create another setTimeout() function that sets it to true after the game duration has passed.
+  * Can check for cheaters by checking e.isTrusted. If true, that means the user clicked with a mouse. If false, it was faked with JS
+

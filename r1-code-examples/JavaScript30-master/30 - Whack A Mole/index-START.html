@@ -36,6 +36,96 @@
   const holes = document.querySelectorAll('.hole');
   const scoreBoard = document.querySelector('.score');
   const moles = document.querySelectorAll('.mole');
+  // let now; // cna remove
+  // let then; // can remove
+  let gameDuration = 10000;
+  let score = 0;
+  let lastHole; // Wes Bos suggestion
+  let isOver = false;
+
+  function startGame() {
+    isOver = false;
+    scoreBoard.textContent = 0;
+    score = 0;
+    // now = Date.now(); // can remove because of setTimeout
+    // then = now + gameDuration; // can remove because of setTimeout
+    moleShow();
+    setTimeout(function() { // added setTimeout per Wes Bos' video
+      isOver = true;
+    }, gameDuration);
+    // moleActive();
+    // moleDuration(250, 1500);
+  }
+
+  function addPoint() {
+    if(!e.isTrusted) {
+      return;
+    }
+    score += 1; // can do score++
+    this.parentNode.classList.remove('up');
+    scoreBoard.textContent = score;
+  }
+
+  function randomTime(min, max) { // function added per Wes Bos's suggestion
+    return Math.round(Math.random() * (max - min) + min);
+  }
+
+  function randomHole(holes) { // function added per Wes Bos' suggestion
+    const index = Math.floor(Math.random() * holes.length);
+    const hole = holes[index];
+
+    if(lastHole === hole) {
+      return randomHole(holes);
+    }
+
+    lastHole = hole;
+    return hole;
+  }
+
+  // function moleActive() { // can remove per Wes Bos function above
+  //   let randomHole = Math.floor(Math.random() * holes.length);
+  //   randomHole(holes).classList.add('up');
+  // }
+
+  function moleShow() {
+    const time = randomTime(250, 1000);
+    const hole = randomHole(holes);
+    // now = Date.now(); // can remove
+
+    hole.classList.add('up');
+
+    setTimeout(function() {
+      lastHole.classList.remove('up');
+      if(!isOver) { // changed from now < then to !isOver
+        moleShow();
+      }
+    }, time);
+  };
+
+  // created new function above based on some components of Wes Bos' video, but primarily on own
+  // function moleDuration(minMS, maxMS) {
+  //   let randomMS = Math.floor(Math.random() * (maxMS - minMS) + minMS);
+  //   function moleTimeout() {
+  //     setTimeout(function() {
+  //       randomMS = Math.floor(Math.random() * (maxMS - minMS) + minMS);
+  //       now = Date.now();
+  //       holes.forEach(function(hole) {
+  //         if(hole.classList.contains('up')) {
+  //           hole.classList.remove('up');
+  //         }
+  //       });
+  //       if(now < then) {
+  //         moleActive();
+  //         moleTimeout();
+  //       }
+  //     }, randomMS);
+  //   };
+  //   moleTimeout();
+  // }
+
+  moles.forEach(function(mole) {
+    mole.addEventListener('click', addPoint);
+  });
 
 </script>
 </body>
