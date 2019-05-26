@@ -740,3 +740,18 @@ The other video wasn't a challenge so much as learning about some event features
   * Can create an isOver boolean variable to determine if the game should be over. Can then create another setTimeout() function that sets it to true after the game duration has passed.
   * Can check for cheaters by checking e.isTrusted. If true, that means the user clicked with a mouse. If false, it was faked with JS
 
+
+## Day 80: May 26, 2019
+
+**Today's Progress**: Started/completed and watched codealong for Wes Bos JavaScript 30 Day 6 challenge.
+
+**Project Summary**: Using ajax, create a search box/results that change as you type instead of changing based on a submit/enter button.
+
+**Thoughts**: Wes Bos used RegEx while I used toLowerCase() as the method to match case for items. My way seemed to work, but I want to re-learn RegEx to be able to to utilize it more. Other notes:
+  * Can use fetch(), instead of xmlHttpRequest() which returns a promise. Can use .then() after it
+    * fetch(endpoint)  .then(blob => blob.json())  .then(data => cities.push(…data) // the … is called spread and is ES6)
+  * Change event fires when you leave that input, so for text entry ones it will only work when you click off of the text entry
+  * Get data first, then worry about displaying it
+Instead of using .toLowerCase() could use const regex = new RegExp(search, gi); // g stands for global, I stands for case insensitive
+
+Also! I have now finished all of Wes Bos' JavaScript 30 challenges!

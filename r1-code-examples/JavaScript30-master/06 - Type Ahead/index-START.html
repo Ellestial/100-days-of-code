@@ -16,6 +16,50 @@
   </form>
 <script>
 const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+const xhr = new XMLHttpRequest();
+const suggestions = document.querySelector('.suggestions');
+const search = document.querySelector('.search');
+let data;
+let results;
+let searchValue;
+
+xhr.open('GET', endpoint);
+xhr.send(null);
+
+xhr.onreadystatechange = function() {
+  if(xhr.readyState === 4) {
+    if(xhr.status === 200) {
+      data = JSON.parse(xhr.response);
+    } else {
+      console.log('Error: ' + xhr.status);
+    }
+  }
+}
+
+function getSuggestions() {
+  searchValue = this.value;
+  suggestions.innerHTML = '';
+
+  results = data.filter(function(item) {
+    return item.city.toLowerCase().includes(searchValue.toLowerCase()) || item.state.toLowerCase().includes(searchValue.toLowerCase());
+  });
+
+  results.forEach(function(result) {
+    newSuggestion(result.city, result.state, result.population);
+  });
+}
+
+function newSuggestion(city, state, population) { // suggested to rename to displaySuggestions() per Wes Bos video
+  const li = document.createElement('li');
+  const location = `${city}, ${state}`;
+  const locationHl =(location.toLowerCase()).replace(searchValue.toLowerCase(), `<span class='hl'>${searchValue}</span>`);
+  li.innerHTML = 
+    `<span class="name">${locationHl}</span>
+    <span class="population">${population}</span>`;
+  suggestions.appendChild(li);
+}
+
+search.addEventListener('keyup', getSuggestions);
 
 </script>
 </body>
