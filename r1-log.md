@@ -755,3 +755,14 @@ The other video wasn't a challenge so much as learning about some event features
 Instead of using .toLowerCase() could use const regex = new RegExp(search, gi); // g stands for global, I stands for case insensitive
 
 Also! I have now finished all of Wes Bos' JavaScript 30 challenges!
+
+
+## Day 81: May 27, 2019
+
+**Today's Progress**: Reviewed You Don't Know JS: Scope & Closures - Chapters 1 & 2 notes. Started reading Chapter 3.
+
+**Thoughts**: I have a lot to learn, and must always remember that. Today I reviewed the compliation process, lexical scope, how to cheat lexical scope, and performance issues with cheating lexical scope. Things I learned in chapter 3:
+  * Think about creating functions with code as a way to hide the code by taking a section of code and wrapping it in a function.
+  * Consider the Principle of Least Privilege -- consider exposing what is minmally necessary and "hide" everything else.
+  * Best to declare variables and functions within the scopes they pertain to instead of global scope when possible.
+  * Libraries avoid collision of multiple variables referring to the same scope identifier in unintended ways by creating one variable object with a unique name in the global scope and having all the properties/methods private within.
