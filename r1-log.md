@@ -766,3 +766,13 @@ Also! I have now finished all of Wes Bos' JavaScript 30 challenges!
   * Consider the Principle of Least Privilege -- consider exposing what is minmally necessary and "hide" everything else.
   * Best to declare variables and functions within the scopes they pertain to instead of global scope when possible.
   * Libraries avoid collision of multiple variables referring to the same scope identifier in unintended ways by creating one variable object with a unique name in the global scope and having all the properties/methods private within.
+
+
+## Missed May 28th to see a musical
+
+
+## Day 82: May 29, 2019
+
+**Today's Progress**: Continued reading You Don't Know JS: Scope & Closures - Chapter 3. Completed FreeCodeCamp Basic Algorithms Finders Keepers and Confirm the Ending
+
+**Thoughts**: I learned about function expressions vs declarations, IIFE, how scope works with IIFE, and that it's helpful to name IIFEs (and all inline functions). I completed one algorithm challenge I had not been able to complete before. I attribute my reading of You Don't Know JS to my success, since I learned about being able to call functions with nested arguments.
