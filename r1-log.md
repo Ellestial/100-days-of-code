@@ -780,34 +780,8 @@ Also! I have now finished all of Wes Bos' JavaScript 30 challenges!
 
 ## Day 83: May 30, 2019
 
-Notes
-Function declarations are similar to variable declarations -- must begin with the word "function" or "var" and are saved for later. They are also hoisted.
- * Ex: function test() { console.log('hi'); }; // later called with test()
- * Ex: var a = 24; // later called with a
+**Today's Progress**: Continued reading You Don't Know JS: Scope & Closures - Chapter 3.
 
-IIFE can be organized two ways -- where the function to execute is given first OR is given second (after invocation and parameters to pass to it)
- * (function test(a) {
-    var b = 4;
-    console.log(b * a);
-   })(2)
- * (function test(arg1) {
-    console.log(arg1(2));
-   })(function executeFunc(a) {
-    var b = 4;
-    return b * a;
-   })
+**Thoughts**: Learned more about IIFE, like how you can have the function to execute in the first part or after the parameters. I also separately researched a bit more on the difference between function expressions and function declarations. It was helpful to make the comparison to variable declarations, which always begin with the var keyword and need to be called later, similar to how function declarations begin with the function keyword and need to be called later.
 
-Blocks as Scopes
- * When using for loops, the variable defined actually scopes itself to the enclosing scope (function or global) even though this is usually not our intent.
- * All variables declared with var always belong to the enclosing scope.
- * Developers may prefer to cehck themselves against accidentally reusing variables outside their intended purpose, such as by being issued an error about an unknown variable if you try to use it in the wrong place. This helps ensure variables are not reused in confusing or hard-to-maintain ways
- * Types of block scoping that are found beneath the surface of JS
-   * with: while frowned upon, it is an example of a form of block scope, since the scope that is created from the object only exists for the lifetime of that with statement
-   * try/catch: catch clause is scoped to catch block, though if you have multiple try/catch in the same block, linters will complain if the catch clauses are named the same, even though they are safely block scoped  
-    * Ex: try {
-      somethingFails();
-      } catch(err) {
-        console.log(err);
-      }
-      console.log(err); // ReferenceError: `err`
-   * let: attaches the variable declaration to the scope of whatever block (commonly a { .. } pair) it's contained in
+I also learned how for loops actually have the var i = 0 (or whatever initialization) scoped to the surrounding function/global scope, not to the for loop.
