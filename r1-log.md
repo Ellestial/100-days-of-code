@@ -789,52 +789,12 @@ I also learned how for loops actually have the var i = 0 (or whatever initializa
 
 ## Day 84: May 31, 2019
 
-**Today's Progress**:
+**Today's Progress**: Finished reading You Don't Know JS: Scope & Closures - Chapter 3. Began Chapter 4: Hoisting.
 
-Notes: 
-- Concerns with using let: it's somewhat implicit. It requires paying close attention to which blocks have variables scoped to them, and if you're in the habit of moving them around.
- - Creating explicit blocks can help address some of these concerns. It may be easier as a whole block to move around later in refactoring, without affecting the position and semantics of the enclosing if-statement.
- - Instead of: if(foo) {
-     let bar = foo * 2;
-     console.log(bar);
-   }
- - Do: if(foo) {
-     {
-       let bar = foo * 2;
-       console.log(bar);
-     }
-   }
- - let declarations do not hoist. They will not exist in the block until the declaration statement. Similar to function expressions.
- 
-Garbage Collection
-- Block-scoping is useful to reclaim memory (aka collect the garbage). Ex:
- function process(data) {
-  // do something interesting
- }
-
- var someReallyBigData = { .. };
-
- process( someReallyBigData );
-
- var btn = document.getElementById( "my_button" );
-
- btn.addEventListener( "click", function click(evt){
-  console.log("button clicked");
- }, /*capturingPhase=*/false );
-In the above, the someReallyBigData isn't needed after running it through process(). Those two lines could be in their own explicit block where var changes to let. This is then garbage collected.
-
-Let loops
-- Works great in for loops. Not only does let in the for-loop header bind the i to the for-loop body, but in fact, it re-binds it to each iteration of the loop, making sure to reassign it to the value from the end of the previous loop iteration.
-- Be careful of gotcha where existing code has a reliance on function-scoped var declarations. Replacing var in these situations with let could potentially break the code.
- - Ex: var foo = true, baz = 10;
-   if (foo) {
-    var bar = 3; // switching this to let would make the next if statement throw a referenceError (or create a global variable in strict mode)
-
-    // ...
-   }
-
-   if (baz > bar) {
-    console.log( baz );
-   }
-- const is also block-scoped, but with a fixed value. Attempting to change the value after it is declared results in a ReferenceError
-- Should use var, let, and const together. Let cannot one-to-one replace var. There is a time and place for function-based scope and block-based scope.
+**Thoughts**: I learned more about let and how block scoping can help with things like garbage collecting, where some memory-guzzling code, like some data, can be placed in its own explicit code block to be run through a function and then left alone so it's not needed for reference later/using up memory still. I also learned that variable and function declarations arep rocessed before variable/function assignment. So:
+ `console.log(a);`
+ `var a = 2;` 
+is processed like so:
+ `var a;`
+ `console.log(a);` // undefined
+ `a = 2;`
