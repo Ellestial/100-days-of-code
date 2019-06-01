@@ -791,10 +791,17 @@ I also learned how for loops actually have the var i = 0 (or whatever initializa
 
 **Today's Progress**: Finished reading You Don't Know JS: Scope & Closures - Chapter 3. Began Chapter 4: Hoisting.
 
-**Thoughts**: I learned more about let and how block scoping can help with things like garbage collecting, where some memory-guzzling code, like some data, can be placed in its own explicit code block to be run through a function and then left alone so it's not needed for reference later/using up memory still. I also learned that variable and function declarations arep rocessed before variable/function assignment. So:
+**Thoughts**: I learned more about let and how block scoping can help with things like garbage collecting, where some memory-guzzling code, like some data, can be placed in its own explicit code block to be run through a function and then left alone so it's not needed for reference later/using up memory still. I also learned that variable and function declarations are processed before variable/function assignment. So:
  `console.log(a);`
  `var a = 2;` 
 is processed like so:
  `var a;`
  `console.log(a);` // undefined
  `a = 2;`
+
+
+ ## Day 85: June 1, 2019
+
+ **Today's Progress**: Continued reading You Don't Know JS - Chapter 4, did a few algorithm challenges, and read a bit more about recursion and hoisting.
+
+ **Thoughts**: I learned how variable declarations are hoisted, but not the assignments. Function declarations are hoisted above variable declarations. Function declarations are hoisted outside their block, even if statements, to the enclosing scope. I'm also playing around with using recursion to create a string reversal algorithm.
