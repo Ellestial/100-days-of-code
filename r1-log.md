@@ -802,6 +802,13 @@ is processed like so:
 
  ## Day 85: June 1, 2019
 
- **Today's Progress**: Continued reading You Don't Know JS - Chapter 4, did a few algorithm challenges, and read a bit more about recursion and hoisting.
+ **Today's Progress**: Continued reading You Don't Know JS - Scope & Closures: Chapter 4, did a few algorithm challenges, and read a bit more about recursion and hoisting.
 
  **Thoughts**: I learned how variable declarations are hoisted, but not the assignments. Function declarations are hoisted above variable declarations. Function declarations are hoisted outside their block, even if statements, to the enclosing scope. I'm also playing around with using recursion to create a string reversal algorithm.
+
+
+ ## Day 86: June 2, 2019
+
+ **Today's Progress**: Finished You Don't Know JS - Scope & Closures: Chapter 4. Reviewed my notes from chapters 1 - 4.
+
+ **Thoughts**: I wanted to review my notes about lookups, lexical scope, function/block-based scope, IIFE, and hoisting before delving into Chapter 5: Closures. I also organized my notes a bit better.
