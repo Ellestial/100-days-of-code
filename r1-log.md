@@ -818,38 +818,4 @@ is processed like so:
 
 **Today's Progress**: Started reading You Don't Know JS - Scope & Closures: Chapter 5.
 
-**Thoughts**:
-
-**Notes**: 
-Closures
-- Closure is all around you in JS, you just have to recognize and embrace it. It may already be occurring all over your code.
-Nitty Gritty
-- Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.
-- Lexical scope is a big part of what closure is.
-
-function foo() {
-  var a = 2;
-  function bar() {
-    console.log(a);
-  }
-  bar();
-}
-foo();
-
-- In the above example, bar() has closure over the lexical scope of foo() and of the global scope.
-  - Put differently, it's said that bar() closes over the scope of foo(). Why? Because bar() appears nested inside of foo(). Plain and simple.
-  
-A more visible way to show closure:
-function foo() {
-  var a = 2;
-  function bar() {
-    console.log(a);
-  }
-  return bar;
-}
-var baz = foo();
-baz(); // 2
-- The bar() function is executed outside of its declared lexical scope.
-- After foo() is executed, we'd expect the inner scope of foo() to go away since it is no longer in use and the Engine employs a Garbage Colelctor that frees up memory once it's no longer in use. HOWEVER, it is still in use by the function bar() since it has lexical scope closure over the inner scope of foo().
-- By virtue of where it was declared, bar() has a lexical scope closure over the inner scope of foo(), which ckeeps the scope alive for bar() to reference at any later time.
-- Any of the various ways that functions can be passed around as values, and indeed invoked in other locations, are all examples of observing/exercising closure.
+**Thoughts**: I started learning a bit about closures -- that they're the combination of lexical scope and functions. I'm planning on rereading a lot of this section to fully grasp the concept and usage.
