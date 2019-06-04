@@ -819,3 +819,31 @@ is processed like so:
 **Today's Progress**: Started reading You Don't Know JS - Scope & Closures: Chapter 5.
 
 **Thoughts**: I started learning a bit about closures -- that they're the combination of lexical scope and functions. I'm planning on rereading a lot of this section to fully grasp the concept and usage.
+
+
+## Day 88: June 4, 2019
+
+**Today's Progress**: Continued reading You Don't Know JS - Scope & Closures: Chapter 5.
+
+**Thoughts**: I'm getting a better grasp on closure. It seems simultaneously as simple as passing functions as values that have access to their original lexical scope, and as complicated as an entirely new way of thinking. The Loops + Closures section was particularly interesting and challenging. Some notes:
+```
+for (var i = 1; i <= 5; i++) {
+  setTimeout(function timer() {
+    console.log(i);
+  }, i * 1000);
+} // output is 6 logged 5 times
+```
+  * While i is <= 5 this runs, so when it gets to 6, the for loop doesn't run (but i is now equal to 6). The output is reflecting the final value of the i after the loop terminates
+  * The timeout function callbacks are happening well after the completion of the loop
+  * We're trying to imply that each iteration of the loop captures its own copy of i at the time of the iteration. However, all 5 instances of this are all closed over the same shared global scope.
+```
+for (var i = 1; i <= 5; i++) {
+  (function() {
+    var j = i;
+    setTimeout(function timer() {
+      console.log(j);
+    }, j * 1000);
+  })();
+} // works!
+```
+  * The use of an IIFE inside each iteration created a new scope for each iteration, which gave our timeout function callbacks the opportunity to close over a new scope for each iteration, one which had a variable with the right per-iteration value in it for us to access
