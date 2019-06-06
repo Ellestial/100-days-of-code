@@ -847,3 +847,10 @@ for (var i = 1; i <= 5; i++) {
 } // works!
 ```
   * The use of an IIFE inside each iteration created a new scope for each iteration, which gave our timeout function callbacks the opportunity to close over a new scope for each iteration, one which had a variable with the right per-iteration value in it for us to access
+
+
+## Day 89: June 5, 2019
+
+**Today's Progress**: Continued reading YDKJS Scope & Closures - Chapter 5.
+
+**Thoughts**: I believe I understand closures, as well as how closures relate to loops. I am working on understanding modules.
