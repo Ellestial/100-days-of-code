@@ -854,3 +854,10 @@ for (var i = 1; i <= 5; i++) {
 **Today's Progress**: Continued reading YDKJS Scope & Closures - Chapter 5.
 
 **Thoughts**: I believe I understand closures, as well as how closures relate to loops. I am working on understanding modules.
+
+
+## Day 90: June 6, 2019
+
+**Today's Progress**: Read YDKJS Scope & Closures - Appendix A and (most of) B; continued Chapter 5
+
+**Thoughts**: I'm slowly learning more about modules, but needed a breather away from the modern modules section. I decided to read more about dynamic scope (which only cares about its called location instead of its written location) and block scope polyfills (using try/catch).
