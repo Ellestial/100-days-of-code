@@ -861,3 +861,21 @@ for (var i = 1; i <= 5; i++) {
 **Today's Progress**: Read YDKJS Scope & Closures - Appendix A and (most of) B; continued Chapter 5
 
 **Thoughts**: I'm slowly learning more about modules, but needed a breather away from the modern modules section. I decided to read more about dynamic scope (which only cares about its called location instead of its written location) and block scope polyfills (using try/catch).
+
+
+## Day 91: June 7, 2019
+
+**Today's Progress**: Finished all of YDKJS SCope & Closures. Began Harry Potter matching game
+
+**Thoughts**: I still feel a bit uncertain on module loaders/managers and want to revisit that section more. I was surprised to learn that arrow functions treat the this keyword differently than normal ones.
+
+I am beginning a project based on a friend's suggestion/challenge (who will be creating the same project):
+Make a memory matching game using the Harry Potter API. Conditions include...
+  * It is an 8x8 grid
+  * Players can choose one of 5 decks: Death Eather, Dumbledore's Army, Order of the Phoenix, Ministry of Magic or all
+  * Each character card displays their Patronus, house if applicable, wand, alias, and blood status
+  * Correct match awards a spell (must not be a duplicative spell)
+  * When completed, the player sees the spells they have earned
+  * When the round is over, everything resets
+  * Must have indicators for: spells earned, the deck currently active, potential matches left
+  * Add a 2 minute timer
