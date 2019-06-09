@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
     <title>Potter Matching Game</title>
 </head>
 <body>
@@ -14,13 +15,14 @@
     </section>
     <section class="game">
         <h2>Hello</h2>
+        <ul class="game__cards">
+            <li class="card" data-index="0">
+                <div class="card__front"></div>
+                <div class="card__back"></div>
+            </li>
+        </ul>
 
-        <div class="game__overlay">
-            <h4 class="overlay__title">New Spell Earned</h4>
-            <img class="overlay__icon" src="https://via.placeholder.com/125x125" />
-            <h2 class="overlay__spell">Aberto</h2>
-            <h3 class="overlay__spell-type">Charm</h3>
-        </div>
+        <div class="game__overlay"></div> <!-- dynamic -->
     </section>
     <script src="script.js"></script>
 </body>

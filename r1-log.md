@@ -886,3 +886,10 @@ Make a memory matching game using the Harry Potter API. Conditions include...
 **Today's Progress**: Started on the Harry Potter Matching Game! I created preliminary wireframes and set up the intro panel in HTML/JS that gives instruction and requests you select a deck.
 
 **Thoughts**: I tried to spend some time writing some pseudo code to organize the structure. I then created the preliminary intro screen where you select a deck to play. I grabbed that info and am ready to work on the actual game portion tomorrow.
+
+
+## Day 93: June 9, 2019
+
+**Today's Progress**: Continued working on the Harry Potter Matching Game. Activities included: selecting a deck to play as, adding a set number of cards to play the game, and awarding spells.
+
+**Thoughts**: I need to get into the actual game portion of selecting a card and selecting a second card to see if they match. Once that's in, I'll feel much more confident with my abilities.
