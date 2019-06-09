@@ -865,7 +865,7 @@ for (var i = 1; i <= 5; i++) {
 
 ## Day 91: June 7, 2019
 
-**Today's Progress**: Finished all of YDKJS SCope & Closures. Began Harry Potter matching game
+**Today's Progress**: Finished all of YDKJS Scope & Closures. Began Harry Potter matching game
 
 **Thoughts**: I still feel a bit uncertain on module loaders/managers and want to revisit that section more. I was surprised to learn that arrow functions treat the this keyword differently than normal ones.
 
@@ -879,3 +879,10 @@ Make a memory matching game using the Harry Potter API. Conditions include...
   * When the round is over, everything resets
   * Must have indicators for: spells earned, the deck currently active, potential matches left
   * Add a 2 minute timer
+
+
+## Day 92: June 8, 2019
+
+**Today's Progress**: Started on the Harry Potter Matching Game! I created preliminary wireframes and set up the intro panel in HTML/JS that gives instruction and requests you select a deck.
+
+**Thoughts**: I tried to spend some time writing some pseudo code to organize the structure. I then created the preliminary intro screen where you select a deck to play. I grabbed that info and am ready to work on the actual game portion tomorrow.
