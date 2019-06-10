@@ -1,3 +1,7 @@
+/////////////////////////////////
+//       global variables      //
+/////////////////////////////////
+
 const panels = document.querySelectorAll('section');
 const cards = document.querySelector('.game__cards');
 const numCards = 36;
@@ -6,22 +10,31 @@ let spellData;
 let selectedDeck;
 let selectedDeckData;
 let selectedDeckCards = [];
-let gameOver;
 let collectedSpells = [];
-
+let gameOver;
 let introDecks;
-
 const deckList = [
   {datadeck: 'deathEater', datatitle: 'Death Eater'},
   {datadeck: 'dumbledoresArmy', datatitle: 'Dumbledore\'s Army'}, 
   {datadeck: 'ministryOfMagic', datatitle: 'Ministry of Magic'}, 
   {datadeck: 'orderOfThePhoenix', datatitle: 'Order of the Phoenix'}];
 
-// general functions
+/////////////////////////////////
+//    onload/IIFE functions    //
+/////////////////////////////////
+
 window.onload = function() {
   panels.forEach(function(panel) {
     panel.style.display = 'none';
   });
+}
+
+/////////////////////////////////
+// multi-use general functions //
+/////////////////////////////////
+
+function randomNum(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
 function showPanel(shownPanel) {
@@ -30,6 +43,28 @@ function showPanel(shownPanel) {
   })
   shownPanel.style.display = 'block';
 }
+
+function resetGame() {
+  gameOver = false;
+  document.body.dataset.deck = '';
+  cards.innerHTML = '';
+  showPanel(document.querySelector('.intro'));
+}
+  
+function randomPotterItem(dataArr, usableArr, title) {
+  let newRandomItem = dataArr[randomNum(0, dataArr.length - 1)];
+  let duplicate = false;
+
+  usableArr.forEach(function(arrItem) {
+    if(arrItem[title] === newRandomItem[title]) {
+      return duplicate = true;
+    }
+  })
+  if(duplicate) {
+    return randomPotterItem(dataArr, usableArr, title);
+  }
+  return newRandomItem;
+};
 
 (function createDecks(decArr) {
   decArr.forEach(function(deck) {
@@ -45,34 +80,9 @@ function showPanel(shownPanel) {
   introDecks = document.querySelectorAll('.deck');
 })(deckList)
 
-function resetGame() {
-  gameOver = false;
-  document.body.dataset.deck = '';
-  cards.innerHTML = '';
-  showPanel(document.querySelector('.intro'));
-}
-
-function randomNum(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
-}
-  
-function randomPotterItem(dataArr, usableArr, title) {
-  console.log(dataArr);
-  let newRandomItem = dataArr[randomNum(0, dataArr.length - 1)];
-  let duplicate = false;
-
-  usableArr.forEach(function(arrItem) {
-    if(arrItem[title] === newRandomItem[title]) {
-      duplicate = true;
-    }
-  })
-
-  if(duplicate && usableArr.length < dataArr.length) {
-    return randomPotterItem();
-  }
-  
-  return newRandomItem;
-};
+/////////////////////////////////
+//    intro panel functions    //
+/////////////////////////////////
 
 function gameIntro() {
   resetGame();
@@ -82,38 +92,52 @@ function gameIntro() {
   });
 }
 
+/////////////////////////////////
+//        game functions       //
+/////////////////////////////////
+
 function beginGame() {
   selectedDeck = this.dataset;
-  document.body.dataset.deck = selectedDeck.deck;
   showPanel(document.querySelector('.game'));
   selectedDeckData = characterData.filter(function(character) {
     return character[selectedDeck.deck] == true;
   });
+  createCards();
   randomCharacters();
+  shuffleCharacters(selectedDeckCards);
+  console.log (selectedDeckCards);
+
+  function createCards() {
+    for(let i = 0; i < numCards; i++) {
+      const newLi = document.createElement('li');
+      newLi.classList.add('card');
+      newLi.dataset.index = i;
+      newLi.innerHTML = `
+      <div class="card__front card__side">
+        <img class="card__image" src="https://via.placeholder.com/80x80?text=${selectedDeck.deck}" />
+      </div>
+      <div class="card__back card__side"></div>`;
+      cards.appendChild(newLi);
+    }
+  };
   
   function randomCharacters() {
-
     for(let i = 0; i < numCards / 2; i++) {
       let selectedDeckCard = randomPotterItem(selectedDeckData, selectedDeckCards, 'name');
       selectedDeckCards.push(selectedDeckCard, selectedDeckCard);
     }
   };
-  createCards();
-  flipCard();
-}
 
-function createCards() {
-  for(let i = 0; i < numCards; i++) {
-    const newLi = document.createElement('li');
-    newLi.classList.add('card');
-    newLi.dataset.index = i;
-    newLi.innerHTML = `
-    <div class="card__front card__side">
-      <img class="card__image" src="https://via.placeholder.com/80x80?text=${selectedDeck.deck}" />
-    </div>
-    <div class="card__back card__side"></div>`;
-    cards.appendChild(newLi);
-  }
+  function shuffleCharacters(usableArr) {
+    for(let i = 0; i < usableArr.length - 1; i++) {
+      let firstEl = usableArr[i];
+      let secondIndex = randomNum(0, usableArr.length - 1);
+      usableArr[i] = usableArr[secondIndex];
+      usableArr[secondIndex] = firstEl;
+    }
+    return usableArr;
+  };
+  flipCard();
 }
 
 function flipCard() {
@@ -124,13 +148,19 @@ function flipCard() {
   })
 
   function checkMatch() {
-    if(firstSelectedCard === '') {
-      this.classList.toggle('card--flipped');
-      firstSelectedCard = this;
+    let i = this.dataset.index;
+    this.querySelector('.card__back').innerHTML = `
+      <h4 class="card__name">${selectedDeckCards[i].name}</h4>
+      <p class="card__blood">${selectedDeckCards[i].bloodStatus}</p>`;
+
+    if(firstSelectedCard === '' || firstSelectedCard === undefined) {
+      firstSelectedCard = selectedDeckCards[i];
+    } else if(firstSelectedCard === selectedDeckCards[i]) {
+      console.log('match!');
     }
-    if(firstSelectedCard === this) {
-      firstSelectedCard = '';
-    }
+    console.log(firstSelectedCard);
+    this.classList.toggle('card--flipped');
+    firstSelectedCard = selectedDeckCards[i];
   }
 }
 
@@ -149,7 +179,10 @@ function populateSpellOverlay() {
   }, 1500);
 }
 
-// ajax requests
+/////////////////////////////////
+//        ajax requests        //
+/////////////////////////////////
+
 let characterRequest = new XMLHttpRequest();
 characterRequest.open('GET', 'https://www.potterapi.com/v1/characters?key=$2a$10$g1ou2bpWNcB/sLAp9iZLMuspw2OPKf2DUpeRzY3zZzPT8SeC1u7yi', true)
 characterRequest.onreadystatechange = function() {
