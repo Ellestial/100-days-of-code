@@ -107,18 +107,15 @@ $spacing-l: 1.5rem;
       background-color: #e3e3e3;
     }
 
-    .card__side {
+    .card__back {
       display: none;
     }
 
-    &.card--front {
+    &.card--flipped {
 
       .card__front {
-        display: block;
+        display: none;
       }
-    }
-
-    &.card--back {
 
       .card__back {
         display: block;
@@ -140,3 +137,23 @@ $spacing-l: 1.5rem;
 }
 
 // overlays
+
+
+  
+// function randomSpell() {
+//   let newRandomSpell = spellData[randomNum(0, spellData.length - 1)];
+//   let duplicate = false;
+
+//   collectedSpells.forEach(function(collectedSpell) {
+//     if(collectedSpell.spell === newRandomSpell.spell) {
+//       duplicate = true;
+//     }
+//   })
+
+//   if(duplicate && collectedSpells.length < spellData.length) {
+//     return randomSpell();
+//   }
+  
+//   collectedSpells.push(newRandomSpell);
+//   return newRandomSpell;
+// };

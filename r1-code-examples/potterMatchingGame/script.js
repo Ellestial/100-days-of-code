@@ -4,7 +4,8 @@ const numCards = 36;
 let characterData;
 let spellData;
 let selectedDeck;
-let deckCards;
+let selectedDeckData;
+let selectedDeckCards = [];
 let gameOver;
 let collectedSpells = [];
 
@@ -21,10 +22,6 @@ window.onload = function() {
   panels.forEach(function(panel) {
     panel.style.display = 'none';
   });
-}
-
-function randomNum(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
 }
 
 function showPanel(shownPanel) {
@@ -55,6 +52,28 @@ function resetGame() {
   showPanel(document.querySelector('.intro'));
 }
 
+function randomNum(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+  
+function randomPotterItem(dataArr, usableArr, title) {
+  console.log(dataArr);
+  let newRandomItem = dataArr[randomNum(0, dataArr.length - 1)];
+  let duplicate = false;
+
+  usableArr.forEach(function(arrItem) {
+    if(arrItem[title] === newRandomItem[title]) {
+      duplicate = true;
+    }
+  })
+
+  if(duplicate && usableArr.length < dataArr.length) {
+    return randomPotterItem();
+  }
+  
+  return newRandomItem;
+};
+
 function gameIntro() {
   resetGame();
 
@@ -67,20 +86,26 @@ function beginGame() {
   selectedDeck = this.dataset;
   document.body.dataset.deck = selectedDeck.deck;
   showPanel(document.querySelector('.game'));
-  deckCards = characterData.filter(function(character) {
+  selectedDeckData = characterData.filter(function(character) {
     return character[selectedDeck.deck] == true;
   });
-  console.log(selectedDeck);
-  console.log(deckCards);
+  randomCharacters();
+  
+  function randomCharacters() {
+
+    for(let i = 0; i < numCards / 2; i++) {
+      let selectedDeckCard = randomPotterItem(selectedDeckData, selectedDeckCards, 'name');
+      selectedDeckCards.push(selectedDeckCard, selectedDeckCard);
+    }
+  };
   createCards();
-  document.querySelector('h2').addEventListener('click', populateSpellOverlay);
+  flipCard();
 }
 
 function createCards() {
   for(let i = 0; i < numCards; i++) {
     const newLi = document.createElement('li');
     newLi.classList.add('card');
-    newLi.classList.add('card--front');
     newLi.dataset.index = i;
     newLi.innerHTML = `
     <div class="card__front card__side">
@@ -91,31 +116,28 @@ function createCards() {
   }
 }
 
-function checkMatch() {
+function flipCard() {
+  const cards = document.querySelectorAll('.card');
+  let firstSelectedCard = '';
+  cards.forEach(function(card) {
+    card.addEventListener('click', checkMatch);
+  })
 
+  function checkMatch() {
+    if(firstSelectedCard === '') {
+      this.classList.toggle('card--flipped');
+      firstSelectedCard = this;
+    }
+    if(firstSelectedCard === this) {
+      firstSelectedCard = '';
+    }
+  }
 }
 
 function populateSpellOverlay() {
   const correctMatchOverlay = document.querySelector('.game__overlay');
-  let collectedSpell = randomSpell();
-  
-  function randomSpell() {
-    let newRandomSpell = spellData[randomNum(0, spellData.length - 1)];
-    let duplicate = false;
-
-    collectedSpells.forEach(function(collectedSpell) {
-      if(collectedSpell.spell === newRandomSpell.spell) {
-        duplicate = true;
-      }
-    })
-
-    if(duplicate && collectedSpells.length < spellData.length) {
-      return randomSpell();
-    }
-    
-    collectedSpells.push(newRandomSpell);
-    return newRandomSpell;
-  };
+  let collectedSpell = randomPotterItem(spellData, collectedSpells, 'spell');
+  collectedSpells.push(collectedSpell);
 
   correctMatchOverlay.innerHTML = `
   <h4 class="overlay__title">You Earned</h4>
@@ -151,10 +173,10 @@ spellRequest.send();
 // set up html with header for: title, spells earned, matches left, current deck, and timer
 // set up html with body for: ul
 // create x number of random cards to fill out the screen (make flexible)
-// create array consisting of x / 2 number of random characters within deck
 // create variable for first pick and second pick
 // when pick first pick, flip card
 // when pick second pick, flip card
+// create array consisting of x / 2 number of random characters within deck
 // see if first pick and second pick are the same character
 // if so, trigger overlay
 // if so, remove cards

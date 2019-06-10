@@ -96,13 +96,13 @@ table {
   transform: scale3d(1.1, 1.1, 1);
   background-color: #e3e3e3;
 }
-.game .card .card__side {
+.game .card .card__back {
   display: none;
 }
-.game .card.card--front .card__front {
-  display: block;
+.game .card.card--flipped .card__front {
+  display: none;
 }
-.game .card.card--back .card__back {
+.game .card.card--flipped .card__back {
   display: block;
 }
 
