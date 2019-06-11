@@ -103,9 +103,8 @@ function beginGame() {
     return character[selectedDeck.deck] == true;
   });
   createCards();
-  randomCharacters();
-  shuffleCharacters(selectedDeckCards);
-  console.log (selectedDeckCards);
+  grabRandomCharacters();
+  watchCards();
 
   function createCards() {
     for(let i = 0; i < numCards; i++) {
@@ -121,46 +120,77 @@ function beginGame() {
     }
   };
   
-  function randomCharacters() {
+  function grabRandomCharacters() {
     for(let i = 0; i < numCards / 2; i++) {
       let selectedDeckCard = randomPotterItem(selectedDeckData, selectedDeckCards, 'name');
       selectedDeckCards.push(selectedDeckCard, selectedDeckCard);
     }
-  };
+    
+    shuffleCharacters(selectedDeckCards);
 
-  function shuffleCharacters(usableArr) {
-    for(let i = 0; i < usableArr.length - 1; i++) {
-      let firstEl = usableArr[i];
-      let secondIndex = randomNum(0, usableArr.length - 1);
-      usableArr[i] = usableArr[secondIndex];
-      usableArr[secondIndex] = firstEl;
-    }
-    return usableArr;
+    function shuffleCharacters(usableArr) {
+      for(let i = 0; i < usableArr.length - 1; i++) {
+        let firstEl = usableArr[i];
+        let secondIndex = randomNum(0, usableArr.length - 1);
+        usableArr[i] = usableArr[secondIndex];
+        usableArr[secondIndex] = firstEl;
+      }
+      return usableArr;
+    };
   };
-  flipCard();
 }
 
-function flipCard() {
+function watchCards() {
   const cards = document.querySelectorAll('.card');
-  let firstSelectedCard = '';
+  let lastSelection;
+  let lastIndex;
+  let cardsFlipped;
+  
   cards.forEach(function(card) {
-    card.addEventListener('click', checkMatch);
+    card.addEventListener('click', flipCard);
   })
 
-  function checkMatch() {
-    let i = this.dataset.index;
-    this.querySelector('.card__back').innerHTML = `
-      <h4 class="card__name">${selectedDeckCards[i].name}</h4>
-      <p class="card__blood">${selectedDeckCards[i].bloodStatus}</p>`;
+  function flipCard() {
+    let thisSelection = this;
+    let thisIndex = thisSelection.dataset.index;
 
-    if(firstSelectedCard === '' || firstSelectedCard === undefined) {
-      firstSelectedCard = selectedDeckCards[i];
-    } else if(firstSelectedCard === selectedDeckCards[i]) {
-      console.log('match!');
-    }
-    console.log(firstSelectedCard);
     this.classList.toggle('card--flipped');
-    firstSelectedCard = selectedDeckCards[i];
+    if(this.classList.contains('card--flipped')) {
+      this.querySelector('.card__back').innerHTML = `
+        <h4 class="card__name">${selectedDeckCards[thisIndex].name}</h4>
+        <p class="card__blood">${selectedDeckCards[thisIndex].bloodStatus}</p>`;
+    } else {
+      this.querySelector('.card__back').innerHTML = ``;
+      lastSelection = '';
+      lastIndex = '';
+    }
+
+    if(lastSelection === '' || lastSelection === undefined) {
+      lastSelection = this;
+      lastIndex = lastSelection.dataset.index;
+    } else {
+
+    }
+    
+    checkMatch();
+    lastSelection = thisSelection;
+    lastIndex = thisIndex;
+
+    function checkMatch() {
+      if(selectedDeckCards[lastIndex] === selectedDeckCards[thisIndex] && lastIndex !== thisIndex) {
+        lastSelection.classList.add('is--empty');
+        lastSelection.innerHTML = '';
+        thisSelection.classList.add('is--empty');
+        thisSelection.innerHTML = '';
+        populateSpellOverlay();
+      } else {
+        console.log(lastSelection, thisSelection);
+        lastSelection.classList.remove('card--flipped');
+        lastSelection.querySelector('.card__back').innerHTML = '';
+        thisSelection.classList.remove('card--flipped');
+        thisSelection.querySelector('.card__back').innerHTML = '';
+      }
+    }
   }
 }
 

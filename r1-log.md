@@ -893,3 +893,10 @@ Make a memory matching game using the Harry Potter API. Conditions include...
 **Today's Progress**: Continued working on the Harry Potter Matching Game. Activities included: selecting a deck to play as, adding a set number of cards to play the game, and awarding spells.
 
 **Thoughts**: I need to get into the actual game portion of selecting a card and selecting a second card to see if they match. Once that's in, I'll feel much more confident with my abilities.
+
+
+## Day 94: June 10, 2019
+
+**Today's Progress**: Continued working on the Harry Potter Matching Game. Activities included: creating randomized, shuffled array of characters of designated deck, flipping cards to reveal options on back, awarding a spell for a correct match.
+
+**Thoughts**: I was able to resolve an issue I had yesterday fairly quickly today. I'm feeling a bit lost with how to determine if two cards were flipped so no more cards are flipped and then flipping the cards back if they were not a match.
