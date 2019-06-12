@@ -47,10 +47,71 @@ table {
 	border-spacing: 0;
 }
 
+// variables
 $spacing-xs: 0.25rem;
 $spacing-s: 0.5rem;
 $spacing-m: 1rem;
 $spacing-l: 1.5rem;
+
+// mixins
+@mixin breakpoint-s {
+  @media(min-width: 540px) { @content; }
+}
+
+@mixin breakpoint-m {
+  @media(min-width: 900px) { @content; }
+}
+
+@mixin breakpoint-l {
+  @media(min-width: 1100px) { @content; }
+}
+
+// animations
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeInUp {
+  0% {opacity: 0; transform: translate3D(0, 100%, 0);}
+  100% {opacity: 1; transform: translate3D(0, 0, 0);}
+}
+
+// reusable classes
+.font-size-header {
+  font-size: 3rem;
+  line-height: 1.3;
+}
+
+.font-size-subheader {
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+.font-size-body-l {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.font-size-body-s {
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+
+html, body {
+  font-size: 100%;
+  font-family: roboto;
+
+  @include breakpoint-m {
+    font-size: 110%;
+  }
+}
+
 
 // intro panel
 .intro {
@@ -82,12 +143,41 @@ $spacing-l: 1.5rem;
 // game panel
 .game {
 
+  .game__header {
+    padding: $spacing-l;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+  }
+
+  .header__deck {
+    margin-bottom: $spacing-m;
+  }
+
+  .header__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .info {
+      margin: 0 $spacing-s;
+      padding: $spacing-s;
+      border: 1px solid #fff;
+    }
+
+    .info__detail {
+      display: block;
+      font-weight: bold;
+    }
+  }
+
   .game__cards {
     max-width: 680px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
+    padding: $spacing-s;
   }
 
   .card {
@@ -100,11 +190,16 @@ $spacing-l: 1.5rem;
     justify-content: center;
     border: 1px solid black;
     margin: $spacing-xs;
+    text-align: center;
     transition: all 150ms;
 
-    &:hover {
+    &:hover:not(.is--completed) {
       transform: scale3d(1.1, 1.1, 1);
       background-color: #e3e3e3;
+    }
+
+    &.is--completed {
+      border: 0;
     }
 
     .card__back {
@@ -124,15 +219,58 @@ $spacing-l: 1.5rem;
   }
 }
 
-.game__overlay {
+.game__overlay__wrapper {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  display: flex;
+  align-items: flex-start;
+  background-color: rgba(255, 255, 255, 0.8);
+  animation: fadeIn 250ms ease-out;
 
   &:empty {
     display: none;
+  }
+
+  &.fade-off {
+    animation: fadeOut 250ms ease-out both;
+  }
+
+  .game__overlay {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+
+    > * {
+      animation-name: fadeInUp;
+      animation-duration: 350ms;
+      animation-fill-mode: backwards;
+
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+          animation-delay: $i * 150ms;
+        }
+      }
+    }
+
+    .overlay__title {
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+
+      &::before,
+      &::after {
+        height: 2px;
+        flex: 1 0;
+        background-color: #333;
+        display: block;
+        margin: 0 $spacing-s;
+        content: '';
+      }
+    }
   }
 }
 

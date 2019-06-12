@@ -900,3 +900,10 @@ Make a memory matching game using the Harry Potter API. Conditions include...
 **Today's Progress**: Continued working on the Harry Potter Matching Game. Activities included: creating randomized, shuffled array of characters of designated deck, flipping cards to reveal options on back, awarding a spell for a correct match.
 
 **Thoughts**: I was able to resolve an issue I had yesterday fairly quickly today. I'm feeling a bit lost with how to determine if two cards were flipped so no more cards are flipped and then flipping the cards back if they were not a match.
+
+
+## Day 95: June 11, 2019
+
+**Today's Progress**: Continued working on the Harry Potter Matching Game. Progress included: ensuring only 2 cards can be flipped over at a time, making sure clicking the same card (or an already matched spot) didn't count as a card click, showing current deck/matches left/spells earned stats, reset game button, and revealing list of earned spells upon full matches.
+
+**Thoughts**: Today was highly productive! The last bit I need to really get in tomorrow before the "due date" is adding a timer. I want to then clean up the JS a lot, since it got pretty messy in my effort to finish this project by my friend's suggested deadline.

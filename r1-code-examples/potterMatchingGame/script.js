@@ -4,14 +4,17 @@
 
 const panels = document.querySelectorAll('section');
 const cards = document.querySelector('.game__cards');
-const numCards = 36;
+const infoDeck = document.querySelector('.deck__name');
+const infoMatchesLeft = document.querySelector('.matches__num');
+const infoSpellsEarned = document.querySelector('.spells__num');
+const numCards = 4;
 let characterData;
 let spellData;
 let selectedDeck;
 let selectedDeckData;
 let selectedDeckCards = [];
 let collectedSpells = [];
-let gameOver;
+let remainingMatches = numCards / 2;
 let introDecks;
 const deckList = [
   {datadeck: 'deathEater', datatitle: 'Death Eater'},
@@ -45,9 +48,15 @@ function showPanel(shownPanel) {
 }
 
 function resetGame() {
-  gameOver = false;
+  selectedDeck = undefined;
+  selectedDeckData = undefined;
+  selectedDeckCards = [];
+  collectedSpells = [];
+  remainingMatches = numCards / 2;
   document.body.dataset.deck = '';
   cards.innerHTML = '';
+  infoMatchesLeft.textContent = remainingMatches;
+  infoSpellsEarned.textContent = 0;
   showPanel(document.querySelector('.intro'));
 }
   
@@ -80,6 +89,8 @@ function randomPotterItem(dataArr, usableArr, title) {
   introDecks = document.querySelectorAll('.deck');
 })(deckList)
 
+document.querySelector('button').addEventListener('click', resetGame);
+
 /////////////////////////////////
 //    intro panel functions    //
 /////////////////////////////////
@@ -98,6 +109,7 @@ function gameIntro() {
 
 function beginGame() {
   selectedDeck = this.dataset;
+  infoDeck.textContent = selectedDeck.title;
   showPanel(document.querySelector('.game'));
   selectedDeckData = characterData.filter(function(character) {
     return character[selectedDeck.deck] == true;
@@ -144,69 +156,102 @@ function watchCards() {
   const cards = document.querySelectorAll('.card');
   let lastSelection;
   let lastIndex;
-  let cardsFlipped;
+  let cardsFlipped = 0;
   
   cards.forEach(function(card) {
     card.addEventListener('click', flipCard);
   })
 
   function flipCard() {
+    cardsFlipped++;
     let thisSelection = this;
     let thisIndex = thisSelection.dataset.index;
 
-    this.classList.toggle('card--flipped');
-    if(this.classList.contains('card--flipped')) {
-      this.querySelector('.card__back').innerHTML = `
+    if(this.classList.contains('is--completed') || thisIndex === lastIndex) {
+      cardsFlipped--;
+      return;
+    }
+
+    if(cardsFlipped <= 2) {
+      thisSelection.classList.add('card--flipped');
+      thisSelection.querySelector('.card__back').innerHTML = `
         <h4 class="card__name">${selectedDeckCards[thisIndex].name}</h4>
         <p class="card__blood">${selectedDeckCards[thisIndex].bloodStatus}</p>`;
-    } else {
-      this.querySelector('.card__back').innerHTML = ``;
-      lastSelection = '';
-      lastIndex = '';
     }
 
-    if(lastSelection === '' || lastSelection === undefined) {
-      lastSelection = this;
-      lastIndex = lastSelection.dataset.index;
-    } else {
-
+    if(cardsFlipped === 1) {
+      lastSelection = thisSelection;
+      lastIndex = thisIndex;
     }
-    
-    checkMatch();
-    lastSelection = thisSelection;
-    lastIndex = thisIndex;
 
+    if(cardsFlipped === 2 && lastIndex !== thisIndex) {
+      checkMatch();
+    }
+  
     function checkMatch() {
-      if(selectedDeckCards[lastIndex] === selectedDeckCards[thisIndex] && lastIndex !== thisIndex) {
-        lastSelection.classList.add('is--empty');
+      if(selectedDeckCards[lastIndex] === selectedDeckCards[thisIndex]) {
+        lastSelection.classList.add('is--completed');
         lastSelection.innerHTML = '';
-        thisSelection.classList.add('is--empty');
+        thisSelection.classList.add('is--completed');
         thisSelection.innerHTML = '';
         populateSpellOverlay();
+        cardsFlipped = 0;
       } else {
-        console.log(lastSelection, thisSelection);
-        lastSelection.classList.remove('card--flipped');
-        lastSelection.querySelector('.card__back').innerHTML = '';
-        thisSelection.classList.remove('card--flipped');
-        thisSelection.querySelector('.card__back').innerHTML = '';
+
+        setTimeout(function() {
+          lastSelection.classList.remove('card--flipped');
+          lastSelection.querySelector('.card__back').innerHTML = '';
+          thisSelection.classList.remove('card--flipped');
+          thisSelection.querySelector('.card__back').innerHTML = '';
+          cardsFlipped = 0;
+        }, 500);
       }
     }
   }
 }
 
 function populateSpellOverlay() {
-  const correctMatchOverlay = document.querySelector('.game__overlay');
+  const correctMatchOverlay = document.querySelector('.game__overlay__wrapper');
   let collectedSpell = randomPotterItem(spellData, collectedSpells, 'spell');
   collectedSpells.push(collectedSpell);
 
   correctMatchOverlay.innerHTML = `
-  <h4 class="overlay__title">You Earned</h4>
-  <img class="overlay__icon" src="https://via.placeholder.com/125x125?text=Spell" />
-  <h2 class="overlay__spell">${collectedSpell.spell}</h2>
-  <h3 class="overlay__spell-type">${collectedSpell.type}</h3>`;
+  <div class="game__overlay">
+    <h4 class="overlay__title font-size-body-l">You Earned</h4>
+    <img class="overlay__icon" src="https://via.placeholder.com/125x125?text=Spell" />
+    <h2 class="overlay__spell font-size-header">${collectedSpell.spell}</h2>
+    <h3 class="overlay__spell-effect font-size-subheader">${collectedSpell.effect}</h3>
+  </div>`;
   setTimeout(function() {
-    correctMatchOverlay.innerHTML = '';
+    correctMatchOverlay.classList.add('fade-off');
+
+    setTimeout(function() {
+      correctMatchOverlay.classList.remove('fade-off');
+      correctMatchOverlay.innerHTML = '';
+      infoMatchesLeft.textContent = remainingMatches--;
+      infoSpellsEarned.textContent = collectedSpells.length;
+      if(remainingMatches === 0) {
+        populateGameOverOverlay();
+      }
+    }, 500);
   }, 1500);
+}
+
+function populateGameOverOverlay() {
+  console.log(collectedSpells);
+  cards.innerHTML = `
+    <h3 class="win__title font-size-header">You Won!</h3>
+    <p class="win__description font-size-body-l">Below you'll find a list of your earned spells.</p>
+    <ul class="win__spells"></u>`;
+  const wonSpells = document.querySelector('.win__spells');
+  collectedSpells.forEach(function(spell) {
+    let newLi = document.createElement('li');
+    newLi.classList.add('win__spell');
+    newLi.innerHTML = `
+    <h4>${spell.spell}</h4>
+    <p>${spell.effect}</p>`;
+    wonSpells.appendChild(newLi);
+  });
 }
 
 /////////////////////////////////

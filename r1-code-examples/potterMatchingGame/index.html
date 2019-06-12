@@ -14,15 +14,18 @@
         <ul class="intro__decks"></ul> <!-- dynamic -->
     </section>
     <section class="game">
-        <h2>Hello</h2>
-        <ul class="game__cards">
-            <li class="card" data-index="0">
-                <div class="card__front"></div>
-                <div class="card__back"></div>
-            </li>
-        </ul>
-
-        <div class="game__overlay"></div> <!-- dynamic -->
+        <div class="game__header">
+            <h2 class="font-size-header">Harry Potter Matching Game</h2>
+            <div class="header__deck font-size-body-l"><span class="deck__name"></span> Deck</div>
+            <div class="header__info">
+                <div class="info__matches-left info">Matches Left <span class="matches__num info__detail">0</span></div>
+                <div class="info__spells-earned info">Spells Earned <span class="spells__num info__detail">0</span></div>
+            </div>
+        </div>
+        <button>Reset</button>
+        <ul class="game__cards"></ul> <!-- dynamic -->
+        <div class="game__overlay__wrapper"></div> <!-- dynamic -->
+        <div class="game__win__overlay__wrapper"></div> <!-- dynamic -->
     </section>
     <script src="script.js"></script>
 </body>

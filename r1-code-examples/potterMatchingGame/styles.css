@@ -52,6 +52,62 @@ table {
   border-spacing: 0;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+.font-size-header {
+  font-size: 3rem;
+  line-height: 1.3;
+}
+
+.font-size-subheader {
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+.font-size-body-l {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.font-size-body-s {
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+html, body {
+  font-size: 100%;
+  font-family: roboto;
+}
+@media (min-width: 900px) {
+  html, body {
+    font-size: 110%;
+  }
+}
+
 .intro .intro__decks {
   display: flex;
   justify-content: center;
@@ -73,12 +129,36 @@ table {
   background-color: #e3e3e3;
 }
 
+.game .game__header {
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+}
+.game .header__deck {
+  margin-bottom: 1rem;
+}
+.game .header__info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.game .header__info .info {
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #fff;
+}
+.game .header__info .info__detail {
+  display: block;
+  font-weight: bold;
+}
 .game .game__cards {
   max-width: 680px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
+  padding: 0.5rem;
 }
 .game .card {
   width: 100%;
@@ -90,11 +170,15 @@ table {
   justify-content: center;
   border: 1px solid black;
   margin: 0.25rem;
+  text-align: center;
   transition: all 150ms;
 }
-.game .card:hover {
+.game .card:hover:not(.is--completed) {
   transform: scale3d(1.1, 1.1, 1);
   background-color: #e3e3e3;
+}
+.game .card.is--completed {
+  border: 0;
 }
 .game .card .card__back {
   display: none;
@@ -106,15 +190,58 @@ table {
   display: block;
 }
 
-.game__overlay {
+.game__overlay__wrapper {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  display: flex;
+  align-items: flex-start;
+  background-color: rgba(255, 255, 255, 0.8);
+  animation: fadeIn 250ms ease-out;
 }
-.game__overlay:empty {
+.game__overlay__wrapper:empty {
   display: none;
+}
+.game__overlay__wrapper.fade-off {
+  animation: fadeOut 250ms ease-out both;
+}
+.game__overlay__wrapper .game__overlay {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+.game__overlay__wrapper .game__overlay > * {
+  animation-name: fadeInUp;
+  animation-duration: 350ms;
+  animation-fill-mode: backwards;
+}
+.game__overlay__wrapper .game__overlay > *:nth-child(1) {
+  animation-delay: 150ms;
+}
+.game__overlay__wrapper .game__overlay > *:nth-child(2) {
+  animation-delay: 300ms;
+}
+.game__overlay__wrapper .game__overlay > *:nth-child(3) {
+  animation-delay: 450ms;
+}
+.game__overlay__wrapper .game__overlay > *:nth-child(4) {
+  animation-delay: 600ms;
+}
+.game__overlay__wrapper .game__overlay .overlay__title {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+.game__overlay__wrapper .game__overlay .overlay__title::before, .game__overlay__wrapper .game__overlay .overlay__title::after {
+  height: 2px;
+  flex: 1 0;
+  background-color: #333;
+  display: block;
+  margin: 0 0.5rem;
+  content: "";
 }
 
 /*# sourceMappingURL=styles.css.map */
