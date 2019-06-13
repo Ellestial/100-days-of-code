@@ -77,8 +77,19 @@ $spacing-l: 1.5rem;
 }
 
 @keyframes fadeInUp {
-  0% {opacity: 0; transform: translate3D(0, 100%, 0);}
-  100% {opacity: 1; transform: translate3D(0, 0, 0);}
+  0% {opacity: 0; transform: translate3d(0, 100%, 0);}
+  100% {opacity: 1; transform: translate3d(0, 0, 0);}
+}
+
+@keyframes flipForward {
+  0% { opacity: 0; transform: rotate3d(1, 0, 0, 0); }
+  100% { opacity: 1; transform: rotate3d(1, 0, 0, 180deg); }
+}
+
+@keyframes flipBack {
+  0% { opacity: 0; transform: rotate3d(1, 0, 0, 180deg); }
+  50% { box-shadow: 5px 0 5px rgba(0, 0, 0, 0.1); }
+  100% { opacity: 1; transform: rotate3d(1, 0, 0, 0); }
 }
 
 // reusable classes
@@ -188,32 +199,54 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
     margin: $spacing-xs;
     text-align: center;
+    perspective: 1000px;
     transition: all 150ms;
 
-    &:hover:not(.is--completed) {
-      transform: scale3d(1.1, 1.1, 1);
-      background-color: #e3e3e3;
+    &:hover:not(.is--completed):not(.card--flipped) {
+
+      .card__inner {
+        background-color: #e3e3e3;
+        cursor: pointer;
+      }
     }
 
     &.is--completed {
       border: 0;
     }
 
+    .card__inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 500ms ease-out;
+      border: 1px solid black;
+      transition: all 250ms;
+    }
+
+    .card__side {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backface-visibility: hidden;
+    }
+
     .card__back {
-      display: none;
+      transform: rotate3d(1, 0, 0, 180deg);
     }
 
     &.card--flipped {
 
-      .card__front {
-        display: none;
-      }
-
-      .card__back {
-        display: block;
+      .card__inner {
+        transform: rotate3d(1, 0, 0, 180deg);
       }
     }
   }
@@ -274,24 +307,20 @@ html, body {
   }
 }
 
-// overlays
+.win__description {
+  width: 100%;
+  text-align: center;
+}
 
+.win__spells {
+  text-align: center;
 
-  
-// function randomSpell() {
-//   let newRandomSpell = spellData[randomNum(0, spellData.length - 1)];
-//   let duplicate = false;
-
-//   collectedSpells.forEach(function(collectedSpell) {
-//     if(collectedSpell.spell === newRandomSpell.spell) {
-//       duplicate = true;
-//     }
-//   })
-
-//   if(duplicate && collectedSpells.length < spellData.length) {
-//     return randomSpell();
-//   }
-  
-//   collectedSpells.push(newRandomSpell);
-//   return newRandomSpell;
-// };
+  .win__spell::before {
+    width: 50px;
+    height: 1px;
+    background-color: black;
+    display: block;
+    margin: $spacing-s auto;
+    content: '';
+  }
+}
