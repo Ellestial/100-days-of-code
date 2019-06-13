@@ -7,7 +7,7 @@ const cards = document.querySelector('.game__cards');
 const infoDeck = document.querySelector('.deck__name');
 const infoMatchesLeft = document.querySelector('.matches__num');
 const infoSpellsEarned = document.querySelector('.spells__num');
-const numCards = 4;
+const numCards = 36;
 let characterData;
 let spellData;
 let selectedDeck;
@@ -69,7 +69,7 @@ function randomPotterItem(dataArr, usableArr, title) {
       return duplicate = true;
     }
   })
-  if(duplicate) {
+  if(duplicate && usableArr.length) {
     return randomPotterItem(dataArr, usableArr, title);
   }
   return newRandomItem;
@@ -89,7 +89,7 @@ function randomPotterItem(dataArr, usableArr, title) {
   introDecks = document.querySelectorAll('.deck');
 })(deckList)
 
-document.querySelector('button').addEventListener('click', resetGame);
+document.querySelector('.game__reset').addEventListener('click', resetGame);
 
 /////////////////////////////////
 //    intro panel functions    //
@@ -124,10 +124,12 @@ function beginGame() {
       newLi.classList.add('card');
       newLi.dataset.index = i;
       newLi.innerHTML = `
-      <div class="card__front card__side">
-        <img class="card__image" src="https://via.placeholder.com/80x80?text=${selectedDeck.deck}" />
-      </div>
-      <div class="card__back card__side"></div>`;
+      <div class="card__inner">
+        <div class="card__front card__side">
+          <img class="card__image" src="https://via.placeholder.com/80x80?text=${selectedDeck.deck}" />
+        </div>
+        <div class="card__back card__side"></div>
+      </div>`;
       cards.appendChild(newLi);
     }
   };
@@ -242,14 +244,14 @@ function populateGameOverOverlay() {
   cards.innerHTML = `
     <h3 class="win__title font-size-header">You Won!</h3>
     <p class="win__description font-size-body-l">Below you'll find a list of your earned spells.</p>
-    <ul class="win__spells"></u>`;
+    <ul class="win__spells"></ul>`;
   const wonSpells = document.querySelector('.win__spells');
   collectedSpells.forEach(function(spell) {
     let newLi = document.createElement('li');
     newLi.classList.add('win__spell');
     newLi.innerHTML = `
-    <h4>${spell.spell}</h4>
-    <p>${spell.effect}</p>`;
+    <h4 class="font-size-subheader">${spell.spell}</h4>
+    <p class="font-size-body-l">${spell.effect}</p>`;
     wonSpells.appendChild(newLi);
   });
 }
