@@ -53,7 +53,6 @@ function resetGame() {
   selectedDeckCards = [];
   collectedSpells = [];
   remainingMatches = numCards / 2;
-  document.body.dataset.deck = '';
   cards.innerHTML = '';
   infoMatchesLeft.textContent = remainingMatches;
   infoSpellsEarned.textContent = 0;
@@ -75,19 +74,21 @@ function randomPotterItem(dataArr, usableArr, title) {
   return newRandomItem;
 };
 
-(function createDecks(decArr) {
-  decArr.forEach(function(deck) {
-    var newLi = document.createElement('li');
-    newLi.classList.add('deck');
-    newLi.dataset.deck = deck.datadeck;
-    newLi.dataset.title = deck.datatitle;
-    newLi.innerHTML = 
-      `<img class='deck__icon' src='https://via.placeholder.com/80x80?text=${deck.datadeck}' />
-      <p class='deck__title'>${deck.datatitle}</p>`;
-    document.querySelector('.intro__decks').appendChild(newLi);
+(function createDecks(deckArr) {
+  let decksEl = document.querySelector('.intro__decks');
+  let deckEl = document.querySelector('.deck');
+  decksEl.removeChild(deckEl);
+
+  deckArr.forEach(function(deck) {
+    let clone = deckEl.cloneNode(true);
+    clone.dataset.deck = deck.datadeck;
+    clone.dataset.title = deck.datatitle;
+    clone.querySelector('.deck__icon').src = `https://via.placeholder.com/80x80?text=${deck.datadeck}`;
+    clone.querySelector('.deck__title').textContent = deck.datatitle;
+    decksEl.appendChild(clone);
   });
   introDecks = document.querySelectorAll('.deck');
-})(deckList)
+})(deckList);
 
 document.querySelector('.game__reset').addEventListener('click', resetGame);
 
@@ -240,7 +241,6 @@ function populateSpellOverlay() {
 }
 
 function populateGameOverOverlay() {
-  console.log(collectedSpells);
   cards.innerHTML = `
     <h3 class="win__title font-size-header">You Won!</h3>
     <p class="win__description font-size-body-l">Below you'll find a list of your earned spells.</p>
@@ -259,7 +259,6 @@ function populateGameOverOverlay() {
 /////////////////////////////////
 //        ajax requests        //
 /////////////////////////////////
-
 let characterRequest = new XMLHttpRequest();
 characterRequest.open('GET', 'https://www.potterapi.com/v1/characters?key=$2a$10$g1ou2bpWNcB/sLAp9iZLMuspw2OPKf2DUpeRzY3zZzPT8SeC1u7yi', true)
 characterRequest.onreadystatechange = function() {
@@ -278,25 +277,3 @@ spellRequest.onreadystatechange = function() {
   }
 }
 spellRequest.send();
-
-// "game screen"
-// set up html with header for: title, spells earned, matches left, current deck, and timer
-// set up html with body for: ul
-// create x number of random cards to fill out the screen (make flexible)
-// create variable for first pick and second pick
-// when pick first pick, flip card
-// when pick second pick, flip card
-// create array consisting of x / 2 number of random characters within deck
-// see if first pick and second pick are the same character
-// if so, trigger overlay
-// if so, remove cards
-// if so, reduce 1 from total matches remaining
-// if so, add 1 to total spells earned
-// if not, flip back cards
-// if all matches paired, trigger gameOver and overlay
-
-// correct match overlay
-
-// "final screen"
-// set up html with header for: title, you won the x deck in x amount of time
-// set up html with body for: list of awarded spells and reset button
