@@ -131,6 +131,12 @@ html, body {
   }
 }
 
+.intro .intro__header {
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+}
 .intro .intro__decks {
   display: flex;
   justify-content: center;
@@ -140,16 +146,36 @@ html, body {
   width: 100%;
   max-width: 200px;
   height: 200px;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0.5rem;
+  margin: 1rem;
   border: 1px solid black;
+  background-color: #fff;
   transition: all 150ms;
+}
+.intro .deck::before, .intro .deck::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 1px solid black;
+  background-color: #fff;
+  z-index: -1;
+  content: "";
+}
+.intro .deck::before {
+  top: 10px;
+  left: 10px;
+}
+.intro .deck::after {
+  top: 5px;
+  left: 5px;
 }
 .intro .deck:hover {
   background-color: #e3e3e3;
+  cursor: pointer;
 }
 
 .game .game__header {
@@ -203,6 +229,9 @@ html, body {
 .game .card.is--completed {
   border: 0;
 }
+.game .card.is--completed .card__side {
+  display: none;
+}
 .game .card .card__inner {
   width: 100%;
   height: 100%;
@@ -224,14 +253,26 @@ html, body {
   justify-content: center;
   backface-visibility: hidden;
 }
+.game .card .card__icon {
+  width: 50px;
+  height: 50px;
+  background: gray;
+}
 .game .card .card__back {
   transform: rotate3d(1, 0, 0, 180deg);
 }
-.game .card.card--flipped .card__inner {
+.game .card.card--flipped:not(.is--completed) .card__inner {
   transform: rotate3d(1, 0, 0, 180deg);
 }
 
-.game__overlay__wrapper {
+button {
+  background-color: pink;
+  border: none;
+  font-size: 100%;
+  padding: 0.25rem 0.75rem;
+}
+
+.overlay__wrapper {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -242,41 +283,42 @@ html, body {
   background-color: rgba(255, 255, 255, 0.8);
   animation: fadeIn 250ms ease-out;
 }
-.game__overlay__wrapper:empty {
+.overlay__wrapper:empty {
   display: none;
 }
-.game__overlay__wrapper.fade-off {
+.overlay__wrapper.fade-off {
   animation: fadeOut 250ms ease-out both;
 }
-.game__overlay__wrapper .game__overlay {
+.overlay__wrapper > * {
   width: 100%;
   max-width: 600px;
   margin: auto;
   text-align: center;
 }
-.game__overlay__wrapper .game__overlay > * {
+
+.overlay__spell > * {
   animation-name: fadeInUp;
   animation-duration: 350ms;
   animation-fill-mode: backwards;
 }
-.game__overlay__wrapper .game__overlay > *:nth-child(1) {
+.overlay__spell > *:nth-child(1) {
   animation-delay: 150ms;
 }
-.game__overlay__wrapper .game__overlay > *:nth-child(2) {
+.overlay__spell > *:nth-child(2) {
   animation-delay: 300ms;
 }
-.game__overlay__wrapper .game__overlay > *:nth-child(3) {
+.overlay__spell > *:nth-child(3) {
   animation-delay: 450ms;
 }
-.game__overlay__wrapper .game__overlay > *:nth-child(4) {
+.overlay__spell > *:nth-child(4) {
   animation-delay: 600ms;
 }
-.game__overlay__wrapper .game__overlay .overlay__title {
+.overlay__spell .spell__title {
   display: flex;
   align-items: center;
   text-transform: uppercase;
 }
-.game__overlay__wrapper .game__overlay .overlay__title::before, .game__overlay__wrapper .game__overlay .overlay__title::after {
+.overlay__spell .spell__title::before, .overlay__spell .spell__title::after {
   height: 2px;
   flex: 1 0;
   background-color: #333;
@@ -285,15 +327,14 @@ html, body {
   content: "";
 }
 
-.win__description {
+.overlay__won .won__description {
   width: 100%;
   text-align: center;
 }
-
-.win__spells {
+.overlay__won .won__spells {
   text-align: center;
 }
-.win__spells .win__spell::before {
+.overlay__won .won__spells .won__spell::before {
   width: 50px;
   height: 1px;
   background-color: black;

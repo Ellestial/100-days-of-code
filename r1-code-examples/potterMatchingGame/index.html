@@ -9,14 +9,16 @@
 </head>
 <body>
     <section class="intro">
-        <h1 class="intro__title">Harry Potter Matching Game</h1>
-        <p class="intro__directions">Select a card to reveal a Harry Potter character. Try and find a matching card and win spells! To begin, select a deck of cards you'd like to play from:</p>
+        <div class="intro__header">
+            <h1 class="intro__title font-size-header">Harry Potter Matching Game</h1>
+            <p class="intro__directions font-size-body-l">Select a card to reveal a Harry Potter character. Try and find a matching card and win spells! To begin, select a deck of characters:</p>
+        </div>
         <ul class="intro__decks">
             <li class="deck">
                 <img class="deck__icon" />
                 <p class="deck__title"></p>
             </li>
-        </ul> <!-- dynamic -->
+        </ul>
     </section>
     <section class="game">
         <div class="game__header">
@@ -32,14 +34,16 @@
             <div class="card">
                 <div class="card__inner">
                     <div class="card__front card__side">
-                        <img class="card__image" />
+                        <div class="card__icon"></div>
                     </div>
-                    <div class="card__back card__side"></div>
+                    <div class="card__back card__side">
+                        <h4 class="card__name"></h4>
+                        <p class="card__blood"></p>
+                    </div>
                 </div>
             </div>
-        </ul> <!-- dynamic -->
-        <div class="game__overlay__wrapper"></div> <!-- dynamic -->
-        <div class="game__win__overlay__wrapper"></div> <!-- dynamic -->
+        </ul>
+        <div class="overlay__wrapper"></div>
     </section>
     <script src="script.js"></script>
 </body>

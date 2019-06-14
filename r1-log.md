@@ -914,3 +914,10 @@ Make a memory matching game using the Harry Potter API. Conditions include...
 **Today's Progress**: Continued working on the Harry Potter Matching Game. Progress included: working on CSS to allow for card flipping, starting to clean up JS in ways like moving some innerHTML declarations to the HTML and cloning the node.
 
 **Thoughts**: I am really wanting to clean up my code as effectively as possible. I stil have to add a timer and I have found a couple bugs (matches left amount is 1 off, if you just flipped 2 cards and hammer on one of those 2 cards before they flip back, you cannot reselect it).
+
+
+## Day 97: June 13, 2019
+
+**Today's Progress**: Continued working on the Harry Potter Matching Game. Progress included: cleaning up the JS and CSS. Added a couple CSS styles. Bug fixing.
+
+**Thoughts**: I seemed to create more bugs while refractoring my code and therefore ended up working on the project pretty late. This means my code got messier as the night went on. I want to revisit it again tomorrow earlier.
