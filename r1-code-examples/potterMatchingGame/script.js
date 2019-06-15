@@ -7,7 +7,9 @@ const infoDeck = document.querySelector('.deck__name');
 const overlayEl = document.querySelector('.overlay__wrapper');
 const infoMatchesLeft = document.querySelector('.matches__num');
 const infoSpellsEarned = document.querySelector('.spells__num');
-const numCards = 36;
+const numCards = 6;
+let spellOverlayEl;
+let wonOverlayEl;
 let characterData;
 let spellData;
 let selectedDeck;
@@ -187,24 +189,18 @@ function flipCard() {
 function populateSpellOverlay() {
   let collectedSpell = randomPotterItem(spellData, collectedSpells, 'spell');
   collectedSpells.push(collectedSpell);
-  overlayEl.innerHTML = `
-  <div class="overlay__spell">
-    <h4 class="spell__title font-size-body-l">You Earned</h4>
-    <img class="spell__icon" src="https://via.placeholder.com/125x125?text=Spell" />
-    <h2 class="spell__name font-size-header">${collectedSpell.spell}</h2>
-    <h3 class="spell__effect font-size-subheader">${collectedSpell.effect}</h3>
-  </div>`;
+  spellOverlayEl.querySelector('.spell__name').textContent = collectedSpell.spell;
+  spellOverlayEl.querySelector('.spell__effect').textContent = collectedSpell.effect;
+  overlayEl.appendChild(spellOverlayEl);
   setTimeout(function() {
     overlayEl.classList.add('fade-off');
 
     setTimeout(function() {
       overlayEl.classList.remove('fade-off');
-      overlayEl.innerHTML = '';
+      overlayEl.removeChild(spellOverlayEl);
+      remainingMatches--;
       infoSpellsEarned.textContent = collectedSpells.length;
-      if(remainingMatches > 0 ) {
-        remainingMatches--;
-        infoMatchesLeft.textContent = remainingMatches;
-      }
+      infoMatchesLeft.textContent = remainingMatches;
       if(remainingMatches === 0) {
         populateWonOverlay();
       }
@@ -213,21 +209,15 @@ function populateSpellOverlay() {
 };
 
 function populateWonOverlay() {
-  overlayEl.innerHTML = `
-  <div class="overlay__won">
-    <h3 class="won__title font-size-header">You Won!</h3>
-    <p class="won__description font-size-body-l">Below you'll find a list of your earned spells.</p>
-    <ul class="won__spells"></ul>
-    <button class="won__reset">New Game</button>
-  </div>`;
-  const wonSpellsEl = document.querySelector('.won__spells');
+  const wonSpellsEl = wonOverlayEl.querySelector('.won__spells');
+  const wonSpellEl = wonOverlayEl.querySelector('.won__spell');
+  wonSpellsEl.removeChild(wonSpellEl);
+  overlayEl.appendChild(wonOverlayEl);
   collectedSpells.forEach(function(spell) {
-    let newLi = document.createElement('li');
-    newLi.classList.add('won__spell');
-    newLi.innerHTML = `
-    <h4 class="font-size-subheader">${spell.spell}</h4>
-    <p class="font-size-body-l">${spell.effect}</p>`;
-    wonSpellsEl.appendChild(newLi);
+    let clone = wonSpellEl.cloneNode(true);
+    clone.querySelector('.spell__name').textContent = spell.spell;
+    clone.querySelector('.spell__effect').textContent = spell.effect;
+    wonSpellsEl.appendChild(clone);
   });
   document.querySelector('.won__reset').addEventListener('click', resetGame);
 };
@@ -260,3 +250,14 @@ spellRequest.onreadystatechange = function() {
   }
 };
 spellRequest.send();
+
+let overlayRequest = new XMLHttpRequest();
+overlayRequest.open('GET', './overlays.html');
+overlayRequest.onreadystatechange = function() {
+  if(overlayRequest.readyState === 4 && overlayRequest.status === 200) {
+    let overlays = new DOMParser().parseFromString(this.response, 'text/html');
+    spellOverlayEl = overlays.querySelector('.overlay__spell');
+    wonOverlayEl = overlays.querySelector('.overlay__won');
+  }
+}
+overlayRequest.send();

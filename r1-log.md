@@ -925,4 +925,6 @@ Make a memory matching game using the Harry Potter API. Conditions include...
 
 ## Day 98: June 14, 2019
 
-**Today's Progress**: I set up the Microsoft IIF server.
+**Today's Progress**: I set up the Microsoft IIF server and moved the overlays to their own HTML that I referenced via AJAX.
+
+**Thoughts**: Was interesting to learn about IIF since I had previously used a separate Apache server years ago. I'm glad my code is cleaned up without any innerHTML() functions. Would like to continue to spruce things up tomorrow and then finally add a timer.
