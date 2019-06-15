@@ -921,3 +921,8 @@ Make a memory matching game using the Harry Potter API. Conditions include...
 **Today's Progress**: Continued working on the Harry Potter Matching Game. Progress included: cleaning up the JS and CSS. Added a couple CSS styles. Bug fixing.
 
 **Thoughts**: I seemed to create more bugs while refractoring my code and therefore ended up working on the project pretty late. This means my code got messier as the night went on. I want to revisit it again tomorrow earlier.
+
+
+## Day 98: June 14, 2019
+
+**Today's Progress**: I set up the Microsoft IIF server.
