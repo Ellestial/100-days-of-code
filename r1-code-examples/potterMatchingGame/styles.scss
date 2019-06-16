@@ -19,7 +19,8 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+  font-size: 100%;
+  box-sizing: border-box;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -52,6 +53,16 @@ $spacing-xs: 0.25rem;
 $spacing-s: 0.5rem;
 $spacing-m: 1rem;
 $spacing-l: 1.5rem;
+
+$font-family-display: 'Crimson Text', serif;
+
+$pattern-squares: url('./assets/pattern-squares.svg');
+
+$color-blue-900: #12384D;
+$color-blue-500: #1E6D91;
+$color-green-100: #D2F4EB;
+$color-green-500: #9DD0BF;
+$color-green-900: #2C646A;
 
 // mixins
 @mixin breakpoint-s {
@@ -105,18 +116,21 @@ $spacing-l: 1.5rem;
 
 .font-size-body-l {
   font-size: 1.5rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 .font-size-body-s {
   font-size: 0.75rem;
-  line-height: 1.6;
+  line-height: 1.2;
+}
+
+.is--hidden {
+  display: none !important;
 }
 
 
 html, body {
-  font-size: 100%;
-  font-family: roboto;
+  font: 100% / 1.2 $font-family-display;
 
   @include breakpoint-m {
     font-size: 110%;
@@ -124,63 +138,82 @@ html, body {
 }
 
 
-// intro panel
-.intro {
+body {
+  background: $pattern-squares, linear-gradient(to right, $color-blue-900 0%, $color-blue-500 30%, $color-blue-500 70%, $color-blue-900 100%);
+}
 
-  .intro__header {
-    padding: $spacing-l;
+.heading {
+  color: #fff;
+
+  .heading__title {
+    max-width: 530px;
+    margin: 0 auto $spacing-m;
     text-align: center;
-    background-color: #333;
-    color: #fff;
+    font: 4rem/1 $font-family-display;
   }
+}
 
-  .intro__decks {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+.game {
+}
+
+.game__directions {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto $spacing-m;
+  color: #fff;
+  text-align: center;
+}
+
+// SECTION for decks
+.game__decks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
   .deck {
     width: 100%;
-    max-width: 200px;
-    height: 200px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: $spacing-m;
-    border: 1px solid black;
-    background-color: #fff;
-    transition: all 150ms;
+    max-width: 225px;
+    height: 225px;
+    margin: $spacing-s;
+    padding: $spacing-m;
+    background-color: $color-green-100;
+    color: $color-green-900;
+    text-align: center;
+    border-radius: 13px;
+    border-top: 5px solid $color-green-500;
+    box-shadow: 0 10px 22px rgba($color-blue-900, 0.16);
+    animation: fadeInUp 250ms both;
+    transition: all 300ms ease-out;
 
-    &::before,
-    &::after {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      border: 1px solid black;
-      background-color: #fff;
-      z-index: -1;
-      content: '';
-    }
-
-    &::before {
-      top: 10px;
-      left: 10px;
-    }
-
-    &::after {
-      top: 5px;
-      left: 5px;
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        animation-delay: 100ms * $i;
+      }
     }
 
     &:hover {
-      background-color: #e3e3e3;
+      background-color: $color-green-500;
+      border-top-color: $color-green-900;
       cursor: pointer;
     }
   }
+
+  .deck__icon__wrapper {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto $spacing-s;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  .deck__icon {
+    width: 80px;
+  }
 }
+
 
 // game panel
 .game {

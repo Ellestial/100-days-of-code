@@ -2,11 +2,11 @@
 //       global variables      //
 /////////////////////////////////
 
-const panels = document.querySelectorAll('section');
-const infoDeck = document.querySelector('.deck__name');
 const overlayEl = document.querySelector('.overlay__wrapper');
-const infoMatchesLeft = document.querySelector('.matches__num');
-const infoSpellsEarned = document.querySelector('.spells__num');
+const settingsEl = document.querySelector('.heading__settings');
+const settingDeckEl = document.querySelector('.deck__name');
+const settingMatchesLeftEl = document.querySelector('.matches__num');
+const settingSpellsEarnedEl = document.querySelector('.spells__num');
 const numCards = 6;
 let spellOverlayEl;
 let wonOverlayEl;
@@ -18,31 +18,25 @@ let selectedDeckCards = [];
 let collectedSpells = [];
 let remainingMatches = numCards / 2;
 const deckList = [
-  {deck: 'deathEater', decktitle: 'Death Eater'},
-  {deck: 'dumbledoresArmy', decktitle: 'Dumbledore\'s Army'}, 
-  {deck: 'ministryOfMagic', decktitle: 'Ministry of Magic'}, 
-  {deck: 'orderOfThePhoenix', decktitle: 'Order of the Phoenix'}];
+  {deck: 'deathEater', deckTitle: 'Death Eater'},
+  {deck: 'dumbledoresArmy', deckTitle: 'Dumbledore\'s Army'}, 
+  {deck: 'ministryOfMagic', deckTitle: 'Ministry of Magic'}, 
+  {deck: 'orderOfThePhoenix', deckTitle: 'Order of the Phoenix'}];
 
 /////////////////////////////////
 //    onload/IIFE functions    //
 /////////////////////////////////
-window.onload = function() {
-  panels.forEach(function(panel) {
-    panel.style.display = 'none';
-  });
-};
-
 (function createDecks(decks) {
-  let decksEl = document.querySelector('.intro__decks');
+  let decksEl = document.querySelector('.game__decks');
   let deckEl = document.querySelector('.deck');
   decksEl.removeChild(deckEl);
 
   decks.forEach(function(deck) {
     let clone = deckEl.cloneNode(true);
     clone.dataset.deck = deck.deck;
-    clone.dataset.title = deck.decktitle;
-    clone.querySelector('.deck__icon').src = `https://via.placeholder.com/80x80?text=${deck.deck}`;
-    clone.querySelector('.deck__title').textContent = deck.decktitle;
+    clone.dataset.title = deck.deckTitle;
+    clone.querySelector('.deck__icon').src = `./assets/deck.svg`;
+    clone.querySelector('.deck__title').textContent = deck.deckTitle;
     decksEl.appendChild(clone);
   });
 })(deckList);
@@ -66,11 +60,14 @@ function randomNum(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 };
 
-function showPanel(shownPanel) {
-  panels.forEach(function(panel) {
-    panel.style.display = 'none';
-  });
-  shownPanel.style.display = 'block';
+function showState(state) {
+  let allStates = document.querySelectorAll('[data-state]')
+  allStates.forEach(function(currentState) {
+    currentState.classList.add('is--hidden');
+    if(currentState.dataset.state === state) {
+      currentState.classList.remove('is--hidden');
+    }
+  })
 };
 
 function shuffle(arr) {
@@ -104,10 +101,10 @@ function resetGame() {
   selectedDeckCards = [];
   collectedSpells = [];
   remainingMatches = numCards / 2;
-  infoMatchesLeft.textContent = remainingMatches;
-  infoSpellsEarned.textContent = 0;
+  settingMatchesLeftEl.textContent = remainingMatches;
+  settingSpellsEarnedEl.textContent = 0;
   overlayEl.textContent = '';
-  showPanel(document.querySelector('.intro'));
+  showState('intro');
 
   document.querySelectorAll('.game__cards .card').forEach(function(card) {
     card.classList.remove('is--completed');
@@ -127,9 +124,9 @@ function beginGame() {
   selectedDeckData = characterData.filter(function(character) {
     return character[selectedDeck.deck] == true;
   });
-  infoDeck.textContent = selectedDeck.title;
-  showPanel(document.querySelector('.game'));
+  settingDeckEl.textContent = selectedDeck.title;
   grabRandomCharacters();
+  showState('game');
   
   function grabRandomCharacters() {
     for(let i = 0; i < numCards / 2; i++) {
@@ -199,8 +196,8 @@ function populateSpellOverlay() {
       overlayEl.classList.remove('fade-off');
       overlayEl.removeChild(spellOverlayEl);
       remainingMatches--;
-      infoSpellsEarned.textContent = collectedSpells.length;
-      infoMatchesLeft.textContent = remainingMatches;
+      settingSpellsEarnedEl.textContent = collectedSpells.length;
+      settingMatchesLeftEl.textContent = remainingMatches;
       if(remainingMatches === 0) {
         populateWonOverlay();
       }
@@ -226,7 +223,7 @@ document.querySelectorAll('.card').forEach(function(card) {
   card.addEventListener('click', flipCard);
 });
 
-document.querySelector('.game__reset').addEventListener('click', resetGame);
+document.querySelector('.setting__reset').addEventListener('click', resetGame);
 
 /////////////////////////////////
 //        ajax requests        //

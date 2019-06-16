@@ -19,6 +19,7 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   font-size: 100%;
+  box-sizing: border-box;
   font: inherit;
   vertical-align: baseline;
 }
@@ -113,17 +114,20 @@ table {
 
 .font-size-body-l {
   font-size: 1.5rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 .font-size-body-s {
   font-size: 0.75rem;
-  line-height: 1.6;
+  line-height: 1.2;
+}
+
+.is--hidden {
+  display: none !important;
 }
 
 html, body {
-  font-size: 100%;
-  font-family: roboto;
+  font: 100%/1.2 "Crimson Text", serif;
 }
 @media (min-width: 900px) {
   html, body {
@@ -131,51 +135,80 @@ html, body {
   }
 }
 
-.intro .intro__header {
-  padding: 1.5rem;
-  text-align: center;
-  background-color: #333;
+body {
+  background: url("./assets/pattern-squares.svg"), linear-gradient(to right, #12384D 0%, #1E6D91 30%, #1E6D91 70%, #12384D 100%);
+}
+
+.heading {
   color: #fff;
 }
-.intro .intro__decks {
+.heading .heading__title {
+  max-width: 530px;
+  margin: 0 auto 1rem;
+  text-align: center;
+  font: 4rem/1 "Crimson Text", serif;
+}
+
+.game__directions {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto 1rem;
+  color: #fff;
+  text-align: center;
+}
+
+.game__decks {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-.intro .deck {
+.game__decks .deck {
   width: 100%;
-  max-width: 200px;
-  height: 200px;
-  position: relative;
+  max-width: 225px;
+  height: 225px;
+  margin: 0.5rem;
+  padding: 1rem;
+  background-color: #D2F4EB;
+  color: #2C646A;
+  text-align: center;
+  border-radius: 13px;
+  border-top: 5px solid #9DD0BF;
+  box-shadow: 0 10px 22px rgba(18, 56, 77, 0.16);
+  animation: fadeInUp 250ms both;
+  transition: all 300ms ease-out;
+}
+.game__decks .deck:nth-child(1) {
+  animation-delay: 100ms;
+}
+.game__decks .deck:nth-child(2) {
+  animation-delay: 200ms;
+}
+.game__decks .deck:nth-child(3) {
+  animation-delay: 300ms;
+}
+.game__decks .deck:nth-child(4) {
+  animation-delay: 400ms;
+}
+.game__decks .deck:nth-child(5) {
+  animation-delay: 500ms;
+}
+.game__decks .deck:hover {
+  background-color: #9DD0BF;
+  border-top-color: #2C646A;
+  cursor: pointer;
+}
+.game__decks .deck__icon__wrapper {
+  width: 120px;
+  height: 120px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 1rem;
-  border: 1px solid black;
+  margin: 0 auto 0.5rem;
+  border-radius: 50%;
   background-color: #fff;
-  transition: all 150ms;
 }
-.intro .deck::before, .intro .deck::after {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border: 1px solid black;
-  background-color: #fff;
-  z-index: -1;
-  content: "";
-}
-.intro .deck::before {
-  top: 10px;
-  left: 10px;
-}
-.intro .deck::after {
-  top: 5px;
-  left: 5px;
-}
-.intro .deck:hover {
-  background-color: #e3e3e3;
-  cursor: pointer;
+.game__decks .deck__icon {
+  width: 80px;
 }
 
 .game .game__header {
