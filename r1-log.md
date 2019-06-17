@@ -935,3 +935,9 @@ Make a memory matching game using the Harry Potter API. Conditions include...
 **Today's Progress**: Mocked up and CSS'd the intro portion of the game. Cleaned up the HTML and made JS updates for that as well.
 
 **Thoughts**: Today wasn't as heavily JS focused, but I made necessary steps to work on the application.
+
+## Day 100: June 16, 2019
+
+**Today's Progress**: Created a timer and further cleaned up HTML/CSS.
+
+**Thoughts**: I. Did. It. I completed the 100 Days of Code challenge! This feels a bit anticlimactic because I intend on diving right into round 2 for another 100 days of coding starting tomorrow. Regardless, I do feel a sense of accomplishment for completing this first round. :)

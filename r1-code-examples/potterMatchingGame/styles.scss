@@ -56,7 +56,7 @@ $spacing-l: 1.5rem;
 
 $font-family-display: 'Crimson Text', serif;
 
-$pattern-squares: url('./assets/pattern-squares.svg');
+$pattern-squares: url('./assets/pattern-squares.svg') repeat-x 0 0;
 
 $color-blue-900: #12384D;
 $color-blue-500: #1E6D91;
@@ -88,7 +88,7 @@ $color-green-900: #2C646A;
 }
 
 @keyframes fadeInUp {
-  0% {opacity: 0; transform: translate3d(0, 100%, 0);}
+  0% {opacity: 0; transform: translate3d(0, 25%, 0);}
   100% {opacity: 1; transform: translate3d(0, 0, 0);}
 }
 
@@ -130,6 +130,7 @@ $color-green-900: #2C646A;
 
 
 html, body {
+  height: 100%;
   font: 100% / 1.2 $font-family-display;
 
   @include breakpoint-m {
@@ -139,29 +140,37 @@ html, body {
 
 
 body {
-  background: $pattern-squares, linear-gradient(to right, $color-blue-900 0%, $color-blue-500 30%, $color-blue-500 70%, $color-blue-900 100%);
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, $color-blue-900 0%, $color-blue-500 30%, $color-blue-500 70%, $color-blue-900 100%);
+}
+
+.heading,
+.game {
+  padding: $spacing-m $spacing-s;
 }
 
 .heading {
   color: #fff;
+  background: $pattern-squares;
+  text-align: center;
 
   .heading__title {
     max-width: 530px;
-    margin: 0 auto $spacing-m;
-    text-align: center;
+    margin: $spacing-l auto;
+    color: $color-green-100;
     font: 4rem/1 $font-family-display;
+  }
+
+  .heading__directions {
+    max-width: 850px;
+    margin: 0 auto;
   }
 }
 
 .game {
-}
-
-.game__directions {
-  width: 100%;
-  max-width: 850px;
-  margin: 0 auto $spacing-m;
-  color: #fff;
-  text-align: center;
+  flex-grow: 1;
+  background-color: rgba($color-blue-900, 0.20);
 }
 
 // SECTION for decks
@@ -218,13 +227,6 @@ body {
 // game panel
 .game {
 
-  .game__header {
-    padding: $spacing-l;
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-  }
-
   .header__deck {
     margin-bottom: $spacing-m;
   }
@@ -268,7 +270,7 @@ body {
     perspective: 1000px;
     transition: all 150ms;
 
-    &:hover:not(.is--completed):not(.card--flipped) {
+    &:hover:not(.is--completed):not(.is--flipped) {
 
       .card__inner {
         background-color: #e3e3e3;
@@ -290,7 +292,6 @@ body {
       position: relative;
       transform-style: preserve-3d;
       transition: transform 500ms ease-out;
-      border: 1px solid black;
       transition: all 250ms;
     }
 
@@ -313,11 +314,16 @@ body {
       background: gray;
     }
 
-    .card__back {
-      transform: rotate3d(1, 0, 0, 180deg);
+    .card__front {
+      background-color: #fff;
     }
 
-    &.card--flipped:not(.is--completed) {
+    .card__back {
+      transform: rotate3d(1, 0, 0, 180deg);
+      background-color: $color-green-100;
+    }
+
+    &.is--flipped:not(.is--completed) {
 
       .card__inner {
         transform: rotate3d(1, 0, 0, 180deg);

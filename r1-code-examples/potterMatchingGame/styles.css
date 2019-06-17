@@ -72,7 +72,7 @@ table {
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 25%, 0);
   }
   100% {
     opacity: 1;
@@ -127,6 +127,7 @@ table {
 }
 
 html, body {
+  height: 100%;
   font: 100%/1.2 "Crimson Text", serif;
 }
 @media (min-width: 900px) {
@@ -136,25 +137,35 @@ html, body {
 }
 
 body {
-  background: url("./assets/pattern-squares.svg"), linear-gradient(to right, #12384D 0%, #1E6D91 30%, #1E6D91 70%, #12384D 100%);
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #12384D 0%, #1E6D91 30%, #1E6D91 70%, #12384D 100%);
+}
+
+.heading,
+.game {
+  padding: 1rem 0.5rem;
 }
 
 .heading {
   color: #fff;
+  background: url("./assets/pattern-squares.svg") repeat-x 0 0;
+  text-align: center;
 }
 .heading .heading__title {
   max-width: 530px;
-  margin: 0 auto 1rem;
-  text-align: center;
+  margin: 1.5rem auto;
+  color: #D2F4EB;
   font: 4rem/1 "Crimson Text", serif;
 }
-
-.game__directions {
-  width: 100%;
+.heading .heading__directions {
   max-width: 850px;
-  margin: 0 auto 1rem;
-  color: #fff;
-  text-align: center;
+  margin: 0 auto;
+}
+
+.game {
+  flex-grow: 1;
+  background-color: rgba(18, 56, 77, 0.2);
 }
 
 .game__decks {
@@ -211,12 +222,6 @@ body {
   width: 80px;
 }
 
-.game .game__header {
-  padding: 1.5rem;
-  text-align: center;
-  background-color: #333;
-  color: #fff;
-}
 .game .header__deck {
   margin-bottom: 1rem;
 }
@@ -255,7 +260,7 @@ body {
   perspective: 1000px;
   transition: all 150ms;
 }
-.game .card:hover:not(.is--completed):not(.card--flipped) .card__inner {
+.game .card:hover:not(.is--completed):not(.is--flipped) .card__inner {
   background-color: #e3e3e3;
   cursor: pointer;
 }
@@ -271,7 +276,6 @@ body {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 500ms ease-out;
-  border: 1px solid black;
   transition: all 250ms;
 }
 .game .card .card__side {
@@ -291,10 +295,14 @@ body {
   height: 50px;
   background: gray;
 }
+.game .card .card__front {
+  background-color: #fff;
+}
 .game .card .card__back {
   transform: rotate3d(1, 0, 0, 180deg);
+  background-color: #D2F4EB;
 }
-.game .card.card--flipped:not(.is--completed) .card__inner {
+.game .card.is--flipped:not(.is--completed) .card__inner {
   transform: rotate3d(1, 0, 0, 180deg);
 }
 

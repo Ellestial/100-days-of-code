@@ -11,13 +11,14 @@
 <body>
     <section class="heading">
         <h1 class="heading__title font-size-header">Harry Potter Matching Game</h1>
+        <h3 data-state="intro" class="heading__directions font-size-body-l">Death Eaters have been rising up recently. Select a deck of characters below. Proceed to match characters to learn a spell to use against the Death Eaters until they are vanquished.</h3>
         <div data-state="game" class="heading__settings">
-            <div class="setting__deck font-size-body-l"><span class="deck__name setting__detail"></span> Deck</div>
+            <div class="setting__deck font-size-body-l"></div>
             <div class="setting__matches-left setting">Matches Left <span class="matches__num setting__detail">0</span></div>
             <div class="setting__spells-earned setting">Spells Earned <span class="spells__num setting__detail">0</span></div>
+            <div class="setting__timer setting">Time Left<span class="timer__time setting__detail"></span></div>
             <button class="setting__reset">Reset</button>
         </div>
-        <h3 data-state="intro" class="game__directions font-size-body-l">Death Eaters have been rising up recently. Select a deck of characters below. Proceed to match characters to learn a spell to use against the Death Eaters until they are vanquished.</h3>
     </section>
     <section class="game">
         <ul data-state="intro" class="game__decks">

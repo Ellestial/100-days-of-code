@@ -4,12 +4,13 @@
 
 const overlayEl = document.querySelector('.overlay__wrapper');
 const settingsEl = document.querySelector('.heading__settings');
-const settingDeckEl = document.querySelector('.deck__name');
+const settingDeckEl = document.querySelector('.setting__deck');
 const settingMatchesLeftEl = document.querySelector('.matches__num');
 const settingSpellsEarnedEl = document.querySelector('.spells__num');
 const numCards = 6;
 let spellOverlayEl;
 let wonOverlayEl;
+let lostOverlayEl;
 let characterData;
 let spellData;
 let selectedDeck;
@@ -21,7 +22,8 @@ const deckList = [
   {deck: 'deathEater', deckTitle: 'Death Eater'},
   {deck: 'dumbledoresArmy', deckTitle: 'Dumbledore\'s Army'}, 
   {deck: 'ministryOfMagic', deckTitle: 'Ministry of Magic'}, 
-  {deck: 'orderOfThePhoenix', deckTitle: 'Order of the Phoenix'}];
+  {deck: 'orderOfThePhoenix', deckTitle: 'Order of the Phoenix'},
+  {deck: 'all', deckTitle: 'All Characters'}];
 
 /////////////////////////////////
 //    onload/IIFE functions    //
@@ -121,12 +123,17 @@ function resetGame() {
 
 function beginGame() {
   selectedDeck = this.dataset;
-  selectedDeckData = characterData.filter(function(character) {
-    return character[selectedDeck.deck] == true;
-  });
-  settingDeckEl.textContent = selectedDeck.title;
+  if(selectedDeck.deck !== 'all') {
+    selectedDeckData = characterData.filter(function(character) {
+      return character[selectedDeck.deck] == true;
+    })
+  } else {
+    selectedDeckData = characterData;
+  }
+  settingDeckEl.textContent = `${selectedDeck.title} Deck`;
   grabRandomCharacters();
   showState('game');
+  setTimer(10);
   
   function grabRandomCharacters() {
     for(let i = 0; i < numCards / 2; i++) {
@@ -136,6 +143,7 @@ function beginGame() {
     shuffle(selectedDeckCards);
   };
 };
+
 let lastSelection;
 let lastIndex;
 let cardsFlipped = 0;
@@ -143,16 +151,15 @@ let cardsFlipped = 0;
 function flipCard() {
   let thisSelection = this;
   let thisIndex = thisSelection.dataset.index;
+  cardsFlipped++;
   if(thisSelection === lastSelection) {
     return;
-  }
-  cardsFlipped++;
-  if(cardsFlipped > 2) {
+  } else if(cardsFlipped > 2) {
     cardsFlipped--;
     return;
   }
 
-  thisSelection.classList.add('card--flipped');
+  thisSelection.classList.add('is--flipped');
   thisSelection.querySelector('.card__name').textContent = selectedDeckCards[thisIndex].name;
   thisSelection.querySelector('.card__blood').textContent = selectedDeckCards[thisIndex].bloodStatus;
 
@@ -172,15 +179,30 @@ function flipCard() {
     setTimeout(function() {
       lastSelection.querySelector('.card__name').textContent = '';
       lastSelection.querySelector('.card__blood').textContent = '';
-      lastSelection.classList.remove('card--flipped');
+      lastSelection.classList.remove('is--flipped');
       thisSelection.querySelector('.card__name').textContent = '';
       thisSelection.querySelector('.card__blood').textContent = '';
-      thisSelection.classList.remove('card--flipped');
+      thisSelection.classList.remove('is--flipped');
       lastSelection = '';
       lastIndex = '';
       cardsFlipped = 0;
     }, 500);
   };
+};
+
+function setTimer(seconds) {
+  let start = Date.now();
+  let end = start + (seconds * 1000);
+  let timerInterval = setInterval(function() {
+    const current = Date.now();
+    const timeLeft = Math.round((end - current) / 1000);
+    document.querySelector('.timer__time').textContent = timeLeft;
+
+    if(timeLeft <= 0) {
+      clearInterval(timerInterval);
+      overlayEl.appendChild(lostOverlayEl);
+    }
+  }, 1000);
 };
 
 function populateSpellOverlay() {
@@ -255,6 +277,7 @@ overlayRequest.onreadystatechange = function() {
     let overlays = new DOMParser().parseFromString(this.response, 'text/html');
     spellOverlayEl = overlays.querySelector('.overlay__spell');
     wonOverlayEl = overlays.querySelector('.overlay__won');
+    lostOverlayEl = overlays.querySelector('.overlay__lost');
   }
 }
 overlayRequest.send();
