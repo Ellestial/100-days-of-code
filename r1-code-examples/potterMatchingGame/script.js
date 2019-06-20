@@ -8,22 +8,20 @@ const settingDeckEl = document.querySelector('.setting__deck');
 const settingMatchesLeftEl = document.querySelector('.matches__num');
 const settingSpellsEarnedEl = document.querySelector('.spells__num');
 const numCards = 6;
+const duration = 15;
 let spellOverlayEl;
-let wonOverlayEl;
-let lostOverlayEl;
+let outroOverlayEl;
 let characterData;
 let spellData;
-let selectedDeck;
-let selectedDeckData;
-let selectedDeckCards = [];
 let collectedSpells = [];
 let remainingMatches = numCards / 2;
+let activeDeck = {};
 const deckList = [
-  {deck: 'deathEater', deckTitle: 'Death Eater'},
-  {deck: 'dumbledoresArmy', deckTitle: 'Dumbledore\'s Army'}, 
-  {deck: 'ministryOfMagic', deckTitle: 'Ministry of Magic'}, 
-  {deck: 'orderOfThePhoenix', deckTitle: 'Order of the Phoenix'},
-  {deck: 'all', deckTitle: 'All Characters'}];
+  {deck: 'deathEater', title: 'Death Eater'},
+  {deck: 'dumbledoresArmy', title: 'Dumbledore\'s Army'}, 
+  {deck: 'ministryOfMagic', title: 'Ministry of Magic'}, 
+  {deck: 'orderOfThePhoenix', title: 'Order of the Phoenix'},
+  {deck: 'all', title: 'All Characters'}];
 
 /////////////////////////////////
 //    onload/IIFE functions    //
@@ -36,9 +34,9 @@ const deckList = [
   decks.forEach(function(deck) {
     let clone = deckEl.cloneNode(true);
     clone.dataset.deck = deck.deck;
-    clone.dataset.title = deck.deckTitle;
+    clone.dataset.title = deck.title;
     clone.querySelector('.deck__icon').src = `./assets/deck.svg`;
-    clone.querySelector('.deck__title').textContent = deck.deckTitle;
+    clone.querySelector('.deck__title').textContent = deck.title;
     decksEl.appendChild(clone);
   });
 })(deckList);
@@ -98,14 +96,13 @@ function randomPotterItem(dataArr, usableArr, title) {
 };
 
 function resetGame() {
-  selectedDeck = undefined;
-  selectedDeckData = undefined;
-  selectedDeckCards = [];
+  activeDeck = {};
   collectedSpells = [];
   remainingMatches = numCards / 2;
   settingMatchesLeftEl.textContent = remainingMatches;
   settingSpellsEarnedEl.textContent = 0;
   overlayEl.textContent = '';
+  timer().reset();
   showState('intro');
 
   document.querySelectorAll('.game__cards .card').forEach(function(card) {
@@ -122,25 +119,28 @@ function resetGame() {
 /////////////////////////////////
 
 function beginGame() {
-  selectedDeck = this.dataset;
-  if(selectedDeck.deck !== 'all') {
-    selectedDeckData = characterData.filter(function(character) {
-      return character[selectedDeck.deck] == true;
+  console.log('clicked!');
+  activeDeck.title = this.dataset.title;
+  activeDeck.deck = this.dataset.deck;
+  if(activeDeck.deck !== 'all') {
+    activeDeck.characters = characterData.filter(function(character) {
+      return character[activeDeck.deck] == true;
     })
   } else {
-    selectedDeckData = characterData;
+    activeDeck.characters = characterData;
   }
-  settingDeckEl.textContent = `${selectedDeck.title} Deck`;
+  settingDeckEl.textContent = `${activeDeck.title} Deck`;
   grabRandomCharacters();
   showState('game');
-  setTimer(10);
+  timer().begin(duration);
   
   function grabRandomCharacters() {
+    let cards = [];
     for(let i = 0; i < numCards / 2; i++) {
-      let selectedDeckCard = randomPotterItem(selectedDeckData, selectedDeckCards, 'name');
-      selectedDeckCards.push(selectedDeckCard, selectedDeckCard);
+      let card = randomPotterItem(activeDeck.characters, cards, 'name');
+      cards.push(card, card);
     }
-    shuffle(selectedDeckCards);
+    activeDeck.cards = shuffle(cards);
   };
 };
 
@@ -160,8 +160,8 @@ function flipCard() {
   }
 
   thisSelection.classList.add('is--flipped');
-  thisSelection.querySelector('.card__name').textContent = selectedDeckCards[thisIndex].name;
-  thisSelection.querySelector('.card__blood').textContent = selectedDeckCards[thisIndex].bloodStatus;
+  thisSelection.querySelector('.card__name').textContent = activeDeck.cards[thisIndex].name;
+  thisSelection.querySelector('.card__blood').textContent = activeDeck.cards[thisIndex].bloodStatus;
 
   if(cardsFlipped === 2 && lastIndex !== thisIndex) {
     return checkMatch();
@@ -171,7 +171,7 @@ function flipCard() {
   lastIndex = thisIndex;
 
   function checkMatch() {
-    if(selectedDeckCards[lastIndex] === selectedDeckCards[thisIndex]) {
+    if(activeDeck.cards[lastIndex] === activeDeck.cards[thisIndex]) {
       lastSelection.classList.add('is--completed');
       thisSelection.classList.add('is--completed');
       populateSpellOverlay();
@@ -190,20 +190,60 @@ function flipCard() {
   };
 };
 
-function setTimer(seconds) {
+function timer(seconds) {
+  var updateTime = 5;
   let start = Date.now();
   let end = start + (seconds * 1000);
-  let timerInterval = setInterval(function() {
+
+  function timerInterval() {
     const current = Date.now();
     const timeLeft = Math.round((end - current) / 1000);
     document.querySelector('.timer__time').textContent = timeLeft;
 
-    if(timeLeft <= 0) {
-      clearInterval(timerInterval);
-      overlayEl.appendChild(lostOverlayEl);
+    if(timeLeft === 0 || remainingMatches === 0) {
+      timer().reset();
     }
-  }, 1000);
+
+    if(timeLeft <= 0) {
+      populateOutroOverlay().lost();
+    }
+  }
+
+  function begin() {
+    updateTime = setInterval(timerInterval, 1000);
+  }
+  console.log(updateTime);
+
+  function reset() {
+    console.log(updateTime);
+    clearInterval(updateTime);
+  }
+
+  return {
+    begin: begin,
+    reset: reset
+  }
 };
+
+
+// function timer(seconds) {
+//   let start = Date.now();
+//   let end = start + (seconds * 1000);
+//   let timerInterval = setInterval(function() {
+//     const current = Date.now();
+//     const timeLeft = Math.round((end - current) / 1000);
+//     document.querySelector('.timer__time').textContent = timeLeft;
+
+//     if(timeLeft === 0 || remainingMatches === 0) {
+//       clearInterval(timerInterval);
+//       console.log(timerInterval);
+//     }
+
+//     if(timeLeft <= 0) {
+//       populateOutroOverlay().lost();
+//     }
+//   }, 1000);
+// };
 
 function populateSpellOverlay() {
   let collectedSpell = randomPotterItem(spellData, collectedSpells, 'spell');
@@ -221,32 +261,52 @@ function populateSpellOverlay() {
       settingSpellsEarnedEl.textContent = collectedSpells.length;
       settingMatchesLeftEl.textContent = remainingMatches;
       if(remainingMatches === 0) {
-        populateWonOverlay();
+        populateOutroOverlay().won();
       }
     }, 500);
   }, 1500);
 };
 
-function populateWonOverlay() {
-  const wonSpellsEl = wonOverlayEl.querySelector('.won__spells');
-  const wonSpellEl = wonOverlayEl.querySelector('.won__spell');
-  wonSpellsEl.removeChild(wonSpellEl);
-  overlayEl.appendChild(wonOverlayEl);
-  collectedSpells.forEach(function(spell) {
-    let clone = wonSpellEl.cloneNode(true);
-    clone.querySelector('.spell__name').textContent = spell.spell;
-    clone.querySelector('.spell__effect').textContent = spell.effect;
-    wonSpellsEl.appendChild(clone);
-  });
-  document.querySelector('.won__reset').addEventListener('click', resetGame);
-};
+function populateOutroOverlay() {
+  const title = outroOverlayEl.querySelector('.outro__title');
+  const description = outroOverlayEl.querySelector('.outro__description');
+  const resetBtn = outroOverlayEl.querySelector('.outro__reset');
+  overlayEl.appendChild(outroOverlayEl);
+  resetBtn.addEventListener('click', resetGame);
+  timer().reset();
+
+  function won() {
+    const wonSpellsEl = outroOverlayEl.querySelector('.outro__spells');
+    const wonSpellEl = outroOverlayEl.querySelector('.outro__spell');
+    wonSpellsEl.removeChild(wonSpellEl);
+    collectedSpells.forEach(function(spell) {
+      let clone = wonSpellEl.cloneNode(true);
+      clone.querySelector('.spell__name').textContent = spell.spell;
+      clone.querySelector('.spell__effect').textContent = spell.effect;
+      wonSpellsEl.appendChild(clone);
+    });
+    title.textContent = 'You Won!';
+    description.textContent = 'Below you\'ll find a list of your earned spells.';
+    resetBtn.textContent = 'New Game';
+  }
+
+  function lost() {
+    title.textContent = 'You Lost';
+    description.textContent = 'You didn\'t learn the spells quick enough to stop the Death Eaters.';
+    resetBtn.textContent = 'Try Again';
+  }
+
+  return {
+    won: won,
+    lost: lost
+  }
+}
   
 document.querySelectorAll('.card').forEach(function(card) {
   card.addEventListener('click', flipCard);
 });
 
 document.querySelector('.setting__reset').addEventListener('click', resetGame);
-
 /////////////////////////////////
 //        ajax requests        //
 /////////////////////////////////
@@ -276,8 +336,7 @@ overlayRequest.onreadystatechange = function() {
   if(overlayRequest.readyState === 4 && overlayRequest.status === 200) {
     let overlays = new DOMParser().parseFromString(this.response, 'text/html');
     spellOverlayEl = overlays.querySelector('.overlay__spell');
-    wonOverlayEl = overlays.querySelector('.overlay__won');
-    lostOverlayEl = overlays.querySelector('.overlay__lost');
+    outroOverlayEl = overlays.querySelector('.overlay__outro');
   }
 }
 overlayRequest.send();
