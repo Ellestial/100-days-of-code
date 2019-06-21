@@ -119,7 +119,6 @@ function resetGame() {
 /////////////////////////////////
 
 function beginGame() {
-  console.log('clicked!');
   activeDeck.title = this.dataset.title;
   activeDeck.deck = this.dataset.deck;
   if(activeDeck.deck !== 'all') {
@@ -189,34 +188,35 @@ function flipCard() {
     }, 500);
   };
 };
-
-function timer(seconds) {
-  var updateTime = 5;
-  let start = Date.now();
-  let end = start + (seconds * 1000);
-
-  function timerInterval() {
-    const current = Date.now();
-    const timeLeft = Math.round((end - current) / 1000);
-    document.querySelector('.timer__time').textContent = timeLeft;
-
-    if(timeLeft === 0 || remainingMatches === 0) {
-      timer().reset();
-    }
-
-    if(timeLeft <= 0) {
-      populateOutroOverlay().lost();
-    }
-  }
-
-  function begin() {
-    updateTime = setInterval(timerInterval, 1000);
+function timer() {
+  const timerEl = document.querySelector('.timer__time');
+  if(typeof updateTime === 'undefined') {
+    var updateTime;
   }
   console.log(updateTime);
 
+  function begin(seconds) {
+    const start = Date.now();
+    const end = start + (seconds * 1000);
+    updateTime = setInterval(function() {
+      const current = Date.now();
+      const timeLeft = Math.round((end - current) / 1000);
+      timerEl.textContent = timeLeft;
+  
+      if(timeLeft === 0 || remainingMatches === 0) {
+        timer().reset();
+      }
+  
+      if(timeLeft <= 0) {
+        populateOutroOverlay().lost();
+      }
+    }, 1000);
+  }
+
   function reset() {
-    console.log(updateTime);
     clearInterval(updateTime);
+    timerEl.textContent = duration;
+    updateTime = undefined;
   }
 
   return {
@@ -307,6 +307,7 @@ document.querySelectorAll('.card').forEach(function(card) {
 });
 
 document.querySelector('.setting__reset').addEventListener('click', resetGame);
+
 /////////////////////////////////
 //        ajax requests        //
 /////////////////////////////////
