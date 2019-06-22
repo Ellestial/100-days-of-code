@@ -188,25 +188,21 @@ function flipCard() {
     }, 500);
   };
 };
+
 function timer() {
   const timerEl = document.querySelector('.timer__time');
-  if(typeof updateTime === 'undefined') {
-    var updateTime;
-  }
-  console.log(updateTime);
 
   function begin(seconds) {
     const start = Date.now();
     const end = start + (seconds * 1000);
+
     updateTime = setInterval(function() {
       const current = Date.now();
       const timeLeft = Math.round((end - current) / 1000);
       timerEl.textContent = timeLeft;
-  
       if(timeLeft === 0 || remainingMatches === 0) {
         timer().reset();
       }
-  
       if(timeLeft <= 0) {
         populateOutroOverlay().lost();
       }
@@ -216,7 +212,6 @@ function timer() {
   function reset() {
     clearInterval(updateTime);
     timerEl.textContent = duration;
-    updateTime = undefined;
   }
 
   return {

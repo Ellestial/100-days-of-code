@@ -26,3 +26,10 @@
 **Today's Progress**: Continued working on Harry Potter Matching Game.
 
 **Thoughts**: I figured out why my timer wasn't working -- the wrapper setInterval variable was getting redefined each time the timer function was called. I am trying to figure out a way to not declare that variable in the global scope while also not having it redefined each time. Tomorrow!
+
+
+## Day 5: June 21, 2019
+
+**Today's Progress**: Reviewed `this` info and continued figuring out how to create a timer closure in the Harry Potter Matching Game.
+
+**Thoughts**: Today was very unproductive. I must have needed more sleep throughout the week, since I was too tired to really focus well by 8:00pm. I still haven't figured out the best way to work with creating a timer and closures.
