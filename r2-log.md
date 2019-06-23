@@ -33,3 +33,17 @@
 **Today's Progress**: Reviewed `this` info and continued figuring out how to create a timer closure in the Harry Potter Matching Game.
 
 **Thoughts**: Today was very unproductive. I must have needed more sleep throughout the week, since I was too tired to really focus well by 8:00pm. I still haven't figured out the best way to work with creating a timer and closures.
+
+
+## Day 6: June 22, 2019
+
+**Today's Progress**: Reviewed `this` info in You Don't Know JS: this and Object Prototypes - Chapter 2
+
+**Thoughts**: I really want to hone into my brain the different types of `this` binding and when they apply. Trying to read through the same content repeatedly for this.
+
+
+## Day 7: June 23, 2019
+
+**Today's Progress**: Continued reading You Don't Know JS: this and Object Prototypes - Chapter 2
+
+**Thoughts**: I finished reviewing the default, implicit, explicit (and hard), and `new` types of binding. I also started reading new information about their precedence. I also researched currying -- how using `bind()` and `new` together can lead to adding only some of the arguments within the `bind()` method that you can then finish passing arguments into with `new`.
