@@ -47,3 +47,10 @@
 **Today's Progress**: Continued reading You Don't Know JS: this and Object Prototypes - Chapter 2
 
 **Thoughts**: I finished reviewing the default, implicit, explicit (and hard), and `new` types of binding. I also started reading new information about their precedence. I also researched currying -- how using `bind()` and `new` together can lead to adding only some of the arguments within the `bind()` method that you can then finish passing arguments into with `new`.
+
+
+## Day 8: June 24, 2019
+
+**Today's Progress**: Finished reading You Don't Know JS: this & Object Prototypes - Chapter 2
+
+**Thoughts**: I learned about spreading and currying more. I also learned some exceptions to `this` rules, such as soft binding, ignoring `this` (for spreading/currying), and indirect `this`. I will want to review this again tomorrow.
