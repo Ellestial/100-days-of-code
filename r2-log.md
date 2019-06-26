@@ -54,3 +54,10 @@
 **Today's Progress**: Finished reading You Don't Know JS: this & Object Prototypes - Chapter 2
 
 **Thoughts**: I learned about spreading and currying more. I also learned some exceptions to `this` rules, such as soft binding, ignoring `this` (for spreading/currying), and indirect `this`. I will want to review this again tomorrow.
+
+
+## Day 9: June 25, 2019
+
+**Today's Progress**: Reviewed end of You Don't Know JS: this & Object Prototypes - Chapter 2. Started reading Chapter 3.
+
+**Thoughts**: Chapter 3 is so far easier to understand. I've learned the difference between a literal data type and a constructed object form. I anticipate that I will want to read all about objects and come back to Chapter 2 to review `this`.
