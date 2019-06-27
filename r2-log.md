@@ -61,3 +61,10 @@
 **Today's Progress**: Reviewed end of You Don't Know JS: this & Object Prototypes - Chapter 2. Started reading Chapter 3.
 
 **Thoughts**: Chapter 3 is so far easier to understand. I've learned the difference between a literal data type and a constructed object form. I anticipate that I will want to read all about objects and come back to Chapter 2 to review `this`.
+
+
+## Day 10: June 26, 2019
+
+**Today's Progress**: Continued reading You Don't Know JS: this & Object Prototypes - CHapter 3.
+
+**Thoughts**: Interesting learning about different object-related things, like how all object properties are strings, which explains why the property name needs to be in quotes in `Object.defineProperty()`. I learned about writable, enumerable, and configurable on `Object.defineProperty()`, too. I want to learn more about how `JSON.parse()` works with deep copying objects.
