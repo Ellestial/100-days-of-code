@@ -75,3 +75,10 @@
 **Today's Progress**: Continued reading You Don't Know JS: this & Object Prototypes - Chapter 3. Continued some tweaks with my Harry Potter Matching Game.
 
 **Thoughts**: I learned about `GET` and `PUT` and getters/setters a bit. I wanted a break from reading, so I worked on creating a graphical timer and styled some aspects in my game.
+
+
+## Day 12: June 28, 2019
+
+**Today's Progress**: Restructured up Harry Potter Matching Game JS.
+
+**Thoughts**: I went to a coffee shop today to focus, and it seemed to help! I tried organizing the JS overlays into one overlay function with closures and `this` references to practice what I've been learning. It worked! But now it's actually quite a bit longer than it was before. However, it's more maintainable in cases where more overlays are added, there needs to be different situations showing all of your earned spells. I want to clean it up more and make it shorter, though. I'll continue refacturing later!

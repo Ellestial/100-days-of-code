@@ -9,8 +9,7 @@ const settingMatchesLeftEl = document.querySelector('.matches__num');
 const settingSpellsEarnedEl = document.querySelector('.spells__num');
 const numCards = 36;
 const duration = 60;
-let spellOverlayEl;
-let outroOverlayEl;
+let overlay;
 let characterData;
 let spellData;
 let collectedSpells = [];
@@ -51,6 +50,10 @@ const deckList = [
     clone.dataset.index = i;
     cardsEl.appendChild(clone);
   }
+  
+  document.querySelectorAll('.card').forEach(function(card) {
+    card.addEventListener('click', flipCard);
+  });
 })();
 
 /////////////////////////////////
@@ -173,7 +176,7 @@ function flipCard() {
     if(activeDeck.cards[lastIndex] === activeDeck.cards[thisIndex]) {
       lastSelection.classList.add('is--completed');
       thisSelection.classList.add('is--completed');
-      populateSpellOverlay();
+      populateOverlay().spell();
     }
     setTimeout(function() {
       lastSelection.querySelector('.card__name').textContent = '';
@@ -207,7 +210,7 @@ function timer() {
         timer().reset();
       }
       if(timeLeft <= 0) {
-        populateOutroOverlay().lost();
+        populateOverlay().outro();
       }
     }, intervalRefresh);
   }
@@ -223,66 +226,97 @@ function timer() {
   }
 };
 
-function populateSpellOverlay() {
-  let collectedSpell = randomPotterItem(spellData, collectedSpells, 'spell');
-  collectedSpells.push(collectedSpell);
-  spellOverlayEl.querySelector('.spell__name').textContent = collectedSpell.spell;
-  spellOverlayEl.querySelector('.spell__effect').textContent = collectedSpell.effect;
-  overlayEl.appendChild(spellOverlayEl);
-  setTimeout(function() {
-    overlayEl.classList.add('fade-off');
-
-    setTimeout(function() {
-      overlayEl.classList.remove('fade-off');
-      overlayEl.removeChild(spellOverlayEl);
-      remainingMatches--;
-      settingSpellsEarnedEl.textContent = collectedSpells.length;
-      settingMatchesLeftEl.textContent = remainingMatches;
-      if(remainingMatches === 0) {
-        populateOutroOverlay().won();
-      }
-    }, 500);
-  }, 1500);
-};
-
-function populateOutroOverlay() {
-  const title = outroOverlayEl.querySelector('.outro__title');
-  const description = outroOverlayEl.querySelector('.outro__description');
-  const resetBtn = outroOverlayEl.querySelector('.outro__reset');
-  overlayEl.appendChild(outroOverlayEl);
-  resetBtn.addEventListener('click', resetGame);
-  timer().reset();
-
-  function won() {
-    const wonSpellsEl = outroOverlayEl.querySelector('.outro__spells');
-    const wonSpellEl = outroOverlayEl.querySelector('.outro__spell');
-    wonSpellsEl.removeChild(wonSpellEl);
-    collectedSpells.forEach(function(spell) {
-      let clone = wonSpellEl.cloneNode(true);
-      clone.querySelector('.spell__name').textContent = spell.spell;
-      clone.querySelector('.spell__effect').textContent = spell.effect;
-      wonSpellsEl.appendChild(clone);
-    });
-    title.textContent = 'You Won!';
-    description.textContent = 'Below you\'ll find a list of your earned spells.';
-    resetBtn.textContent = 'New Game';
-  }
-
-  function lost() {
-    title.textContent = 'You Lost';
-    description.textContent = 'You didn\'t learn the spells quick enough to stop the Death Eaters.';
-    resetBtn.textContent = 'Try Again';
-  }
-
-  return {
-    won: won,
-    lost: lost
+let overlayText = {
+  spell: {
+    title: 'Breaking News',
+    description: 'You\'ve learned how to cast'
+  },
+  won: {
+    title: 'You Won!',
+    description: 'Below you\'ll find a list of your earned spells.'
+  },
+  lost: {
+    title: 'You Lost',
+    description: 'You didn\'t learn the spells quick enough to stop the Death Eaters.'
   }
 }
+
+/////////////////////////////////
+//           overlays          //
+/////////////////////////////////
+
+function populateOverlay() {
+  const titleEl = overlay.querySelector('.overlay__title');
+  const descriptionEl = overlay.querySelector('.overlay__description');
+  overlayEl.appendChild(overlay);
+
+  function populateText() {
+    titleEl.textContent = this.title;
+    descriptionEl.textContent = this.description;
+  }
+
+  function populateSpell(spells) {
+    const wonSpellsEl = overlay.querySelector('.overlay__spells');
+    const wonSpellEl = overlay.querySelector('.overlay__spell');
+
+    function spellText(el) {
+      this.querySelector('.spell__name').textContent = el.spell;
+      this.querySelector('.spell__effect').textContent = el.effect;
+    }
+    if(spells.length > 1) {
+      wonSpellsEl.removeChild(wonSpellEl);
+
+      spells.forEach(function(spell) {
+        const clone = wonSpellEl.cloneNode(true);
+        spellText.call(clone, spell);
+        wonSpellsEl.appendChild(clone);
+      });
+    } else {
+      spellText.call(wonSpellEl, spells);
+    }
+  }
+
+  function spell() {
+    const collectedSpell = randomPotterItem(spellData, collectedSpells, 'spell');
+    collectedSpells.push(collectedSpell);
+    populateSpell(collectedSpell);
+    populateText.call(overlayText.spell);
+
+    setTimeout(function() {
+      overlayEl.classList.add('fade-off');
   
-document.querySelectorAll('.card').forEach(function(card) {
-  card.addEventListener('click', flipCard);
-});
+      setTimeout(function() {
+        overlayEl.classList.remove('fade-off');
+        overlayEl.removeChild(overlay);
+        remainingMatches--;
+        settingSpellsEarnedEl.textContent = collectedSpells.length;
+        settingMatchesLeftEl.textContent = remainingMatches;
+        if(remainingMatches === 0) {
+          activeDeck.won = true;
+          populateOverlay().outro();
+        }
+      }, 500);
+    }, 1500);
+  };
+
+  function outro() {
+    const resetBtn = overlay.querySelector('.overlay__reset');
+    resetBtn.addEventListener('click', resetGame);
+    timer().reset();
+
+    if(activeDeck.won) {
+      populateSpell(collectedSpells);
+      populateText.call(overlayText.won);
+    } else {
+      populateText.call(overlayText.lost);
+    }
+  };
+
+  return {
+    spell: spell,
+    outro: outro
+  }
+};
 
 document.querySelector('.setting__reset').addEventListener('click', resetGame);
 
@@ -314,8 +348,7 @@ overlayRequest.open('GET', './overlays.html');
 overlayRequest.onreadystatechange = function() {
   if(overlayRequest.readyState === 4 && overlayRequest.status === 200) {
     let overlays = new DOMParser().parseFromString(this.response, 'text/html');
-    spellOverlayEl = overlays.querySelector('.overlay__spell');
-    outroOverlayEl = overlays.querySelector('.overlay__outro');
+    overlay = overlays.querySelector('.overlay');
   }
 }
 overlayRequest.send();
