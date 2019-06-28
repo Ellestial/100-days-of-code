@@ -7,8 +7,8 @@ const settingsEl = document.querySelector('.heading__settings');
 const settingDeckEl = document.querySelector('.setting__deck');
 const settingMatchesLeftEl = document.querySelector('.matches__num');
 const settingSpellsEarnedEl = document.querySelector('.spells__num');
-const numCards = 6;
-const duration = 15;
+const numCards = 36;
+const duration = 60;
 let spellOverlayEl;
 let outroOverlayEl;
 let characterData;
@@ -189,8 +189,11 @@ function flipCard() {
   };
 };
 
+let updateTime;
 function timer() {
-  const timerEl = document.querySelector('.timer__time');
+  const timerFill = document.querySelector('.timer__fill');
+  const intervalRefresh = 1000;
+  timerFill.style.transition = 'width ' + intervalRefresh + 'ms linear';
 
   function begin(seconds) {
     const start = Date.now();
@@ -199,19 +202,19 @@ function timer() {
     updateTime = setInterval(function() {
       const current = Date.now();
       const timeLeft = Math.round((end - current) / 1000);
-      timerEl.textContent = timeLeft;
+      timerFill.style.width = ((timeLeft / duration) * 100).toFixed(2) + '%';
       if(timeLeft === 0 || remainingMatches === 0) {
         timer().reset();
       }
       if(timeLeft <= 0) {
         populateOutroOverlay().lost();
       }
-    }, 1000);
+    }, intervalRefresh);
   }
 
   function reset() {
     clearInterval(updateTime);
-    timerEl.textContent = duration;
+    timerFill.style.width = '100%';
   }
 
   return {
@@ -219,26 +222,6 @@ function timer() {
     reset: reset
   }
 };
-
-
-// function timer(seconds) {
-//   let start = Date.now();
-//   let end = start + (seconds * 1000);
-//   let timerInterval = setInterval(function() {
-//     const current = Date.now();
-//     const timeLeft = Math.round((end - current) / 1000);
-//     document.querySelector('.timer__time').textContent = timeLeft;
-
-//     if(timeLeft === 0 || remainingMatches === 0) {
-//       clearInterval(timerInterval);
-//       console.log(timerInterval);
-//     }
-
-//     if(timeLeft <= 0) {
-//       populateOutroOverlay().lost();
-//     }
-//   }, 1000);
-// };
 
 function populateSpellOverlay() {
   let collectedSpell = randomPotterItem(spellData, collectedSpells, 'spell');

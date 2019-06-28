@@ -58,8 +58,9 @@ $font-family-display: 'Crimson Text', serif;
 
 $pattern-squares: url('./assets/pattern-squares.svg') repeat-x 0 0;
 
-$color-blue-900: #12384D;
+$color-blue-100: #a7d8ef;
 $color-blue-500: #1E6D91;
+$color-blue-900: #12384D;
 $color-green-100: #D2F4EB;
 $color-green-500: #9DD0BF;
 $color-green-900: #2C646A;
@@ -143,6 +144,25 @@ body {
   display: flex;
   flex-direction: column;
   background: linear-gradient(to right, $color-blue-900 0%, $color-blue-500 30%, $color-blue-500 70%, $color-blue-900 100%);
+}
+
+button {
+  min-width: 150px;
+  min-height: 40px;
+  margin: $spacing-m 0;
+  border: 1px solid $color-green-100;
+  color: $color-green-100;
+  font-size: 100%;
+  padding: 0.25rem 0.75rem;
+  background-color: rgba($color-green-500, 0.2);
+  transition: all 150ms;
+
+  &:hover {
+    border-color: $color-blue-100;
+    color: $color-blue-100;
+    background-color: rgba($color-blue-500, 0.2);
+    cursor: pointer;
+  }
 }
 
 .heading,
@@ -332,11 +352,31 @@ body {
   }
 }
 
-button {
-  background-color: pink;
-  border: none;
-  font-size: 100%;
-  padding: 0.25rem 0.75rem;
+.setting__stats {
+  background-color: rgba($color-blue-900, 0.36);
+  margin: $spacing-s 0;
+  padding: $spacing-s;
+
+  > * {
+    display: inline-block;
+    margin: 0 $spacing-s;
+  }
+}
+
+.timer {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  background: white;
+
+  .timer__fill {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color-green-500;
+  }
 }
 
 .overlay__wrapper {
@@ -347,7 +387,8 @@ button {
   left: 0;
   display: flex;
   align-items: flex-start;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba($color-blue-900, 0.85);
+  color: #fff;
   animation: fadeIn 250ms ease-out;
 
   &:empty {

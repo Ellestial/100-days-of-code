@@ -65,6 +65,13 @@
 
 ## Day 10: June 26, 2019
 
-**Today's Progress**: Continued reading You Don't Know JS: this & Object Prototypes - CHapter 3.
+**Today's Progress**: Continued reading You Don't Know JS: this & Object Prototypes - Chapter 3.
 
 **Thoughts**: Interesting learning about different object-related things, like how all object properties are strings, which explains why the property name needs to be in quotes in `Object.defineProperty()`. I learned about writable, enumerable, and configurable on `Object.defineProperty()`, too. I want to learn more about how `JSON.parse()` works with deep copying objects.
+
+
+## Day 11: June 27, 2019
+
+**Today's Progress**: Continued reading You Don't Know JS: this & Object Prototypes - Chapter 3. Continued some tweaks with my Harry Potter Matching Game.
+
+**Thoughts**: I learned about `GET` and `PUT` and getters/setters a bit. I wanted a break from reading, so I worked on creating a graphical timer and styled some aspects in my game.

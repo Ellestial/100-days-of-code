@@ -14,10 +14,17 @@
         <h3 data-state="intro" class="heading__directions font-size-body-l">Death Eaters have been rising up recently. Select a deck of characters below. Proceed to match characters to learn a spell to use against the Death Eaters until they are vanquished.</h3>
         <div data-state="game" class="heading__settings">
             <div class="setting__deck font-size-body-l"></div>
-            <div class="setting__matches-left setting">Matches Left <span class="matches__num setting__detail">0</span></div>
-            <div class="setting__spells-earned setting">Spells Earned <span class="spells__num setting__detail">0</span></div>
-            <div class="setting__timer setting">Time Left<span class="timer__time setting__detail"></span></div>
+            <div class="setting__stats">
+                <div class="setting__matches-left setting">Matches Left <span class="matches__num setting__detail">0</span></div>
+                <div class="setting__spells-earned setting">Spells Earned <span class="spells__num setting__detail">0</span></div>
+            </div>
             <button class="setting__reset">Reset</button>
+            <div class="timer__wrapper">
+                <div class="timer__label">Time Left</div>
+                <div class="timer">
+                    <div class="timer__fill"></div>
+                </div>
+            </div>
         </div>
     </section>
     <section class="game">
