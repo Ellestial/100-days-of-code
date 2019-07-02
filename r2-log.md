@@ -82,3 +82,14 @@
 **Today's Progress**: Restructured up Harry Potter Matching Game JS.
 
 **Thoughts**: I went to a coffee shop today to focus, and it seemed to help! I tried organizing the JS overlays into one overlay function with closures and `this` references to practice what I've been learning. It worked! But now it's actually quite a bit longer than it was before. However, it's more maintainable in cases where more overlays are added, there needs to be different situations showing all of your earned spells. I want to clean it up more and make it shorter, though. I'll continue refacturing later!
+
+
+### **Missed June 29 and June 30 due to friends visiting from out of state.** 
+
+
+## Day 13: July 1, 2019
+
+**Today's Progress**: Started working on Free Code Camp's Random Quote Machine project.
+
+**Thoughts**: I'm trying to learn about JSONP in order to get around CORS issues with CodePen. Will need to resolve tomorrow.
+
