@@ -7,7 +7,7 @@ const settingsEl = document.querySelector('.heading__settings');
 const settingDeckEl = document.querySelector('.setting__deck');
 const settingMatchesLeftEl = document.querySelector('.matches__num');
 const settingSpellsEarnedEl = document.querySelector('.spells__num');
-const numCards = 36;
+const numCards = 12;
 const duration = 60;
 let overlay;
 let characterData;
