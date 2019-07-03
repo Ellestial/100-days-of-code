@@ -84,7 +84,7 @@
 **Thoughts**: I went to a coffee shop today to focus, and it seemed to help! I tried organizing the JS overlays into one overlay function with closures and `this` references to practice what I've been learning. It worked! But now it's actually quite a bit longer than it was before. However, it's more maintainable in cases where more overlays are added, there needs to be different situations showing all of your earned spells. I want to clean it up more and make it shorter, though. I'll continue refacturing later!
 
 
-### **Missed June 29 and June 30 due to friends visiting from out of state.** 
+### **Missed June 29 and June 30 due to friends visiting from out of state. Managed to read part of JavaScript & jQuery by Jon Duckett for 45 minutes on the 29th, though.** 
 
 
 ## Day 13: July 1, 2019
@@ -93,3 +93,16 @@
 
 **Thoughts**: I'm trying to learn about JSONP in order to get around CORS issues with CodePen. Will need to resolve tomorrow.
 
+
+## Day 14: July 2, 2019
+
+**Today's Progress**: Researched more about JSONP and continued reading JavaScript & jQuery by Jon Duckett, Chapter 7: Events.
+
+**Thoughts**: Struggled with figuring out how to implement JSONP in vanilla JS. Going to chat with my friend about it at some point soon, though. This JavaScript & jQuery book is the first JS book I ever got, and I figured I should continue reading through it. I learned about the three different event types: HTML, handler, and listener. I also learned there's a good deal of different setup to support IE8 and below. Fortunately, this isn't something to be concerned with anymore.
+
+
+## Day 15: July 3, 2019
+
+**Today's Progress**: Continued reading JavaScript & jQuery by Jon Duckett, Chapter 7: Events.
+
+**Thoughts**: I learned about the event object, how to pass it along to a function within a function, what the screen/page/client properties adjust, and info on different types of events like UI ones that use the window object instead of document.
