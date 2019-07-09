@@ -106,3 +106,13 @@
 **Today's Progress**: Continued reading JavaScript & jQuery by Jon Duckett, Chapter 7: Events.
 
 **Thoughts**: I learned about the event object, how to pass it along to a function within a function, what the screen/page/client properties adjust, and info on different types of events like UI ones that use the window object instead of document.
+
+
+## Did not do JS 7.4 - 7.7 due to travel/vacationing
+
+
+## Day 16: July 8, 2019
+
+**Today's Progress**: Continued reading You Don't Know JS: this & Object Prototypes - Chapter 3. Continued working on FreeCodeCamp quote project.
+
+**Thoughts**: Finally figured out how to bypass CORS through a HTTPS proxy! And I think I'm understanding getters/setters a bit.
