@@ -116,3 +116,10 @@
 **Today's Progress**: Continued reading You Don't Know JS: this & Object Prototypes - Chapter 3. Continued working on FreeCodeCamp quote project.
 
 **Thoughts**: Finally figured out how to bypass CORS through a HTTPS proxy! And I think I'm understanding getters/setters a bit.
+
+
+## Day 17: July 9, 2019
+
+**Today's Progress**: Went through HackerRank challenge and almost finished Random Quote Generator challenge.
+
+**Thoughts**: Trying to complete one HackerRank challenge a day. I am working through adding a Twitter "Share Tweet" button with a dynamic data-text attribute. Once that's in, I'm done.
