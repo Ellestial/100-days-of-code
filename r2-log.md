@@ -123,3 +123,10 @@
 **Today's Progress**: Went through HackerRank challenge and almost finished Random Quote Generator challenge.
 
 **Thoughts**: Trying to complete one HackerRank challenge a day. I am working through adding a Twitter "Share Tweet" button with a dynamic data-text attribute. Once that's in, I'm done.
+
+
+## Day 18: July 10, 2019
+
+**Today's Progress**: Finished YDKJS - this & Object Prototypes: Chapter 3. Started chapter 4.
+
+**Thoughts**: Having a bit of a hard time understanding `for..of` loops and `@@iterator`. I have been sick this week, so hoping to revisit this info later. Chapter 4 seems more digestible--I've learned that JS doesn't have classes and that classes are not foundational programming.
