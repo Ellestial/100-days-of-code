@@ -113,20 +113,27 @@
 
 ## Day 16: July 8, 2019
 
-**Today's Progress**: Continued reading You Don't Know JS: this & Object Prototypes - Chapter 3. Continued working on FreeCodeCamp quote project.
+**Today's Progress**: Continued reading You Don't Know JS: this & Object Prototypes - Chapter 3. Continued working on FreeCodeCamp quote project. Completed HackerRank Day 1.
 
-**Thoughts**: Finally figured out how to bypass CORS through a HTTPS proxy! And I think I'm understanding getters/setters a bit.
+**Thoughts**: Finally figured out how to bypass CORS through a HTTPS proxy! And I think I'm understanding getters/setters a bit. HackerRank is a site that provides 1 challenge a day for 30 days.
 
 
 ## Day 17: July 9, 2019
 
-**Today's Progress**: Went through HackerRank challenge and almost finished Random Quote Generator challenge.
+**Today's Progress**: Went through HackerRank challenge and almost finished Random Quote Generator challenge. Completed HackerRank Day 2.
 
 **Thoughts**: Trying to complete one HackerRank challenge a day. I am working through adding a Twitter "Share Tweet" button with a dynamic data-text attribute. Once that's in, I'm done.
 
 
 ## Day 18: July 10, 2019
 
-**Today's Progress**: Finished YDKJS - this & Object Prototypes: Chapter 3. Started chapter 4.
+**Today's Progress**: Finished YDKJS - this & Object Prototypes: Chapter 3. Started chapter 4. Completed HackerRank Day 3.
 
 **Thoughts**: Having a bit of a hard time understanding `for..of` loops and `@@iterator`. I have been sick this week, so hoping to revisit this info later. Chapter 4 seems more digestible--I've learned that JS doesn't have classes and that classes are not foundational programming.
+
+
+## Day 19: July 11, 2019
+
+**Today's Progress**: Tried working through CodinGame, continued reading YDKJS - this & Object Prototypes: Chapter 4, created a learning schedule for the next week. Also completed HackerRank Day 4.
+
+**Thoughts**: I need to understand a bit more about nodeJS to understanding the CodinGame setup. I don't know what `readline`, etc. mean/do. I continued reading YDKJS and started up a JSON file with flashcard info in it so I can create my own flashcard app at a future date. Finally, I set up a learning plan up through July 19th to prep for a class I am taking downtown on web components/making a CTA app. Overall, productive day!

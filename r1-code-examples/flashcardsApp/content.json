@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Class Theory",
+    "definition": "Implies a way of classifying a certain data structure. Think about any given structure as a specific variation of a more general base definition. This is an optional pattern in software design, and you have the choice to use them in JS or not.",
+    "example": "Vehicle may be a class that contains attributes that are common to all types of vehicles (plane, train, automobile). Car may be another class that inherits/extends the base definition from Vehicle. Data in an instance of the class Car would be unique like a specific car's VIN.",
+    "topic": "objects"
+  },
+  {
+    "title": "Class Theory Key Concepts",
+    "definition": "Classes, inheritance, instantiation, polymorphism.",
+    "topic": "objects"
+  },
+  {
+    "title": "Object Oriented Programming",
+    "definition": "Stresses that data intrinisically has associated behavior that opereates on it, so proper design is to package up the data and behavior together. Also called class oriented programming and data structures.",
+    "example": "A series of characters representing a word is a string. This data is combined with behaviors/functionality like finding the length of the string with OOP.",
+    "topic": "objects"
+  },
+  {
+    "title": "Polymorphism",
+    "definition": "The idea that a general behavior from a parent class can be overridden in a child class to give it more specifics. Class theory suggests both parent/child classes should share the same method name for a certain behavior so the child can override easier, but this is opting into frustration and code brittleness.",
+    "topic": "objects"
+  }
+]
