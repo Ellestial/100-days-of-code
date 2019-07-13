@@ -113,27 +113,34 @@
 
 ## Day 16: July 8, 2019
 
-**Today's Progress**: Continued reading You Don't Know JS: this & Object Prototypes - Chapter 3. Continued working on FreeCodeCamp quote project. Completed HackerRank Day 1.
+**Today's Progress**: Continued reading You Don't Know JS: this & Object Prototypes - Chapter 3. Continued working on FreeCodeCamp quote project.
 
-**Thoughts**: Finally figured out how to bypass CORS through a HTTPS proxy! And I think I'm understanding getters/setters a bit. HackerRank is a site that provides 1 challenge a day for 30 days.
+**Thoughts**: Finally figured out how to bypass CORS through a HTTPS proxy! And I think I'm understanding getters/setters a bit.
 
 
 ## Day 17: July 9, 2019
 
-**Today's Progress**: Went through HackerRank challenge and almost finished Random Quote Generator challenge. Completed HackerRank Day 2.
+**Today's Progress**: Went through HackerRank challenge and almost finished Random Quote Generator challenge. Completed HackerRank Day 1.
 
 **Thoughts**: Trying to complete one HackerRank challenge a day. I am working through adding a Twitter "Share Tweet" button with a dynamic data-text attribute. Once that's in, I'm done.
 
 
 ## Day 18: July 10, 2019
 
-**Today's Progress**: Finished YDKJS - this & Object Prototypes: Chapter 3. Started chapter 4. Completed HackerRank Day 3.
+**Today's Progress**: Finished YDKJS - this & Object Prototypes: Chapter 3. Started chapter 4. Completed HackerRank Day 2.
 
 **Thoughts**: Having a bit of a hard time understanding `for..of` loops and `@@iterator`. I have been sick this week, so hoping to revisit this info later. Chapter 4 seems more digestible--I've learned that JS doesn't have classes and that classes are not foundational programming.
 
 
 ## Day 19: July 11, 2019
 
-**Today's Progress**: Tried working through CodinGame, continued reading YDKJS - this & Object Prototypes: Chapter 4, created a learning schedule for the next week. Also completed HackerRank Day 4.
+**Today's Progress**: Tried working through CodinGame, continued reading YDKJS - this & Object Prototypes: Chapter 4, created a learning schedule for the next week. Also completed HackerRank Day 3.
 
 **Thoughts**: I need to understand a bit more about nodeJS to understanding the CodinGame setup. I don't know what `readline`, etc. mean/do. I continued reading YDKJS and started up a JSON file with flashcard info in it so I can create my own flashcard app at a future date. Finally, I set up a learning plan up through July 19th to prep for a class I am taking downtown on web components/making a CTA app. Overall, productive day!
+
+
+## Day 20: July 12, 2019
+
+**Today's Progress**: Continued reading YDKJS - this & Obejct Prototypes: Chapter 4, completed HackerRank Day 4, read a tad about web components, and watched a video on Java.
+
+**Thoughts**: I focused on learning more about object prototypes, specifically about class inheritance, the concept of `super` that exists more truthfully in other programming languages, and polymorphism. I was relieved to know that multiple inheritance doesn't exist in JavaScript. Today's HackerRank challenge involved classes (though in a way very different from JS since the challenges can be done in multiple languages), so I watched a 30 minute accompanying video. The video was in Java, and was my first time really looking at how another programming language works.
