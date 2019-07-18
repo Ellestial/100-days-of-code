@@ -177,3 +177,35 @@ $.isArrayLike = function(obj) {
     return obj.length === 0 || (obj.length > 0 && (obj.length - 1) in obj);
   }
 }
+
+
+Mixing Copies
+	• The name comes from an alternative way of explaining the task--Car has Vehicle's contents mixed-in, just like you mix in chocolate chips into your favorite cookie dough.
+	• Ways two objects can affect each other even after copying:
+		○ If they share a reference to a common object (ex: array)
+		○ If they share a reference to a common function. Manual copying of functions from one object to another doesn't actually emulate real duplication from class to instance that occurs in class-oriented languages. They can't be duplicated. So if you modified a shared function object (like ignition()) by adding properties to it, both Vehicle and Car would be affected.
+	• You can partially emulate multiple inheritance by explicitly using mixins in 2+ objects to your target object. But you can't  handle collisions if the same method/property is being copied from more than one source.
+	• Only use explicit mixins where it actually helps make more readable code. Might be less brittle/easier to manage to just defining the properties twice.
+	• Parasitic Inheritance
+		○ Variation on explicit mixin pattern.
+		○ // "Parasitic Class" `Car`
+function Car() {
+  // first, `car` is a `Vehicle`
+  var car = new Vehicle();  // now, let's modify our `car` to specialize it
+  car.wheels = 4;  // save a privileged reference to `Vehicle::drive()`
+  var vehDrive = car.drive;  // override `Vehicle::drive()`
+  car.drive = function() {
+    vehDrive.call( this );
+    console.log( "Rolling on all " + this.wheels + " wheels!" );
+  };  return car;
+}
+		
+
+Implicit Mixins
+	• Done in a similar way as explicit mixins, but not using an explicit mixin() function. Instead, can just reference another object's property/method.
+	• This is borrowing the function Something.cool() and calling it in the context of Another.
+	• Ex:
+		○ var Something = {  cool: function() {    this.greeting = 'Hello World';    this.count = this.count ? this.count + 1 : 1;  }};Something.cool();Something.count; // 1var Another = {  cool: function() {    Something.cool.call(this);  }};Another.cool();Another.count; // 1
+
+
+questions: research mixins more. parasitic inheritance and implicit mixins specifically
