@@ -144,3 +144,36 @@
 **Today's Progress**: Continued reading YDKJS - this & Obejct Prototypes: Chapter 4, completed HackerRank Day 4, read a tad about web components, and watched a video on Java.
 
 **Thoughts**: I focused on learning more about object prototypes, specifically about class inheritance, the concept of `super` that exists more truthfully in other programming languages, and polymorphism. I was relieved to know that multiple inheritance doesn't exist in JavaScript. Today's HackerRank challenge involved classes (though in a way very different from JS since the challenges can be done in multiple languages), so I watched a 30 minute accompanying video. The video was in Java, and was my first time really looking at how another programming language works.
+
+
+# July 13 - 16 became too sick to study
+
+
+## Day 21: July 17, 2019
+
+**Today's Progress**: Went through first section of DOM & jQuery (Functional Utilities) project on Bitovi in preparation for class I am taking Saturday.
+
+**Today's Progress**: I'm glad I'm finally feeling well enough to do JavaScript again. I'm trying to prepare for my all-day class Saturday on web components. The instructors stated that attendees should be familiar enough with JavaScript to go through the above DOM & jQuery project on Bitovi. I was nervous that I wouldn't be skilled enough, but I think I will be OK after going through this section. I will focus tomorrow and Friday on reading YDKJS to learn more about prototypes to feel more prepared.
+
+
+$.extend = function(target, object) {
+  for(prop in object) {
+	if(object.hasOwnProperty(prop) && !target.hasOwnProperty(prop)) {
+      target[prop] = object[prop];
+    }
+  }
+  return target;
+};
+
+$.isArray = function(obj) {
+  return Object.prototype.toString.call(obj) === '[object Array]';
+};
+
+$.isArrayLike = function(obj) {
+    typeof(obj.length) === 'number' ? 
+    (obj.length >= 0 ? 
+     : false) : false;
+  if(typeof obj === 'object' && typeof obj.length === 'number') {
+    return obj.length === 0 || (obj.length > 0 && (obj.length - 1) in obj);
+  }
+}
