@@ -163,6 +163,38 @@
 **Thoughts**: I have a loose understanding now of what mixins and parasitic inheritance are, but I would like to delve into those concepts more later. I also finally understand a high level definition of prototype.
 
 
+## Day 23: July 19, 2019
+
+**Today's Progress**: Continued reading YDKJS - this & Object Prototypes: Chapter 5. Watched a full video explaining how function prototypes work and how they came about [here](https://www.youtube.com/watch?v=_JJgSbuj5VI).
+
+**Thoughts**: I found the video fascinating. It was an hour and a half lecture on turning a "class"-like function into something more efficient using prototype. The lecturer went through the process of working through this through steps to change the below
+
+
+```
+var Car = function(speed) {  var result = {};
+  result.speed = speed;
+  result.location = 0;
+  result.move = function() {    this.location += this.speed;  }
+  return result;}
+var buggy = Car(30);
+var viper = Car(300);
+```
+
+into 
+
+```
+var Car = function(speed) {  
+  this.speed = speed;  
+  this.location = 0;
+}
+Car.prototype.move = function() {
+  this.location += this.speed;
+}
+var buggy = new Car(30;
+var viper = new Car(300);
+```
+
+
 $.extend = function(target, object) {
   for(prop in object) {
 	if(object.hasOwnProperty(prop) && !target.hasOwnProperty(prop)) {
