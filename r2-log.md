@@ -170,6 +170,20 @@
 **Thoughts**: I found the video fascinating. It was an hour and a half lecture on turning a "class"-like function into something more efficient using prototype. The lecturer went through the process of working through this through steps to change the below
 
 
+## Day 24: July 20, 2019
+
+**Today's Progress**: Took an 8 hour class on web components and ended up creating a CTA bus tracker app.
+
+**Thoughts**: Very interesting! I learned about DOM Shadowing, custom elements, and templates. Some of it was more complex for me to figure out, but nothing was way over my head, so I count that as a success! [See my tracker here](https://codepen.io/Ellestial/pen/xvGqzW)
+
+
+## Day 25: July 21, 2019
+
+**Today's Progress**: Worked on random quote machine project.
+
+**Thoughts**: I think I'm a bit burnt out from such a long programming day yesterday, so I didn't get as far as I would have liked. I failed 2 of the tests that Free Code Camp set up with this project, which I will resolve in the future.
+
+
 ```
 var Car = function(speed) {  var result = {};
   result.speed = speed;
