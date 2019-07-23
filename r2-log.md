@@ -184,6 +184,13 @@
 **Thoughts**: I think I'm a bit burnt out from such a long programming day yesterday, so I didn't get as far as I would have liked. I failed 2 of the tests that Free Code Camp set up with this project, which I will resolve in the future.
 
 
+## Day 26: July 22, 2019
+
+**Today's Progress**: Finished random quote machine project and started going through more FreeCodeCamp.
+
+**Thoughts**: I need to ask someone I know how to have a Twitter share button refresh the content without a page reload. I wasn't able to figure this out and am instead recreating the button each time I need new content in it. I need to set a daily/weekly plan for what I want to accomplish in my JS practice now so I can be more efficient/less scattered. I think it would be good to go through all the algorithm practice in FreeCodeCamp, so I started going through a few lessons that I didn't complete last year.
+
+
 ```
 var Car = function(speed) {  var result = {};
   result.speed = speed;
