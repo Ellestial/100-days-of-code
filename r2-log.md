@@ -191,6 +191,13 @@
 **Thoughts**: I need to ask someone I know how to have a Twitter share button refresh the content without a page reload. I wasn't able to figure this out and am instead recreating the button each time I need new content in it. I need to set a daily/weekly plan for what I want to accomplish in my JS practice now so I can be more efficient/less scattered. I think it would be good to go through all the algorithm practice in FreeCodeCamp, so I started going through a few lessons that I didn't complete last year.
 
 
+## Day 27: July 23, 2019
+
+**Today's Progress**: Went through the first third of ES6 tutorials on freeCodeCamp.
+
+**Thoughts**: I'm enjoying this break from reading You Don't Know JS. I learned that you can stil mutate objects with `const` despite it being read-only through redefining values within the object. I also learned how to properly set up arrow functions and about default parameters and rest operator with functions.
+
+
 ```
 var Car = function(speed) {  var result = {};
   result.speed = speed;
