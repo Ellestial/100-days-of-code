@@ -205,6 +205,57 @@
 **Thoughts**: I learned about spread and destructuring assignments. Both seem useful! The spread tutorial mentioned the ES5 way of using apply(thisObj, args), which I learned from the You Don't Know JS book series, so I felt good about knowing that.
 
 
+## Day 29: July 25, 2019
+
+**Today's Progress**:
+
+**Thoughts**: 
+
+7.25 Notes
+- Rest Operator to Reassign Array Elements
+  - Can collect remaining elements in an array to an array similar to slice()
+  - Example
+  - const [a, b, ...arr] = [1, 2, 3, 4, 5, 6];
+  - console.log(a, b, arr) // a = 1, b = 2, arr = [3, 4, 5, 6]
+  - Called rest operator. Only works when it is the last variable in a destructuring assignment.
+- Use Destructuring Assignment to Pass an Object as a Function's Parameter
+  - Can choose to only manipulate certain properties within a function using this.
+  - Example
+    const profileUpdate = (profileData) => {
+    const { name, age, nationality, location } = profileData;
+    // do something with these variables
+  }
+  - This effectively destructures the object sent into the function. This can also be done in-place:
+  const profileUpdate = ({ name, age, nationality, location }) => {
+    /* do something with these fields */
+  }
+- Template Literals
+  - Allows multiline strings without using \n
+  - Example
+  - const greeting = `Hello, my name is ${myObj.name}.`;
+-  Write Concise Object Literal Declarations Using Simple Fields
+  - Can write object literal declarations without declaring separate property/value.
+  - const self = (name, age) => ({
+      name: name,
+      age: age
+    });
+  - const self = (name, age) => ({ name, age });
+- ES6: Write Concise Declarative Functions with ES6
+  - Can remove function keyword and semicolon in declarations within objects.
+  - const self = {
+      name: 'Emily',
+      greeting: function() {
+        // stuff
+      };
+    }
+   - const self = {
+       name: 'Emily',
+       greeting() {
+         // stuff
+       }
+     }
+
+
 ```
 var Car = function(speed) {  var result = {};
   result.speed = speed;
