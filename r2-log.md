@@ -198,6 +198,13 @@
 **Thoughts**: I'm enjoying this break from reading You Don't Know JS. I learned that you can stil mutate objects with `const` despite it being read-only through redefining values within the object. I also learned how to properly set up arrow functions and about default parameters and rest operator with functions.
 
 
+## Day 28: July 24, 2019
+
+**Today's Progress**: Continued with freeCodeCamp's ES6 tutorials.
+
+**Thoughts**: I learned about spread and destructuring assignments. Both seem useful! The spread tutorial mentioned the ES5 way of using apply(thisObj, args), which I learned from the You Don't Know JS book series, so I felt good about knowing that.
+
+
 ```
 var Car = function(speed) {  var result = {};
   result.speed = speed;
