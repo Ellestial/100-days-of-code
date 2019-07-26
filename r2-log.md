@@ -207,9 +207,9 @@
 
 ## Day 29: July 25, 2019
 
-**Today's Progress**:
+**Today's Progress**: Continued with freeCodeCamp's ES6 tutorials.
 
-**Thoughts**: 
+**Thoughts**: Today I learned about `class` and `constructor`, which would have been very helpful in my class I took last weekend! I'm glad I learned it now, though. I also got some practice with getters and setters in a really cool way--user sets a temperature in Fahrenheit at instantiation, but can reset it to Celsius and it will keep it what you need.
 
 7.25 Notes
 - Rest Operator to Reassign Array Elements
