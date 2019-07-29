@@ -211,49 +211,15 @@
 
 **Thoughts**: Today I learned about `class` and `constructor`, which would have been very helpful in my class I took last weekend! I'm glad I learned it now, though. I also got some practice with getters and setters in a really cool way--user sets a temperature in Fahrenheit at instantiation, but can reset it to Celsius and it will keep it what you need.
 
-7.25 Notes
-- Rest Operator to Reassign Array Elements
-  - Can collect remaining elements in an array to an array similar to slice()
-  - Example
-  - const [a, b, ...arr] = [1, 2, 3, 4, 5, 6];
-  - console.log(a, b, arr) // a = 1, b = 2, arr = [3, 4, 5, 6]
-  - Called rest operator. Only works when it is the last variable in a destructuring assignment.
-- Use Destructuring Assignment to Pass an Object as a Function's Parameter
-  - Can choose to only manipulate certain properties within a function using this.
-  - Example
-    const profileUpdate = (profileData) => {
-    const { name, age, nationality, location } = profileData;
-    // do something with these variables
-  }
-  - This effectively destructures the object sent into the function. This can also be done in-place:
-  const profileUpdate = ({ name, age, nationality, location }) => {
-    /* do something with these fields */
-  }
-- Template Literals
-  - Allows multiline strings without using \n
-  - Example
-  - const greeting = `Hello, my name is ${myObj.name}.`;
--  Write Concise Object Literal Declarations Using Simple Fields
-  - Can write object literal declarations without declaring separate property/value.
-  - const self = (name, age) => ({
-      name: name,
-      age: age
-    });
-  - const self = (name, age) => ({ name, age });
-- ES6: Write Concise Declarative Functions with ES6
-  - Can remove function keyword and semicolon in declarations within objects.
-  - const self = {
-      name: 'Emily',
-      greeting: function() {
-        // stuff
-      };
-    }
-   - const self = {
-       name: 'Emily',
-       greeting() {
-         // stuff
-       }
-     }
+
+## Skipped July 26 and 27 due to traveling
+
+
+## Day 30: July 28, 2019
+
+**Today's Progress**: Finished freeCodeCamp's ES6 tutorials and began reviewing notes on ES6.
+
+**Thoughts**: Definitely want to spend time reviewing this info in the next few days. Glad to finally know some of these basics so I can understand code I see in the future.
 
 
 ```
