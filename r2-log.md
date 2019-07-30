@@ -222,6 +222,13 @@
 **Thoughts**: Definitely want to spend time reviewing this info in the next few days. Glad to finally know some of these basics so I can understand code I see in the future.
 
 
+## Day 31: July 29, 2019
+
+**Today's Progress**: Began watching a [Scrimba course](https://scrimba.com/g/ges6) to review the freeCodeCamp ES6 tutorials.
+
+**Thoughts**: I was exhausted today, so it was hard to get through my studying tonight. Scrimba is very interesting, though, because the tutorials are videos of code like normal, BUT you can click onto it at any point to mess around with the code and treat it like a text editor. Very cool, and unlike anything I've seen.
+
+
 ```
 var Car = function(speed) {  var result = {};
   result.speed = speed;
