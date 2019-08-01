@@ -236,6 +236,13 @@
 **Thoughts**: This was entirely review, but was definitely still worthwhile. Looking forward to reading the ES6 YDKJS book in the future!
 
 
+## Day 33: July 31, 2019
+
+**Today's Progress**: I started the ideation/wireframing steps of a flashcard app.
+
+**Thoughts**: I chatted with a programmer coworker today who gave me some good advice. I decided to start a new project that will be beneficial for my learning now and in the future--a flashcard application. It will have 3 modes: review, quiz, and matching.
+
+
 ```
 var Car = function(speed) {  var result = {};
   result.speed = speed;
