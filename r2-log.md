@@ -243,6 +243,29 @@
 **Thoughts**: I chatted with a programmer coworker today who gave me some good advice. I decided to start a new project that will be beneficial for my learning now and in the future--a flashcard application. It will have 3 modes: review, quiz, and matching.
 
 
+## Day 34: August 1, 2019
+
+**Today's Progress**:
+
+**Thoughts**:
+
+**Notes**: 
+
+
+[[Prototype]]
+- The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
+- This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
+- If none is ever found, the return result from the [[Get]] operation is undefined
+- If using `for..in`, any property that can be reached via its chain (and is also enumerable) will be enumerated
+- If using `in` to test for existence of a property on an object, it will check the entire chain of the object regardless of enumerability
+
+Object.prototype
+- The top-end of every normal [[Prototype]] chain is the built-in Object.prototype (including all normal built-in objects)
+
+Setting & Shadowing Properties
+- 
+
+
 ```
 var Car = function(speed) {  var result = {};
   result.speed = speed;
