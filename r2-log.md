@@ -245,9 +245,9 @@
 
 ## Day 34: August 1, 2019
 
-**Today's Progress**:
+**Today's Progress**: Read a bit of YDKJS, continued on my flashcard/quiz application wireframes, and wrote up some direction.
 
-**Thoughts**:
+**Thoughts**: I decided on a direction to go with the home page of the flashcard/quiz application. After wireframing the desktop version of that up, I decided to write down every single technical/design thing I could think of for that specific page so I can make sure to have a clear direction once I begin coding.
 
 **Notes**: 
 
