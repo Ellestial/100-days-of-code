@@ -249,8 +249,12 @@
 
 **Thoughts**: I decided on a direction to go with the home page of the flashcard/quiz application. After wireframing the desktop version of that up, I decided to write down every single technical/design thing I could think of for that specific page so I can make sure to have a clear direction once I begin coding.
 
-**Notes**: 
 
+## Day 35: August 2, 2019
+
+**Today's Progress**: Continued on my quiz application wireframes, and wrote up some direction on the match game type.
+
+**Thoughts**: Today started to get hard! Coming up with all the rules and nitty gritty details about this game BEFORE starting any production is hard work and is making me excited to start programming. I am going on vacation Tuesday, and hope to have all the wireframes and details about direction/technical information done before then so I can dive right in when I return.
 
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 

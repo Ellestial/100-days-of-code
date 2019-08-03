@@ -50,6 +50,19 @@ Summary: This page provides a list of topics to study and test from. It is the f
 * Memorize (Flashcard)
 
 * Quiz (Matching)
+Summary: This game mode tests the user's familiarity with terms/definitions/examples. The user selects one item and then selects one other item that is related to their first selection.
+
+? User interactions:
+- The user goes through 3 steps with this game.
+  1. Select appropriate settings from an overlay.
+  2. Begin matching terms/definitions/examples.
+  3. Select replay and/or adjust settings.
+
+? Technical notes:
+- Settings overlay appears after user has selected the Match tab. The application uses cookies to save the settings choices, so if the user selects a different game tab and comes back, the overlay will not appear and use their previously selected settings. There is a settings gear icon that can be selected at any time to bring this overlay back up. The overlay includes the following options:
+  - Number of matches
+  - Types of matches (term/definition, term/example, definition/example, or all 3)
+- Progress is indicated by a bar at the top of the screen. When a match is made (whether or not it is a correct)
 
 * Code Test (Text Entry)
 
