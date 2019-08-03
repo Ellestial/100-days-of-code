@@ -53,16 +53,30 @@ Summary: This page provides a list of topics to study and test from. It is the f
 Summary: This game mode tests the user's familiarity with terms/definitions/examples. The user selects one item and then selects one other item that is related to their first selection.
 
 ? User interactions:
-- The user goes through 3 steps with this game.
+- The user goes through 5 steps with this game.
   1. Select appropriate settings from an overlay.
   2. Begin matching terms/definitions/examples.
-  3. Select replay and/or adjust settings.
+  3. OPTIONAL selects settings icon, adjusts settings, and creates a new game.
+  4. User sees results panel upon game completion.
+  5. OPTIONAL Select replay from overlay.
 
 ? Technical notes:
 - Settings overlay appears after user has selected the Match tab. The application uses cookies to save the settings choices, so if the user selects a different game tab and comes back, the overlay will not appear and use their previously selected settings. There is a settings gear icon that can be selected at any time to bring this overlay back up. The overlay includes the following options:
-  - Number of matches
+  - Number of matches (maybe?)
   - Types of matches (term/definition, term/example, definition/example, or all 3)
+- Results overlay appears after user has completed the game. It shows the overall accuracy rating of that run and provides a button to start a new game.
 - Progress is indicated by a bar at the top of the screen. When a match is made (whether or not it is a correct)
+- There are 6 available matches at a time. Once the user correctly matches all the pairs, 6 additional matches appear on screen. This happens until the user has gone through 18 matches.
+- Positioning and size of each item is based on how long the text within it is. The grid must calculate the best way to lay out the cards based on the following factors: 
+  - length of text within each item
+  - Type of item (term/example/definition)
+  - Viewport size
+
+? Design notes:
+- After user clicks "Start Game" from initial settings overlay, it animates into the settings icon so users can make the connection that clicking that icon opens that overlay.
+- There is a visual indicator when an incorrect and a correct match is made.
+- This utilizes CSS Grid.
+- Terms, examples, and definitions all have visually distinct styles on their cards.
 
 * Code Test (Text Entry)
 

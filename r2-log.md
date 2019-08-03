@@ -256,6 +256,13 @@
 
 **Thoughts**: Today started to get hard! Coming up with all the rules and nitty gritty details about this game BEFORE starting any production is hard work and is making me excited to start programming. I am going on vacation Tuesday, and hope to have all the wireframes and details about direction/technical information done before then so I can dive right in when I return.
 
+
+## Day 36: August 3, 2019
+
+**Today's Progress**: Completed (mostly) the matching game wireframes/detailed information within my quiz application.
+
+**Thoughts**: Just trying to figure out the pesky progress meter and how I want to portray that during the matching game. Tomorrow I will finish that up and work on the flashcard portion of the application, which should hopefully be simpler/quicker!
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
