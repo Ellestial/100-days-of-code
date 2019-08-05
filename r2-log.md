@@ -263,6 +263,13 @@
 
 **Thoughts**: Just trying to figure out the pesky progress meter and how I want to portray that during the matching game. Tomorrow I will finish that up and work on the flashcard portion of the application, which should hopefully be simpler/quicker!
 
+
+## Day 37: August 4, 2019
+
+**Today's Progress**: Completed the flashcard wireframes/detailed information within my quiz application.
+
+**Thoughts**: Figured out how to show progress! Decided to make it simpler rather than harder. Flashcard ideation went quickly because that's what prompted me to want to create this whole application. Tomorrow I am hoping to wireframe/write up info about the Test component.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
