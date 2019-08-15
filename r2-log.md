@@ -270,6 +270,15 @@
 
 **Thoughts**: Figured out how to show progress! Decided to make it simpler rather than harder. Flashcard ideation went quickly because that's what prompted me to want to create this whole application. Tomorrow I am hoping to wireframe/write up info about the Test component.
 
+
+## Packing/on vacation August 5 - 13
+
+## Day 38: August 14, 2019
+
+**Today's Progress**: Worked on the wireframe/write up for the Test component.
+
+**Thoughts**: Since I was on vacation for a while, it took me a bit to get back into the groove of this. I made good progress on the Test component, but will need to finish tomorrow.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 

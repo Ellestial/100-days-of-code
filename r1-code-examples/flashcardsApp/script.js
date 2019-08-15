@@ -91,6 +91,23 @@ The results overlay shows the overall accuracy rating of that run and provides a
 
 
 * Test
+Summary: The user now tests their knowledge theyy gained from flashcards and matching through multiple choice, true/false, and text input questions.
+
+? User interactions:
+- The user selects from the settings overlay: how many questions they'd like, what styles of questions should be included, and what types of questions should be included.
+- User reads statement and selects (or types in) an answer option. 
+- User repeats the previous step until all questions are answered.
+- OPTIONAL Select review from overlay. The user then scrolls through all answered questions that now have a correct/incorrect indicator.
+- OPTIONAL Select replay from overlay.
+
+? Techincal notes:
+The settings overlay includes the following options:
+  - Number of questions
+  - Types of questions as checkboxes (term/definition, term/example, definition/example)
+  - Styles of questions as checkboxes (true/false, multiple choice, text input)
+The results overlay shows the overall accuracy rating of that run and provides a button to start a new game or see a breakdown of what questions the user got correct/incorrect.
+
+? Design notes: 
 
 
 
@@ -98,6 +115,7 @@ The results overlay shows the overall accuracy rating of that run and provides a
 - Launch application.
 - OPTIONAL search for a target topic.
 - Select a topic.
+- OPTIONAL 
 
 */
 
