@@ -279,6 +279,13 @@
 
 **Thoughts**: Since I was on vacation for a while, it took me a bit to get back into the groove of this. I made good progress on the Test component, but will need to finish tomorrow.
 
+
+## Day 39: August 15, 2019
+
+**Today's Progress**: Worked on write up for the Test component. Continued working on FreeCodeCamp's Basic Data Structures section.
+
+**Thoughts**: Very exhausted today, so I didn't get very far with my app write up. I haven't actually touched code for maybe 2 weeks, so I wanted to delve into FCC a bit.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 

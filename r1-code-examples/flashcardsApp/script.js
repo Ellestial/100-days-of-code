@@ -100,12 +100,18 @@ Summary: The user now tests their knowledge theyy gained from flashcards and mat
 - OPTIONAL Select review from overlay. The user then scrolls through all answered questions that now have a correct/incorrect indicator.
 - OPTIONAL Select replay from overlay.
 
-? Techincal notes:
-The settings overlay includes the following options:
+? Technical notes:
+- The settings overlay includes the following options:
   - Number of questions
   - Types of questions as checkboxes (term/definition, term/example, definition/example)
   - Styles of questions as checkboxes (true/false, multiple choice, text input)
-The results overlay shows the overall accuracy rating of that run and provides a button to start a new game or see a breakdown of what questions the user got correct/incorrect.
+- The results overlay shows the overall accuracy rating of that run and provides a button to start a new game or see a breakdown of what questions the user got correct/incorrect.
+- Question styles and types will be randomized based on the selection from the settings overlay.
+- One question appears at a time. The previous and next questions are slightly visible at the top/bottom of the screen.
+- Text Input: only accepts example or term as input, not definition. Uses regex to allow for any uppercase/lowercase characters.
+- Remember correct/incorrect choices to reveal in review section, which indicates a correct or incorrect indicator on each question, as well as the correct choice.
+- Each question has an icon representing the style and question number.
+- Review: scrolling will make the cards move (think Animate on Scroll).
 
 ? Design notes: 
 
@@ -116,6 +122,9 @@ The results overlay shows the overall accuracy rating of that run and provides a
 - OPTIONAL search for a target topic.
 - Select a topic.
 - OPTIONAL 
+
+! Future State
+- Allow JSON upload to replace existing items. Use cookies to save them.
 
 */
 
