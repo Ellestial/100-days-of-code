@@ -286,6 +286,13 @@
 
 **Thoughts**: Very exhausted today, so I didn't get very far with my app write up. I haven't actually touched code for maybe 2 weeks, so I wanted to delve into FCC a bit.
 
+
+## Day 40: August 16, 2019
+
+**Today's Progress**: Finished FreeCodeCamp's Basic Data Structures section. Started on Learn application JS/HTML.
+
+**Thoughts**: It's good to dive into real JS again. It's been a good while because of app planning and my vacation, so it's going a bit slow.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
