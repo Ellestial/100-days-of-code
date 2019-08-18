@@ -1,54 +1,92 @@
 [
   {
-    "title": "Class Theory",
-    "definition": "Implies a way of classifying a certain data structure. Think about any given structure as a specific variation of a more general base definition. This is an optional design pattern in software design, and you have the choice to use them in JS or not.",
-    "example": "Vehicle may be a class that contains attributes that are common to all types of vehicles (plane, train, automobile). Car may be another class that inherits/extends the base definition from Vehicle. Data in an instance of the class Car would be unique like a specific car's VIN.",
-    "topic": "objects"
+    "name": "Array Methods",
+    "items": [
+      {
+        "term": "Term test",
+        "definition": "Definition test",
+        "example": "Example test"
+      },
+      {
+        "term": "Term test",
+        "definition": "Definition test",
+        "example": "Example test"
+      }
+    ]
   },
   {
-    "title": "Class Theory Key Concepts",
-    "definition": "Classes, inheritance, instantiation, polymorphism.",
-    "topic": "objects"
+    "name": "Date Methods",
+    "items": [
+      {
+        "term": "Term test",
+        "definition": "Definition test",
+        "example": "Example test"
+      },
+      {
+        "term": "Term test",
+        "definition": "Definition test",
+        "example": "Example test"
+      }
+    ]
   },
   {
-    "title": "Object Oriented Programming",
-    "definition": "Stresses that data intrinisically has associated behavior that opereates on it, so proper design is to package up the data and behavior together. Also called class oriented programming and data structures.",
-    "example": "A series of characters representing a word is a string. This data is combined with behaviors/functionality like finding the length of the string with OOP.",
-    "topic": "objects"
+    "name": "Function Methods",
+    "items": [
+      {
+        "term": "Term test",
+        "definition": "Definition test",
+        "example": "Example test"
+      },
+      {
+        "term": "Term test",
+        "definition": "Definition test",
+        "example": "Example test"
+      }
+    ]
   },
   {
-    "title": "Polymorphism",
-    "definition": "The idea that a general behavior from a parent class can be overridden in a child of the same name class to give it more specifics. Class theory suggests both parent/child classes should share the same method name for a certain behavior so the child can override easier, but this is opting into frustration and code brittleness.",
-    "topic": "objects"
+    "name": "Math Methods",
+    "items": [
+      {
+        "term": "Term test",
+        "definition": "Definition test",
+        "example": "Example test"
+      },
+      {
+        "term": "Term test",
+        "definition": "Definition test",
+        "example": "Example test"
+      }
+    ]
   },
   {
-    "title": "Relative Polymorphism",
-    "definition": "The idea that any method in a class can reference another method of the same or different name at a higher level of the inheritance hierarchy. It's relative because we don't absolutely define which inheritance level (class) we want to access, but rather a relative reference by saying \"look up one level.\"",
-    "topic": "objects"
+    "name": "Object Methods",
+    "items": [
+      {
+        "term": "Term test",
+        "definition": "Definition test",
+        "example": "Example test"
+      },
+      {
+        "term": "Term test",
+        "definition": "Definition test",
+        "example": "Example test"
+      }
+    ]
   },
   {
-    "title": "let and const",
-    "definition": "ES6 feature. They are block/statement/expression-scoped instead of function/global scoped. Once declared, you can't redeclare in the same scope without an error being thrown. const is read-only, but you can change the values of objects that are assigned to it through myObj[prop] = 'value';",
-    "topic": "ES6"
-  },
-  {
-    "title": "Arrow functions",
-    "definition": "Shorthand for anonymous functions. Instead of var foo = function(a, b) { return a + b; }, it's let/const foo = (a, b) => a + b where (a, b) is the list of parameters that include parentheses when there are 2+ parameters, and where a + b is the function body and doesn't need curly braces around it or the word return if there's only one line and it's returning.",
-    "topic": "ES6"
-  },
-  {
-    "title": "Function parameters",
-    "definition": "Can set default parameters by using function foo(name = 'Anonymous') { return 'Hello ' + name;} and calling it with foo() or foo('Emily')",
-    "topic": "ES6"
-  },
-  {
-    "title": "Rest operator",
-    "definition": "Can create functions that take avariable number of arguments. They are stored in an array that can be accessed later from inside the function. Allows use of map(), reduce(), and filter() on the parameter since it's an array. Replaces arguments object, which was array-like anyway and didn't cover map() etc. Ex: function foo(...args) { return args; } foo({}, 200, [174, 33]) yields 0: {}, 1: 200, 2: [174, 33]",
-    "topic": "ES6"
-  },
-  {
-    "title": "Spread Operator",
-    "definition": "Use ... before an array as a parameter to 'unpack' the array as multiple arguments.",
-    "topic": "ES6"
+    "name": "String Methods",
+    "items": [
+      {
+        "term": "Term test",
+        "definition": "Definition test",
+        "example": "Example test"
+      },
+      {
+        "term": "Term test",
+        "definition": "Definition test",
+        "example": "Example test"
+      }
+    ]
   }
 ]

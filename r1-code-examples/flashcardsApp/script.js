@@ -1,25 +1,13 @@
 const content = document.querySelector('.content');
 const minTopics = 4;
 const maxTopics = 24;
-let numTopics = 10;
-
-function createNav() {
-
-};
-
-(function addTopics() {
-  const topicEl = document.querySelector('.topic');
-  content.removeChild(topicEl);
-
-  for(var i = 0; i < numTopics; i++) {
-    const topicClone = topicEl.cloneNode(true);
-    content.appendChild(topicClone);
-  }
-})();
+let numTopics;
+let jsonData;
 
 function adjustTopics() {
   const topicEl = document.querySelector('.topic');
   const topics = content.querySelectorAll('.topic');
+  content.dataset.topics = numTopics;
 
   if(topics.length < numTopics) {
     for(let i = topics.length; i < numTopics; i++) {
@@ -47,7 +35,23 @@ function updateNumTopics() {
   adjustTopics();
 }
 
+updateNumTopics();
+
 window.addEventListener('resize', updateNumTopics);
+
+
+/////////////////////////////
+//      ajax requests      //
+/////////////////////////////
+
+let jsonContentRequest = new XMLHttpRequest();
+jsonContentRequest.open('GET', './content.json');
+jsonContentRequest.onreadystatechange = function() {
+  if(jsonContentRequest.readyState === 4 && jsonContentRequest.status === 200) {
+    jsonData = JSON.parse(this.response);
+  }
+}
+jsonContentRequest.send();
 
 // duplicate a topic
 // have it duplicated a certain number of times to fit the screen

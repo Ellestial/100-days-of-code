@@ -300,6 +300,13 @@
 
 **Thoughts**: I am trying to focus on one small piece at a time. I want to clean up what I already have and then work on getting some JSON data hooked up so I can more easily work on the Select a Topic/Subject page.
 
+
+## Day 42: August 18, 2019
+
+**Today's Progress**: Worked on Learn application. Cleaned up existing JS, set up JSON file format, used AJAX to pull in JSON file data, and configured CSS.
+
+**Thoughts**: So far so good! Next step is to have it so each topic on screen is connected with an actual JSON topic.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
