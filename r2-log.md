@@ -293,6 +293,13 @@
 
 **Thoughts**: It's good to dive into real JS again. It's been a good while because of app planning and my vacation, so it's going a bit slow.
 
+
+## Day 41: August 17, 2019
+
+**Today's Progress**: Worked on Learn application. Got it so the topics populate on page load and change on browser resize.
+
+**Thoughts**: I am trying to focus on one small piece at a time. I want to clean up what I already have and then work on getting some JSON data hooked up so I can more easily work on the Select a Topic/Subject page.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
