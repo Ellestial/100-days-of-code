@@ -307,6 +307,13 @@
 
 **Thoughts**: So far so good! Next step is to have it so each topic on screen is connected with an actual JSON topic.
 
+
+## Day 43: August 19, 2019
+
+**Today's Progress**: Worked on Learn application and did some FreeCodeCamp challenges.
+
+**Thoughts**: Very tired today, but starting to get data into the topics.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
