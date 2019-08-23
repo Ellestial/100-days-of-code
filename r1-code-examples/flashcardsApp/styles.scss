@@ -130,6 +130,7 @@ div {
   padding: 18px;
   background-color: #F2F2F2;
   border: 1px solid gray;
+  transition: all 250ms;
 
   &::before,
   &::after {
@@ -153,6 +154,19 @@ div {
     width: 80%;
     top: 8px;
     z-index: -2;
+  }
+
+  &[data-topic="empty"] {
+    border: 0;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  &.is--disappearing {
+    transform: scale3d(0, 0, 1);
   }
 
   .topic__icon {

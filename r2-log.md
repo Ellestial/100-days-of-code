@@ -314,6 +314,20 @@
 
 **Thoughts**: Very tired today, but starting to get data into the topics.
 
+
+## Day 44: August 21, 2019
+
+**Today's Progress**: Worked on Learn application.
+
+**Thoughts**: Got data into topics, started working on search functionality.
+
+
+## Day 45: August 22, 2019
+
+**Today's Progress**: Worked on Learn application and freeCodeCamp.
+
+**Thoughts**: Struggling through this project. Hoping to find some inspiration soon, but am having a hard time figuring out how to work the search functionality.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 

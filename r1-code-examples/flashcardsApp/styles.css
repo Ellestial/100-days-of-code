@@ -120,6 +120,7 @@ div {
   padding: 18px;
   background-color: #F2F2F2;
   border: 1px solid gray;
+  transition: all 250ms;
 }
 .topic::before, .topic::after {
   height: 100%;
@@ -140,6 +141,15 @@ div {
   width: 80%;
   top: 8px;
   z-index: -2;
+}
+.topic[data-topic=empty] {
+  border: 0;
+}
+.topic[data-topic=empty]::before, .topic[data-topic=empty]::after {
+  display: none;
+}
+.topic.is--disappearing {
+  transform: scale3d(0, 0, 1);
 }
 .topic .topic__icon {
   margin-bottom: 10px;
