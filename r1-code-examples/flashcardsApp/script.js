@@ -1,58 +1,59 @@
 const content = document.querySelector('.content');
 const searchInput = document.querySelector('.search__input');
+let topics = content.querySelectorAll('.topic');
 let topicView = true;
 let numTopics;
 let topicsData;
+let refreshInterval;
 
-function adjustTopics() {
-  const topics = content.querySelectorAll('.topic');
-  let lastNum;
+function sizeTopics() {
+  topics = content.querySelectorAll('.topic');
+  let lastTopicIndex;
   content.dataset.topics = numTopics;
 
   if (topics.length < numTopics) {
     for (let i = topics.length; i < numTopics; i++) {
-      let num = randomNum(0, topicsData.length - 1);
-      while (num === lastNum) {
-        num = randomNum(0, topicsData.length - 1);
+      let topicIndex = randomNum(0, topicsData.length - 1);
+      while (topicIndex === lastTopicIndex) {
+        topicIndex = randomNum(0, topicsData.length - 1);
       }
-      topic().add(num);
-      lastNum = num;
+      let newTopic = topic.create(topicIndex);
+      content.appendChild(newTopic);
+      lastTopicIndex = topicIndex;
     }
   } else if (topics.length > numTopics) {
     for (let i = topics.length; i > numTopics; i--) {
       content.removeChild(content.lastChild);
     }
   }
+  topics = content.querySelectorAll('.topic');
 };
 
-function topic() {
-  const template = document.querySelector('#topictemplate');
-
-  function add(index) {
+const topic = {
+  create: function(index) {
+    const template = document.querySelector('#topictemplate');
     const clone = document.importNode(template.content, true);
     const topic = clone.querySelector('.topic');
     const name = topicsData[index].name;
+    const nameEl = topic.querySelector('.topic__name');
     topic.dataset.topic = index;
     topic.dataset.index = document.querySelectorAll('.topic').length;
-    topic.querySelector('.topic__name').textContent = name;
-    content.appendChild(clone);
-  };
-
-  function remove(index) {
-    content.removeChild(querySelector('[data-topic="' + index + '"]'))
-  };
-
-  function empty(el) {
-    el.dataset.topic = 'empty';
-    el.removeChild(topic.querySelector('.topic__icon'));
-    el.removeChild(topic.querySelector('.topic__name'));
-  };
-
-  return {
-    add: add,
-    remove: remove,
-    empty: empty
-  };
+    nameEl.textContent = name;
+    return topic;
+  },
+  update: function(topic, index) {
+    const name = topicsData[index].name;
+    const nameEl = topic.querySelector('.topic__name');
+    topic.dataset.topic = index;
+    nameEl.textContent = name;
+    return topic;
+  },
+  empty: function(topic) {
+    const nameEl = topic.querySelector('.topic__name');
+    topic.dataset.topic = 'empty';
+    nameEl.textContent = '';
+    return topic;
+  }
 };
 
 function randomNum(min, max) {
@@ -72,47 +73,55 @@ function updateNumTopics() {
     numTopics = 6;
   }
   if (lastNum !== numTopics) {
-    adjustTopics();
+    sizeTopics();
   }
 };
 
 function topicRefresh() {
-  let refresh = setInterval(function() {
+  let refreshInterval = setInterval(function() {
     let topicIndex = randomNum(0, content.dataset.topics - 1);
-    let oldTopic = document.querySelector('.topic[data-index="' + topicIndex + '"');
-    let newTopic = topic().add(3);
-    console.log(newTopic);
-    oldTopic.classList.add('is--disappearing');
+    let newTopicIndex = randomNum(0, content.dataset.topics - 1);
+    let refreshedTopic = document.querySelector('.topic[data-index="' + topicIndex + '"');
+    refreshedTopic.classList.add('is--disappearing');
     setTimeout(function() {
-      oldTopic.classList.remove('is--disappearing');
-      content.replaceChild(newTopic, oldTopic);
-    }, 1000);
+      topic.update(refreshedTopic, newTopicIndex);
+      refreshedTopic.classList.remove('is--disappearing');
+    }, 500);
   }, 5000);
 };
 
 topicRefresh();
 
-function search(e) {
-  const topics = content.querySelectorAll('.topic');
-  topics.forEach(function(topic) {
-    topic.empty(topic);
-  });
-  if(this.value.length === 0) {
-    console.log(this.value.length);
-    adjustTopics();
-  }
-  if(this.value.length <= 3) {
-    return;
-  }
-  topicsData.forEach(function(topic) {
-    if(topic.name.includes(searchInput.value)) {
-      console.log('you win!');
-    }
-  });
-};
+// function search(e) {
+//   const topics = content.querySelectorAll('.topic');
+//   topics.forEach(function(topic) {
+//     topic.empty(topic);
+//   });
+//   if(this.value.length === 0) {
+//     sizeTopics();
+//   }
+//   if(this.value.length <= 3) {
+//     return;
+//   }
+//   topicsData.forEach(function(topic) {
+//     if(topic.name.includes(searchInput.value)) {
+//       console.log('you win!');
+//     }
+//   });
+// };
+
+
 
 window.addEventListener('resize', updateNumTopics);
-searchInput.addEventListener('keypress', search);
+content.addEventListener('click', function(e) {
+  console.dir(e.target);
+}), true;
+topics.forEach(function(topic) {
+  console.log(topics);
+  topic.addEventListener('click', function(e) {
+    console.log(this.dataset.topic);
+  });
+});
 
 /////////////////////////////
 //      ajax requests      //

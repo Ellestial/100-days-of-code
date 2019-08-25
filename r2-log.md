@@ -328,6 +328,16 @@
 
 **Thoughts**: Struggling through this project. Hoping to find some inspiration soon, but am having a hard time figuring out how to work the search functionality.
 
+
+## Missed August 23 because didn't get home until midnight.
+
+
+## Day 46: August 24, 2019
+
+**Today's Progress**: Worked on Learn application.
+
+**Thoughts**: Today went well! I was able to clean up the code and get a good chunk of the topics page done. I have items disappearing/reappearing added in now. Next step is addressing the behemoth that is search.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
