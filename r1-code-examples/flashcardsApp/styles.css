@@ -121,6 +121,11 @@ div {
   background-color: #F2F2F2;
   border: 1px solid gray;
   transition: all 250ms;
+  z-index: 1;
+}
+.topic:hover:not([data-id=empty]) {
+  transform: scale3d(1.1, 1.1, 1);
+  cursor: pointer;
 }
 .topic::before, .topic::after {
   height: 100%;
@@ -142,10 +147,13 @@ div {
   top: 8px;
   z-index: -2;
 }
-.topic[data-topic=empty] {
+.topic[data-id=empty] {
   border: 0;
 }
-.topic[data-topic=empty]::before, .topic[data-topic=empty]::after {
+.topic[data-id=empty]::before, .topic[data-id=empty]::after {
+  display: none;
+}
+.topic[data-id=empty] img {
   display: none;
 }
 .topic.is--disappearing {

@@ -338,6 +338,13 @@
 
 **Thoughts**: Today went well! I was able to clean up the code and get a good chunk of the topics page done. I have items disappearing/reappearing added in now. Next step is addressing the behemoth that is search.
 
+
+## Day 47: August 25, 2019
+
+**Today's Progress**: Worked on Learn application. Saving out current screen info in array. Setting current topic with clicking on a topic.
+
+**Thoughts**: Though I'm still trying to even grasp how search will work, I feel pretty good about the other fixes I made. Trying to make sure all the data is in the JS and then gets pushed to the DOM instead of just declaring in the DOM for the first time.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
