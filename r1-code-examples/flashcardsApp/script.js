@@ -42,7 +42,6 @@ const topic = {
     topic.dataset.index = document.querySelectorAll('.topic').length;
     nameEl.textContent = name;
     shownTopics.push(topicsData[index]);
-    console.log(shownTopics);
     return topic;
   },
   update: function(topic, newId) {
@@ -99,42 +98,77 @@ function topicRefresh() {
 
 topicRefresh();
 
-
-
-function search(e) {
+function search() {
   const topics = content.querySelectorAll('.topic');
+  const topicsArr = Array.prototype.slice.call(topics);
   let searchResults = [];
   clearInterval(refreshInterval);
-  if(this.value.length === 0) {
+
+  function clearResults() {
+    if(topics.length > numTopics) {
+      for(let i = topics.length; i > numTopics; i--) {
+        content.removeChild(content.lastChild);
+      }
+    }
     for (let i = 0; i < numTopics; i++) {
       topic.update(topics[i], shownTopics[i].id);
     }
-    refreshInterval;
-  } else if(this.value.length === 1) {
+    searchResults = [];
+  };
+
+  function clearTopics() {
     topics.forEach(function(el) {
       topic.empty(el);
     });
-  } else if(this.value.length > 3) {
+  };
+
+  function findResults() {
     let input = searchInput.value.toUpperCase();
-    topicsData.forEach(function(topicName) {
-      let name = topicName.name.toUpperCase();
-      if(name.includes(input) && searchResults.indexOf(topicName.name) === -1) {
-        let availableSpot;
-        for(let i = 0; i < topics.length; i++) {
-          if(topics[i].dataset.id === 'empty') {
-            availableSpot = topics[i];
-            topic.update(availableSpot, topicName.id);
-            break;
-          }
-        }
-        console.log(availableSpot);
+    topicsData.forEach(function(topic) {
+      let name = topic.name.toUpperCase();
+      let result = searchResults.indexOf(topic.name);
+      if(!name.includes(input) && result >= 0) {
+        searchResults.splice(result, 0);
+      } else if(name.includes(input) && result === -1) {
         searchResults.push(topic);
-        // check if input is already topic on search result
-        // if not in search result, add to search result array
-        // select first empty data-index and update
-        // if all data-index are filled with results, add a result
       }
     });
+  };
+
+  function showResults() {
+    searchResults.forEach(function(result) {
+      let existingTopicIndex = topicsArr.findIndex(function(topic) {
+        console.log(topic.dataset.id, result.id);
+        return topic.dataset.id === result.id;
+      });
+      console.log(existingTopicIndex);
+      if(existingTopicIndex > -1) {
+        return;
+      }
+      if(topicsArr.indexOf(result) >= 0) {
+        return;
+      }
+      let availableSpot = topicsArr.findIndex(function(topic) {
+        return topic.dataset.id === "empty";
+      });
+
+      if(availableSpot >= 0) {
+        topic.update(topics[availableSpot], result.id);
+      } else {
+        let newTopic = topic.create(result.id);
+        content.appendChild(newTopic);
+      }
+    });
+  };
+
+  if(this.value.length === 0) {
+    clearResults();
+  } else if(this.value.length === 1) {
+    clearTopics();
+  } else if(this.value.length > 1) {
+    findResults();
+    showResults();
+    console.log(searchResults);
   }
 };
 
@@ -147,7 +181,6 @@ content.addEventListener('click', function(e) {
     return;
   }
   activeTopic = topicsData[clickedTopic.dataset.id];
-  console.log(activeTopic);
 });
 searchInput.addEventListener('input', search);
 

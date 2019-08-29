@@ -355,6 +355,13 @@
 
 **Thoughts**: Realized I was using the index of topics instead of their id number to create and update topics. Still need to fix up the create method, but refresh should be good. Also have search starting to work! Default topics disappear when I start typing and reappear if I delete all typed letters. Input value is compared with topics names (case insensitive) and adds a topic if it matches. Need to fix up a lot still though.
 
+
+## Day 49: August 29, 2019
+
+**Today's Progress**: Worked on Learn application. Continued work on search functionality. Updates array when search results are entered/deleted. Updates DOM when items are added.
+
+**Thoughts**: Search is time-consuming! I feel a bit better about it now that I have an array that contains all the search results. I'm learning to separate the JS from the DOM. Do the JS first, and then add to the DOM after. That has helped a lot. A few things to work on tomorrow: make sure search results aren't added again if they already exist. Remove search results if they don't match search term.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
