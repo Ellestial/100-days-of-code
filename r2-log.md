@@ -345,6 +345,16 @@
 
 **Thoughts**: Though I'm still trying to even grasp how search will work, I feel pretty good about the other fixes I made. Trying to make sure all the data is in the JS and then gets pushed to the DOM instead of just declaring in the DOM for the first time.
 
+
+## Missed August 26 due to WoW Classic release. Missed August 27 due to family emergency.
+
+
+## Day 48: August 28, 2019
+
+**Today's Progress**: Worked on Learn application. Refactored code to use identification code of topics instead of their index location. Worked on search.
+
+**Thoughts**: Realized I was using the index of topics instead of their id number to create and update topics. Still need to fix up the create method, but refresh should be good. Also have search starting to work! Default topics disappear when I start typing and reappear if I delete all typed letters. Input value is compared with topics names (case insensitive) and adds a topic if it matches. Need to fix up a lot still though.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 

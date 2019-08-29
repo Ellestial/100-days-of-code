@@ -20,9 +20,7 @@ function sizeTopics() {
         topicIndex = randomNum(0, topicsData.length - 1);
       }
       let newTopic = topic.create(topicIndex);
-      console.log(newTopic);
       content.appendChild(newTopic);
-      shownTopics.push(topicsData[topicIndex]);
       lastTopicIndex = topicIndex;
     }
   } else if (topics.length > numTopics) {
@@ -43,14 +41,19 @@ const topic = {
     topic.dataset.id = index;
     topic.dataset.index = document.querySelectorAll('.topic').length;
     nameEl.textContent = name;
+    shownTopics.push(topicsData[index]);
+    console.log(shownTopics);
     return topic;
   },
-  update: function(topic, index) {
-    const name = topicsData[index].name;
+  update: function(topic, newId) {
     const nameEl = topic.querySelector('.topic__name');
-    topic.dataset.id = index;
-    nameEl.textContent = name;
-    return topic;
+    let newTopic = topicsData.find(function(topic) {
+      return topic.id === newId;
+    });
+    shownTopics[topic.dataset.index] = newTopic;
+    topic.dataset.id = newTopic.id;
+    nameEl.textContent = newTopic.name;
+    return newTopic;
   },
   empty: function(topic) {
     const nameEl = topic.querySelector('.topic__name');
@@ -83,8 +86,8 @@ function updateNumTopics() {
 
 function topicRefresh() {
   refreshInterval = setInterval(function() {
-    let topicIndex = randomNum(0, content.dataset.ids - 1);
-    let newTopicIndex = randomNum(0, content.dataset.ids - 1);
+    let topicIndex = randomNum(0, numTopics - 1);
+    let newTopicIndex = randomNum(0, numTopics - 1);
     let refreshedTopic = document.querySelector('.topic[data-index="' + topicIndex + '"');
     refreshedTopic.classList.add('is--disappearing');
     setTimeout(function() {
@@ -99,25 +102,40 @@ topicRefresh();
 
 
 function search(e) {
-  clearInterval(refreshInterval);
   const topics = content.querySelectorAll('.topic');
+  let searchResults = [];
+  clearInterval(refreshInterval);
   if(this.value.length === 0) {
     for (let i = 0; i < numTopics; i++) {
-      topic.update(shownTopics[i], shownTopics[i].dataset.id);
+      topic.update(topics[i], shownTopics[i].id);
     }
     refreshInterval;
-  }
-  if(this.value.length > 0 && this.value.length <= 3) {
+  } else if(this.value.length === 1) {
     topics.forEach(function(el) {
       topic.empty(el);
     });
-    return;
+  } else if(this.value.length > 3) {
+    let input = searchInput.value.toUpperCase();
+    topicsData.forEach(function(topicName) {
+      let name = topicName.name.toUpperCase();
+      if(name.includes(input) && searchResults.indexOf(topicName.name) === -1) {
+        let availableSpot;
+        for(let i = 0; i < topics.length; i++) {
+          if(topics[i].dataset.id === 'empty') {
+            availableSpot = topics[i];
+            topic.update(availableSpot, topicName.id);
+            break;
+          }
+        }
+        console.log(availableSpot);
+        searchResults.push(topic);
+        // check if input is already topic on search result
+        // if not in search result, add to search result array
+        // select first empty data-index and update
+        // if all data-index are filled with results, add a result
+      }
+    });
   }
-  topicsData.forEach(function(topic) {
-    if(topic.name.includes(searchInput.value)) {
-      console.log('you win!');
-    }
-  });
 };
 
 
