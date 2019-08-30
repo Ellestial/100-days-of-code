@@ -362,6 +362,13 @@
 
 **Thoughts**: Search is time-consuming! I feel a bit better about it now that I have an array that contains all the search results. I'm learning to separate the JS from the DOM. Do the JS first, and then add to the DOM after. That has helped a lot. A few things to work on tomorrow: make sure search results aren't added again if they already exist. Remove search results if they don't match search term.
 
+
+## Day 50: August 30, 2019
+
+**Today's Progress**: Worked on Learn application. Went in circles for most of the time, but eventually got it to only show results aren't added again if they already exist. Have it checking if existing DOM results are still present if the search results don't match after previously mapping.
+
+**Thoughts**: I felt frustrated working in circles today, but glad to make some progress. Last (I think?) search feature is to remove DOM search results that no longer match the search term. Since I have it accurately checking the number of DOM elements and search results array, I think this should be OK to handle tomorrow.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 

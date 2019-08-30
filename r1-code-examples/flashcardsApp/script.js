@@ -133,15 +133,14 @@ function search() {
         searchResults.push(topic);
       }
     });
+    console.log(searchResults);
   };
 
   function showResults() {
     searchResults.forEach(function(result) {
       let existingTopicIndex = topicsArr.findIndex(function(topic) {
-        console.log(topic.dataset.id, result.id);
-        return topic.dataset.id === result.id;
+        return topic.dataset.id == result.id;
       });
-      console.log(existingTopicIndex);
       if(existingTopicIndex > -1) {
         return;
       }
@@ -159,6 +158,12 @@ function search() {
         content.appendChild(newTopic);
       }
     });
+    let domTopics = topicsArr.filter(function(topic) {
+      return topic.dataset.id !== "empty";
+    });
+    if(domTopics.length > searchResults.length) {
+      console.log('something is off!');
+    }
   };
 
   if(this.value.length === 0) {
@@ -168,7 +173,6 @@ function search() {
   } else if(this.value.length > 1) {
     findResults();
     showResults();
-    console.log(searchResults);
   }
 };
 
