@@ -369,6 +369,13 @@
 
 **Thoughts**: I felt frustrated working in circles today, but glad to make some progress. Last (I think?) search feature is to remove DOM search results that no longer match the search term. Since I have it accurately checking the number of DOM elements and search results array, I think this should be OK to handle tomorrow.
 
+
+## Day 51: August 31, 2019
+
+**Today's Progress**: Worked on Learn application. Have DOM elements update based on current search term (adding/removing items as necessary), added setInterval of swapping topics back in after you exit search, and ensure new topics don't get added after resizing the screen while searching.
+
+**Thoughts**: Good progress! Last bits I need to work on are organizing search results alphabetically, using regex to allow for searching terms out of order (so 'methods function' gives the same search results as 'function methods'), and cleaning up the JS. It's very messy, but I'm excited with this progress.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 

@@ -1,6 +1,7 @@
 const content = document.querySelector('.content');
 const searchInput = document.querySelector('.search__input');
 let topicView = true;
+let searching = false;
 let numTopics;
 let topicsData;
 let shownTopics = [];
@@ -21,6 +22,9 @@ function sizeTopics() {
       }
       let newTopic = topic.create(topicIndex);
       content.appendChild(newTopic);
+      if(searching) {
+        topic.empty(newTopic);
+      }
       lastTopicIndex = topicIndex;
     }
   } else if (topics.length > numTopics) {
@@ -102,6 +106,7 @@ function search() {
   const topics = content.querySelectorAll('.topic');
   const topicsArr = Array.prototype.slice.call(topics);
   let searchResults = [];
+  searching = true;
   clearInterval(refreshInterval);
 
   function clearResults() {
@@ -114,6 +119,8 @@ function search() {
       topic.update(topics[i], shownTopics[i].id);
     }
     searchResults = [];
+    topicRefresh();
+    searching = false;
   };
 
   function clearTopics() {
@@ -133,7 +140,6 @@ function search() {
         searchResults.push(topic);
       }
     });
-    console.log(searchResults);
   };
 
   function showResults() {
@@ -142,9 +148,6 @@ function search() {
         return topic.dataset.id == result.id;
       });
       if(existingTopicIndex > -1) {
-        return;
-      }
-      if(topicsArr.indexOf(result) >= 0) {
         return;
       }
       let availableSpot = topicsArr.findIndex(function(topic) {
@@ -162,7 +165,22 @@ function search() {
       return topic.dataset.id !== "empty";
     });
     if(domTopics.length > searchResults.length) {
-      console.log('something is off!');
+      let noMatch = [];
+      domTopics.forEach(function(domTopic) {
+        let match = searchResults.some(function(result) {
+          return domTopic.dataset.id == result.id;
+        });
+        if(!match) {
+          noMatch.push(domTopic);
+        }
+      });
+      console.log(noMatch);
+      domTopics.forEach(function(domTopic) {
+
+      });
+      noMatch.forEach(function(match) {
+        topic.empty(match);
+      })
     }
   };
 
