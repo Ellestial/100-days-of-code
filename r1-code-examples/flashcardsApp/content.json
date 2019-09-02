@@ -16,6 +16,22 @@
     ]
   },
   {
+    "name": "Object Methods",
+    "id": 4,
+    "items": [
+      {
+        "term": "Term test",
+        "definition": "Definition test",
+        "example": "Example test"
+      },
+      {
+        "term": "Term test",
+        "definition": "Definition test",
+        "example": "Example test"
+      }
+    ]
+  },
+  {
     "name": "Date Methods",
     "id": 1,
     "items": [
@@ -50,22 +66,6 @@
   {
     "name": "Math Methods",
     "id": 3,
-    "items": [
-      {
-        "term": "Term test",
-        "definition": "Definition test",
-        "example": "Example test"
-      },
-      {
-        "term": "Term test",
-        "definition": "Definition test",
-        "example": "Example test"
-      }
-    ]
-  },
-  {
-    "name": "Object Methods",
-    "id": 4,
     "items": [
       {
         "term": "Term test",

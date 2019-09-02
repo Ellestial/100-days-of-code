@@ -376,6 +376,16 @@
 
 **Thoughts**: Good progress! Last bits I need to work on are organizing search results alphabetically, using regex to allow for searching terms out of order (so 'methods function' gives the same search results as 'function methods'), and cleaning up the JS. It's very messy, but I'm excited with this progress.
 
+
+## Was out of state for September 1
+
+
+## Day 52: September 2, 2019
+
+**Today's Progress**: Worked on Learn application and regex info on freeCodeCamp. Have results appear alphabetically now.
+
+**Thoughts**: Today was sort of frustrating. I'm trying to find a way to have the user search for 'function methods' or 'methods function' to return the same result, but haven't figured out how yet. Tried the regex approach, but that's not working. Currently trying to use split(' '), arr.some(), and arr.includes(), but struggling a bit.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 

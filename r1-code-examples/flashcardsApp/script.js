@@ -139,6 +139,21 @@ function search() {
       } else if(name.includes(input) && result === -1) {
         searchResults.push(topic);
       }
+      let test = name.split(' ').some(function(el) {
+        console.log(input.split(' ').includes(el));
+        let inputTest = input.split(' ');
+        input.split(' ').forEach(function(test) {
+
+        });
+        return input.split(' ').includes(el);
+      });
+    });
+    searchResults.sort(function(a, b) {
+      if (a.name > b.name) {
+        return 1;
+      } else if (a.name < b.name) {
+        return -1;
+      }
     });
   };
 
