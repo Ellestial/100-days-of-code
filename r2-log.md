@@ -386,6 +386,13 @@
 
 **Thoughts**: Today was sort of frustrating. I'm trying to find a way to have the user search for 'function methods' or 'methods function' to return the same result, but haven't figured out how yet. Tried the regex approach, but that's not working. Currently trying to use split(' '), arr.some(), and arr.includes(), but struggling a bit.
 
+
+## Day 53: September 3, 2019
+
+**Today's Progress**: Worked on Learn application. Able to have users search for words out of order!
+
+**Thoughts**: I barely figured this out in time, but I was able to figure it out using .every() and .includes() together. The only pitfall currently is that it searches for the input in any place in the result, not just the first letters. For example, "programming o" yields the results "Functional Programming" and "Object Oriented Programming", even though the former doesn't make total sense. This is because the word "functional" has the letter "o" in it. Going to see if I can base it on what each of the words starts with tomorrow.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 

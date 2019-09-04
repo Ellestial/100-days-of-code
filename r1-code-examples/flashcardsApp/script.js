@@ -87,7 +87,7 @@ function updateNumTopics() {
   }
 };
 
-function topicRefresh() {
+function refreshTopicInterval() {
   refreshInterval = setInterval(function() {
     let topicIndex = randomNum(0, numTopics - 1);
     let newTopicIndex = randomNum(0, numTopics - 1);
@@ -100,7 +100,7 @@ function topicRefresh() {
   }, 5000);
 };
 
-topicRefresh();
+refreshTopicInterval();
 
 function search() {
   const topics = content.querySelectorAll('.topic');
@@ -110,17 +110,15 @@ function search() {
   clearInterval(refreshInterval);
 
   function clearResults() {
-    if(topics.length > numTopics) {
-      for(let i = topics.length; i > numTopics; i--) {
-        content.removeChild(content.lastChild);
-      }
-    }
+    searching = false;
+    searchResults = [];
     for (let i = 0; i < numTopics; i++) {
       topic.update(topics[i], shownTopics[i].id);
     }
-    searchResults = [];
-    topicRefresh();
-    searching = false;
+    for(let i = topics.length; i > numTopics; i--) {
+      content.removeChild(content.lastChild);
+    }
+    refreshTopicInterval();
   };
 
   function clearTopics() {
@@ -131,22 +129,20 @@ function search() {
 
   function findResults() {
     let input = searchInput.value.toUpperCase();
+    let inputArr = input.split(' ');
+    let noMatch = 0;
     topicsData.forEach(function(topic) {
       let name = topic.name.toUpperCase();
+      let nameArr = name.split(' ');
       let result = searchResults.indexOf(topic.name);
-      if(!name.includes(input) && result >= 0) {
+      let matchedWords = inputArr.every(function(el, i) {
+        return name.includes(el);
+      });
+      if(!matchedWords && result >= 0) {
         searchResults.splice(result, 0);
-      } else if(name.includes(input) && result === -1) {
+      } else if(matchedWords && result === -1) {
         searchResults.push(topic);
       }
-      let test = name.split(' ').some(function(el) {
-        console.log(input.split(' ').includes(el));
-        let inputTest = input.split(' ');
-        input.split(' ').forEach(function(test) {
-
-        });
-        return input.split(' ').includes(el);
-      });
     });
     searchResults.sort(function(a, b) {
       if (a.name > b.name) {
