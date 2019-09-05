@@ -393,6 +393,13 @@
 
 **Thoughts**: I barely figured this out in time, but I was able to figure it out using .every() and .includes() together. The only pitfall currently is that it searches for the input in any place in the result, not just the first letters. For example, "programming o" yields the results "Functional Programming" and "Object Oriented Programming", even though the former doesn't make total sense. This is because the word "functional" has the letter "o" in it. Going to see if I can base it on what each of the words starts with tomorrow.
 
+
+## Day 54: September 4, 2019
+
+**Today's Progress**: Worked on Learn application. Refactored search code.
+
+**Thoughts**: I feel pretty good about my refactoring, but need to parse through the code I made yesterday because I already find it convoluted/confusing. I want to focus on updating that part tomorrow and making sure search results appear without empty topics inbetween filled ones.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 

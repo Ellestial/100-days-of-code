@@ -7,7 +7,6 @@ let topicsData;
 let shownTopics = [];
 let refreshInterval;
 let activeTopic = {};
-let searchResults;
 
 function sizeTopics() {
   let topics = content.querySelectorAll('.topic');
@@ -102,14 +101,13 @@ function refreshTopicInterval() {
 
 refreshTopicInterval();
 
-function search() {
+function searchTopics() {
   const topics = content.querySelectorAll('.topic');
   const topicsArr = Array.prototype.slice.call(topics);
   let searchResults = [];
-  searching = true;
   clearInterval(refreshInterval);
 
-  function clearResults() {
+  function clear() {
     searching = false;
     searchResults = [];
     for (let i = 0; i < numTopics; i++) {
@@ -121,57 +119,58 @@ function search() {
     refreshTopicInterval();
   };
 
-  function clearTopics() {
-    topics.forEach(function(el) {
-      topic.empty(el);
-    });
+  function update() {
+    searching = true;
+    updateSearchResultsArr();
+    updateSearchResultsDOM();
+    test();
   };
 
-  function findResults() {
+  function updateSearchResultsArr() {
     let input = searchInput.value.toUpperCase();
     let inputArr = input.split(' ');
-    let noMatch = 0;
     topicsData.forEach(function(topic) {
       let name = topic.name.toUpperCase();
-      let nameArr = name.split(' ');
-      let result = searchResults.indexOf(topic.name);
+      let resultExists = searchResults.indexOf(topic.name);
       let matchedWords = inputArr.every(function(el, i) {
         return name.includes(el);
       });
-      if(!matchedWords && result >= 0) {
-        searchResults.splice(result, 0);
-      } else if(matchedWords && result === -1) {
+      if(!matchedWords && resultExists >= 0) {
+        searchResults.splice(resultExists, 0);
+      } else if(matchedWords && resultExists === -1) {
         searchResults.push(topic);
       }
     });
     searchResults.sort(function(a, b) {
-      if (a.name > b.name) {
-        return 1;
-      } else if (a.name < b.name) {
-        return -1;
-      }
+      return a.name > b.name ? 1 : a.name < b.name ? -1 : 0;
     });
   };
 
-  function showResults() {
+  function updateSearchResultsDOM() {
+    // topicsArr.forEach(function(topicEl) {
+    //   topic.empty(topicEl);
+    // });
     searchResults.forEach(function(result) {
-      let existingTopicIndex = topicsArr.findIndex(function(topic) {
+      let resultExists = topicsArr.some(function(topic) {
         return topic.dataset.id == result.id;
       });
-      if(existingTopicIndex > -1) {
-        return;
-      }
-      let availableSpot = topicsArr.findIndex(function(topic) {
+      console.log(result);
+      let availableIndex = topicsArr.findIndex(function(topic) {
         return topic.dataset.id === "empty";
       });
-
-      if(availableSpot >= 0) {
-        topic.update(topics[availableSpot], result.id);
+      if (resultExists) {
+        return;
+      }
+      if (availableIndex >= 0) {
+        topic.update(topics[availableIndex], result.id);
       } else {
         let newTopic = topic.create(result.id);
         content.appendChild(newTopic);
       }
     });
+  };
+
+  function test() {
     let domTopics = topicsArr.filter(function(topic) {
       return topic.dataset.id !== "empty";
     });
@@ -185,27 +184,17 @@ function search() {
           noMatch.push(domTopic);
         }
       });
-      console.log(noMatch);
-      domTopics.forEach(function(domTopic) {
-
-      });
       noMatch.forEach(function(match) {
         topic.empty(match);
       })
     }
   };
 
-  if(this.value.length === 0) {
-    clearResults();
-  } else if(this.value.length === 1) {
-    clearTopics();
-  } else if(this.value.length > 1) {
-    findResults();
-    showResults();
+  return {
+    clear: clear,
+    update: update
   }
 };
-
-
 
 window.addEventListener('resize', updateNumTopics);
 content.addEventListener('click', function(e) {
@@ -215,7 +204,13 @@ content.addEventListener('click', function(e) {
   }
   activeTopic = topicsData[clickedTopic.dataset.id];
 });
-searchInput.addEventListener('input', search);
+searchInput.addEventListener('input', function() {
+  if (this.value.length === 0) {
+    searchTopics().clear();
+  } else if (this.value.length > 2) {
+    searchTopics().update();
+  }
+});
 
 /////////////////////////////
 //      ajax requests      //
