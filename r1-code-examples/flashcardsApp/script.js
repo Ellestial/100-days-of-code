@@ -119,6 +119,12 @@ function searchTopics() {
     refreshTopicInterval();
   };
 
+  function empty() {
+    topics.forEach(function(topicEl) {
+      topic.empty(topicEl);
+    })
+  };
+
   function update() {
     searching = true;
     updateSearchResultsArr();
@@ -147,17 +153,14 @@ function searchTopics() {
   };
 
   function updateSearchResultsDOM() {
-    // topicsArr.forEach(function(topicEl) {
-    //   topic.empty(topicEl);
-    // });
     searchResults.forEach(function(result) {
       let resultExists = topicsArr.some(function(topic) {
         return topic.dataset.id == result.id;
       });
-      console.log(result);
       let availableIndex = topicsArr.findIndex(function(topic) {
         return topic.dataset.id === "empty";
       });
+      console.log(resultExists, availableIndex);
       if (resultExists) {
         return;
       }
@@ -168,30 +171,62 @@ function searchTopics() {
         content.appendChild(newTopic);
       }
     });
+    if (topics.length > numTopics && searchResults.length < numTopics) {
+      for (let i = topics.length; i > numTopics; i--) {
+        content.removeChild(content.lastChild);
+      }
+    }
   };
 
+  // function updateSearchResultsDOM() {
+  //   searchResults.forEach(function(result) {
+  //     let resultExists = topicsArr.some(function(topic) {
+  //       return topic.dataset.id == result.id;
+  //     });
+  //     let availableIndex = topicsArr.findIndex(function(topic) {
+  //       return topic.dataset.id === "empty";
+  //     });
+  //     console.log(resultExists, availableIndex);
+  //     if (resultExists) {
+  //       return;
+  //     }
+  //     if (availableIndex >= 0) {
+  //       topic.update(topics[availableIndex], result.id);
+  //     } else {
+  //       let newTopic = topic.create(result.id);
+  //       content.appendChild(newTopic);
+  //     }
+  //   });
+  //   if (topics.length > numTopics && searchResults.length < numTopics) {
+  //     for (let i = topics.length; i > numTopics; i--) {
+  //       content.removeChild(content.lastChild);
+  //     }
+  //   }
+  // };
+
   function test() {
-    let domTopics = topicsArr.filter(function(topic) {
-      return topic.dataset.id !== "empty";
-    });
-    if(domTopics.length > searchResults.length) {
-      let noMatch = [];
-      domTopics.forEach(function(domTopic) {
-        let match = searchResults.some(function(result) {
-          return domTopic.dataset.id == result.id;
-        });
-        if(!match) {
-          noMatch.push(domTopic);
-        }
-      });
-      noMatch.forEach(function(match) {
-        topic.empty(match);
-      })
-    }
+    // let domTopics = topicsArr.filter(function(topic) {
+    //   return topic.dataset.id !== "empty";
+    // });
+    // if(domTopics.length > searchResults.length) {
+    //   let noMatch = [];
+    //   domTopics.forEach(function(domTopic) {
+    //     let match = searchResults.some(function(result) {
+    //       return domTopic.dataset.id == ' ' + result.id;
+    //     });
+    //     if(!match) {
+    //       noMatch.push(domTopic);
+    //     }
+    //   });
+    //   noMatch.forEach(function(match) {
+    //     topic.empty(match);
+    //   })
+    // }
   };
 
   return {
     clear: clear,
+    empty: empty,
     update: update
   }
 };
@@ -207,7 +242,10 @@ content.addEventListener('click', function(e) {
 searchInput.addEventListener('input', function() {
   if (this.value.length === 0) {
     searchTopics().clear();
-  } else if (this.value.length > 2) {
+  } else if (this.value.length === 1) {
+    searchTopics().empty();
+  } 
+  if (this.value.length > 0) {
     searchTopics().update();
   }
 });

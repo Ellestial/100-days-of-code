@@ -400,6 +400,13 @@
 
 **Thoughts**: I feel pretty good about my refactoring, but need to parse through the code I made yesterday because I already find it convoluted/confusing. I want to focus on updating that part tomorrow and making sure search results appear without empty topics inbetween filled ones.
 
+
+## Day 55: September 5, 2019
+
+**Today's Progress**: Worked on Learn application. Opened up a wave of bugs, no progress.
+
+**Thoughts**: One of my least productive days on here so far. I just keep getting more confused and more bugs keep appearing. I will need to view this with a clear head tomorrow.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
