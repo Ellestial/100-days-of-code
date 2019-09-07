@@ -1,6 +1,6 @@
-const content = document.querySelector('.content');
+const topicView = document.querySelector('.topic-view');
 const searchInput = document.querySelector('.search__input');
-let topicView = true;
+let topicsActive = true;
 let searching = false;
 let numTopics;
 let topicsData;
@@ -9,9 +9,9 @@ let refreshInterval;
 let activeTopic = {};
 
 function sizeTopics() {
-  let topics = content.querySelectorAll('.topic');
+  let topics = topicView.querySelectorAll('.topic');
   let lastTopicIndex;
-  content.dataset.topics = numTopics;
+  topicView.dataset.topics = numTopics;
 
   if (topics.length < numTopics) {
     for (let i = topics.length; i < numTopics; i++) {
@@ -20,7 +20,7 @@ function sizeTopics() {
         topicIndex = randomNum(0, topicsData.length - 1);
       }
       let newTopic = topic.create(topicIndex);
-      content.appendChild(newTopic);
+      topicView.appendChild(newTopic);
       if(searching) {
         topic.empty(newTopic);
       }
@@ -28,7 +28,7 @@ function sizeTopics() {
     }
   } else if (topics.length > numTopics) {
     for (let i = topics.length; i > numTopics; i--) {
-      content.removeChild(content.lastChild);
+      topicView.removeChild(topicView.lastChild);
       shownTopics.pop();
     }
   }
@@ -43,6 +43,7 @@ const topic = {
     const nameEl = topic.querySelector('.topic__name');
     topic.dataset.id = index;
     topic.dataset.index = document.querySelectorAll('.topic').length;
+    topic.href = 'flashcard.html' + '#' + index;
     nameEl.textContent = name;
     shownTopics.push(topicsData[index]);
     return topic;
@@ -102,7 +103,7 @@ function refreshTopicInterval() {
 refreshTopicInterval();
 
 function searchTopics() {
-  const topics = content.querySelectorAll('.topic');
+  const topics = topicView.querySelectorAll('.topic');
   const topicsArr = Array.prototype.slice.call(topics);
   let searchResults = [];
   clearInterval(refreshInterval);
@@ -114,7 +115,7 @@ function searchTopics() {
       topic.update(topics[i], shownTopics[i].id);
     }
     for(let i = topics.length; i > numTopics; i--) {
-      content.removeChild(content.lastChild);
+      topicView.removeChild(topicView.lastChild);
     }
     refreshTopicInterval();
   };
@@ -140,7 +141,10 @@ function searchTopics() {
       let nameArr = name.split(' ');
       let resultExists = searchResults.indexOf(topic.name);
       let matchedWords = inputArr.every(function(el, i) {
-        return name.includes(el);
+        let wordInTopicArr = nameArr.some(function(nameWord) {
+          return nameWord.indexOf(el) === 0;
+        });
+        return wordInTopicArr;
       });
       if (!matchedWords && resultExists >= 0) {
         searchResults.splice(resultExists, 0);
@@ -157,7 +161,7 @@ function searchTopics() {
     searchResults.forEach(function(result, i) {
       if(topics[i] == undefined) {
         let newTopic = topic.create(result.id);
-        content.appendChild(newTopic);
+        topicView.appendChild(newTopic);
       } else {
         topic.update(topics[i], result.id);
       }
@@ -182,7 +186,7 @@ function searchTopics() {
     }
     if (topics.length > numTopics && searchResults.length < numTopics) {
       for (let i = topics.length; i > numTopics; i--) {
-        content.removeChild(content.lastChild);
+        topicView.removeChild(topicView.lastChild);
       }
     }
   };
@@ -195,13 +199,12 @@ function searchTopics() {
 };
 
 window.addEventListener('resize', updateNumTopics);
-content.addEventListener('click', function(e) {
+topicView.addEventListener('click', function(e) {
   let clickedTopic = e.target.closest('.topic');
   if(!clickedTopic || clickedTopic.dataset.id === 'empty') {
     return;
   }
   activeTopic = topicsData[clickedTopic.dataset.id];
-  console.log(activeTopic);
 });
 searchInput.addEventListener('input', function() {
   if (this.value.length === 0) {

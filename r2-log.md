@@ -414,6 +414,13 @@
 
 **Thoughts**: Hank noticed the main issue yesterday is that items were not being removed if they were no longer a match. Getting a second pair of eyes was helpful, even if he doesn't know JS! I feel much better today and very productive. Last thing I need to do with search tomorrow is pretty minor--I need to make sure to only add search results if the searched words are all present in the topic name. For example, "programming o" should not yield "Functional Programming". It currently does because the second word that is just "o" can be found in the words "Functional Programming".
 
+
+## Day 57: September 7, 2019
+
+**Today's Progress**: I DID IT. The Learn app search works where you can start typing the beginning of any word and it will show those results. Also created HTML/CSS for flashcards a bit. Finally, set up topics to go to a new page when clicked and have a hash of their topic ids.
+
+**Thoughts**: I feel really good today. The absolute last thing I need to do with search is to make sure once a word matches, it is removed from the available matches to make (for example, you can currently search for "function function function" and get results for Function Methods, Functional Programming, and Functional Test). I want to refactor everything tomorrow so pages are linked together properly. Basically so there's one central JS file and a separate one for topics, flashcards, matching, and test. Hooray for a super productive day!
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 

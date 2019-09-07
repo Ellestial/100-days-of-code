@@ -21,7 +21,8 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
+  vertical-align: baseline;
+  box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -48,6 +49,11 @@ table {
 }
 
 /////////////////////////////
+//       Variables         //
+/////////////////////////////
+$spacing-m: 1rem;
+
+/////////////////////////////
 //  Choose A Topic Styles  //
 /////////////////////////////
 
@@ -60,7 +66,7 @@ div {
   box-sizing: border-box;
 }
 
-.content {
+.topic-view {
   display: grid;
   justify-content: center;
   align-items: center;
@@ -188,3 +194,92 @@ div {
     color: gray;
   }
 }
+
+// .topic-view {
+//   display: none;
+// } 
+
+
+  /////////////////////////////
+  //    Header Game Styles   //
+  /////////////////////////////
+  header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  nav {
+    height: 80px;
+    display: flex;
+    background-color: #F2F2F2;
+    border-bottom: 1px solid gray;
+
+    .nav__topic {
+      font-size: 135%;
+      align-self: center;
+    }
+
+    .nav__games {
+      display: flex;
+      margin-left: auto;
+    }
+
+    .game {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      text-align: center;
+      border-bottom: 3px solid transparent;
+      font-size: 90%;
+
+      &.is--active {
+        border-bottom-color: gray;
+      }
+
+      .game__icon {
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+
+  .progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    text-align: center;
+    background-color: #E6E6E6;
+
+    .progress__title {
+      text-transform: uppercase;
+      margin-right: 0.5rem;
+    }
+
+    .progress__bar {
+      width: 50%;
+      height: 8px;
+      position: relative;
+      border-radius: 10px;
+      border: 1px solid gray;
+      background-color: #fff;
+    }
+
+    .progress__fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: gray;
+      transition: width 250ms;
+    }
+  }
+
+  .settings {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: 0.75rem;
+  }

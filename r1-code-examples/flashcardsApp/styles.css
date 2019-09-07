@@ -21,6 +21,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -61,34 +62,34 @@ div {
   box-sizing: border-box;
 }
 
-.content {
+.topic-view {
   display: grid;
   justify-content: center;
   align-items: center;
   grid-gap: 20px 10px;
 }
-.content[data-topics="22"] {
+.topic-view[data-topics="22"] {
   grid-template-columns: repeat(8, minmax(0, 1fr));
 }
-.content[data-topics="22"] .title {
+.topic-view[data-topics="22"] .title {
   grid-column: 4/6;
 }
-.content[data-topics="16"] {
+.topic-view[data-topics="16"] {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
-.content[data-topics="16"] .title {
+.topic-view[data-topics="16"] .title {
   grid-column: 3/5;
 }
-.content[data-topics="10"] {
+.topic-view[data-topics="10"] {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
-.content[data-topics="10"] .title {
+.topic-view[data-topics="10"] .title {
   grid-column: 2/4;
 }
-.content[data-topics="6"] {
+.topic-view[data-topics="6"] {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-.content[data-topics="6"] .title {
+.topic-view[data-topics="6"] .title {
   grid-row: 1;
   grid-column: 1/3;
 }
@@ -165,6 +166,79 @@ div {
 .topic .topic__name {
   font-size: 26px;
   color: gray;
+}
+
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+nav {
+  height: 80px;
+  display: flex;
+  background-color: #F2F2F2;
+  border-bottom: 1px solid gray;
+}
+nav .nav__topic {
+  font-size: 135%;
+  align-self: center;
+}
+nav .nav__games {
+  display: flex;
+  margin-left: auto;
+}
+nav .game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  text-align: center;
+  border-bottom: 3px solid transparent;
+  font-size: 90%;
+}
+nav .game.is--active {
+  border-bottom-color: gray;
+}
+nav .game .game__icon {
+  margin-bottom: 0.25rem;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  text-align: center;
+  background-color: #E6E6E6;
+}
+.progress .progress__title {
+  text-transform: uppercase;
+  margin-right: 0.5rem;
+}
+.progress .progress__bar {
+  width: 50%;
+  height: 8px;
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid gray;
+  background-color: #fff;
+}
+.progress .progress__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: gray;
+  transition: width 250ms;
+}
+
+.settings {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  right: 0.75rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
