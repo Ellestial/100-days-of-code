@@ -407,6 +407,13 @@
 
 **Thoughts**: One of my least productive days on here so far. I just keep getting more confused and more bugs keep appearing. I will need to view this with a clear head tomorrow.
 
+
+## Day 56: September 6, 2019
+
+**Today's Progress**: Worked on Learn application. Got through bugs and adjusted code so results always appear in alphabetical order and from the top left available spot.
+
+**Thoughts**: Hank noticed the main issue yesterday is that items were not being removed if they were no longer a match. Getting a second pair of eyes was helpful, even if he doesn't know JS! I feel much better today and very productive. Last thing I need to do with search tomorrow is pretty minor--I need to make sure to only add search results if the searched words are all present in the topic name. For example, "programming o" should not yield "Functional Programming". It currently does because the second word that is just "o" can be found in the words "Functional Programming".
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 

@@ -128,8 +128,8 @@ function searchTopics() {
   function update() {
     searching = true;
     updateSearchResultsArr();
-    updateSearchResultsDOM();
-    test();
+    addSearchResultsDOM();
+    removeSearchResultsDOM();
   };
 
   function updateSearchResultsArr() {
@@ -137,13 +137,14 @@ function searchTopics() {
     let inputArr = input.split(' ');
     topicsData.forEach(function(topic) {
       let name = topic.name.toUpperCase();
+      let nameArr = name.split(' ');
       let resultExists = searchResults.indexOf(topic.name);
       let matchedWords = inputArr.every(function(el, i) {
         return name.includes(el);
       });
-      if(!matchedWords && resultExists >= 0) {
+      if (!matchedWords && resultExists >= 0) {
         searchResults.splice(resultExists, 0);
-      } else if(matchedWords && resultExists === -1) {
+      } else if (matchedWords && resultExists === -1) {
         searchResults.push(topic);
       }
     });
@@ -152,76 +153,38 @@ function searchTopics() {
     });
   };
 
-  function updateSearchResultsDOM() {
-    searchResults.forEach(function(result) {
-      let resultExists = topicsArr.some(function(topic) {
-        return topic.dataset.id == result.id;
-      });
-      let availableIndex = topicsArr.findIndex(function(topic) {
-        return topic.dataset.id === "empty";
-      });
-      console.log(resultExists, availableIndex);
-      if (resultExists) {
-        return;
-      }
-      if (availableIndex >= 0) {
-        topic.update(topics[availableIndex], result.id);
-      } else {
+  function addSearchResultsDOM() {
+    searchResults.forEach(function(result, i) {
+      if(topics[i] == undefined) {
         let newTopic = topic.create(result.id);
         content.appendChild(newTopic);
+      } else {
+        topic.update(topics[i], result.id);
       }
     });
+  };
+
+  function removeSearchResultsDOM() {
+    let existingResults = topicsArr.filter(function(topic) {
+      return topic.dataset.id !== "empty";
+    });
+    if (searchResults.length === existingResults.length) {
+      let allMatch = existingResults.every(function(existingResult, i) {
+        return existingResult.dataset.id == searchResults[i].id;
+      });
+      if (allMatch) {
+        return;
+      } 
+    } else if (searchResults.length < existingResults.length) {
+      for (let i = searchResults.length; i < topics.length; i++) {
+        topic.empty(topics[i]);
+      }
+    }
     if (topics.length > numTopics && searchResults.length < numTopics) {
       for (let i = topics.length; i > numTopics; i--) {
         content.removeChild(content.lastChild);
       }
     }
-  };
-
-  // function updateSearchResultsDOM() {
-  //   searchResults.forEach(function(result) {
-  //     let resultExists = topicsArr.some(function(topic) {
-  //       return topic.dataset.id == result.id;
-  //     });
-  //     let availableIndex = topicsArr.findIndex(function(topic) {
-  //       return topic.dataset.id === "empty";
-  //     });
-  //     console.log(resultExists, availableIndex);
-  //     if (resultExists) {
-  //       return;
-  //     }
-  //     if (availableIndex >= 0) {
-  //       topic.update(topics[availableIndex], result.id);
-  //     } else {
-  //       let newTopic = topic.create(result.id);
-  //       content.appendChild(newTopic);
-  //     }
-  //   });
-  //   if (topics.length > numTopics && searchResults.length < numTopics) {
-  //     for (let i = topics.length; i > numTopics; i--) {
-  //       content.removeChild(content.lastChild);
-  //     }
-  //   }
-  // };
-
-  function test() {
-    // let domTopics = topicsArr.filter(function(topic) {
-    //   return topic.dataset.id !== "empty";
-    // });
-    // if(domTopics.length > searchResults.length) {
-    //   let noMatch = [];
-    //   domTopics.forEach(function(domTopic) {
-    //     let match = searchResults.some(function(result) {
-    //       return domTopic.dataset.id == ' ' + result.id;
-    //     });
-    //     if(!match) {
-    //       noMatch.push(domTopic);
-    //     }
-    //   });
-    //   noMatch.forEach(function(match) {
-    //     topic.empty(match);
-    //   })
-    // }
   };
 
   return {
@@ -238,6 +201,7 @@ content.addEventListener('click', function(e) {
     return;
   }
   activeTopic = topicsData[clickedTopic.dataset.id];
+  console.log(activeTopic);
 });
 searchInput.addEventListener('input', function() {
   if (this.value.length === 0) {
@@ -245,7 +209,7 @@ searchInput.addEventListener('input', function() {
   } else if (this.value.length === 1) {
     searchTopics().empty();
   } 
-  if (this.value.length > 0) {
+  if (this.value.length >= 1) {
     searchTopics().update();
   }
 });
