@@ -1,12 +1,54 @@
+/////////////////////////////
+//  topics view variables  //
+/////////////////////////////
+
 const topicView = document.querySelector('.topic-view');
 const searchInput = document.querySelector('.search__input');
 let topicsActive = true;
 let searching = false;
 let numTopics;
-let topicsData;
 let shownTopics = [];
 let refreshInterval;
-let activeTopic = {};
+
+/////////////////////////////
+//         objects         //
+/////////////////////////////
+
+const topic = {
+  create: function(index) {
+    const template = document.querySelector('#topictemplate');
+    const clone = document.importNode(template.content, true);
+    const topic = clone.querySelector('.topic');
+    const name = topicsData[index].name;
+    const nameEl = topic.querySelector('.topic__name');
+    topic.dataset.id = index;
+    topic.dataset.index = document.querySelectorAll('.topic').length;
+    topic.href = 'flashcard.html#?topic=' + index;
+    nameEl.textContent = name;
+    shownTopics.push(topicsData[index]);
+    return topic;
+  },
+  update: function(topic, newId) {
+    const nameEl = topic.querySelector('.topic__name');
+    let newTopic = topicsData.find(function(topic) {
+      return topic.id === newId;
+    });
+    shownTopics[topic.dataset.index] = newTopic;
+    topic.dataset.id = newTopic.id;
+    nameEl.textContent = newTopic.name;
+    return newTopic;
+  },
+  empty: function(topic) {
+    const nameEl = topic.querySelector('.topic__name');
+    topic.dataset.id = 'empty';
+    nameEl.textContent = '';
+    return topic;
+  }
+};
+
+/////////////////////////////
+//        functions        //
+/////////////////////////////
 
 function sizeTopics() {
   let topics = topicView.querySelectorAll('.topic');
@@ -32,42 +74,6 @@ function sizeTopics() {
       shownTopics.pop();
     }
   }
-};
-
-const topic = {
-  create: function(index) {
-    const template = document.querySelector('#topictemplate');
-    const clone = document.importNode(template.content, true);
-    const topic = clone.querySelector('.topic');
-    const name = topicsData[index].name;
-    const nameEl = topic.querySelector('.topic__name');
-    topic.dataset.id = index;
-    topic.dataset.index = document.querySelectorAll('.topic').length;
-    topic.href = 'flashcard.html' + '#' + index;
-    nameEl.textContent = name;
-    shownTopics.push(topicsData[index]);
-    return topic;
-  },
-  update: function(topic, newId) {
-    const nameEl = topic.querySelector('.topic__name');
-    let newTopic = topicsData.find(function(topic) {
-      return topic.id === newId;
-    });
-    shownTopics[topic.dataset.index] = newTopic;
-    topic.dataset.id = newTopic.id;
-    nameEl.textContent = newTopic.name;
-    return newTopic;
-  },
-  empty: function(topic) {
-    const nameEl = topic.querySelector('.topic__name');
-    topic.dataset.id = 'empty';
-    nameEl.textContent = '';
-    return topic;
-  }
-};
-
-function randomNum(min, max) {
-  return Math.floor(Math.random() * (max + 1 - min) + min);
 };
 
 function updateNumTopics() {
@@ -99,8 +105,6 @@ function refreshTopicInterval() {
     }, 500);
   }, 5000);
 };
-
-refreshTopicInterval();
 
 function searchTopics() {
   const topics = topicView.querySelectorAll('.topic');
@@ -198,13 +202,21 @@ function searchTopics() {
   }
 };
 
+/////////////////////////////
+//     event listeners     //
+/////////////////////////////
+
 window.addEventListener('resize', updateNumTopics);
+window.addEventListener('load', refreshTopicInterval);
 topicView.addEventListener('click', function(e) {
   let clickedTopic = e.target.closest('.topic');
   if(!clickedTopic || clickedTopic.dataset.id === 'empty') {
     return;
   }
   activeTopic = topicsData[clickedTopic.dataset.id];
+  activeTopic.mode = 'flashcards';
+  activeTopicString = JSON.stringify(activeTopic);
+  localStorage.setItem('activeTopic', activeTopicString);
 });
 searchInput.addEventListener('input', function() {
   if (this.value.length === 0) {
@@ -225,6 +237,7 @@ let jsonContentRequest = new XMLHttpRequest();
 jsonContentRequest.open('GET', './content.json');
 jsonContentRequest.onreadystatechange = function() {
   if(jsonContentRequest.readyState === 4 && jsonContentRequest.status === 200) {
+    localStorage.setItem('topicsData', this.response);
     topicsData = JSON.parse(this.response);
     updateNumTopics();
   }

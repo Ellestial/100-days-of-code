@@ -421,6 +421,13 @@
 
 **Thoughts**: I feel really good today. The absolute last thing I need to do with search is to make sure once a word matches, it is removed from the available matches to make (for example, you can currently search for "function function function" and get results for Function Methods, Functional Programming, and Functional Test). I want to refactor everything tomorrow so pages are linked together properly. Basically so there's one central JS file and a separate one for topics, flashcards, matching, and test. Hooray for a super productive day!
 
+
+## Day 58: September 8, 2019
+
+**Today's Progress**: Worked on Learn app. Organized 3 JS files: one for global variables/methods, one for the topics view, and one for the games view. Worked on local storage and pulling in correct info from topics view page to games view.
+
+**Thoughts**: I feel rejuvinated moving past search (though I should revisit it to fix up the issue I brought up yesterday). Tomorrow I want to focus on starting the general settings overlay, which will impact all game types.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 

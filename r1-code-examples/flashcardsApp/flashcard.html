@@ -13,17 +13,17 @@
         <a class="nav__back" href="./index.html">
             <img class="nav__back" src="https://via.placeholder.com/35x35" />
         </a>
-        <h2 class="nav__topic">Topic Name</h2>
+        <h2 class="nav__topic"></h2>
         <div class="nav__games">
-          <div class="game__flashcards game">
+          <div data-mode="flashcards" class="game__flashcards game">
               <img class="game__icon" src="https://via.placeholder.com/35x35" />
               <p class="game__title">Flashcards</p>
           </div>
-          <div class="game__matching game">
+          <div data-mode="matching" class="game__matching game">
               <img class="game__icon" src="https://via.placeholder.com/35x35" />
               <p class="game__title">Matching</p>
             </div>
-          <div class="game__test game">
+          <div data-mode="test" class="game__test game">
               <img class="game__icon" src="https://via.placeholder.com/35x35" />
               <p class="game__title">Test</p>
             </div>
@@ -48,6 +48,7 @@
       </div>
     </div>
   </template>
-  <script src="script.js"></script>
+  <script src="globals.js"></script>
+  <script src="games-view.js"></script>
 </body>
 </html>
