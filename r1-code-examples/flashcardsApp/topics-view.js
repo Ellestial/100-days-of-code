@@ -23,7 +23,6 @@ const topic = {
     const nameEl = topic.querySelector('.topic__name');
     topic.dataset.id = index;
     topic.dataset.index = document.querySelectorAll('.topic').length;
-    topic.href = 'flashcard.html#?topic=' + index;
     nameEl.textContent = name;
     shownTopics.push(topicsData[index]);
     return topic;
@@ -213,7 +212,10 @@ topicView.addEventListener('click', function(e) {
   if(!clickedTopic || clickedTopic.dataset.id === 'empty') {
     return;
   }
-  activeTopic = topicsData[clickedTopic.dataset.id];
+  let index = topicsData.findIndex(function(el) {
+    return el.id == clickedTopic.dataset.id;
+  });
+  activeTopic = topicsData[index];
   activeTopic.mode = 'flashcards';
   activeTopicString = JSON.stringify(activeTopic);
   localStorage.setItem('activeTopic', activeTopicString);

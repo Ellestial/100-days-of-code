@@ -170,7 +170,7 @@ div {
 
 header {
   width: 100%;
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
 }
@@ -239,6 +239,23 @@ nav .game .game__icon {
   position: absolute;
   top: calc(100% + 0.75rem);
   right: 0.75rem;
+}
+
+.flashcard {
+  width: 100%;
+  max-width: 600px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.flashcard .flashcard__content {
+  width: 100%;
+  height: 100%;
+  border: 1px solid gray;
+  padding: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

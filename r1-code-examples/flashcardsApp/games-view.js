@@ -6,11 +6,26 @@ activeTopic = JSON.parse(localStorage.activeTopic);
 const topicName = document.querySelector('.nav__topic');
 const navModes = document.querySelectorAll('.game');
 const navMode = document.querySelector('.nav__games');
+const gameContent = document.querySelector('.game__content');
 topicName.textContent = activeTopic.name;
 
 /////////////////////////////
 //         objects         //
 /////////////////////////////
+
+function createFlashcard(index) {
+  const template = document.querySelector('#flashcardTemplate');
+  const clone = document.importNode(template.content, true);
+  const flashcard = clone.querySelector('.flashcard');
+  const front = flashcard.querySelector('.front__text');
+  const back = flashcard.querySelector('.back__text');
+  const item = activeTopic.items[index];
+  front.textContent = item.term;
+  back.textContent = item.definition;
+  gameContent.appendChild(flashcard);
+  return flashcard;
+}
+createFlashcard(1);
 
 /////////////////////////////
 //        functions        //
@@ -29,7 +44,9 @@ function setMode(clickedMode = 'flashcards') {
   });
 }
 
-setMode();
+/////////////////////////////
+//        flashcards       //
+/////////////////////////////
 
 /////////////////////////////
 //     event listeners     //

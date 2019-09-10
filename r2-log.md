@@ -428,6 +428,13 @@
 
 **Thoughts**: I feel rejuvinated moving past search (though I should revisit it to fix up the issue I brought up yesterday). Tomorrow I want to focus on starting the general settings overlay, which will impact all game types.
 
+
+## Day 59: September 9, 2019
+
+**Today's Progress**: Worked on Learn app. Fixed a bug to make sure correct topics were being pulled into the game pages, and worked out some kinks on how settings overlays should work UX-wise. Started working on flashcard JS/CSS.
+
+**Thoughts**: I'm thinking of combining all 3 games into one page, since they all are related and just have a couple unique settings.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 

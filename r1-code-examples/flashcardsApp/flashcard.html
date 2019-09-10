@@ -8,43 +8,48 @@
   <title>Document</title>
 </head>
 <body>
-    <header>
-      <nav>
-        <a class="nav__back" href="./index.html">
-            <img class="nav__back" src="https://via.placeholder.com/35x35" />
-        </a>
-        <h2 class="nav__topic"></h2>
-        <div class="nav__games">
-          <div data-mode="flashcards" class="game__flashcards game">
-              <img class="game__icon" src="https://via.placeholder.com/35x35" />
-              <p class="game__title">Flashcards</p>
+  <header>
+    <nav>
+      <a class="nav__back" href="./index.html">
+          <img class="nav__back" src="https://via.placeholder.com/35x35" />
+      </a>
+      <h2 class="nav__topic"></h2>
+      <div class="nav__games">
+        <div data-mode="flashcards" class="game__flashcards game">
+            <img class="game__icon" src="https://via.placeholder.com/35x35" />
+            <p class="game__title">Flashcards</p>
+        </div>
+        <div data-mode="matching" class="game__matching game">
+            <img class="game__icon" src="https://via.placeholder.com/35x35" />
+            <p class="game__title">Matching</p>
           </div>
-          <div data-mode="matching" class="game__matching game">
-              <img class="game__icon" src="https://via.placeholder.com/35x35" />
-              <p class="game__title">Matching</p>
-            </div>
-          <div data-mode="test" class="game__test game">
-              <img class="game__icon" src="https://via.placeholder.com/35x35" />
-              <p class="game__title">Test</p>
-            </div>
-        </div>
-      </nav>
-      <div class="progress">
-        <h4 class="progress__title">Progress</h4>
-        <div class="progress__bar">
-          <div class="progress__fill"></div>
-        </div>
+        <div data-mode="test" class="game__test game">
+            <img class="game__icon" src="https://via.placeholder.com/35x35" />
+            <p class="game__title">Test</p>
+          </div>
       </div>
-      <div class="settings">
-          <img class="game__icon" src="https://via.placeholder.com/50x50" />
+    </nav>
+    <div class="progress">
+      <h4 class="progress__title">Progress</h4>
+      <div class="progress__bar">
+        <div class="progress__fill"></div>
       </div>
-    </header>
+    </div>
+    <div class="settings">
+        <img class="game__icon" src="https://via.placeholder.com/50x50" />
+    </div>
+  </header>
 
+  <div class="game__content"></div>
   <template id="flashcardTemplate">
     <div class="flashcard">
       <div class="flashcard__content">
-        <div class="flashcard__front"></div>
-        <div class="flashcard__back"></div>
+        <div class="flashcard__front">
+          <p class="front__text"></p>
+        </div>
+        <div class="flashcard__back">
+          <p class="back__text"></p>
+        </div>
       </div>
     </div>
   </template>
