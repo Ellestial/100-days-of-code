@@ -4,13 +4,33 @@
     "id": 0,
     "items": [
       {
-        "term": "Term test",
-        "definition": "Definition test",
+        "term": "concat()",
+        "definition": "It is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array. Supported in all browsers.",
         "example": "Example test"
       },
       {
-        "term": "Term test",
-        "definition": "Definition test",
+        "term": "copyWithin()",
+        "definition": "It shallow copies part of an array to another location in the same array and returns it without modifying its length.",
+        "example": "Example test"
+      },
+      {
+        "term": "every()",
+        "definition": "Tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value. Supported in all browsers.",
+        "example": "Example test"
+      },
+      {
+        "term": "fill()",
+        "definition": "Fills (modifies) all the elements of an array from a start index (default zero) to an end index (default array length) with a static value. It returns the modified array. Not supported in IE.",
+        "example": "Example test"
+      },
+      {
+        "term": "filter()",
+        "definition": "Creates a new array with all elements that pass the test implemented by the provided function. Supported in all browsers.",
+        "example": "Example test"
+      },
+      {
+        "term": "find()",
+        "definition": "Returns the value of the first element in the provided array that satisfies the provided testing function. Not supported in IE.",
         "example": "Example test"
       }
     ]

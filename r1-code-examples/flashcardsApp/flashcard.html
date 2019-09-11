@@ -42,17 +42,22 @@
 
   <div class="game__content"></div>
   <template id="flashcardTemplate">
-    <div class="flashcard">
+    <div data-side="front" class="flashcard">
       <div class="flashcard__content">
-        <div class="flashcard__front">
+        <div class="flashcard__front flashcard__side">
           <p class="front__text"></p>
         </div>
-        <div class="flashcard__back">
+        <div class="flashcard__back flashcard__side">
           <p class="back__text"></p>
         </div>
+        <div class="flashcard__flip">Flip</div>
       </div>
     </div>
   </template>
+  <div class="flashcards__arrows">
+    <div class="arrow__prev flashcards__arrow">Previous</div>
+    <div class="arrow__next flashcards__arrow">Next</div>
+  </div>
   <script src="globals.js"></script>
   <script src="games-view.js"></script>
 </body>

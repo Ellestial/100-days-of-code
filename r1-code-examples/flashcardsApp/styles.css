@@ -245,17 +245,55 @@ nav .game .game__icon {
   width: 100%;
   max-width: 600px;
   min-height: 200px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
   padding: 1rem;
 }
+.flashcard.is--active {
+  display: flex;
+}
+.flashcard[data-side=front] .flashcard__front {
+  display: block;
+}
+.flashcard[data-side=back] .flashcard__back {
+  display: block;
+}
 .flashcard .flashcard__content {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
   border: 1px solid gray;
   padding: 1rem;
+  cursor: pointer;
+}
+.flashcard .flashcard__side {
+  margin: auto;
+  display: none;
+}
+.flashcard .flashcard__flip {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
+
+.flashcards__arrows {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flashcards__arrows > * {
+  padding: 1rem;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */

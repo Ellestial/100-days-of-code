@@ -435,6 +435,13 @@
 
 **Thoughts**: I'm thinking of combining all 3 games into one page, since they all are related and just have a couple unique settings.
 
+
+## Day 60: September 10, 2019
+
+**Today's Progress**: Worked on Learn app. Took care of a bunch of flashcard JS work, such as creating cards, flipping cards, and moving to next card.
+
+**Thoughts**: This was extremely satisfying and exciting, and I had a hard time stopping coding for the night! I started getting an object set up with all the info related to a flashcard session like points, settings, and actual flashcards used. Tomorrow I want to get settings set up better, fix a bug I found, and start setting up practice mode.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
