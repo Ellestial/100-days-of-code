@@ -351,4 +351,11 @@ div {
     padding: $spacing-m;
     cursor: pointer;
   }
+
+  .flashcards__arrow {
+
+    &.is--disabled {
+      opacity: 0.5;
+    }
+  }
 }

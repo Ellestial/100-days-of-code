@@ -295,5 +295,8 @@ nav .game .game__icon {
   padding: 1rem;
   cursor: pointer;
 }
+.flashcards__arrows .flashcards__arrow.is--disabled {
+  opacity: 0.5;
+}
 
 /*# sourceMappingURL=styles.css.map */
