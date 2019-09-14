@@ -452,11 +452,18 @@
 
 ## Skipped September 12 for a celebration.
 
-## Day 62: September 12, 2019
+## Day 62: September 13, 2019
 
 **Today's Progress**: Worked on Learn app Flashcard section. Refactored more of the code. Got progress bar to work.
 
 **Thoughts**: I still need to clean up the code quite a bit, but I have a universal progress bar updating appropriately. I also have all the settings figured out for the flashcard, just need to find a way to show/have the user select them.
+
+
+## Day 63: September 14, 2019
+
+**Today's Progres**: Worked on Learn app settings. Set up local server on desktop computer, and adjusted mockups to work on the cloud.
+
+**Thoughts**: I was fortunate enough to get a free iMac from my job and worked on setting it up with everything today. I then mocked up how I wanted settings to work and created the HTML for it. I was able to start a bit on CSS and JS, but will get more into that tomorrow.
 
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 

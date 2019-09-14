@@ -5,11 +5,48 @@ topicsData = JSON.parse(localStorage.topicsData);
 activeTopic = JSON.parse(localStorage.activeTopic);
 const topicName = document.querySelector('.nav__topic');
 const navModes = document.querySelectorAll('.game');
-const navMode = document.querySelector('.nav__games');
 const gameContent = document.querySelector('.game__content');
-const arrows = document.querySelector('.flashcards__arrows');
 const progress = document.querySelector('.progress__fill');
+const selectGame;
 topicName.textContent = activeTopic.name;
+
+/////////////////////////////
+//  games view functions   //
+/////////////////////////////
+function setProgress(game) {
+  progress.style.width = Math.floor((game.active / game.settings.number) * 100) + '%';
+}
+
+const settings = {
+  create: function() {
+    const template = document.querySelector('#gameSettingsTemplate');
+    const clone = document.importNode(template.content, true);
+    const games = clone.querySelector('.games');
+    gameContent.appendChild(games);
+    selectGame = games;
+    return games;
+  }
+}
+
+settings.create();
+
+let game = {
+  selection: 'flashcards',
+  settings: {
+    mode: 'study',
+    sideA: 'term',
+    sideB: 'definition',
+    number: 15
+  },
+  score: 0,
+  active: 0,
+  items: []
+};
+
+/////////////////////////////
+//   flashcard variables   //
+/////////////////////////////
+const arrows = document.querySelector('.flashcards__arrows');
 let flashcardGame = {
   settings: {
     mode: 'study',
@@ -22,6 +59,9 @@ let flashcardGame = {
   cards: []
 };
 
+/////////////////////////////
+//         objects         //
+/////////////////////////////
 const flashcard = {
   create: function(index) {
     const template = document.querySelector('#flashcardTemplate');
@@ -87,29 +127,8 @@ const flashcard = {
 };
 
 /////////////////////////////
-//         objects         //
-/////////////////////////////
-
-/////////////////////////////
 //        functions        //
 /////////////////////////////
-function setMode(clickedMode = 'flashcards') {
-  activeTopic.mode = clickedMode.dataset.mode;
-
-  let activeMode = activeTopic.mode;
-
-  navModes.forEach(function(mode) {
-    if(activeMode == mode.dataset.mode) {
-      mode.classList.add('is--active');
-    } else if (activeMode !== mode.dataset.mode && mode.classList.contains('is--active')) {
-      mode.classList.remove('is--active');
-    }
-  });
-}
-
-function setProgress(game) {
-  progress.style.width = Math.floor((game.active / game.settings.number) * 100) + '%';
-}
 
 function setupFlashcards(num) {
   for(var i = 0; i < num; i++) {
@@ -125,23 +144,16 @@ function setupFlashcards(num) {
   }
   document.querySelector('.flashcard').classList.add('is--active');
 };
-setupFlashcards(flashcardGame.settings.number);
-
-/////////////////////////////
-//        flashcards       //
-/////////////////////////////
+// setupFlashcards(flashcardGame.settings.number);
 
 /////////////////////////////
 //     event listeners     //
 /////////////////////////////
-navMode.addEventListener('click', function(e) {
-  let clickedMode = e.target.closest('.game');
-  clickedMode.classList.add('is--active');
-  console.log(clickedMode);
-});
-
 gameContent.addEventListener('click', flashcard.flip);
 arrows.addEventListener('click', function(e) {
   const clickedArrow = e.target.closest('.flashcards__arrow');
   flashcard.setActive(clickedArrow);
+});
+selectGame.addEventListener('click', function() {
+  
 });
