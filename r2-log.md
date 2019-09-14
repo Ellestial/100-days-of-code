@@ -438,16 +438,25 @@
 
 ## Day 60: September 10, 2019
 
-**Today's Progress**: Worked on Learn app. Took care of a bunch of flashcard JS work, such as creating cards, flipping cards, and moving to next card.
+**Today's Progress**: Worked on Learn app Flashcard section. Took care of a bunch of flashcard JS work, such as creating cards, flipping cards, and moving to next card.
 
 **Thoughts**: This was extremely satisfying and exciting, and I had a hard time stopping coding for the night! I started getting an object set up with all the info related to a flashcard session like points, settings, and actual flashcards used. Tomorrow I want to get settings set up better, fix a bug I found, and start setting up practice mode.
 
 
 ## Day 61: September 11, 2019
 
-**Today's Progress**: Worked on Learn app. Started refactoring messy flashcard code.
+**Today's Progress**: Worked on Learn app Flashcard section. Started refactoring messy flashcard code.
 
 **Thoughts**: This is taking a little while to figure out. Hope that looking at this with a fresh set of eyes tomorrow.
+
+
+## Skipped September 12 for a celebration.
+
+## Day 62: September 12, 2019
+
+**Today's Progress**: Worked on Learn app Flashcard section. Refactored more of the code. Got progress bar to work.
+
+**Thoughts**: I still need to clean up the code quite a bit, but I have a universal progress bar updating appropriately. I also have all the settings figured out for the flashcard, just need to find a way to show/have the user select them.
 
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
