@@ -7,8 +7,22 @@ const topicName = document.querySelector('.nav__topic');
 const navModes = document.querySelectorAll('.game');
 const gameContent = document.querySelector('.game__content');
 const progress = document.querySelector('.progress__fill');
-const selectGame;
+let selectGame;
 topicName.textContent = activeTopic.name;
+let settingsShown = true;
+
+let game = {
+  selection: 'flashcards',
+  settings: {
+    mode: 'study',
+    sideA: 'term',
+    sideB: 'definition',
+    number: 15
+  },
+  score: 0,
+  active: 0,
+  items: []
+};
 
 /////////////////////////////
 //  games view functions   //
@@ -25,23 +39,37 @@ const settings = {
     gameContent.appendChild(games);
     selectGame = games;
     return games;
+  },
+  hide: function() {
+    gameContent.removeChild(selectGame);
+  },
+  setFlashcards: function() {
+    game.selection = 'flashcards',
+    game.settings = {
+      number: 15,
+      mode: 'study',
+      sideA: 'term',
+      sideB: 'definition'
+    }
+  },
+  setMatching: function() {
+    game.selection = 'matching',
+    game.settings = {
+      number: 15,
+      type: []
+    }
+  },
+  setTest: function() {
+    game.selection = 'test',
+    game.settings = {
+      number: 15,
+      style: [],
+      type: []
+    }
   }
 }
 
 settings.create();
-
-let game = {
-  selection: 'flashcards',
-  settings: {
-    mode: 'study',
-    sideA: 'term',
-    sideB: 'definition',
-    number: 15
-  },
-  score: 0,
-  active: 0,
-  items: []
-};
 
 /////////////////////////////
 //   flashcard variables   //
@@ -149,11 +177,28 @@ function setupFlashcards(num) {
 /////////////////////////////
 //     event listeners     //
 /////////////////////////////
-gameContent.addEventListener('click', flashcard.flip);
-arrows.addEventListener('click', function(e) {
-  const clickedArrow = e.target.closest('.flashcards__arrow');
-  flashcard.setActive(clickedArrow);
+// gameContent.addEventListener('click', flashcard.flip);
+// arrows.addEventListener('click', function(e) {
+//   const clickedArrow = e.target.closest('.flashcards__arrow');
+//   flashcard.setActive(clickedArrow);
+// });
+selectGame.addEventListener('click', function(e) {
+  const clickedGame = e.target.closest('.game');
+  const clickedButton = e.target.closest('.game__start');
+  const games = document.querySelectorAll('.game');
+  games.forEach(function(game) {
+    if(game.classList.contains('is--active')) {
+      game.classList.remove('is--active');
+    }
+  });
+  clickedGame.classList.add('is--active');
+
+  if (clickedButton) {
+    game.selection = clickedGame.dataset.selection;
+    console.log('you clicked button!');
+  }
 });
-selectGame.addEventListener('click', function() {
-  
-});
+
+if (settingsShown) {
+  console.log('beep!');
+};

@@ -31,11 +31,12 @@
 
     <template id="gameSettingsTemplate">
       <div class="games">
-        <div class="game__flashcards game">
+        <div data-selection="flashcards" class="game__flashcards game">
           <h2 class="flashcards__title game__title">Flashcards</h2>
           <p class="flashcards__description game__description">Aliquam erat volutpat. Mauris pharetra libero et vehicula semper. Aliquam erat volutpat. Mauris pharetra libero et vehicula. Aliquam erat volutpat. Mauris pharetra libero. Mauris pharetra libero.</p>
           <div class="flashcards__settings game__settings">
-            <div class="settings__number game__settings">
+            <h3 class="game__settings__title">Settings</h3>
+            <div class="settings__number game__setting">
               <label for="number">Number</label>
               <input name="number" type="number" min="1">
             </div>
@@ -46,23 +47,31 @@
             </div>
             <div class="settings__sideA game__setting">
               <label>Side A</label>
-              <select>Term</select>
-              <select>Definition</select>
-              <select>Example</select>
+              <select>
+                <option>Select Side A</option>
+                <option>Term</option>
+                <option>Definition</option>
+                <option>Example</option>
+              </select>
             </div>
             <div class="settings__sideB game__setting">
               <label>Side B</label>
-              <select>Term</select>
-              <select>Definition</select>
-              <select>Example</select>
+              <select>
+                <option>Select Side B</option>
+                <option>Term</option>
+                <option>Definition</option>
+                <option>Example</option>
+              </select>
             </div>
           </div>
+          <button class="flashcards__start game__start">Start</button>
         </div>
-        <div class="game__matching game">
+        <div data-selection="matching" class="game__matching game">
           <h2 class="matching__title game__title">Matching</h2>
           <p class="matching__description game__description">Aliquam erat volutpat. Mauris pharetra libero et vehicula semper. Aliquam erat volutpat. Mauris pharetra libero et vehicula. Aliquam erat volutpat. Mauris pharetra libero. Mauris pharetra libero.</p>
           <div class="matching__settings game__settings">
-            <div class="settings__number game__settings">
+            <h3 class="game__settings__title">Settings</h3>
+            <div class="settings__number game__setting">
               <label for="number">Number</label>
               <input name="number" type="number" min="1">
             </div>
@@ -73,12 +82,14 @@
               <input type="checkbox" name="type" value="definition/example"> Definition/Example
             </div>
           </div>
+          <button class="matching__start game__start">Start</button>
         </div>
-        <div class="game__test game">
+        <div data-selection="test" class="game__test game">
             <h2 class="test__title game__title">Test</h2>
             <p class="test__description game__description">Aliquam erat volutpat. Mauris pharetra libero et vehicula semper. Aliquam erat volutpat. Mauris pharetra libero et vehicula. Aliquam erat volutpat. Mauris pharetra libero. Mauris pharetra libero.</p>
           <div class="test__settings game__settings">
-            <div class="settings__number game__settings">
+            <h3 class="game__settings__title">Settings</h3>
+            <div class="settings__number game__setting">
               <label for="number">Number</label>
               <input name="number" type="number" min="1">
             </div>
@@ -95,6 +106,7 @@
               <input type="checkbox" name="type" value="definition/example"> Definition/Example
             </div>
           </div>
+          <button class="test__start game__start">Start</button>
         </div>
       </div>
     </template>
