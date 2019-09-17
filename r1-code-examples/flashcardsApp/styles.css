@@ -180,32 +180,18 @@ header {
 nav {
   height: 80px;
   display: flex;
+  align-items: center;
+  padding: 1rem;
   background-color: #F2F2F2;
   border-bottom: 1px solid gray;
 }
 nav .nav__topic {
+  margin-left: 0.5rem;
   font-size: 135%;
-  align-self: center;
 }
-nav .nav__games {
-  display: flex;
+nav .settings {
   margin-left: auto;
-}
-nav .game {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
-  text-align: center;
-  border-bottom: 3px solid transparent;
-  font-size: 90%;
-}
-nav .game.is--active {
-  border-bottom-color: gray;
-}
-nav .game .game__icon {
-  margin-bottom: 0.25rem;
+  cursor: pointer;
 }
 
 .progress {
@@ -235,12 +221,6 @@ nav .game .game__icon {
   height: 100%;
   background-color: gray;
   transition: width 250ms;
-}
-
-.settings {
-  position: absolute;
-  top: calc(100% + 0.75rem);
-  right: 0.75rem;
 }
 
 .flashcard {

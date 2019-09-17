@@ -7,7 +7,8 @@ const topicName = document.querySelector('.nav__topic');
 const navModes = document.querySelectorAll('.game');
 const gameContent = document.querySelector('.game__content');
 const progress = document.querySelector('.progress__fill');
-let selectGame;
+const settingsBtn = document.querySelector('.settings');
+let gamesOverlay;
 topicName.textContent = activeTopic.name;
 let settingsShown = true;
 
@@ -35,37 +36,81 @@ const settings = {
   create: function() {
     const template = document.querySelector('#gameSettingsTemplate');
     const clone = document.importNode(template.content, true);
-    const games = clone.querySelector('.games');
-    gameContent.appendChild(games);
-    selectGame = games;
-    return games;
+    gamesOverlay = clone.querySelector('.games');
+    const numbersEl = gamesOverlay.querySelectorAll('input[name="number"]');
+    gameContent.appendChild(gamesOverlay);
+    numbersEl.forEach(function(numberEl) {
+      numberEl.max = activeTopic.items.length;
+    });
+    return gamesOverlay;
   },
   hide: function() {
-    gameContent.removeChild(selectGame);
+    settingsShown = false;
+    gameContent.removeChild(gamesOverlay);
   },
-  setFlashcards: function() {
-    game.selection = 'flashcards',
-    game.settings = {
-      number: 15,
-      mode: 'study',
-      sideA: 'term',
-      sideB: 'definition'
-    }
+  show: function() {
+    settingsShown = true;
+    gameContent.appendChild(gamesOverlay);
   },
-  setMatching: function() {
-    game.selection = 'matching',
-    game.settings = {
-      number: 15,
-      type: []
+  set: function(selectedGame) {
+    game.selection = selectedGame.dataset.selection;
+    const numberEl = selectedGame.querySelector('input[name="number"]');
+    if (game.selection == 'flashcards') {
+      setFlashcards();
+    } else if (game.selection == 'matching') {
+      setMatching();
+    } else if (game.selection == 'test') {
+      setTest();
     }
-  },
-  setTest: function() {
-    game.selection = 'test',
-    game.settings = {
-      number: 15,
-      style: [],
-      type: []
-    }
+    
+    function setFlashcards() {
+      const modeEls = selectedGame.querySelectorAll('[name="mode"]');
+      const sideAEl = selectedGame.querySelector('[name="sideA"]');
+      const sideBEl = selectedGame.querySelector('[name="sideB"]');
+      game.settings = {
+        number: Number(numberEl.value),
+        sideA: sideAEl.value.toLowerCase(),
+        sideB: sideBEl.value.toLowerCase()
+      }
+      modeEls.forEach(function(modeEl) {
+        if (modeEl.checked) {
+          game.settings.mode = modeEl.value;
+        }
+      });
+    };
+
+    function setMatching() {
+      const typeEls = selectedGame.querySelectorAll('[name="type"]');
+      game.settings = {
+        number: Number(numberEl.value),
+        type: []
+      }
+      typeEls.forEach(function(typeEl) {
+        if (typeEl.checked) {
+          game.settings.type.push(typeEl.value);
+        }
+      });
+    };
+
+    function setTest() {
+      const styleEls = selectedGame.querySelectorAll('[name="style"]');
+      const typeEls = selectedGame.querySelectorAll('[name="type"]');
+      game.settings = {
+        number: Number(numberEl.value),
+        style: [],
+        type: []
+      }
+      styleEls.forEach(function(styleEl) {
+        if (styleEl.checked) {
+          game.settings.style.push(styleEl.value);
+        }
+      });
+      typeEls.forEach(function(typeEl) {
+        if (typeEl.checked) {
+          game.settings.type.push(typeEl.value);
+        }
+      });
+    };
   }
 }
 
@@ -75,17 +120,6 @@ settings.create();
 //   flashcard variables   //
 /////////////////////////////
 const arrows = document.querySelector('.flashcards__arrows');
-let flashcardGame = {
-  settings: {
-    mode: 'study',
-    sideA: 'term',
-    sideB: 'definition',
-    number: 15
-  },
-  score: 0,
-  active: 0,
-  cards: []
-};
 
 /////////////////////////////
 //         objects         //
@@ -98,8 +132,8 @@ const flashcard = {
     const front = flashcard.querySelector('.front__text');
     const back = flashcard.querySelector('.back__text');
     const item = activeTopic.items[index];
-    const sideA = flashcardGame.settings.sideA;
-    const sideB = flashcardGame.settings.sideB;
+    const sideA = game.settings.sideA;
+    const sideB = game.settings.sideB;
     front.textContent = item[sideA];
     back.textContent = item[sideB];
     flashcard.dataset.index = document.querySelectorAll('.flashcard').length;
@@ -110,14 +144,14 @@ const flashcard = {
     let activeCard = card.target.closest('.flashcard.is--active');
     if(activeCard.dataset.side === 'front') {
       activeCard.dataset.side = 'back';
-    } else if(activeCard.dataset.side === 'back' && flashcardGame.settings.mode === 'study') {
+    } else if(activeCard.dataset.side === 'back' && game.settings.mode === 'study') {
       activeCard.dataset.side = 'front';
     };
   },
   setActive: function(arrow) {
     const oldActive = document.querySelector('.flashcard.is--active');
     let i = Number(oldActive.dataset.index);
-    const max = flashcardGame.settings.number - 1;
+    const max = game.settings.number - 1;
     const flashcards = document.querySelectorAll('.flashcard');
     const arrows = document.querySelectorAll('.flashcard__arrow');
     let isPrev = false;
@@ -135,7 +169,7 @@ const flashcard = {
     };
     setArrows();
     newActive = flashcards[i];
-    flashcardGame.active = i;
+    game.active = i;
     oldActive.classList.remove('is--active');
     oldActive.dataset.side = 'front';
     newActive.classList.add('is--active');
@@ -150,7 +184,7 @@ const flashcard = {
         return;
       }
     };
-    setProgress(flashcardGame);
+    setProgress(game);
   }
 };
 
@@ -161,18 +195,17 @@ const flashcard = {
 function setupFlashcards(num) {
   for(var i = 0; i < num; i++) {
     let rand = randomNum(0, num);
-    while(flashcardGame.cards.includes(activeTopic.items[rand]) && flashcardGame.cards.length < activeTopic.items.length) {
+    while(game.items.includes(activeTopic.items[rand]) && game.items.length < activeTopic.items.length) {
       rand = randomNum(0, num);
     }
     while(activeTopic.items[rand] === undefined) {
       rand = randomNum(0, num);
     }
-    flashcardGame.cards.push(activeTopic.items[rand]);
+    game.items.push(activeTopic.items[rand]);
     flashcard.create(rand);
   }
   document.querySelector('.flashcard').classList.add('is--active');
 };
-// setupFlashcards(flashcardGame.settings.number);
 
 /////////////////////////////
 //     event listeners     //
@@ -182,7 +215,7 @@ function setupFlashcards(num) {
 //   const clickedArrow = e.target.closest('.flashcards__arrow');
 //   flashcard.setActive(clickedArrow);
 // });
-selectGame.addEventListener('click', function(e) {
+gamesOverlay.addEventListener('click', function(e) {
   const clickedGame = e.target.closest('.game');
   const clickedButton = e.target.closest('.game__start');
   const games = document.querySelectorAll('.game');
@@ -194,11 +227,21 @@ selectGame.addEventListener('click', function(e) {
   clickedGame.classList.add('is--active');
 
   if (clickedButton) {
-    game.selection = clickedGame.dataset.selection;
+    settings.set(clickedGame);
     console.log('you clicked button!');
+    settings.hide();
+    
+    setupFlashcards(game.settings.number);
   }
 });
 
-if (settingsShown) {
-  console.log('beep!');
-};
+settingsBtn.addEventListener('click', function() {
+  if (this.classList.contains('is--disabled')) {
+    return;
+  }
+  if (settingsShown) {
+    settings.hide();
+  } else {
+    settings.show();
+  }
+});

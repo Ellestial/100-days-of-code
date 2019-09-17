@@ -472,6 +472,13 @@
 
 **Thoughts**: Feeling a bit sick/tired today, so I didn't get as much accomplished as I would have liked. I want to figure out how to automatically update the game.settings object with appropriate values once a user presses the start button within a game type tab.
 
+
+## Day 65: September 16, 2019
+
+**Today's Progress**: Worked on Learn app settings. set them up fully! Other than considering when users don't input acceptable settings.
+
+**Thoughts**: This is exciting! I have it mostly set up, but I am wondering if there's a more simplified way to interpret the settings values. I currently am defining them separately for each game (flashcards/matching/test). However, they all have different settings, so maybe this is fine?
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 

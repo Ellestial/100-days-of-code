@@ -15,15 +15,15 @@
             <img class="nav__back" src="https://via.placeholder.com/35x35" />
         </a>
         <h2 class="nav__topic"></h2>
+        <button class="settings">
+            <img class="game__icon" src="https://via.placeholder.com/50x50" />
+        </button>
       </nav>
       <div class="progress">
         <h4 class="progress__title">Progress</h4>
         <div class="progress__bar">
           <div class="progress__fill" style="width: 0%;"></div>
         </div>
-      </div>
-      <div class="settings">
-          <img class="game__icon" src="https://via.placeholder.com/50x50" />
       </div>
     </header>
 
@@ -47,7 +47,7 @@
             </div>
             <div class="settings__sideA game__setting">
               <label>Side A</label>
-              <select>
+              <select name="sideA">
                 <option>Select Side A</option>
                 <option>Term</option>
                 <option>Definition</option>
@@ -56,7 +56,7 @@
             </div>
             <div class="settings__sideB game__setting">
               <label>Side B</label>
-              <select>
+              <select name="sideB">
                 <option>Select Side B</option>
                 <option>Term</option>
                 <option>Definition</option>
@@ -94,10 +94,10 @@
               <input name="number" type="number" min="1">
             </div>
             <div class="settings__style game__setting">
-              <label for="styles">Question Styles</label>
-              <input type="checkbox" name="styles" value="true/false"> True/False
-              <input type="checkbox" name="styles" value="multiple choice"> Multiple Choice
-              <input type="checkbox" name="styles" value="text input"> Text Input
+              <label for="style">Question Style</label>
+              <input type="checkbox" name="style" value="true/false"> True/False
+              <input type="checkbox" name="style" value="multiple choice"> Multiple Choice
+              <input type="checkbox" name="style" value="text input"> Text Input
             </div>
             <div class="settings__type game__setting">
               <label for="type">Type</label>
@@ -122,11 +122,11 @@
           <div class="flashcard__flip">Flip</div>
         </div>
       </div>
+      <div class="flashcards__arrows">
+        <div class="arrow__prev flashcards__arrow">Previous</div>
+        <div class="arrow__next flashcards__arrow">Next</div>
+      </div>
     </template>
-    <div class="flashcards__arrows">
-      <div class="arrow__prev flashcards__arrow">Previous</div>
-      <div class="arrow__next flashcards__arrow">Next</div>
-    </div>
   </div>
   <script src="globals.js"></script>
   <script src="games-view.js"></script>
