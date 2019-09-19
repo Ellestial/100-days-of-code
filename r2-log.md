@@ -479,6 +479,16 @@
 
 **Thoughts**: This is exciting! I have it mostly set up, but I am wondering if there's a more simplified way to interpret the settings values. I currently am defining them separately for each game (flashcards/matching/test). However, they all have different settings, so maybe this is fine?
 
+
+## Skipped September 17 due to a cold
+
+
+## Day 66: September 18, 2019
+
+**Today's Progress**: Worked on Learn app settings and flashcard game. I'm able to have the flashcard game start after selecting Start from the settings page. Everything also resets if you open the settings and press Start again.
+
+**Thoughts**: Progress! Once I have all the details of the flashcard game figured out, I'm going to try and clean up my code again before it becomes too much of a behemoth.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
