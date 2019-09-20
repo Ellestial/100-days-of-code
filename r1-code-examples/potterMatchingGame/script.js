@@ -239,7 +239,7 @@ let overlayText = {
     title: 'You Lost',
     description: 'You didn\'t learn the spells quick enough to stop the Death Eaters.'
   }
-}
+};
 
 /////////////////////////////////
 //           overlays          //
