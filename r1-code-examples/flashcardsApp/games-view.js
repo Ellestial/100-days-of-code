@@ -7,6 +7,7 @@ const topicName = document.querySelector('.nav__topic');
 const gameContent = document.querySelector('.game__content');
 const progress = document.querySelector('.progress__fill');
 const settingsBtn = document.querySelector('.settings');
+let arrowsEl;
 let gamesOverlay;
 let settingsShown = true;
 let game = {
@@ -138,16 +139,11 @@ function setupNewGame(game) {
 settings.create();
 
 /////////////////////////////
-//   flashcard variables   //
-/////////////////////////////
-const arrows = document.querySelector('.flashcards__arrows');
-
-/////////////////////////////
-//         objects         //
+//      flashcard game     //
 /////////////////////////////
 const flashcard = {
   create: function(index) {
-    const template = document.querySelector('#flashcardTemplate');
+    const template = document.querySelector('#flashcardsTemplate');
     const clone = document.importNode(template.content, true);
     const flashcard = clone.querySelector('.flashcard');
     const front = flashcard.querySelector('.front__text');
@@ -159,16 +155,15 @@ const flashcard = {
     back.textContent = item[sideB];
     flashcard.dataset.index = document.querySelectorAll('.flashcard').length;
     gameContent.appendChild(flashcard);
-    return flashcard;
   },
   flip: function(e) {
     let activeCard = e.target.closest('.flashcard.is--active');
-    if(activeCard == null) {
+    if (activeCard == null) {
       return;
     }
-    if(activeCard.dataset.side === 'front') {
+    if (activeCard.dataset.side === 'front') {
       activeCard.dataset.side = 'back';
-    } else if(activeCard.dataset.side === 'back' && game.settings.mode === 'study') {
+    } else if (activeCard.dataset.side === 'back') {
       activeCard.dataset.side = 'front';
     };
   },
@@ -176,7 +171,6 @@ const flashcard = {
     const oldActive = document.querySelector('.flashcard.is--active');
     const max = game.settings.number - 1;
     const flashcards = document.querySelectorAll('.flashcard');
-    const arrows = document.querySelectorAll('.flashcard__arrow');
     let isPrev = false;
     let newActive;
     if (arrow.classList.contains('arrow__prev')) {
@@ -186,7 +180,6 @@ const flashcard = {
       return;
     };
     if (isPrev) {
-      console.log('boop');
       game.active -= 1;
     } else {
       game.active += 1;
@@ -199,39 +192,52 @@ const flashcard = {
   }
 };
 
-/////////////////////////////
-//        functions        //
-/////////////////////////////
+function arrows() {
+  let prev;
+  let next;
+
+  function create() {
+    const template = document.querySelector('#' + game.selection + 'Template');
+    const clone = document.importNode(template.content, true);
+    const arrows = clone.querySelector('.flashcards__arrows');
+    gameContent.appendChild(arrows);
+    arrowsEl = arrows;
+    prev = document.querySelector('.arrow__prev');
+    next = document.querySelector('.arrow__next');
+    console.log(prev);
+    checkDisabled();
+  };
+
+  function checkDisabled() {
+    console.log(prev);
+    if(game.active == 0) {
+      prev.classList.add('is--disabled');
+    } else if (game.active == game.settings.number - 1) {
+      next.classList.add('is--disabled');
+    } else {
+      prev.classList.remove('is--disabled');
+      next.classList.remove('is--disabled');
+    }
+  };
+
+  return {
+    create: create,
+    checkDisabled: checkDisabled
+  }
+};
 
 function setupFlashcards() {
   game.items.forEach(function(item, i) {
     flashcard.create(i);
   });
-  createArrows();
   document.querySelector('.flashcard').classList.add('is--active');
+  arrows().create();
   gameContent.addEventListener('click', flashcard.flip);
-
-  function createArrows() {
-    const template = document.querySelector('#flashcardTemplate');
-    const clone = document.importNode(template.content, true);
-    const arrows = clone.querySelector('.flashcards__arrows');
-    gameContent.appendChild(arrows);
-    const prev = document.querySelector('.arrow__prev');
-    const next = document.querySelector('.arrow__next');
-
-    arrows.addEventListener('click', function(e) {
-      const clickedArrow = e.target.closest('.flashcards__arrow');
-      flashcard.setActive(clickedArrow);
-      if(game.active == 0 && !prev.classList.contains('is--disabled')) {
-        prev.classList.add('is--disabled');
-      } else if (game.active == game.settings.number - 1 && !next.classList.contains('is--disabled')) {
-        next.classList.add('is--disabled');
-      } else {
-        prev.classList.remove('is--disabled');
-        next.classList.remove('is--disabled');
-      }
-    });
-  };
+  arrowsEl.addEventListener('click', function(e) {
+    const clickedArrow = e.target.closest('.flashcards__arrow');
+    flashcard.setActive(clickedArrow);
+    arrows().checkDisabled();
+  });
 };
 
 /////////////////////////////

@@ -496,6 +496,13 @@
 
 **Thoughts**: I was not in a good mood today, so I had some trouble focusing. Once I iron out some if/else statements to make previous/next buttons disable appropriately, I want to really go through and clean up my flashcard JS. Once that's done, I can start the practice version of the flashcard app.
 
+
+## Day 68: September 20, 2019
+
+**Today's Progress**: Worked on Learn app flashcard game. Cleaned up code. Started to try and figure out the popup that comes up when you've completed the game.
+
+**Thoughts**: My code feels a bit cleaner, so that's good. I'm trying to find the best way to have the final popup come up, and I'm wondering if it should be consistent or different per game. Hope to really dive into that more tomorrow.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
