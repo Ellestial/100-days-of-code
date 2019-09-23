@@ -8,7 +8,8 @@ const gameContent = document.querySelector('.game__content');
 const progress = document.querySelector('.progress__fill');
 const settingsBtn = document.querySelector('.settings');
 let arrowsEl;
-let gamesOverlay;
+let settingsOverlay;
+let endOverlay;
 let settingsShown = true;
 let game = {
   selection: '',
@@ -31,21 +32,21 @@ const settings = {
   create: function() {
     const template = document.querySelector('#gameSettingsTemplate');
     const clone = document.importNode(template.content, true);
-    gamesOverlay = clone.querySelector('.games');
-    const numbersEl = gamesOverlay.querySelectorAll('input[name="number"]');
-    gameContent.appendChild(gamesOverlay);
+    settingsOverlay = clone.querySelector('.games');
+    const numbersEl = settingsOverlay.querySelectorAll('input[name="number"]');
+    gameContent.appendChild(settingsOverlay);
     numbersEl.forEach(function(numberEl) {
       numberEl.max = activeTopic.items.length;
     });
-    return gamesOverlay;
+    return settingsOverlay;
   },
   hide: function() {
     settingsShown = false;
-    gameContent.removeChild(gamesOverlay);
+    gameContent.removeChild(settingsOverlay);
   },
   show: function() {
     settingsShown = true;
-    gameContent.appendChild(gamesOverlay);
+    gameContent.appendChild(settingsOverlay);
   },
   set: function(selectedGame) {
     game.selection = selectedGame.dataset.selection;
@@ -123,7 +124,29 @@ const settings = {
       game.items.push(activeTopic.items[rand]);
     }
   }
-}
+};
+
+const end = {
+  create: function() {
+    const template = document.querySelector('#gameEndTemplate');
+    const clone = document.importNode(template.content, true);
+    endOverlay = clone.querySelector('.end');
+  },
+  show: function(parentNode, percentage) {
+    const scoreWrapper = endOverlay.querySelector('.end__score');
+    const score = endOverlay.querySelector('.score__amount');
+    if (percentage) {
+      score.textContent = percentage + '%';
+      scoreWrapper.classList.remove('is--hidden');
+    } else {
+      scoreWrapper.classList.add('is--hidden');
+    }
+    parentNode.appendChild(endOverlay);
+  },
+  hide: function(parentNode) {
+    parentNode.removeChild(endOverlay);
+  }
+};
 
 function setupNewGame(game) {
   const clickedGame = game;
@@ -137,6 +160,7 @@ function setupNewGame(game) {
 };
 
 settings.create();
+end.create();
 
 /////////////////////////////
 //      flashcard game     //
@@ -167,24 +191,12 @@ const flashcard = {
       activeCard.dataset.side = 'front';
     };
   },
-  setActive: function(arrow) {
+  setActive: function(index, clickedArrow) {
     const oldActive = document.querySelector('.flashcard.is--active');
-    const max = game.settings.number - 1;
     const flashcards = document.querySelectorAll('.flashcard');
-    let isPrev = false;
     let newActive;
-    if (arrow.classList.contains('arrow__prev')) {
-      isPrev = true;
-    }
-    if (game.active < 1 && isPrev || game.active >= max && !isPrev) {
-      return;
-    };
-    if (isPrev) {
-      game.active -= 1;
-    } else {
-      game.active += 1;
-    };
-    newActive = flashcards[game.active];
+    arrows().setActive(clickedArrow);
+    newActive = flashcards[index];
     oldActive.classList.remove('is--active');
     oldActive.dataset.side = 'front';
     newActive.classList.add('is--active');
@@ -192,9 +204,9 @@ const flashcard = {
   }
 };
 
+let prev;
+let next;
 function arrows() {
-  let prev;
-  let next;
 
   function create() {
     const template = document.querySelector('#' + game.selection + 'Template');
@@ -220,9 +232,26 @@ function arrows() {
     }
   };
 
+  function setActive(arrow) {
+    const max = game.settings.number - 1;
+    let isPrev = false;
+    if (arrow.classList.contains('arrow__prev')) {
+      isPrev = true;
+    }
+    if (game.active < 1 && isPrev || game.active >= max && !isPrev) {
+      return;
+    };
+    if (isPrev) {
+      game.active -= 1;
+    } else {
+      game.active += 1;
+    };
+  }
+
   return {
     create: create,
-    checkDisabled: checkDisabled
+    checkDisabled: checkDisabled,
+    setActive: setActive
   }
 };
 
@@ -235,15 +264,22 @@ function setupFlashcards() {
   gameContent.addEventListener('click', flashcard.flip);
   arrowsEl.addEventListener('click', function(e) {
     const clickedArrow = e.target.closest('.flashcards__arrow');
-    flashcard.setActive(clickedArrow);
+    flashcard.setActive(game.settings.number, clickedArrow);
     arrows().checkDisabled();
   });
+  if(game.selection == 'flashcards' && game.settings.mode == 'study') {
+    let newDiv = document.createElement('div');
+    newDiv.classList.add('flashcard')
+    newDiv.dataset.index = game.settings.number;
+    end.show(newDiv);
+    gameContent.appendChild(newDiv);
+  }
 };
 
 /////////////////////////////
 //     event listeners     //
 /////////////////////////////
-gamesOverlay.addEventListener('click', function(e) {
+settingsOverlay.addEventListener('click', function(e) {
   const clickedGame = e.target.closest('.game');
   const clickedButton = e.target.closest('.game__start');
   const games = document.querySelectorAll('.game');

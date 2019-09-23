@@ -503,6 +503,15 @@
 
 **Thoughts**: My code feels a bit cleaner, so that's good. I'm trying to find the best way to have the final popup come up, and I'm wondering if it should be consistent or different per game. Hope to really dive into that more tomorrow.
 
+
+## Skipped September 21 from not feeling well.
+
+## Day 69: September 22, 2019
+
+**Today's Progress**: Worked on Learn app game ending portion.
+
+**Thoughts**: Today was a bit difficult. I'm trying to incorporate the same game end overlay in all different game styles to make it as reusable as possible, so I'm messing around with flashcard app settings to accomodate that.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
