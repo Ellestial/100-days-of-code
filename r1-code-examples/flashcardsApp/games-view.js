@@ -130,6 +130,8 @@ const end = {
   create: function() {
     const template = document.querySelector('#gameEndTemplate');
     const clone = document.importNode(template.content, true);
+    const selectAnotherGame = clone.querySelector('.end__different');
+    selectAnotherGame.addEventListener('click', settings.show);
     endOverlay = clone.querySelector('.end');
   },
   show: function(parentNode, percentage) {
@@ -191,12 +193,14 @@ const flashcard = {
       activeCard.dataset.side = 'front';
     };
   },
-  setActive: function(index, clickedArrow) {
+  setActive: function(clickedArrow) {
     const oldActive = document.querySelector('.flashcard.is--active');
     const flashcards = document.querySelectorAll('.flashcard');
     let newActive;
-    arrows().setActive(clickedArrow);
-    newActive = flashcards[index];
+    if (clickedArrow) {
+      arrows().setActive(clickedArrow);
+    }
+    newActive = flashcards[game.active];
     oldActive.classList.remove('is--active');
     oldActive.dataset.side = 'front';
     newActive.classList.add('is--active');
@@ -204,8 +208,6 @@ const flashcard = {
   }
 };
 
-let prev;
-let next;
 function arrows() {
 
   function create() {
@@ -214,21 +216,18 @@ function arrows() {
     const arrows = clone.querySelector('.flashcards__arrows');
     gameContent.appendChild(arrows);
     arrowsEl = arrows;
-    prev = document.querySelector('.arrow__prev');
-    next = document.querySelector('.arrow__next');
-    console.log(prev);
     checkDisabled();
   };
 
   function checkDisabled() {
-    console.log(prev);
-    if(game.active == 0) {
+    const prev = document.querySelector('.arrow__prev');
+    const next = document.querySelector('.arrow__next');
+    prev.classList.remove('is--disabled');
+    next.classList.remove('is--disabled');
+    if (game.active == 0) {
       prev.classList.add('is--disabled');
     } else if (game.active == game.settings.number - 1) {
       next.classList.add('is--disabled');
-    } else {
-      prev.classList.remove('is--disabled');
-      next.classList.remove('is--disabled');
     }
   };
 
@@ -259,20 +258,31 @@ function setupFlashcards() {
   game.items.forEach(function(item, i) {
     flashcard.create(i);
   });
+  if (game.selection == 'flashcards' && game.settings.mode == 'study') {
+    game.settings.number += 1;
+    createEndFlashcard();
+    arrows().create();
+  }
   document.querySelector('.flashcard').classList.add('is--active');
-  arrows().create();
   gameContent.addEventListener('click', flashcard.flip);
   arrowsEl.addEventListener('click', function(e) {
     const clickedArrow = e.target.closest('.flashcards__arrow');
-    flashcard.setActive(game.settings.number, clickedArrow);
+    flashcard.setActive(clickedArrow);
     arrows().checkDisabled();
   });
-  if(game.selection == 'flashcards' && game.settings.mode == 'study') {
-    let newDiv = document.createElement('div');
-    newDiv.classList.add('flashcard')
-    newDiv.dataset.index = game.settings.number;
-    end.show(newDiv);
-    gameContent.appendChild(newDiv);
+
+  function createEndFlashcard() {
+    const restartGame = endOverlay.querySelector('.end__try-again');
+    let newFlashcard = document.createElement('div');
+    newFlashcard.classList.add('flashcard')
+    newFlashcard.dataset.index = game.settings.number;
+    end.show(newFlashcard);
+    gameContent.appendChild(newFlashcard);
+    restartGame.addEventListener('click', function() {
+      game.active = 0;
+      flashcard.setActive();
+      arrows().checkDisabled();
+    })
   }
 };
 

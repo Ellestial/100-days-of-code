@@ -512,6 +512,13 @@
 
 **Thoughts**: Today was a bit difficult. I'm trying to incorporate the same game end overlay in all different game styles to make it as reusable as possible, so I'm messing around with flashcard app settings to accomodate that.
 
+
+## Day 70: September 23, 2019
+
+**Today's Progress**: Worked on Learn app end settings in flashcard.
+
+**Thoughts**: The study portion of flashcards is done!! The end card comes up appropriately and I now have buttons to open the settings overlay and to start the flashcards from the first one again. Tomorrow I will start figuring out the practice portion of the flashcard game--it'll involve removing the arrows and adding persistent buttons.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
