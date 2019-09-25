@@ -48,6 +48,17 @@ const settings = {
     settingsShown = true;
     gameContent.appendChild(settingsOverlay);
   },
+  randomizeItems: function() {
+    let currentItems = game.items;
+    let newItems = [];
+    for(let i = 0; i < game.settings.number; i++) {
+      let rand = randomNum(0, currentItems.length);
+      let removedItem = currentItems.splice(rand, 1);
+      newItems.push(removedItem);
+    }
+    game.items = newItems;
+    console.table(currentItems, newItems);
+  },
   set: function(selectedGame) {
     game.selection = selectedGame.dataset.selection;
     game.score = 0;
@@ -132,13 +143,16 @@ const end = {
     const clone = document.importNode(template.content, true);
     const selectAnotherGame = clone.querySelector('.end__different');
     selectAnotherGame.addEventListener('click', settings.show);
-    endOverlay = clone.querySelector('.end');
+    endOverlay = clone.querySelector('.end__wrapper');
   },
-  show: function(parentNode, percentage) {
+  show: function(parentNode, showScore) {
     const scoreWrapper = endOverlay.querySelector('.end__score');
-    const score = endOverlay.querySelector('.score__amount');
-    if (percentage) {
-      score.textContent = percentage + '%';
+    const percentage = endOverlay.querySelector('.score__percentage');
+    const fraction = endOverlay.querySelector('.score__fraction');
+    if (showScore) {
+      let scoreAmount = Math.floor((game.score / game.settings.number) * 100);
+      percentage.textContent = scoreAmount + '%';
+      fraction.textContent = game.score + '/' + game.settings.number;
       scoreWrapper.classList.remove('is--hidden');
     } else {
       scoreWrapper.classList.add('is--hidden');
@@ -226,13 +240,13 @@ function arrows() {
     next.classList.remove('is--disabled');
     if (game.active == 0) {
       prev.classList.add('is--disabled');
-    } else if (game.active == game.settings.number - 1) {
+    } else if (game.active == game.settings.number) {
       next.classList.add('is--disabled');
     }
   };
 
   function setActive(arrow) {
-    const max = game.settings.number - 1;
+    const max = game.settings.number;
     let isPrev = false;
     if (arrow.classList.contains('arrow__prev')) {
       isPrev = true;
@@ -258,18 +272,20 @@ function setupFlashcards() {
   game.items.forEach(function(item, i) {
     flashcard.create(i);
   });
-  if (game.selection == 'flashcards' && game.settings.mode == 'study') {
+  if (game.settings.mode == 'study') {
     game.settings.number += 1;
     createEndFlashcard();
     arrows().create();
+    arrowsEl.addEventListener('click', function(e) {
+      const clickedArrow = e.target.closest('.flashcards__arrow');
+      flashcard.setActive(clickedArrow);
+      arrows().checkDisabled();
+    });
+  } else if (game.settings.mode == 'practice') {
+    createButtons();
   }
   document.querySelector('.flashcard').classList.add('is--active');
   gameContent.addEventListener('click', flashcard.flip);
-  arrowsEl.addEventListener('click', function(e) {
-    const clickedArrow = e.target.closest('.flashcards__arrow');
-    flashcard.setActive(clickedArrow);
-    arrows().checkDisabled();
-  });
 
   function createEndFlashcard() {
     const restartGame = endOverlay.querySelector('.end__try-again');
@@ -282,6 +298,44 @@ function setupFlashcards() {
       game.active = 0;
       flashcard.setActive();
       arrows().checkDisabled();
+    })
+  };
+
+  function createButtons() {
+    const btnWrapper = document.createElement('div');
+    const rightBtn = document.createElement('button');
+    const wrongBtn = document.createElement('button');
+    const restartGame = endOverlay.querySelector('.end__try-again');
+    btnWrapper.classList.add('flashcard__btns');
+    rightBtn.classList.add('btn__right', 'flashcard__btn', 'btn');
+    rightBtn.textContent = 'I was right';
+    wrongBtn.classList.add('btn__wrong', 'flashcard__btn', 'btn');
+    wrongBtn.textContent = 'I was wrong';
+    btnWrapper.appendChild(rightBtn);
+    btnWrapper.appendChild(wrongBtn);
+    gameContent.appendChild(btnWrapper);
+
+    btnWrapper.addEventListener('click', function(e) {
+      const clickedBtn = e.target.closest('.flashcard__btn');
+      if (!clickedBtn) {
+        return;
+      }
+      if(clickedBtn.classList.contains('btn__right')) {
+        game.score += 1;
+      }
+      game.active += 1;
+      if(game.active == game.settings.number) {
+        end.show(gameContent, true);
+      } else {
+        flashcard.setActive();
+      }
+    });
+
+    restartGame.addEventListener('click', function() {
+      end.hide(gameContent);
+      game.active = 0;
+      game.score = 0;
+      flashcard.setActive();
     })
   }
 };

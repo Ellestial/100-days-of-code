@@ -316,13 +316,15 @@ nav .settings {
 }
 
 .game__content,
-.games {
+.games,
+.end__wrapper {
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
 }
 
-.games {
+.games,
+.end__wrapper {
   width: 100%;
   min-height: 100%;
   position: absolute;
@@ -336,7 +338,24 @@ nav .settings {
   padding: 1rem;
 }
 
-.game {
+.end .end__title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.end .end__score {
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 1px solid gray;
+}
+.end .score__percentage {
+  font-size: 2rem;
+}
+.end .score__fraction {
+  font-size: 1.5rem;
+}
+
+.game,
+.end {
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -349,43 +368,55 @@ nav .settings {
 }
 .game:not(.is--active) .game__description,
 .game:not(.is--active) .game__settings,
-.game:not(.is--active) .game__start {
+.game:not(.is--active) .game__start,
+.end:not(.is--active) .game__description,
+.end:not(.is--active) .game__settings,
+.end:not(.is--active) .game__start {
   display: none;
 }
-.game.is--active {
+.game.is--active,
+.end.is--active {
   flex-grow: 4;
 }
-.game > * {
+.game > *,
+.end > * {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
 }
-.game .game__title {
+.game .game__title,
+.end .game__title {
   font-size: 3rem;
   color: gray;
 }
-.game .game__description {
+.game .game__description,
+.end .game__description {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.game .game__settings {
+.game .game__settings,
+.end .game__settings {
   padding: 1rem;
   border: 1px solid gray;
 }
-.game .game__settings__title {
+.game .game__settings__title,
+.end .game__settings__title {
   font-size: 2rem;
   color: gray;
   margin-bottom: 1rem;
 }
-.game .game__setting {
+.game .game__setting,
+.end .game__setting {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
 }
-.game .game__setting label {
+.game .game__setting label,
+.end .game__setting label {
   margin-right: auto;
 }
-.game .game__start {
+.game .game__start,
+.end .game__start {
   margin-top: 1rem;
   padding: 1rem;
 }

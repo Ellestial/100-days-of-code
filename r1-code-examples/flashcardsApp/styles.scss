@@ -381,13 +381,15 @@ div {
   }
 
   .game__content,
-  .games {
+  .games,
+  .end__wrapper {
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
   }
 
-  .games {
+  .games,
+  .end__wrapper {
     width: 100%;
     min-height: 100%;
     position: absolute;
@@ -401,7 +403,30 @@ div {
     padding: $spacing-m;
   }
 
-  .game {
+  .end {
+
+    .end__title {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .end__score {
+      margin: $spacing-m auto;
+      padding: $spacing-m;
+      border: 1px solid gray;
+    }
+
+    .score__percentage {
+      font-size: 2rem;
+    }
+
+    .score__fraction {
+      font-size: 1.5rem;
+    }
+  }
+
+  .game,
+  .end {
     min-height: 100%;
     display: flex;
     flex-direction: column;
