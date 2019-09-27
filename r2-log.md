@@ -526,6 +526,16 @@
 
 **Thoughts**: I was able to take care of the whole practice mode today! It helped I tried setting up the settings to accomodate it. The JS is very messy and I absolutely want to refine it tomorrow or after tomorrow. I want to add a method to the settings object that randomizes the current items when you click Try Again in the end overlay. I just realize now though that I could probably refine the settings.addItems() method to do this! I'll work on that tomorrow. After that and cleaning up the JS, I want to create real, high-fidelity mockups and work on the CSS for those before I move onto the matching game.
 
+
+## Skipped September 25th.
+
+
+## Day 72: September 26, 2019
+
+**Today's Progress**: Worked on Learn app color palette and mockups.
+
+**Thoughts**: I want to get a good design established, which may take a few days.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
