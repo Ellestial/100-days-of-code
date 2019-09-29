@@ -536,6 +536,16 @@
 
 **Thoughts**: I want to get a good design established, which may take a few days.
 
+
+## Skipped September 28th due to events that took entire day.
+
+
+## Day 73: September 28, 2019
+
+**Today's Progress**: Worked on Learn app Topics page design.
+
+**Thoughts**: I'm not totally happy with what I have yet, but I do have a base design laid out. I hope to spend all tomorrow tweaking things to have a topics page I like.
+
 [[Prototype]]
 - The default [[Get]] operation proceeds to follow the [[Prototype]] link of the object if it cannot find the requested property on the object directly. 
 - This process continues until either a matching property name is found, or hte [[Prototype]] chain ends. 
